@@ -1,0 +1,1242 @@
+[
+ {
+  "key": "hero.aerial",
+  "original": "2024_03_Al-Maskaan-Village.jpg",
+  "local": "assets/images/hero/aerial-masterplan.jpg",
+  "w": 1500,
+  "h": 844,
+  "origW": 1500,
+  "origH": 844,
+  "bytes": 274576
+ },
+ {
+  "key": "hero.courtyard",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.46.42.jpeg",
+  "local": "assets/images/hero/courtyard-aerial.jpg",
+  "w": 1600,
+  "h": 1344,
+  "origW": 1600,
+  "origH": 1344,
+  "bytes": 289545
+ },
+ {
+  "key": "acc.tower",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.41.59.jpeg",
+  "local": "assets/images/accommodation/residential-block-corner.jpg",
+  "w": 1600,
+  "h": 1344,
+  "origW": 1600,
+  "origH": 1344,
+  "bytes": 166671
+ },
+ {
+  "key": "acc.block",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.46.16.jpeg",
+  "local": "assets/images/accommodation/residential-block-frontage.jpg",
+  "w": 1600,
+  "h": 900,
+  "origW": 1600,
+  "origH": 900,
+  "bytes": 224495
+ },
+ {
+  "key": "acc.street",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.38.07-1.jpeg",
+  "local": "assets/images/accommodation/landscaped-walkway.jpg",
+  "w": 1600,
+  "h": 1344,
+  "origW": 1600,
+  "origH": 1344,
+  "bytes": 217996
+ },
+ {
+  "key": "acc.junior1",
+  "original": "2024_02_JB-Bed-room-view-1-scaled.jpg",
+  "local": "assets/images/accommodation/junior-staff-room-1.jpg",
+  "w": 2200,
+  "h": 1238,
+  "origW": 2560,
+  "origH": 1440,
+  "bytes": 167763
+ },
+ {
+  "key": "acc.junior2",
+  "original": "2024_02_JB-Bed-room-view-2-scaled.jpg",
+  "local": "assets/images/accommodation/junior-staff-room-2.jpg",
+  "w": 2200,
+  "h": 1238,
+  "origW": 2560,
+  "origH": 1440,
+  "bytes": 180020
+ },
+ {
+  "key": "acc.junior3",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.43.24-1.jpeg",
+  "local": "assets/images/accommodation/junior-staff-room-3.jpg",
+  "w": 1600,
+  "h": 900,
+  "origW": 1600,
+  "origH": 900,
+  "bytes": 128853
+ },
+ {
+  "key": "acc.juniorPlan",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.41.29.jpeg",
+  "local": "assets/images/accommodation/junior-staff-rooms-isometric.jpg",
+  "w": 1256,
+  "h": 919,
+  "origW": 1256,
+  "origH": 919,
+  "bytes": 136774
+ },
+ {
+  "key": "acc.single",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.42.27.jpeg",
+  "local": "assets/images/accommodation/senior-single-premium.jpg",
+  "w": 1600,
+  "h": 900,
+  "origW": 1600,
+  "origH": 900,
+  "bytes": 71215
+ },
+ {
+  "key": "acc.single2",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.42.35-1.jpeg",
+  "local": "assets/images/accommodation/senior-single-premium-2.jpg",
+  "w": 1600,
+  "h": 900,
+  "origW": 1600,
+  "origH": 900,
+  "bytes": 77017
+ },
+ {
+  "key": "acc.double",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.42.20.jpeg",
+  "local": "assets/images/accommodation/senior-double-premium.jpg",
+  "w": 1600,
+  "h": 900,
+  "origW": 1600,
+  "origH": 900,
+  "bytes": 81444
+ },
+ {
+  "key": "acc.triple",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.42.43.jpeg",
+  "local": "assets/images/accommodation/senior-triple-premium.jpg",
+  "w": 1600,
+  "h": 900,
+  "origW": 1600,
+  "origH": 900,
+  "bytes": 75490
+ },
+ {
+  "key": "retail.frontage",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.53.10.jpeg",
+  "local": "assets/images/retail/retail-frontage.jpg",
+  "w": 1600,
+  "h": 1042,
+  "origW": 1600,
+  "origH": 1042,
+  "bytes": 249431
+ },
+ {
+  "key": "retail.office",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.50.48.jpeg",
+  "local": "assets/images/retail/commercial-building.jpg",
+  "w": 1600,
+  "h": 1368,
+  "origW": 1600,
+  "origH": 1368,
+  "bytes": 254776
+ },
+ {
+  "key": "retail.commercial2",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.51.46.jpeg",
+  "local": "assets/images/retail/commercial-building-street.jpg",
+  "w": 1600,
+  "h": 1344,
+  "origW": 1600,
+  "origH": 1344,
+  "bytes": 306691
+ },
+ {
+  "key": "cat.hall",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.37.10.jpeg",
+  "local": "assets/images/catering/dining-hall-render.jpg",
+  "w": 1600,
+  "h": 900,
+  "origW": 1600,
+  "origH": 900,
+  "bytes": 185381
+ },
+ {
+  "key": "cat.hall2",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.38.46.jpeg",
+  "local": "assets/images/catering/dining-hall-long.jpg",
+  "w": 1600,
+  "h": 900,
+  "origW": 1600,
+  "origH": 900,
+  "bytes": 194326
+ },
+ {
+  "key": "cat.hallBig",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.38.07-2.jpeg",
+  "local": "assets/images/catering/dining-hall-main.jpg",
+  "w": 1600,
+  "h": 900,
+  "origW": 1600,
+  "origH": 900,
+  "bytes": 170103
+ },
+ {
+  "key": "cat.hallPhoto",
+  "original": "2024_06_AlMaskaanVillage_WelcomeResidents_2.jpg",
+  "local": "assets/images/catering/dining-hall-built.jpg",
+  "w": 1575,
+  "h": 924,
+  "origW": 1575,
+  "origH": 924,
+  "bytes": 202341
+ },
+ {
+  "key": "cat.kitchen",
+  "original": "2024_04_AlMaskaanVillage_Catering_3.jpg",
+  "local": "assets/images/catering/central-kitchen.jpg",
+  "w": 1140,
+  "h": 567,
+  "origW": 1140,
+  "origH": 567,
+  "bytes": 82538
+ },
+ {
+  "key": "cat.canapes",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.35.30-1.jpeg",
+  "local": "assets/images/catering/canapes.jpg",
+  "w": 1600,
+  "h": 1066,
+  "origW": 1600,
+  "origH": 1066,
+  "bytes": 252224
+ },
+ {
+  "key": "cat.desserts",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.35.30.jpeg",
+  "local": "assets/images/catering/dessert-cups.jpg",
+  "w": 1280,
+  "h": 1600,
+  "origW": 1280,
+  "origH": 1600,
+  "bytes": 304528
+ },
+ {
+  "key": "cat.buffet",
+  "original": "2024_06_AlMaskaanVillage_Catering_1.jpg",
+  "local": "assets/images/catering/buffet-service.jpg",
+  "w": 1575,
+  "h": 631,
+  "origW": 1575,
+  "origH": 631,
+  "bytes": 110058
+ },
+ {
+  "key": "cat.chef",
+  "original": "2024_02_catering-popup.jpeg",
+  "local": "assets/images/catering/chef-plating.jpg",
+  "w": 1000,
+  "h": 1000,
+  "origW": 1000,
+  "origH": 1000,
+  "bytes": 98749
+ },
+ {
+  "key": "spaces.lounge",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.55.55.jpeg",
+  "local": "assets/images/spaces/office-lounge.jpg",
+  "w": 1600,
+  "h": 900,
+  "origW": 1600,
+  "origH": 900,
+  "bytes": 123957
+ },
+ {
+  "key": "spaces.lounge2",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.57.02.jpeg",
+  "local": "assets/images/spaces/meeting-lounge.jpg",
+  "w": 1600,
+  "h": 800,
+  "origW": 1600,
+  "origH": 800,
+  "bytes": 131305
+ },
+ {
+  "key": "spaces.cafe",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.56.45-1.jpeg",
+  "local": "assets/images/spaces/cafe-atrium.jpg",
+  "w": 1600,
+  "h": 900,
+  "origW": 1600,
+  "origH": 900,
+  "bytes": 179482
+ },
+ {
+  "key": "spaces.cafe2",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.56.55.jpeg",
+  "local": "assets/images/spaces/cafe-atrium-2.jpg",
+  "w": 1600,
+  "h": 900,
+  "origW": 1600,
+  "origH": 900,
+  "bytes": 197823
+ },
+ {
+  "key": "spaces.recreation",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.56.45.jpeg",
+  "local": "assets/images/spaces/recreation-centre.jpg",
+  "w": 1600,
+  "h": 1131,
+  "origW": 1600,
+  "origH": 1131,
+  "bytes": 233693
+ },
+ {
+  "key": "spaces.games",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.56.55-2.jpeg",
+  "local": "assets/images/spaces/games-lounge.jpg",
+  "w": 1600,
+  "h": 796,
+  "origW": 1600,
+  "origH": 796,
+  "bytes": 121546
+ },
+ {
+  "key": "life.garden",
+  "original": "2024_03_Al-Maskaan-Village1.jpg",
+  "local": "assets/images/lifestyle/garden-pergola.jpg",
+  "w": 1500,
+  "h": 844,
+  "origW": 1500,
+  "origH": 844,
+  "bytes": 257843
+ },
+ {
+  "key": "life.courts",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.49.48-2.jpeg",
+  "local": "assets/images/lifestyle/courtyard-basketball.jpg",
+  "w": 1573,
+  "h": 1166,
+  "origW": 1573,
+  "origH": 1166,
+  "bytes": 280280
+ },
+ {
+  "key": "life.pitch",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.49.48-1.jpeg",
+  "local": "assets/images/lifestyle/football-pitch.jpg",
+  "w": 1199,
+  "h": 833,
+  "origW": 1199,
+  "origH": 833,
+  "bytes": 168597
+ },
+ {
+  "key": "life.mosque",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.49.48.jpeg",
+  "local": "assets/images/facilities/mosque-and-pitch.jpg",
+  "w": 1455,
+  "h": 1129,
+  "origW": 1455,
+  "origH": 1129,
+  "bytes": 351281
+ },
+ {
+  "key": "life.hall",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.47.15.jpeg",
+  "local": "assets/images/lifestyle/recreation-hall-exterior.jpg",
+  "w": 1600,
+  "h": 900,
+  "origW": 1600,
+  "origH": 900,
+  "bytes": 204237
+ },
+ {
+  "key": "fac.service",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.38.07.jpeg",
+  "local": "assets/images/facilities/service-building.jpg",
+  "w": 1600,
+  "h": 900,
+  "origW": 1600,
+  "origH": 900,
+  "bytes": 183621
+ },
+ {
+  "key": "people.thomas",
+  "original": "2024_01_Dr.-Thomas-Alexander-2.jpg",
+  "local": "assets/images/people/dr-thomas-alexander.jpg",
+  "w": 1021,
+  "h": 1171,
+  "origW": 1021,
+  "origH": 1171,
+  "bytes": 74517
+ },
+ {
+  "key": "people.aadil",
+  "original": "2024_02_Dr.-Aadil-Alexander-1.jpg",
+  "local": "assets/images/people/dr-aadil-alexander.jpg",
+  "w": 1021,
+  "h": 1171,
+  "origW": 1021,
+  "origH": 1171,
+  "bytes": 87589
+ },
+ {
+  "key": "people.riyas",
+  "original": "2024_02_Mr.-Riyas-Mohamed-1.jpg",
+  "local": "assets/images/people/riyas-mohamed.jpg",
+  "w": 1021,
+  "h": 1171,
+  "origW": 1021,
+  "origH": 1171,
+  "bytes": 90479
+ },
+ {
+  "key": "people.richard",
+  "original": "2024_02_Mr.-Richard-Sequeria-1.jpg",
+  "local": "assets/images/people/richard-sequeira.jpg",
+  "w": 1021,
+  "h": 1171,
+  "origW": 1021,
+  "origH": 1171,
+  "bytes": 67765
+ },
+ {
+  "key": "people.rajan",
+  "original": "2024_02_Mr.-Rajan-P-1.jpg",
+  "local": "assets/images/people/rajan-prabhakaran.jpg",
+  "w": 1021,
+  "h": 1171,
+  "origW": 1021,
+  "origH": 1171,
+  "bytes": 67058
+ },
+ {
+  "key": "logos/al-maskaan-village-logo.png",
+  "original": "2024_01_logo-6.png",
+  "local": "assets/logos/al-maskaan-village-logo.png",
+  "w": 300,
+  "h": 84,
+  "bytes": 4406
+ },
+ {
+  "key": "logos/al-maskaan-village-mark.png",
+  "original": "2024_03_logo-favicon.png",
+  "local": "assets/logos/al-maskaan-village-mark.png",
+  "w": 512,
+  "h": 512,
+  "bytes": 11008
+ },
+ {
+  "key": "logos/al-maskaan-village-logo-dots.png",
+  "original": "2024_01_AMV-Logo-Dots.png",
+  "local": "assets/logos/al-maskaan-village-logo-dots.png",
+  "w": 1772,
+  "h": 1863,
+  "bytes": 62283
+ },
+ {
+  "key": "logos/amv-accommodation.png",
+  "original": "2024_02_AMV-Accommodation-Logo-V.png",
+  "local": "assets/logos/amv-accommodation.png",
+  "w": 1772,
+  "h": 1661,
+  "bytes": 62271
+ },
+ {
+  "key": "logos/amv-catering.png",
+  "original": "2024_02_AMV-Catering-Logo-V.png",
+  "local": "assets/logos/amv-catering.png",
+  "w": 1772,
+  "h": 1661,
+  "bytes": 58703
+ },
+ {
+  "key": "logos/amv-retail.png",
+  "original": "2024_02_AMV-Retail-Logo-V.png",
+  "local": "assets/logos/amv-retail.png",
+  "w": 1772,
+  "h": 1661,
+  "bytes": 56760
+ },
+ {
+  "key": "logos/amv-spaces.png",
+  "original": "2024_02_AMV-Spaces-Logo-V.png",
+  "local": "assets/logos/amv-spaces.png",
+  "w": 1772,
+  "h": 1661,
+  "bytes": 58197
+ },
+ {
+  "key": "logos/amv-lifestyle.png",
+  "original": "2024_02_AMV-Lifestyle-Logo-V.png",
+  "local": "assets/logos/amv-lifestyle.png",
+  "w": 1772,
+  "h": 1661,
+  "bytes": 58795
+ },
+ {
+  "key": "logos/amv-mark-accommodation.png",
+  "original": "2024_01_haven-of-5-accomodation.png",
+  "local": "assets/logos/amv-mark-accommodation.png",
+  "w": 133,
+  "h": 133,
+  "bytes": 2578
+ },
+ {
+  "key": "logos/amv-mark-catering.png",
+  "original": "2024_01_haven-of-5-catering.png",
+  "local": "assets/logos/amv-mark-catering.png",
+  "w": 133,
+  "h": 133,
+  "bytes": 2558
+ },
+ {
+  "key": "logos/amv-mark-retail.png",
+  "original": "2024_01_haven-of-5-retail.png",
+  "local": "assets/logos/amv-mark-retail.png",
+  "w": 133,
+  "h": 133,
+  "bytes": 2561
+ },
+ {
+  "key": "logos/amv-mark-spaces.png",
+  "original": "2024_01_haven-of-5-spaces.png",
+  "local": "assets/logos/amv-mark-spaces.png",
+  "w": 133,
+  "h": 133,
+  "bytes": 2572
+ },
+ {
+  "key": "logos/amv-mark-lifestyle.png",
+  "original": "2024_01_haven-of-5-lifestyle.png",
+  "local": "assets/logos/amv-mark-lifestyle.png",
+  "w": 133,
+  "h": 133,
+  "bytes": 2595
+ },
+ {
+  "key": "images/clients/al-naba-group.png",
+  "original": "2025_09_ANG-Logo_11zon-1-1.png",
+  "local": "assets/images/clients/al-naba-group.png",
+  "w": 480,
+  "h": 480,
+  "bytes": 48691
+ },
+ {
+  "key": "images/clients/al-naba-ambition-unlimited.jpg",
+  "original": "2025_09_COMPANY-LOGO_11zon-1.jpg",
+  "local": "assets/images/clients/al-naba-ambition-unlimited.jpg",
+  "w": 480,
+  "h": 480,
+  "bytes": 55903
+ },
+ {
+  "key": "images/clients/home-suite.jpg",
+  "original": "2025_09_homesuite_11zon-1.jpg",
+  "local": "assets/images/clients/home-suite.jpg",
+  "w": 480,
+  "h": 480,
+  "bytes": 27015
+ },
+ {
+  "key": "images/clients/muscat-hills-aluminium.jpg",
+  "original": "2025_09_muscat_11zon-1.jpg",
+  "local": "assets/images/clients/muscat-hills-aluminium.jpg",
+  "w": 480,
+  "h": 480,
+  "bytes": 51980
+ },
+ {
+  "key": "images/clients/food-development-company.jpg",
+  "original": "2025_09_food-Logo-1-salalah-mills_11zon-1.jpg",
+  "local": "assets/images/clients/food-development-company.jpg",
+  "w": 480,
+  "h": 480,
+  "bytes": 20646
+ },
+ {
+  "key": "images/clients/kv-group.jpg",
+  "original": "2025_09_suhol-1-1_11zon-1.jpg",
+  "local": "assets/images/clients/kv-group.jpg",
+  "w": 480,
+  "h": 480,
+  "bytes": 37171
+ },
+ {
+  "key": "images/clients/suhol-alfayha.jpg",
+  "original": "2025_09_suhol-2-1_11zon-1.jpg",
+  "local": "assets/images/clients/suhol-alfayha.jpg",
+  "w": 480,
+  "h": 480,
+  "bytes": 22363
+ },
+ {
+  "key": "gallery.village",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.49.48-2.jpeg",
+  "local": "assets/images/gallery/village-154948-2.jpg",
+  "w": 1573,
+  "h": 1166,
+  "origW": 1573,
+  "origH": 1166,
+  "bytes": 259590
+ },
+ {
+  "key": "gallery.village",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.46.42.jpeg",
+  "local": "assets/images/gallery/village-154642.jpg",
+  "w": 1600,
+  "h": 1344,
+  "origW": 1600,
+  "origH": 1344,
+  "bytes": 266886
+ },
+ {
+  "key": "gallery.village",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.49.48-4.jpeg",
+  "local": "assets/images/gallery/village-154948-4.jpg",
+  "w": 754,
+  "h": 462,
+  "origW": 754,
+  "origH": 462,
+  "bytes": 54268
+ },
+ {
+  "key": "gallery.village",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.49.48-3.jpeg",
+  "local": "assets/images/gallery/village-154948-3.jpg",
+  "w": 1370,
+  "h": 848,
+  "origW": 1370,
+  "origH": 848,
+  "bytes": 169914
+ },
+ {
+  "key": "gallery.village",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.49.48.jpeg",
+  "local": "assets/images/gallery/village-154948.jpg",
+  "w": 1455,
+  "h": 1129,
+  "origW": 1455,
+  "origH": 1129,
+  "bytes": 329317
+ },
+ {
+  "key": "gallery.village",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.49.48-1.jpeg",
+  "local": "assets/images/gallery/village-154948-1.jpg",
+  "w": 1199,
+  "h": 833,
+  "origW": 1199,
+  "origH": 833,
+  "bytes": 156487
+ },
+ {
+  "key": "gallery.village",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.38.07-1.jpeg",
+  "local": "assets/images/gallery/village-153807-1.jpg",
+  "w": 1600,
+  "h": 1344,
+  "origW": 1600,
+  "origH": 1344,
+  "bytes": 200318
+ },
+ {
+  "key": "gallery.village",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.41.59.jpeg",
+  "local": "assets/images/gallery/village-154159.jpg",
+  "w": 1600,
+  "h": 1344,
+  "origW": 1600,
+  "origH": 1344,
+  "bytes": 150613
+ },
+ {
+  "key": "gallery.village",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.41.59-1.jpeg",
+  "local": "assets/images/gallery/village-154159-1.jpg",
+  "w": 1600,
+  "h": 1344,
+  "origW": 1600,
+  "origH": 1344,
+  "bytes": 203250
+ },
+ {
+  "key": "gallery.village",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.46.16.jpeg",
+  "local": "assets/images/gallery/village-154616.jpg",
+  "w": 1600,
+  "h": 900,
+  "origW": 1600,
+  "origH": 900,
+  "bytes": 208253
+ },
+ {
+  "key": "gallery.village",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.47.15.jpeg",
+  "local": "assets/images/gallery/village-154715.jpg",
+  "w": 1600,
+  "h": 900,
+  "origW": 1600,
+  "origH": 900,
+  "bytes": 187048
+ },
+ {
+  "key": "gallery.village",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.38.07.jpeg",
+  "local": "assets/images/gallery/village-153807.jpg",
+  "w": 1600,
+  "h": 900,
+  "origW": 1600,
+  "origH": 900,
+  "bytes": 168319
+ },
+ {
+  "key": "gallery.village",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.50.48.jpeg",
+  "local": "assets/images/gallery/village-155048.jpg",
+  "w": 1600,
+  "h": 1368,
+  "origW": 1600,
+  "origH": 1368,
+  "bytes": 234143
+ },
+ {
+  "key": "gallery.village",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.51.46.jpeg",
+  "local": "assets/images/gallery/village-155146.jpg",
+  "w": 1600,
+  "h": 1344,
+  "origW": 1600,
+  "origH": 1344,
+  "bytes": 282871
+ },
+ {
+  "key": "gallery.village",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.51.14.jpeg",
+  "local": "assets/images/gallery/village-155114.jpg",
+  "w": 1600,
+  "h": 900,
+  "origW": 1600,
+  "origH": 900,
+  "bytes": 163687
+ },
+ {
+  "key": "gallery.village",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.57.10.jpeg",
+  "local": "assets/images/gallery/village-155710.jpg",
+  "w": 1600,
+  "h": 1147,
+  "origW": 1600,
+  "origH": 1147,
+  "bytes": 188264
+ },
+ {
+  "key": "gallery.accommodation",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.41.45.jpeg",
+  "local": "assets/images/gallery/accommodation-154145.jpg",
+  "w": 1600,
+  "h": 900,
+  "origW": 1600,
+  "origH": 900,
+  "bytes": 93973
+ },
+ {
+  "key": "gallery.accommodation",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.43.24-1.jpeg",
+  "local": "assets/images/gallery/accommodation-154324-1.jpg",
+  "w": 1600,
+  "h": 900,
+  "origW": 1600,
+  "origH": 900,
+  "bytes": 119291
+ },
+ {
+  "key": "gallery.accommodation",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.43.24.jpeg",
+  "local": "assets/images/gallery/accommodation-154324.jpg",
+  "w": 1600,
+  "h": 900,
+  "origW": 1600,
+  "origH": 900,
+  "bytes": 119678
+ },
+ {
+  "key": "gallery.accommodation",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.41.29.jpeg",
+  "local": "assets/images/gallery/accommodation-154129.jpg",
+  "w": 1256,
+  "h": 919,
+  "origW": 1256,
+  "origH": 919,
+  "bytes": 123540
+ },
+ {
+  "key": "gallery.accommodation",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.44.21.jpeg",
+  "local": "assets/images/gallery/accommodation-154421.jpg",
+  "w": 1467,
+  "h": 1019,
+  "origW": 1467,
+  "origH": 1019,
+  "bytes": 165070
+ },
+ {
+  "key": "gallery.accommodation",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.42.27.jpeg",
+  "local": "assets/images/gallery/accommodation-154227.jpg",
+  "w": 1600,
+  "h": 900,
+  "origW": 1600,
+  "origH": 900,
+  "bytes": 63462
+ },
+ {
+  "key": "gallery.accommodation",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.42.35-1.jpeg",
+  "local": "assets/images/gallery/accommodation-154235-1.jpg",
+  "w": 1600,
+  "h": 900,
+  "origW": 1600,
+  "origH": 900,
+  "bytes": 69303
+ },
+ {
+  "key": "gallery.accommodation",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.42.20.jpeg",
+  "local": "assets/images/gallery/accommodation-154220.jpg",
+  "w": 1600,
+  "h": 900,
+  "origW": 1600,
+  "origH": 900,
+  "bytes": 73302
+ },
+ {
+  "key": "gallery.accommodation",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.42.20-1.jpeg",
+  "local": "assets/images/gallery/accommodation-154220-1.jpg",
+  "w": 1600,
+  "h": 900,
+  "origW": 1600,
+  "origH": 900,
+  "bytes": 73302
+ },
+ {
+  "key": "gallery.accommodation",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.42.43.jpeg",
+  "local": "assets/images/gallery/accommodation-154243.jpg",
+  "w": 1600,
+  "h": 900,
+  "origW": 1600,
+  "origH": 900,
+  "bytes": 67688
+ },
+ {
+  "key": "gallery.accommodation",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.42.43-1.jpeg",
+  "local": "assets/images/gallery/accommodation-154243-1.jpg",
+  "w": 1600,
+  "h": 900,
+  "origW": 1600,
+  "origH": 900,
+  "bytes": 55687
+ },
+ {
+  "key": "gallery.catering",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.37.10.jpeg",
+  "local": "assets/images/gallery/catering-153710.jpg",
+  "w": 1600,
+  "h": 900,
+  "origW": 1600,
+  "origH": 900,
+  "bytes": 170783
+ },
+ {
+  "key": "gallery.catering",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.38.46.jpeg",
+  "local": "assets/images/gallery/catering-153846.jpg",
+  "w": 1600,
+  "h": 900,
+  "origW": 1600,
+  "origH": 900,
+  "bytes": 177909
+ },
+ {
+  "key": "gallery.catering",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.38.07-2.jpeg",
+  "local": "assets/images/gallery/catering-153807-2.jpg",
+  "w": 1600,
+  "h": 900,
+  "origW": 1600,
+  "origH": 900,
+  "bytes": 158555
+ },
+ {
+  "key": "gallery.catering",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.38.07-3.jpeg",
+  "local": "assets/images/gallery/catering-153807-3.jpg",
+  "w": 1600,
+  "h": 900,
+  "origW": 1600,
+  "origH": 900,
+  "bytes": 158621
+ },
+ {
+  "key": "gallery.catering",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.35.30-1.jpeg",
+  "local": "assets/images/gallery/catering-153530-1.jpg",
+  "w": 1600,
+  "h": 1066,
+  "origW": 1600,
+  "origH": 1066,
+  "bytes": 234006
+ },
+ {
+  "key": "gallery.catering",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.35.30.jpeg",
+  "local": "assets/images/gallery/catering-153530.jpg",
+  "w": 1280,
+  "h": 1600,
+  "origW": 1280,
+  "origH": 1600,
+  "bytes": 282283
+ },
+ {
+  "key": "gallery.retail",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.53.10.jpeg",
+  "local": "assets/images/gallery/retail-155310.jpg",
+  "w": 1600,
+  "h": 1042,
+  "origW": 1600,
+  "origH": 1042,
+  "bytes": 230518
+ },
+ {
+  "key": "gallery.spaces",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.55.55.jpeg",
+  "local": "assets/images/gallery/spaces-155555.jpg",
+  "w": 1600,
+  "h": 900,
+  "origW": 1600,
+  "origH": 900,
+  "bytes": 112187
+ },
+ {
+  "key": "gallery.spaces",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.57.02.jpeg",
+  "local": "assets/images/gallery/spaces-155702.jpg",
+  "w": 1600,
+  "h": 800,
+  "origW": 1600,
+  "origH": 800,
+  "bytes": 120842
+ },
+ {
+  "key": "gallery.spaces",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.56.45-1.jpeg",
+  "local": "assets/images/gallery/spaces-155645-1.jpg",
+  "w": 1600,
+  "h": 900,
+  "origW": 1600,
+  "origH": 900,
+  "bytes": 165894
+ },
+ {
+  "key": "gallery.spaces",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.56.55.jpeg",
+  "local": "assets/images/gallery/spaces-155655.jpg",
+  "w": 1600,
+  "h": 900,
+  "origW": 1600,
+  "origH": 900,
+  "bytes": 183681
+ },
+ {
+  "key": "gallery.lifestyle",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.56.45.jpeg",
+  "local": "assets/images/gallery/lifestyle-155645.jpg",
+  "w": 1600,
+  "h": 1131,
+  "origW": 1600,
+  "origH": 1131,
+  "bytes": 216144
+ },
+ {
+  "key": "gallery.lifestyle",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.56.55-2.jpeg",
+  "local": "assets/images/gallery/lifestyle-155655-2.jpg",
+  "w": 1600,
+  "h": 796,
+  "origW": 1600,
+  "origH": 796,
+  "bytes": 111412
+ },
+ {
+  "key": "gallery.lifestyle",
+  "original": "2024_02_WhatsApp-Image-2024-02-29-at-15.56.55-1.jpeg",
+  "local": "assets/images/gallery/lifestyle-155655-1.jpg",
+  "w": 1600,
+  "h": 900,
+  "origW": 1600,
+  "origH": 900,
+  "bytes": 183681
+ },
+ {
+  "key": "news.joyalukkas-exchange-brings-convenience-to-al-maskaan-village-and-khazaen-city",
+  "original": "2024_11_AlMaskaanVillage_Joyalukkas.jpg",
+  "local": "assets/images/news/2024-11-11-joyalukkas-exchange-brings-convenience-to-al-mas.jpg",
+  "w": 1575,
+  "h": 631,
+  "origW": 1575,
+  "origH": 631,
+  "bytes": 136947
+ },
+ {
+  "key": "news.bank-muscat-atm-now-active",
+  "original": "2024_11_AlMaskaanVillage_ATM_11.jpg",
+  "local": "assets/images/news/2024-11-05-bank-muscat-atm-now-active.jpg",
+  "w": 1575,
+  "h": 631,
+  "origW": 1575,
+  "origH": 631,
+  "bytes": 65084
+ },
+ {
+  "key": "news.he-dr-mansour-al-hinai-visits-al-maskaan-village",
+  "original": "2024_09_AlMaskaanVillage_HE_Dr_AlHinai_Visit_1.jpg",
+  "local": "assets/images/news/2024-09-03-he-dr-mansour-al-hinai-visits-al-maskaan-village.jpg",
+  "w": 1200,
+  "h": 481,
+  "origW": 1200,
+  "origH": 481,
+  "bytes": 69799
+ },
+ {
+  "key": "news.al-maskaan-village-almost-there",
+  "original": "2024_08_Al-Maskaan-Village-Oman.jpg",
+  "local": "assets/images/news/2024-08-21-al-maskaan-village-almost-there.jpg",
+  "w": 1575,
+  "h": 631,
+  "origW": 1575,
+  "origH": 631,
+  "bytes": 66971
+ },
+ {
+  "key": "news.bank-muscat-atm-coming-soon-to-al-maskaan-village",
+  "original": "2024_08_AlMaskaanVillage_ATM_1-1.jpg",
+  "local": "assets/images/news/2024-08-13-bank-muscat-atm-coming-soon-to-al-maskaan-villag.jpg",
+  "w": 1575,
+  "h": 631,
+  "origW": 1575,
+  "origH": 631,
+  "bytes": 47573
+ },
+ {
+  "key": "news.al-maskaan-village-brings-freshness-and-flavor-with-new-supermarket-and-restaurant",
+  "original": "2024_07_AlMaskaanVillage_Silal_1-1.jpg",
+  "local": "assets/images/news/2024-08-05-al-maskaan-village-brings-freshness-and-flavor-w.jpg",
+  "w": 1575,
+  "h": 631,
+  "origW": 1575,
+  "origH": 631,
+  "bytes": 114673
+ },
+ {
+  "key": "news.fresh-success-at-our-doorstep-silal-thriving-next-to-al-maskaan-village",
+  "original": "2024_07_AlMaskaanVillage_Silal_1-1.jpg",
+  "local": "assets/images/news/2024-07-25-fresh-success-at-our-doorstep-silal-thriving-nex.jpg",
+  "w": 1575,
+  "h": 631,
+  "origW": 1575,
+  "origH": 631,
+  "bytes": 114673
+ },
+ {
+  "key": "news.omans-thriving-market-and-logistics-landscape-a-look-at-khazaen-city",
+  "original": "2024_07_AlMaskaanVillage_Oman_Market_Logistics_Growth_1-1.jpg",
+  "local": "assets/images/news/2024-07-16-omans-thriving-market-and-logistics-landscape-a.jpg",
+  "w": 1575,
+  "h": 631,
+  "origW": 1575,
+  "origH": 631,
+  "bytes": 90890
+ },
+ {
+  "key": "news.al-maskaan-village-your-gateway-to-thriving-khazaen",
+  "original": "2024_07_AlMaskaanVillage_Khazaen_1-1.jpg",
+  "local": "assets/images/news/2024-07-10-al-maskaan-village-your-gateway-to-thriving-khaz.jpg",
+  "w": 1575,
+  "h": 631,
+  "origW": 1575,
+  "origH": 631,
+  "bytes": 133620
+ },
+ {
+  "key": "news.al-maskaan-catering",
+  "original": "2024_07_AlMaskaanVillage_Catering.jpg",
+  "local": "assets/images/news/2024-07-03-al-maskaan-catering.jpg",
+  "w": 1575,
+  "h": 631,
+  "origW": 1575,
+  "origH": 631,
+  "bytes": 78854
+ },
+ {
+  "key": "news.al-maskaan-village-gears-up-to-welcome-first-residents",
+  "original": "2024_06_AlMaskaanVillage_WelcomeResidents_1.jpg",
+  "local": "assets/images/news/2024-06-26-al-maskaan-village-gears-up-to-welcome-first-res.jpg",
+  "w": 1575,
+  "h": 631,
+  "origW": 1575,
+  "origH": 631,
+  "bytes": 214447
+ },
+ {
+  "key": "news.al-maskaan-welcomes-adlife-clinics-laboratories-exceptional-healthcare-at-your-doorstep",
+  "original": "2024_06_Al-Maskaan-AdLife-Clinics-Laboratories2.jpg",
+  "local": "assets/images/news/2024-06-19-al-maskaan-welcomes-adlife-clinics-laboratories.jpg",
+  "w": 1575,
+  "h": 631,
+  "origW": 1575,
+  "origH": 631,
+  "bytes": 130474
+ },
+ {
+  "key": "news.al-maskaan-village-announces-partnership-with-suhol-al-fayha-supermarket-and-restaurant",
+  "original": "2024_06_AlMaskaanVillage_AlFayha_1.jpg",
+  "local": "assets/images/news/2024-06-11-al-maskaan-village-announces-partnership-with-su.jpg",
+  "w": 1575,
+  "h": 631,
+  "origW": 1575,
+  "origH": 631,
+  "bytes": 146362
+ },
+ {
+  "key": "news.a-symphony-of-flavors-for-every-occasion-al-maskaan-catering-serves-the-soul-of-our-community",
+  "original": "2024_06_AlMaskaanVillage_Catering_1.jpg",
+  "local": "assets/images/news/2024-06-04-a-symphony-of-flavors-for-every-occasion-al-mask.jpg",
+  "w": 1575,
+  "h": 631,
+  "origW": 1575,
+  "origH": 631,
+  "bytes": 100778
+ },
+ {
+  "key": "news.al-maskaan-village-your-financial-hub-in-khazaen-citys-thriving-future",
+  "original": "2024_05_AlMaskaanVillage_Bank_1.jpg",
+  "local": "assets/images/news/2024-05-28-al-maskaan-village-your-financial-hub-in-khazaen.jpg",
+  "w": 1575,
+  "h": 631,
+  "origW": 1575,
+  "origH": 631,
+  "bytes": 69979
+ },
+ {
+  "key": "news.cultivate-your-business-success-in-a-futuristic-workspace-at-al-maskaan-village",
+  "original": "2024_05_AlMaskaanVillage_Office_Space_1.jpg",
+  "local": "assets/images/news/2024-05-21-cultivate-your-business-success-in-a-futuristic.jpg",
+  "w": 1575,
+  "h": 631,
+  "origW": 1575,
+  "origH": 631,
+  "bytes": 96592
+ },
+ {
+  "key": "news.al-maskaan-village-partners-with-trufud-to-bolster-omans-food-security-and-vision-2040-goals",
+  "original": "2024_05_AlMaskaanVillage_Trufud_1.jpg",
+  "local": "assets/images/news/2024-05-14-al-maskaan-village-partners-with-trufud-to-bolst.jpg",
+  "w": 1600,
+  "h": 641,
+  "origW": 1800,
+  "origH": 721,
+  "bytes": 160488
+ },
+ {
+  "key": "news.unleash-your-retail-potential-in-a-welcoming-space",
+  "original": "2024_05_AlMaskaanVillage_Retail_4.jpeg",
+  "local": "assets/images/news/2024-05-07-unleash-your-retail-potential-in-a-welcoming-spa.jpg",
+  "w": 1134,
+  "h": 567,
+  "origW": 1134,
+  "origH": 567,
+  "bytes": 72823
+ },
+ {
+  "key": "news.al-maskaan-catering-cultivates-culinary-connections",
+  "original": "2024_04_AlMaskaanVillage_Catering_1.jpeg",
+  "local": "assets/images/news/2024-04-30-al-maskaan-catering-cultivates-culinary-connecti.jpg",
+  "w": 1134,
+  "h": 567,
+  "origW": 1134,
+  "origH": 567,
+  "bytes": 96296
+ },
+ {
+  "key": "news.al-maskaan-village-set-to-open-doors-in-june-2024",
+  "original": "2024_04_AlMaskaanVillage_investment_1-1.jpg",
+  "local": "assets/images/news/2024-04-16-al-maskaan-village-set-to-open-doors-in-june-202.jpg",
+  "w": 1600,
+  "h": 800,
+  "origW": 1600,
+  "origH": 800,
+  "bytes": 313766
+ },
+ {
+  "key": "news.al-maskaan-village-boasts-a-captive-audience-of-residents-and-employees",
+  "original": "2024_04_AlMaskaanVillage_investment_1.jpg",
+  "local": "assets/images/news/2024-04-09-al-maskaan-village-boasts-a-captive-audience-of.jpg",
+  "w": 1134,
+  "h": 567,
+  "origW": 1134,
+  "origH": 567,
+  "bytes": 108096
+ },
+ {
+  "key": "news.al-maskaan-village-catering-elevating-culinary-experiences",
+  "original": "2024_04_AlMaskaanVillage_Catering_3.jpg",
+  "local": "assets/images/news/2024-04-02-al-maskaan-village-catering-elevating-culinary-e.jpg",
+  "w": 1140,
+  "h": 567,
+  "origW": 1140,
+  "origH": 567,
+  "bytes": 77067
+ },
+ {
+  "key": "news.invest-in-your-teams-success-with-a-holistic-living-experience",
+  "original": "2024_03_AlMaskaanLifestyle_Ext1.jpg",
+  "local": "assets/images/news/2024-03-27-invest-in-your-teams-success-with-a-holistic-liv.jpg",
+  "w": 850,
+  "h": 478,
+  "origW": 850,
+  "origH": 478,
+  "bytes": 87827
+ },
+ {
+  "key": "news.exciting-partnership-announcement",
+  "original": "2024_03_Exciting-Partnership.jpg",
+  "local": "assets/images/news/2024-02-19-exciting-partnership-announcement.jpg",
+  "w": 1000,
+  "h": 525,
+  "origW": 1000,
+  "origH": 525,
+  "bytes": 105790
+ },
+ {
+  "key": "news.insider-insights",
+  "original": "2024_03_INSIDER-INSIGHTS.jpg",
+  "local": "assets/images/news/2024-02-05-insider-insights.jpg",
+  "w": 1000,
+  "h": 525,
+  "origW": 1000,
+  "origH": 525,
+  "bytes": 126319
+ }
+]

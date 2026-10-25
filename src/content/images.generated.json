@@ -1,0 +1,672 @@
+{
+ "images": {
+  "hero.aerial": {
+   "src": "/assets/images/hero/aerial-masterplan.jpg",
+   "w": 2000,
+   "h": 1116,
+   "alt": "Aerial rendering of Al Maskaan Village: residential blocks, sports court and amenity buildings in Khazaen Economic City"
+  },
+  "hero.courtyard": {
+   "src": "/assets/images/hero/courtyard-aerial.jpg",
+   "w": 1600,
+   "h": 1344,
+   "alt": "Aerial view of the residential courtyard with basketball and tennis courts"
+  },
+  "acc.tower": {
+   "src": "/assets/images/accommodation/residential-block-corner.jpg",
+   "w": 1600,
+   "h": 1344,
+   "alt": "Corner of an Al Maskaan Village residential block under a blue sky"
+  },
+  "acc.block": {
+   "src": "/assets/images/accommodation/residential-block-frontage.jpg",
+   "w": 1600,
+   "h": 900,
+   "alt": "Residential block frontage with parking"
+  },
+  "acc.street": {
+   "src": "/assets/images/accommodation/landscaped-walkway.jpg",
+   "w": 1600,
+   "h": 1344,
+   "alt": "Landscaped paved walkway between residential blocks"
+  },
+  "acc.junior1": {
+   "src": "/assets/images/accommodation/junior-staff-room-1.jpg",
+   "w": 2200,
+   "h": 1238,
+   "alt": "Junior staff room with steel bunk beds and wardrobes"
+  },
+  "acc.junior2": {
+   "src": "/assets/images/accommodation/junior-staff-room-2.jpg",
+   "w": 2200,
+   "h": 1238,
+   "alt": "Junior staff room with bunks, desk and wardrobes"
+  },
+  "acc.junior3": {
+   "src": "/assets/images/accommodation/junior-staff-room-3.jpg",
+   "w": 1600,
+   "h": 900,
+   "alt": "Junior staff bunk room with study table"
+  },
+  "acc.juniorPlan": {
+   "src": "/assets/images/accommodation/junior-staff-rooms-isometric.jpg",
+   "w": 1256,
+   "h": 919,
+   "alt": "Isometric cutaway of junior staff bunk rooms"
+  },
+  "acc.single": {
+   "src": "/assets/images/accommodation/senior-single-premium.jpg",
+   "w": 1600,
+   "h": 900,
+   "alt": "Single Premium room with queen bed, sofa, desk and television"
+  },
+  "acc.single2": {
+   "src": "/assets/images/accommodation/senior-single-premium-2.jpg",
+   "w": 1600,
+   "h": 900,
+   "alt": "Single Premium room seating corner"
+  },
+  "acc.double": {
+   "src": "/assets/images/accommodation/senior-double-premium.jpg",
+   "w": 1600,
+   "h": 900,
+   "alt": "Double Premium room with two single beds, sofa and coffee table"
+  },
+  "acc.triple": {
+   "src": "/assets/images/accommodation/senior-triple-premium.jpg",
+   "w": 1600,
+   "h": 900,
+   "alt": "Triple Premium room with three single beds"
+  },
+  "retail.frontage": {
+   "src": "/assets/images/retail/retail-frontage.jpg",
+   "w": 1600,
+   "h": 1042,
+   "alt": "Retail frontage with mobile shop, ATM and exchange units"
+  },
+  "retail.office": {
+   "src": "/assets/images/retail/commercial-building.jpg",
+   "w": 1600,
+   "h": 1368,
+   "alt": "Three-storey commercial building with glazed facade"
+  },
+  "retail.commercial2": {
+   "src": "/assets/images/retail/commercial-building-street.jpg",
+   "w": 1600,
+   "h": 1344,
+   "alt": "Commercial building seen from the street"
+  },
+  "cat.hall": {
+   "src": "/assets/images/catering/dining-hall-render.jpg",
+   "w": 1600,
+   "h": 900,
+   "alt": "Dining hall with serving counters and green chairs"
+  },
+  "cat.hall2": {
+   "src": "/assets/images/catering/dining-hall-long.jpg",
+   "w": 1600,
+   "h": 900,
+   "alt": "Long dining hall with tables and green chairs"
+  },
+  "cat.hallBig": {
+   "src": "/assets/images/catering/dining-hall-main.jpg",
+   "w": 1600,
+   "h": 900,
+   "alt": "Main community dining hall with red and white chairs"
+  },
+  "cat.hallPhoto": {
+   "src": "/assets/images/catering/dining-hall-built.jpg",
+   "w": 1575,
+   "h": 924,
+   "alt": "The completed dining hall with rows of tables and red chairs"
+  },
+  "cat.kitchen": {
+   "src": "/assets/images/catering/central-kitchen.jpg",
+   "w": 1140,
+   "h": 567,
+   "alt": "Central kitchen with chefs and commercial cooking equipment"
+  },
+  "cat.canapes": {
+   "src": "/assets/images/catering/canapes.jpg",
+   "w": 1600,
+   "h": 1066,
+   "alt": "Canapé platter for events (stock photograph used on the original website)"
+  },
+  "cat.desserts": {
+   "src": "/assets/images/catering/dessert-cups.jpg",
+   "w": 1280,
+   "h": 1600,
+   "alt": "Dessert cups served at an event (stock photograph used on the original website)"
+  },
+  "cat.buffet": {
+   "src": "/assets/images/catering/buffet-service.jpg",
+   "w": 1575,
+   "h": 631,
+   "alt": "Buffet service for corporate events"
+  },
+  "cat.chef": {
+   "src": "/assets/images/catering/chef-plating.jpg",
+   "w": 1000,
+   "h": 1000,
+   "alt": "Chef plating a dish (stock photograph used on the original website)"
+  },
+  "spaces.lounge": {
+   "src": "/assets/images/spaces/office-lounge.jpg",
+   "w": 1600,
+   "h": 900,
+   "alt": "Bright office lounge with round tables and white chairs"
+  },
+  "spaces.lounge2": {
+   "src": "/assets/images/spaces/meeting-lounge.jpg",
+   "w": 1600,
+   "h": 800,
+   "alt": "Meeting lounge with glass-walled meeting room"
+  },
+  "spaces.cafe": {
+   "src": "/assets/images/spaces/cafe-atrium.jpg",
+   "w": 1600,
+   "h": 900,
+   "alt": "Cafe on a double-height atrium with landscaped stair"
+  },
+  "spaces.cafe2": {
+   "src": "/assets/images/spaces/cafe-atrium-2.jpg",
+   "w": 1600,
+   "h": 900,
+   "alt": "Cafe and atrium with planting"
+  },
+  "spaces.recreation": {
+   "src": "/assets/images/spaces/recreation-centre.jpg",
+   "w": 1600,
+   "h": 1131,
+   "alt": "Recreation centre lobby with lounge seating and timber stair"
+  },
+  "spaces.games": {
+   "src": "/assets/images/spaces/games-lounge.jpg",
+   "w": 1600,
+   "h": 796,
+   "alt": "Lounge with colourful sofas beside a glass-walled room"
+  },
+  "life.garden": {
+   "src": "/assets/images/lifestyle/garden-pergola.jpg",
+   "w": 1500,
+   "h": 844,
+   "alt": "Landscaped garden with pergola and seating between residential blocks"
+  },
+  "life.courts": {
+   "src": "/assets/images/lifestyle/courtyard-basketball.jpg",
+   "w": 1573,
+   "h": 1166,
+   "alt": "Aerial view of the courtyard with basketball and tennis courts"
+  },
+  "life.pitch": {
+   "src": "/assets/images/lifestyle/football-pitch.jpg",
+   "w": 1199,
+   "h": 833,
+   "alt": "Aerial view of the football pitch beside the recreation hall"
+  },
+  "life.mosque": {
+   "src": "/assets/images/facilities/mosque-and-pitch.jpg",
+   "w": 1455,
+   "h": 1129,
+   "alt": "Aerial view of the village mosque, football pitch and parking"
+  },
+  "life.hall": {
+   "src": "/assets/images/lifestyle/recreation-hall-exterior.jpg",
+   "w": 1600,
+   "h": 900,
+   "alt": "Recreation hall exterior with parking"
+  },
+  "fac.service": {
+   "src": "/assets/images/facilities/service-building.jpg",
+   "w": 1600,
+   "h": 900,
+   "alt": "Service building exterior with coach"
+  },
+  "people.thomas": {
+   "src": "/assets/images/people/dr-thomas-alexander.jpg",
+   "w": 1021,
+   "h": 1171,
+   "alt": "Portrait of Dr. Thomas Alexander, Founder and Chairman"
+  },
+  "people.aadil": {
+   "src": "/assets/images/people/dr-aadil-alexander.jpg",
+   "w": 1021,
+   "h": 1171,
+   "alt": "Portrait of Dr. Aadil Alexander, Executive Director"
+  },
+  "people.riyas": {
+   "src": "/assets/images/people/riyas-mohamed.jpg",
+   "w": 1021,
+   "h": 1171,
+   "alt": "Portrait of Riyas Mohamed, Chief Executive Officer"
+  },
+  "people.richard": {
+   "src": "/assets/images/people/richard-sequeira.jpg",
+   "w": 1021,
+   "h": 1171,
+   "alt": "Portrait of Richard Sequeira, DGM Facility Management"
+  },
+  "people.rajan": {
+   "src": "/assets/images/people/rajan-prabhakaran.jpg",
+   "w": 1021,
+   "h": 1171,
+   "alt": "Portrait of Rajan Prabhakaran, DGM Technical"
+  }
+ },
+ "news": {
+  "joyalukkas-exchange-brings-convenience-to-al-maskaan-village-and-khazaen-city": {
+   "src": "/assets/images/news/2024-11-11-joyalukkas-exchange-brings-convenience-to-al-mas.jpg",
+   "w": 1575,
+   "h": 631
+  },
+  "bank-muscat-atm-now-active": {
+   "src": "/assets/images/news/2024-11-05-bank-muscat-atm-now-active.jpg",
+   "w": 1575,
+   "h": 631
+  },
+  "he-dr-mansour-al-hinai-visits-al-maskaan-village": {
+   "src": "/assets/images/news/2024-09-03-he-dr-mansour-al-hinai-visits-al-maskaan-village.jpg",
+   "w": 1200,
+   "h": 481
+  },
+  "al-maskaan-village-almost-there": {
+   "src": "/assets/images/news/2024-08-21-al-maskaan-village-almost-there.jpg",
+   "w": 1575,
+   "h": 631
+  },
+  "bank-muscat-atm-coming-soon-to-al-maskaan-village": {
+   "src": "/assets/images/news/2024-08-13-bank-muscat-atm-coming-soon-to-al-maskaan-villag.jpg",
+   "w": 1575,
+   "h": 631
+  },
+  "al-maskaan-village-brings-freshness-and-flavor-with-new-supermarket-and-restaurant": {
+   "src": "/assets/images/news/2024-08-05-al-maskaan-village-brings-freshness-and-flavor-w.jpg",
+   "w": 1575,
+   "h": 631
+  },
+  "fresh-success-at-our-doorstep-silal-thriving-next-to-al-maskaan-village": {
+   "src": "/assets/images/news/2024-07-25-fresh-success-at-our-doorstep-silal-thriving-nex.jpg",
+   "w": 1575,
+   "h": 631
+  },
+  "omans-thriving-market-and-logistics-landscape-a-look-at-khazaen-city": {
+   "src": "/assets/images/news/2024-07-16-omans-thriving-market-and-logistics-landscape-a.jpg",
+   "w": 1575,
+   "h": 631
+  },
+  "al-maskaan-village-your-gateway-to-thriving-khazaen": {
+   "src": "/assets/images/news/2024-07-10-al-maskaan-village-your-gateway-to-thriving-khaz.jpg",
+   "w": 1575,
+   "h": 631
+  },
+  "al-maskaan-catering": {
+   "src": "/assets/images/news/2024-07-03-al-maskaan-catering.jpg",
+   "w": 1575,
+   "h": 631
+  },
+  "al-maskaan-village-gears-up-to-welcome-first-residents": {
+   "src": "/assets/images/news/2024-06-26-al-maskaan-village-gears-up-to-welcome-first-res.jpg",
+   "w": 1575,
+   "h": 631
+  },
+  "al-maskaan-welcomes-adlife-clinics-laboratories-exceptional-healthcare-at-your-doorstep": {
+   "src": "/assets/images/news/2024-06-19-al-maskaan-welcomes-adlife-clinics-laboratories.jpg",
+   "w": 1575,
+   "h": 631
+  },
+  "al-maskaan-village-announces-partnership-with-suhol-al-fayha-supermarket-and-restaurant": {
+   "src": "/assets/images/news/2024-06-11-al-maskaan-village-announces-partnership-with-su.jpg",
+   "w": 1575,
+   "h": 631
+  },
+  "a-symphony-of-flavors-for-every-occasion-al-maskaan-catering-serves-the-soul-of-our-community": {
+   "src": "/assets/images/news/2024-06-04-a-symphony-of-flavors-for-every-occasion-al-mask.jpg",
+   "w": 1575,
+   "h": 631
+  },
+  "al-maskaan-village-your-financial-hub-in-khazaen-citys-thriving-future": {
+   "src": "/assets/images/news/2024-05-28-al-maskaan-village-your-financial-hub-in-khazaen.jpg",
+   "w": 1575,
+   "h": 631
+  },
+  "cultivate-your-business-success-in-a-futuristic-workspace-at-al-maskaan-village": {
+   "src": "/assets/images/news/2024-05-21-cultivate-your-business-success-in-a-futuristic.jpg",
+   "w": 1575,
+   "h": 631
+  },
+  "al-maskaan-village-partners-with-trufud-to-bolster-omans-food-security-and-vision-2040-goals": {
+   "src": "/assets/images/news/2024-05-14-al-maskaan-village-partners-with-trufud-to-bolst.jpg",
+   "w": 1600,
+   "h": 641
+  },
+  "unleash-your-retail-potential-in-a-welcoming-space": {
+   "src": "/assets/images/news/2024-05-07-unleash-your-retail-potential-in-a-welcoming-spa.jpg",
+   "w": 1134,
+   "h": 567
+  },
+  "al-maskaan-catering-cultivates-culinary-connections": {
+   "src": "/assets/images/news/2024-04-30-al-maskaan-catering-cultivates-culinary-connecti.jpg",
+   "w": 1134,
+   "h": 567
+  },
+  "al-maskaan-village-set-to-open-doors-in-june-2024": {
+   "src": "/assets/images/news/2024-04-16-al-maskaan-village-set-to-open-doors-in-june-202.jpg",
+   "w": 1600,
+   "h": 800
+  },
+  "al-maskaan-village-boasts-a-captive-audience-of-residents-and-employees": {
+   "src": "/assets/images/news/2024-04-09-al-maskaan-village-boasts-a-captive-audience-of.jpg",
+   "w": 1134,
+   "h": 567
+  },
+  "al-maskaan-village-catering-elevating-culinary-experiences": {
+   "src": "/assets/images/news/2024-04-02-al-maskaan-village-catering-elevating-culinary-e.jpg",
+   "w": 1140,
+   "h": 567
+  },
+  "invest-in-your-teams-success-with-a-holistic-living-experience": {
+   "src": "/assets/images/news/2024-03-27-invest-in-your-teams-success-with-a-holistic-liv.jpg",
+   "w": 850,
+   "h": 478
+  },
+  "exciting-partnership-announcement": {
+   "src": "/assets/images/news/2024-02-19-exciting-partnership-announcement.jpg",
+   "w": 1000,
+   "h": 525
+  },
+  "insider-insights": {
+   "src": "/assets/images/news/2024-02-05-insider-insights.jpg",
+   "w": 1000,
+   "h": 525
+  }
+ },
+ "gallery": [
+  {
+   "src": "/assets/images/gallery/village-154948-2.jpg",
+   "w": 1573,
+   "h": 1166,
+   "cat": "village",
+   "alt": "Aerial view of the courtyard with basketball and tennis courts"
+  },
+  {
+   "src": "/assets/images/gallery/village-154642.jpg",
+   "w": 1600,
+   "h": 1344,
+   "cat": "village",
+   "alt": "Courtyard seen from above with sports courts and landscaping"
+  },
+  {
+   "src": "/assets/images/gallery/village-154948-4.jpg",
+   "w": 754,
+   "h": 462,
+   "cat": "village",
+   "alt": "Courtyard with tennis courts and residential blocks"
+  },
+  {
+   "src": "/assets/images/gallery/village-154948-3.jpg",
+   "w": 1370,
+   "h": 848,
+   "cat": "village",
+   "alt": "Courtyard with courts and residential balconies"
+  },
+  {
+   "src": "/assets/images/gallery/village-154948.jpg",
+   "w": 1455,
+   "h": 1129,
+   "cat": "village",
+   "alt": "Mosque, football pitch and parking from above"
+  },
+  {
+   "src": "/assets/images/gallery/village-154948-1.jpg",
+   "w": 1199,
+   "h": 833,
+   "cat": "village",
+   "alt": "Football pitch and amenity building from above"
+  },
+  {
+   "src": "/assets/images/gallery/village-153807-1.jpg",
+   "w": 1600,
+   "h": 1344,
+   "cat": "village",
+   "alt": "Paved landscaped walkway between residential blocks"
+  },
+  {
+   "src": "/assets/images/gallery/village-154159.jpg",
+   "w": 1600,
+   "h": 1344,
+   "cat": "village",
+   "alt": "Residential block corner at street level"
+  },
+  {
+   "src": "/assets/images/gallery/village-154159-1.jpg",
+   "w": 1600,
+   "h": 1344,
+   "cat": "village",
+   "alt": "Residential block facade"
+  },
+  {
+   "src": "/assets/images/gallery/village-154616.jpg",
+   "w": 1600,
+   "h": 900,
+   "cat": "village",
+   "alt": "Residential block frontage and parking"
+  },
+  {
+   "src": "/assets/images/gallery/village-154715.jpg",
+   "w": 1600,
+   "h": 900,
+   "cat": "village",
+   "alt": "Recreation hall exterior"
+  },
+  {
+   "src": "/assets/images/gallery/village-153807.jpg",
+   "w": 1600,
+   "h": 900,
+   "cat": "village",
+   "alt": "Service building exterior"
+  },
+  {
+   "src": "/assets/images/gallery/village-155048.jpg",
+   "w": 1600,
+   "h": 1368,
+   "cat": "village",
+   "alt": "Commercial building with glazed facade"
+  },
+  {
+   "src": "/assets/images/gallery/village-155146.jpg",
+   "w": 1600,
+   "h": 1344,
+   "cat": "village",
+   "alt": "Commercial building corner"
+  },
+  {
+   "src": "/assets/images/gallery/village-155114.jpg",
+   "w": 1600,
+   "h": 900,
+   "cat": "village",
+   "alt": "Amenity building exterior"
+  },
+  {
+   "src": "/assets/images/gallery/village-155710.jpg",
+   "w": 1600,
+   "h": 1147,
+   "cat": "village",
+   "alt": "Amenity building entrance and parking"
+  },
+  {
+   "src": "/assets/images/gallery/accommodation-154145.jpg",
+   "w": 1600,
+   "h": 900,
+   "cat": "accommodation",
+   "alt": "Junior staff bunk room"
+  },
+  {
+   "src": "/assets/images/gallery/accommodation-154324-1.jpg",
+   "w": 1600,
+   "h": 900,
+   "cat": "accommodation",
+   "alt": "Junior staff room with study table"
+  },
+  {
+   "src": "/assets/images/gallery/accommodation-154324.jpg",
+   "w": 1600,
+   "h": 900,
+   "cat": "accommodation",
+   "alt": "Junior staff room with wardrobes"
+  },
+  {
+   "src": "/assets/images/gallery/accommodation-154129.jpg",
+   "w": 1256,
+   "h": 919,
+   "cat": "accommodation",
+   "alt": "Isometric view of junior staff bunk rooms"
+  },
+  {
+   "src": "/assets/images/gallery/accommodation-154421.jpg",
+   "w": 1467,
+   "h": 1019,
+   "cat": "accommodation",
+   "alt": "Isometric view of bunk room layout"
+  },
+  {
+   "src": "/assets/images/gallery/accommodation-154227.jpg",
+   "w": 1600,
+   "h": 900,
+   "cat": "accommodation",
+   "alt": "Single Premium room"
+  },
+  {
+   "src": "/assets/images/gallery/accommodation-154235-1.jpg",
+   "w": 1600,
+   "h": 900,
+   "cat": "accommodation",
+   "alt": "Single Premium room with seating"
+  },
+  {
+   "src": "/assets/images/gallery/accommodation-154220.jpg",
+   "w": 1600,
+   "h": 900,
+   "cat": "accommodation",
+   "alt": "Double Premium room"
+  },
+  {
+   "src": "/assets/images/gallery/accommodation-154220-1.jpg",
+   "w": 1600,
+   "h": 900,
+   "cat": "accommodation",
+   "alt": "Double Premium room with sofa"
+  },
+  {
+   "src": "/assets/images/gallery/accommodation-154243.jpg",
+   "w": 1600,
+   "h": 900,
+   "cat": "accommodation",
+   "alt": "Triple Premium room"
+  },
+  {
+   "src": "/assets/images/gallery/accommodation-154243-1.jpg",
+   "w": 1600,
+   "h": 900,
+   "cat": "accommodation",
+   "alt": "Triple Premium room with three beds"
+  },
+  {
+   "src": "/assets/images/gallery/catering-153710.jpg",
+   "w": 1600,
+   "h": 900,
+   "cat": "catering",
+   "alt": "Dining hall with serving counters"
+  },
+  {
+   "src": "/assets/images/gallery/catering-153846.jpg",
+   "w": 1600,
+   "h": 900,
+   "cat": "catering",
+   "alt": "Long dining hall with green chairs"
+  },
+  {
+   "src": "/assets/images/gallery/catering-153807-2.jpg",
+   "w": 1600,
+   "h": 900,
+   "cat": "catering",
+   "alt": "Main community dining hall"
+  },
+  {
+   "src": "/assets/images/gallery/catering-153807-3.jpg",
+   "w": 1600,
+   "h": 900,
+   "cat": "catering",
+   "alt": "Dining hall from the entrance"
+  },
+  {
+   "src": "/assets/images/gallery/catering-153530-1.jpg",
+   "w": 1600,
+   "h": 1066,
+   "cat": "catering",
+   "alt": "Canapé platter"
+  },
+  {
+   "src": "/assets/images/gallery/catering-153530.jpg",
+   "w": 1280,
+   "h": 1600,
+   "cat": "catering",
+   "alt": "Dessert cups"
+  },
+  {
+   "src": "/assets/images/gallery/retail-155310.jpg",
+   "w": 1600,
+   "h": 1042,
+   "cat": "retail",
+   "alt": "Retail frontage with mobile shop, ATM and exchange"
+  },
+  {
+   "src": "/assets/images/gallery/spaces-155555.jpg",
+   "w": 1600,
+   "h": 900,
+   "cat": "spaces",
+   "alt": "Office lounge"
+  },
+  {
+   "src": "/assets/images/gallery/spaces-155702.jpg",
+   "w": 1600,
+   "h": 800,
+   "cat": "spaces",
+   "alt": "Meeting lounge"
+  },
+  {
+   "src": "/assets/images/gallery/spaces-155645-1.jpg",
+   "w": 1600,
+   "h": 900,
+   "cat": "spaces",
+   "alt": "Cafe atrium"
+  },
+  {
+   "src": "/assets/images/gallery/spaces-155655.jpg",
+   "w": 1600,
+   "h": 900,
+   "cat": "spaces",
+   "alt": "Cafe and atrium planting"
+  },
+  {
+   "src": "/assets/images/gallery/lifestyle-155645.jpg",
+   "w": 1600,
+   "h": 1131,
+   "cat": "lifestyle",
+   "alt": "Recreation centre lobby"
+  },
+  {
+   "src": "/assets/images/gallery/lifestyle-155655-2.jpg",
+   "w": 1600,
+   "h": 796,
+   "cat": "lifestyle",
+   "alt": "Lounge beside a glass-walled meeting room"
+  },
+  {
+   "src": "/assets/images/gallery/lifestyle-155655-1.jpg",
+   "w": 1600,
+   "h": 900,
+   "cat": "lifestyle",
+   "alt": "Cafe seating beside the atrium"
+  }
+ ]
+}
