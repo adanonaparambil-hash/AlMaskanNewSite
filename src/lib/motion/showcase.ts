@@ -204,3 +204,62 @@ export function footerRise(root: ParentNode) {
     gsap.fromTo(el, { y: 70, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 1.3, ease: EASE.expo, scrollTrigger: { trigger: el, start: 'top 94%', once: true } });
   });
 }
+
+/**
+ * [data-feast] — catering scene on a sticky stage. Scattered mosaic tiles settle while the headline lifts away;
+ * then the full-size dining-hall layer is uncovered from the centre tile's exact rectangle to full screen (a
+ * clip, not a scale, so the photo stays sharp) as the other tiles push out; finally the glass card rises and
+ * its figures count up. The centre rectangle is measured from layout offsets (unaffected by transforms).
+ */
+export function feasts(root: HTMLElement) {
+  q(root, '[data-feast]').forEach((section) => {
+    const stage = section.querySelector<HTMLElement>('.feast__stage');
+    const grid = section.querySelector<HTMLElement>('[data-feast-grid]');
+    const hero = section.querySelector<HTMLElement>('[data-feast-hero]');
+    const center = section.querySelector<HTMLElement>('[data-feast-tile="center"]');
+    if (!stage || !grid || !hero || !center) return;
+    const veil = section.querySelector<HTMLElement>('[data-feast-veil]');
+    const intro = section.querySelector<HTMLElement>('[data-feast-intro]');
+    const card = section.querySelector<HTMLElement>('[data-feast-card]');
+    const heroImg = hero.querySelector<HTMLElement>('.media__inner');
+    const outer = q(grid, '[data-feast-tile=""]');
+    const counts = q(section, '[data-feast-count]');
+    // deterministic scatter so every visit starts from the same composition
+    const scatter = [[-60, -40, -6], [0, -70, 3], [60, -40, 5], [-80, 0, -4], [80, 0, 4], [-60, 50, 5], [0, 70, -3], [60, 50, -5]];
+
+    const startClip = () => {
+      const w = stage.clientWidth;
+      const h = stage.clientHeight;
+      const l = grid.offsetLeft + center.offsetLeft;
+      const t = grid.offsetTop + center.offsetTop;
+      const pct = (v: number, of: number) => `${((v / of) * 100).toFixed(3)}%`;
+      // start with the tile's own rounded corners (the theme radius)
+      const radius = getComputedStyle(document.documentElement).getPropertyValue('--radius').trim() || '22px';
+      return `inset(${pct(t, h)} ${pct(w - l - center.offsetWidth, w)} ${pct(h - t - center.offsetHeight, h)} ${pct(l, w)} round ${radius})`;
+    };
+
+    const tl = gsap.timeline({
+      defaults: { ease: 'none' },
+      scrollTrigger: { trigger: section, start: 'top top', end: 'bottom bottom', scrub: 0.8, invalidateOnRefresh: true },
+    });
+    // 1 — headline lifts away, the mosaic settles and brightens
+    if (intro) tl.fromTo(intro, { autoAlpha: 1, y: 0, scale: 1 }, { autoAlpha: 0, y: -90, scale: 1.06, duration: 0.24 }, 0.04);
+    if (veil) tl.fromTo(veil, { opacity: 1 }, { opacity: 0.12, duration: 0.28 }, 0.04);
+    tl.fromTo(grid, { scale: 0.84 }, { scale: 1, duration: 0.3 }, 0);
+    tl.fromTo(outer, { x: (i) => scatter[i % 8][0], y: (i) => scatter[i % 8][1], rotation: (i) => scatter[i % 8][2] }, { x: 0, y: 0, rotation: 0, duration: 0.3 }, 0);
+    // 2 — the dining hall opens from the centre tile to full screen; the rest of the mosaic pushes out
+    tl.set(hero, { autoAlpha: 1 }, 0.32);
+    tl.fromTo(hero, { clipPath: startClip }, { clipPath: 'inset(0% 0% 0% 0% round 0px)', duration: 0.34 }, 0.32);
+    if (heroImg) tl.fromTo(heroImg, { scale: 1.12 }, { scale: 1, duration: 0.34 }, 0.32);
+    tl.to(grid, { scale: 1.3, autoAlpha: 0, duration: 0.3 }, 0.34);
+    // 3 — the details arrive over the hall
+    if (veil) tl.to(veil, { opacity: 0.6, duration: 0.18 }, 0.68);
+    if (card) tl.fromTo(card, { autoAlpha: 0, y: 70 }, { autoAlpha: 1, y: 0, duration: 0.18 }, 0.72);
+    counts.forEach((el) => {
+      const end = Number(el.dataset.feastCount) || 0;
+      const proxy = { v: 0 };
+      tl.fromTo(proxy, { v: 0 }, { v: end, duration: 0.2, onUpdate: () => { el.textContent = Math.round(proxy.v).toLocaleString('en-US'); } }, 0.76);
+    });
+    tl.to({}, { duration: 0.04 }, 0.96); // a short hold at the end before the stage releases
+  });
+}

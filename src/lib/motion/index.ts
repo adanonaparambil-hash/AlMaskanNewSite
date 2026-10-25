@@ -3,7 +3,7 @@ import { hero } from './hero';
 import { counters, fadeReveals, lineReveals, maskReveals, staggerGroups } from './reveals';
 import { cursor, hero3d, magnetic, marquees, ring, rise3d, tilt, velocitySkew, wordScrub } from './fx3d';
 import { expansion, header, horizontalScroll, parallax, timelines } from './scroll';
-import { blurReveals, charReveals, circles, curtains, driftX, footerRise, glow, progressBar, scaleReveals, scrambles, speeds, stacks, textFills } from './showcase';
+import { blurReveals, charReveals, circles, curtains, driftX, feasts, footerRise, glow, progressBar, scaleReveals, scrambles, speeds, stacks, textFills } from './showcase';
 
 const HIDDEN = '[data-reveal],[data-stagger-item],[data-hero],[data-timeline-item]';
 
@@ -42,6 +42,7 @@ export function initMotion(root: HTMLElement): () => void {
       // pinned sections first, so every trigger measured after them accounts for the pin spacing
       if (c.desktop) horizontalScroll(root);
       circles(root);
+      feasts(root);
       header();
       progressBar();
       hero(root);

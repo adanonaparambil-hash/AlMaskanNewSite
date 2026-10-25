@@ -46,6 +46,14 @@ const lifestyleItems = [
   { n: '04', t: 'Events and workshops', d: 'A recreation hall for community events, workshops, dance classes and game nights.' },
 ];
 
+/** 3×3 mosaic for the catering scene; the centre tile (index 4) is the completed dining hall that opens to full screen. */
+const FEAST_TILES = ['cat.canapes', 'cat.kitchen', 'cat.chef', 'cat.hall', 'cat.hallPhoto', 'cat.buffet', 'cat.desserts', 'cat.hall2', 'cat.hallBig'];
+const CATERING_FACTS = [
+  { value: 3900, unit: 'm²', label: 'Industrial kitchen' },
+  { value: 3000, unit: '', label: 'In-house catering serving' },
+  { value: 1000, unit: '', label: 'External catering serving' },
+];
+
 export default function Home() {
   const [lead, ...rest] = articles;
   return (
@@ -278,32 +286,38 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7 — CATERING */}
-      <section className="section" aria-labelledby="cat-title">
-        <div className="container">
-          <div className="grid-12" style={{ marginBottom: 'clamp(40px, 5vw, 72px)' }}>
-            <div style={{ gridColumn: '1 / span 7' }}>
-              <Eyebrow color="var(--c-cat)">Al Maskaan Catering</Eyebrow>
-              <Heading as="h2" className="display--lg" fx="chars" id="cat-title">Delicious meals, <em>included</em> in your stay</Heading>
+      {/* 7 — CATERING: scattered mosaic settles, then the dining hall opens to full screen (data-feast) */}
+      <section className="feast" data-feast aria-labelledby="cat-title">
+        <div className="feast__stage">
+          <div className="feast__grid" data-feast-grid>
+            {FEAST_TILES.map((k, i) => (
+              <div key={k} className={i === 4 ? 'feast__tile feast__tile--center' : 'feast__tile'} data-feast-tile={i === 4 ? 'center' : ''}>
+                <Media k={k} sizes="(min-width: 760px) 32vw, 34vw" />
+              </div>
+            ))}
+          </div>
+          <div className="feast__hero" data-feast-hero aria-hidden="true">
+            <Media k="cat.hallPhoto" alt="" sizes="100vw" />
+          </div>
+          <div className="feast__veil" data-feast-veil aria-hidden="true" />
+          <div className="feast__intro" data-feast-intro>
+            <Eyebrow color="var(--c-cat)">Al Maskaan Catering</Eyebrow>
+            <h2 id="cat-title" className="display display--xl">Delicious meals, <em>included</em> in your stay</h2>
+          </div>
+          <div className="feast__card glass" data-feast-card>
+            <p className="feast__copy">Three nutritious meals a day keep residents fuelled and ready to perform. Beyond the daily table, bespoke catering suits boardroom meetings, industry conferences and team celebrations — menus designed with our chefs around your culture, preferences and budget.</p>
+            <ul className="feast__facts">
+              {CATERING_FACTS.map((f) => (
+                <li key={f.label}>
+                  <b><span data-feast-count={f.value}>{f.value.toLocaleString('en-US')}</span>+{f.unit && <small> {f.unit}</small>}</b>
+                  <span>{f.label}</span>
+                </li>
+              ))}
+            </ul>
+            <div className="feast__cta">
+              <Button href="/facilities/catering">Catering for companies</Button>
+              <Button href="/individuals/individuals-catering" variant="line">Meals for residents</Button>
             </div>
-            <div style={{ gridColumn: '8 / span 5', alignSelf: 'end', display: 'grid', gap: 20 }} className="prose" data-reveal="fade">
-              <p>Three nutritious meals a day keep residents fuelled and ready to perform. Beyond the daily table, bespoke catering suits boardroom meetings, industry conferences and team celebrations — menus designed with our chefs around your culture, preferences and budget.</p>
-            </div>
-          </div>
-          <div className="collage">
-            <div data-speed="-0.15"><Media k="cat.hallBig" ratio="16 / 10" sizes="(min-width: 800px) 58vw, 100vw" reveal parallax={0.06} /></div>
-            <div data-speed="0.35"><Media k="cat.canapes" ratio="4 / 5" sizes="(min-width: 800px) 40vw, 50vw" reveal="right" /></div>
-            <div data-speed="0.2"><Media k="cat.kitchen" ratio="4 / 3" sizes="(min-width: 800px) 40vw, 50vw" reveal /></div>
-            <div data-speed="-0.25"><Media k="cat.desserts" ratio="3 / 2" sizes="(min-width: 800px) 40vw, 100vw" reveal="right" /></div>
-          </div>
-          <div className="facts" style={{ marginTop: 'clamp(48px, 6vw, 96px)', gridTemplateColumns: 'repeat(3, 1fr)' }} data-stagger="0.1">
-            <Fact value={3900} suffix="+" unit="m²" label="Industrial kitchen" />
-            <Fact value={3000} suffix="+" label="In-house catering serving" />
-            <Fact value={1000} suffix="+" label="External catering serving" />
-          </div>
-          <div style={{ marginTop: 36, display: 'flex', gap: 24, flexWrap: 'wrap' }} data-reveal="fade">
-            <Button href="/facilities/catering">Catering for companies</Button>
-            <Button href="/individuals/individuals-catering" variant="line">Meals for residents</Button>
           </div>
         </div>
       </section>

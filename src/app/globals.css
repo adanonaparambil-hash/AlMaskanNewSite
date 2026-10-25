@@ -520,14 +520,48 @@ html.is-loading { overflow: hidden; }
 .curtain__leaf--l { left: 0; border-right: 1px solid var(--glass-hi); }
 .curtain__leaf--r { right: 0; border-left: 1px solid var(--glass-hi); }
 
-/* catering collage (children move at different speeds) */
-.collage { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; align-items: end; }
-.collage > :nth-child(1) { grid-column: 1 / span 7; }
-.collage > :nth-child(2) { grid-column: 8 / span 5; margin-bottom: 18%; }
-.collage > :nth-child(3) { grid-column: 3 / span 5; margin-top: -4%; }
-.collage > :nth-child(4) { grid-column: 8 / span 5; }
 [data-speed] { will-change: transform; }
-@media (max-width: 700px) { .collage { grid-template-columns: 1fr 1fr; } .collage > * { grid-column: auto !important; margin: 0 !important; } .collage > :first-child { grid-column: 1 / -1 !important; } }
+
+/* catering — a scattered 3×3 mosaic settles, the dining hall opens to full screen, a glass card brings the details
+   (scrubbed by the motion library's [data-feast]; without motion it is a static mosaic with the card below) */
+.feast { position: relative; height: 340vh; }
+.feast__stage { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; }
+.feast__grid { position: absolute; inset: 9vh 3vw; display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 1fr); gap: 1.2vw; transform-origin: 50% 50%; }
+.feast__tile { position: relative; border-radius: var(--radius); }
+.feast__tile .media { position: absolute; inset: 0; }
+.feast__hero { position: absolute; inset: 0; z-index: 1; visibility: hidden; }
+.feast__hero .media { position: absolute; inset: 0; border-radius: 0; }
+.feast__hero .media::after { display: none; }
+.feast__veil { position: absolute; inset: 0; z-index: 2; pointer-events: none;
+  background: radial-gradient(70% 60% at 50% 50%, rgba(6, 14, 28, 0.55), rgba(6, 14, 28, 0.88)); }
+.feast__intro { position: absolute; inset: 0; z-index: 3; display: grid; place-content: center; justify-items: center; text-align: center; padding: 0 var(--gutter); pointer-events: none; }
+.feast__intro .display { max-width: 14ch; text-shadow: 0 10px 50px rgba(0, 0, 0, 0.5); }
+.feast__intro .eyebrow { margin-bottom: 1.4rem; }
+.feast__card { position: absolute; z-index: 4; left: var(--gutter); bottom: clamp(20px, 6vh, 64px); width: min(580px, calc(100% - 2 * var(--gutter))); padding: clamp(22px, 2.8vw, 40px); display: grid; gap: 20px; background: rgba(10, 22, 44, 0.58); }
+.feast__copy { color: var(--text); font-size: clamp(0.95rem, 1.05vw, 1.05rem); line-height: 1.6; }
+.feast__facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.feast__facts li { display: grid; gap: 4px; padding: 14px 14px 16px; border-radius: var(--radius-sm); border: 1px solid var(--glass-edge); background: rgba(255, 255, 255, 0.05); }
+.feast__facts b { font-family: var(--font-display); font-weight: 320; font-size: clamp(1.5rem, 2.2vw, 2.2rem); line-height: 1; letter-spacing: -0.02em; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.feast__facts b small { font-family: var(--font-body); font-size: 0.42em; font-weight: 600; color: var(--muted); }
+.feast__facts li > span { color: var(--muted); font-size: 0.8rem; line-height: 1.35; }
+.feast__cta { display: flex; flex-wrap: wrap; gap: 10px; }
+@media (max-width: 760px) {
+  .feast { height: 280vh; }
+  .feast__grid { inset: 14vh 4vw 12vh; gap: 2vw; }
+  .feast__card { left: 12px; right: 12px; width: auto; bottom: 12px; gap: 14px; padding: 18px; }
+  .feast__copy { font-size: 0.88rem; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+  .feast__facts li { padding: 10px; }
+  .feast__facts li > span { font-size: 0.7rem; }
+  .feast__cta .btn { min-height: 44px; padding: 0 16px; font-size: 0.7rem; }
+}
+/* no motion (reduced motion, no JS, or scripts failed): a calm static mosaic with the card beneath */
+html:not(.motion-on) .feast { height: auto; padding-block: clamp(64px, 8.5vw, 136px); }
+html:not(.motion-on) .feast__stage { position: relative; height: auto; overflow: visible; display: grid; gap: 28px; padding: 0 var(--gutter); max-width: var(--max); margin-inline: auto; }
+html:not(.motion-on) .feast__grid { position: relative; inset: auto; aspect-ratio: 16 / 10; order: 2; }
+html:not(.motion-on) .feast__hero, html:not(.motion-on) .feast__veil { display: none; }
+html:not(.motion-on) .feast__intro { position: relative; inset: auto; order: 1; padding: 0; }
+html:not(.motion-on) .feast__card { position: relative; left: auto; right: auto; bottom: auto; width: auto; order: 3; }
+html:not(.motion-on) .feast__copy { display: block; -webkit-line-clamp: unset; overflow: visible; }
 
 /* spaces — a circle opens onto the image, glass card floats over it */
 .circle { position: relative; height: 220vh; }
