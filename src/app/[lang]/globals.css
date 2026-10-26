@@ -1140,3 +1140,52 @@ html[lang='ar'] em, html[lang='ar'] i:not(:empty), html[lang='ar'] .mmenu__link-
 .footer__visits { display: inline-flex; align-items: center; gap: 10px; padding: 7px 14px; border-radius: 999px; border: 1px solid var(--glass-edge); background: rgba(226, 196, 138, 0.06); color: var(--muted); }
 .footer__visits i { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 10px var(--gold); }
 .footer__visits b { color: var(--text); font-weight: 700; font-variant-numeric: tabular-nums; }
+
+/* =====================================================================
+   Site assistant — floating chat (bottom-left; WhatsApp keeps the right)
+   ===================================================================== */
+.assistant__launcher { position: fixed; left: clamp(14px, 2vw, 28px); bottom: clamp(14px, 2vw, 28px); z-index: 91; width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; color: #1a1408; background: var(--gold-grad); box-shadow: 0 14px 34px -12px rgba(226, 196, 138, 0.7); transition: transform 0.5s var(--ease), box-shadow 0.4s; }
+.assistant__launcher::before { content: ''; position: absolute; inset: 0; border-radius: 50%; border: 2px solid var(--gold); animation: wa-ring 2.8s var(--ease) infinite; }
+.assistant__launcher.is-open::before { animation: none; opacity: 0; }
+.assistant__launcher:hover { transform: translateY(-3px) scale(1.05); }
+.assistant__launcher:focus-visible { border-radius: 50%; }
+.assistant__hint { position: absolute; left: calc(100% + 12px); white-space: nowrap; padding: 8px 14px; border-radius: 999px; background: var(--glass-solid); border: 1px solid var(--glass-edge); color: var(--text); font-size: 0.8rem; font-weight: 600; -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); opacity: 0; transform: translateX(-6px); transition: opacity 0.35s, transform 0.5s var(--ease); pointer-events: none; }
+.assistant__launcher:hover .assistant__hint, .assistant__launcher:focus-visible .assistant__hint { opacity: 1; transform: none; }
+
+.assistant { position: fixed; left: clamp(14px, 2vw, 28px); bottom: calc(clamp(14px, 2vw, 28px) + 68px); z-index: 92; width: min(390px, calc(100vw - 28px)); height: min(620px, calc(100svh - 130px)); display: grid; grid-template-rows: auto 1fr auto auto; overflow: hidden; background: rgba(8, 18, 36, 0.86); transform-origin: bottom left; opacity: 0; transform: translateY(14px) scale(0.96); visibility: hidden; transition: opacity 0.35s var(--ease), transform 0.5s var(--ease), visibility 0s 0.5s; }
+.assistant.is-open { opacity: 1; transform: none; visibility: visible; transition-delay: 0s; }
+.assistant__head { display: flex; align-items: center; gap: 12px; padding: 16px 18px; border-bottom: 1px solid var(--line); }
+.assistant__head img { width: 34px; height: 34px; filter: brightness(0) invert(1); flex: none; }
+.assistant__head h2 { font-family: var(--font-display); font-size: 1.15rem; font-weight: 500; line-height: 1.2; }
+.assistant__head p { font-size: 0.8rem; color: var(--muted); }
+.assistant__body { overflow-y: auto; overscroll-behavior: contain; padding: 16px; display: grid; gap: 10px; align-content: start; }
+.assistant__msg { max-width: 88%; padding: 11px 14px; border-radius: 16px; font-size: 0.92rem; line-height: 1.55; overflow-wrap: anywhere; }
+.assistant__msg p + p { margin-top: 2px; }
+.assistant__msg a { color: var(--gold); text-decoration: underline; text-underline-offset: 2px; }
+.assistant__msg.is-bot { justify-self: start; background: rgba(255, 255, 255, 0.06); border: 1px solid var(--line); border-end-start-radius: 4px; }
+.assistant__msg.is-user { justify-self: end; background: var(--gold-grad); color: #1a1408; border-end-end-radius: 4px; }
+.assistant__msg.is-user a { color: inherit; }
+.assistant__cta { display: inline-block; margin-top: 10px; padding: 7px 14px; border-radius: 999px; border: 1px solid var(--glass-edge); background: rgba(255, 255, 255, 0.05); font-size: 0.8rem; font-weight: 700; text-decoration: none !important; }
+.assistant__contact { margin-top: 8px; font-weight: 600; }
+.assistant__typing { display: inline-flex; gap: 5px; align-items: center; padding: 14px 16px; }
+.assistant__typing i { width: 6px; height: 6px; border-radius: 50%; background: var(--muted); animation: assistant-dot 1.2s ease-in-out infinite; }
+.assistant__typing i:nth-child(2) { animation-delay: 0.15s; }
+.assistant__typing i:nth-child(3) { animation-delay: 0.3s; }
+@keyframes assistant-dot { 0%, 80%, 100% { opacity: 0.3; transform: translateY(0); } 40% { opacity: 1; transform: translateY(-3px); } }
+.assistant__chips { display: flex; flex-wrap: wrap; gap: 6px; padding-top: 6px; }
+.assistant__chips button { padding: 7px 12px; border-radius: 999px; border: 1px solid var(--glass-edge); background: rgba(255, 255, 255, 0.04); color: var(--text); font-size: 0.8rem; font-weight: 600; transition: border-color 0.3s, background-color 0.3s; }
+.assistant__chips button:hover { border-color: var(--gold); background: rgba(226, 196, 138, 0.1); }
+.assistant__chips button:focus-visible { border-radius: 999px; }
+.assistant__form { display: flex; gap: 8px; align-items: flex-end; padding: 12px; border-top: 1px solid var(--line); }
+.assistant__form textarea { flex: 1; min-height: 44px; max-height: 120px; resize: none; padding: 11px 14px; border-radius: 14px; border: 1px solid var(--glass-edge); background: rgba(255, 255, 255, 0.05); color: var(--text); font: inherit; font-size: 0.92rem; }
+.assistant__form textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(226, 196, 138, 0.16); }
+.assistant__form button { flex: none; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--gold-grad); color: #1a1408; transition: opacity 0.3s; }
+.assistant__form button:disabled { opacity: 0.4; cursor: not-allowed; }
+.assistant__form button:focus-visible { border-radius: 50%; }
+.assistant__note { padding: 0 14px 12px; font-size: 0.72rem; color: var(--dim); }
+[dir='rtl'] .assistant__form button svg { transform: scaleX(-1); }
+@media (max-width: 520px) {
+  .assistant { left: 8px; right: 8px; width: auto; bottom: 80px; height: min(560px, calc(100svh - 110px)); }
+  .assistant__hint { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { .assistant__launcher::before, .assistant__typing i { animation: none; } }

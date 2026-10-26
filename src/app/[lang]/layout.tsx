@@ -6,6 +6,8 @@ import { Ambient, WhatsAppButton } from '@/components/fx';
 import Preloader from '@/components/Preloader';
 import PageTransition from '@/components/PageTransition';
 import MotionProvider from '@/components/MotionProvider';
+import SiteAssistant from '@/components/SiteAssistant';
+import { topicsFor } from '@/lib/assistant/topics';
 import { I18nProvider } from '@/i18n/client';
 import { alternatesFor, LOCALES } from '@/i18n/config';
 import { getContent } from '@/i18n/server';
@@ -76,6 +78,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <Footer />
           <PageTransition />
           <WhatsAppButton />
+          <SiteAssistant topics={topicsFor(c)} />
           <MotionProvider />
         </I18nProvider>
       </body>

@@ -34,3 +34,10 @@ Any Node host (Vercel, a container, a VPS with `next start` behind nginx). Set t
 
 ## Visitor counter
 The footer shows "visitors since launch" (each browser counted once; bots skipped; no cookies or personal data). It needs a small Redis store: in Vercel open the project → **Storage** → **Create Database** → **Upstash for Redis** (free plan) → connect it to this project, then redeploy. Vercel adds `KV_REST_API_URL` and `KV_REST_API_TOKEN` (or `UPSTASH_REDIS_REST_URL`/`UPSTASH_REDIS_REST_TOKEN`) for you. Until then the counter stays hidden. API: `GET/POST /api/visits`.
+
+## Site assistant (chatbot)
+The chat bubble (bottom-left) answers visitors in English or Arabic.
+- **Always on:** seven one-tap topics (rooms & rates, meals, shops, meeting spaces, sports & lifestyle, location, contact) built from the site's content; typed questions are matched to the closest topic.
+- **With an API key:** typed questions are answered by Claude (`claude-opus-5-5`, low effort, streamed) using a knowledge text compiled from the site's own content files (`src/lib/assistant/knowledge.ts`), cached as the system prompt. It is told to use only that knowledge, quote rates as "subject to confirmation", stay on topic and point to the team when unsure. Refusals fall back server-side (`fallbacks: "default"`).
+- **Setup:** add `ANTHROPIC_API_KEY` in Vercel → Settings → Environment Variables, then redeploy. Consider a monthly spend limit on the Claude Console. The route has a basic per-visitor rate limit.
+- Edit topics in `src/lib/assistant/topics.ts`; the AI knowledge updates automatically when content files change.
