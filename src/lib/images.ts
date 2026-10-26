@@ -1,4 +1,5 @@
 import data from '@/content/images.generated.json';
+import altsAr from '@/content/images.ar.json';
 
 export type Img = { src: string; w: number; h: number; alt: string };
 type GalleryItem = Img & { cat: string };
@@ -18,3 +19,9 @@ export function newsImage(slug: string) {
 }
 
 export const galleryItems = data.gallery as GalleryItem[];
+
+const AR = altsAr as Record<string, string>;
+/** The image description in the page's language (Arabic alts are keyed by image path). */
+export const altFor = (image: { src: string; alt: string }, locale: 'en' | 'ar') => (locale === 'ar' ? AR[image.src] ?? image.alt : image.alt);
+/** Gallery items with descriptions in the page's language. */
+export const galleryFor = (locale: 'en' | 'ar'): GalleryItem[] => (locale === 'ar' ? galleryItems.map((g) => ({ ...g, alt: altFor(g, 'ar') })) : galleryItems);

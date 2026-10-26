@@ -1,12 +1,14 @@
 import Image from 'next/image';
-import Link from 'next/link';
+import Link from '@/components/LocaleLink';
 import type { Article } from '@/lib/news';
 import { formatDate } from '@/lib/news';
 import { Arrow, cx } from './ui';
+import { getContent } from '@/i18n/server';
 
-export default function NewsCard({ a, feature, priority }: { a: Article; feature?: boolean; priority?: boolean }) {
+export default async function NewsCard({ a, feature, priority }: { a: Article; feature?: boolean; priority?: boolean }) {
+  const { ui, locale } = await getContent();
   return (
-    <article className={cx('card', feature && 'card--feature')} data-stagger-item data-tilt="4" data-cursor="Read">
+    <article className={cx('card', feature && 'card--feature')} data-stagger-item data-tilt="4" data-cursor={ui.cursor.read}>
       {a.image && (
         <div className="media">
           <div className="media__inner">
@@ -23,12 +25,12 @@ export default function NewsCard({ a, feature, priority }: { a: Article; feature
         </div>
       )}
       <div style={{ display: 'grid', gap: 14 }}>
-        <time className="card__date" dateTime={a.date}>{formatDate(a.date)}</time>
+        <time className="card__date" dateTime={a.date}>{formatDate(a.date, locale)}</time>
         <h3>{a.title}</h3>
         <p>{a.excerpt}</p>
-        <span className="more">Read more <Arrow /></span>
+        <span className="more">{ui.card.more} <Arrow /></span>
       </div>
-      <Link className="card__link" href={`/news/${a.slug}`} aria-label={`${a.title} — read article`} />
+      <Link className="card__link" href={`/news/${a.slug}`} aria-label={ui.card.readAria(a.title)} />
     </article>
   );
 }

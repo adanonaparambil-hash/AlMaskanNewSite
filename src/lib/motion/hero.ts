@@ -29,9 +29,11 @@ export function hero(root: HTMLElement) {
   if (eyebrow) tl.fromTo(eyebrow, { autoAlpha: 0, y: 14 }, { autoAlpha: 1, y: 0, duration: 0.8, ease: EASE.out }, 0.7);
 
   if (title) {
-    const split = SplitText.create(title, { type: 'words,chars', mask: 'words', charsClass: 'split-char' });
+    // Arabic letters join: rise word by word there, letter by letter in Latin script
+    const joined = document.documentElement.lang === 'ar';
+    const split = SplitText.create(title, { type: joined ? 'words' : 'words,chars', mask: 'words', charsClass: 'split-char' });
     gsap.set(title, { autoAlpha: 1 });
-    tl.from(split.chars, { yPercent: 120, rotationX: -80, transformOrigin: '50% 100%', duration: 1.3, stagger: 0.022 }, 0.8);
+    tl.from(joined ? split.words : split.chars, { yPercent: 120, rotationX: -80, transformOrigin: '50% 100%', duration: 1.3, stagger: joined ? 0.08 : 0.022 }, 0.8);
   }
   if (copy.length) tl.fromTo(copy, { autoAlpha: 0, y: 24 }, { autoAlpha: 1, y: 0, duration: 1, stagger: 0.1, ease: EASE.out }, 1.35);
   if (cta.length) tl.fromTo(cta, { autoAlpha: 0, y: 24 }, { autoAlpha: 1, y: 0, duration: 0.9, stagger: 0.1, ease: EASE.out }, 1.55);

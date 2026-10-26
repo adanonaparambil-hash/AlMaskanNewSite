@@ -1,14 +1,21 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
+import Link from './LocaleLink';
 import { usePathname } from 'next/navigation';
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { NAV } from '@/content/site';
+import { useI18n } from '@/i18n/client';
+import { switchLocalePath } from '@/i18n/config';
 import { lockScroll } from '@/lib/motion/smooth';
 
 export default function Header() {
   const pathname = usePathname();
+  const { nav, ui, locale, href, site } = useI18n();
+  const other = locale === 'ar' ? 'en' : 'ar';
+  // a plain anchor (not the locale-aware Link): this one deliberately leaves the current language
+  const LangSwitch = ({ className }: { className: string }) => (
+    <a className={className} href={switchLocalePath(pathname, other)} hrefLang={other} lang={other} aria-label={ui.switchToLabel}>{ui.switchTo}</a>
+  );
   const [open, setOpen] = useState(false);
   const [openSub, setOpenSub] = useState<string | null>(null);
   const panelRef = useRef<HTMLDivElement>(null);
@@ -42,18 +49,23 @@ export default function Header() {
     return () => { document.removeEventListener('keydown', onKey); document.documentElement.style.overflow = ''; lockScroll(false); };
   }, [open, close]);
 
-  const isActive = (href: string) => (href === '/' ? pathname === '/' : pathname === href || pathname.startsWith(href + '/'));
+  // English pages report the internal /en path; compare against the address the visitor sees
+  const current = pathname.replace(/^\/en(?=\/|$)/, '') || '/';
+  const isActive = (path: string) => {
+    const p = href(path);
+    return path === '/' ? current === p : current === p || current.startsWith(p + '/');
+  };
 
   return (
     <header className="site-header" data-site-header>
       <div className="site-header__bar container">
-        <Link href="/" className="site-header__logo" aria-label="Al Maskaan Village — home" data-nav-bit>
-          <Image src="/assets/logos/al-maskaan-village-logo.png" alt="Al Maskaan Village" width={300} height={84} priority sizes="150px" />
+        <Link href="/" className="site-header__logo" aria-label={ui.header.logo} data-nav-bit>
+          <Image src="/assets/logos/al-maskaan-village-logo.png" alt={site.name} width={300} height={84} priority sizes="150px" />
         </Link>
 
-        <nav className="nav" aria-label="Primary">
+        <nav className="nav" aria-label={ui.header.primary}>
           <ul>
-            {NAV.map((item) => (
+            {nav.map((item) => (
               <li key={item.href} className={item.children ? 'has-sub' : undefined} data-nav-bit>
                 <Link href={item.href} aria-current={isActive(item.href) ? 'page' : undefined}>
                   <span>{item.label}</span>
@@ -81,8 +93,10 @@ export default function Header() {
         </nav>
 
         <Link href="/contact-us" className="site-header__cta btn btn--solid btn--sm" data-nav-bit>
-          <span className="btn__label">Get in touch</span>
+          <span className="btn__label">{ui.header.cta}</span>
         </Link>
+
+        <LangSwitch className="lang-switch" />
 
         <button
           ref={burgerRef}
@@ -90,7 +104,7 @@ export default function Header() {
           className="burger"
           aria-expanded={open}
           aria-controls="mobile-menu"
-          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-label={open ? ui.header.close : ui.header.open}
           onClick={() => setOpen((v) => !v)}
         >
           <span /><span />
@@ -98,9 +112,9 @@ export default function Header() {
       </div>
 
       <div id="mobile-menu" ref={panelRef} className="mmenu" data-open={open} aria-hidden={!open} inert={!open}>
-        <nav aria-label="Mobile">
+        <nav aria-label={ui.header.mobile}>
           <ul>
-            {NAV.map((item) => (
+            {nav.map((item) => (
               <li key={item.href}>
                 {item.children ? (
                   <>
@@ -119,7 +133,8 @@ export default function Header() {
                 )}
               </li>
             ))}
-            <li><Link href="/contact-us" className="mmenu__link mmenu__link--cta">Get in touch</Link></li>
+            <li><Link href="/contact-us" className="mmenu__link mmenu__link--cta">{ui.header.cta}</Link></li>
+            <li><LangSwitch className="mmenu__link mmenu__lang" /></li>
           </ul>
         </nav>
       </div>

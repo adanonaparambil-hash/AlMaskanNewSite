@@ -4,15 +4,9 @@ import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { lockScroll, scrollToTop } from '@/lib/motion/smooth';
+import { useI18n } from '@/i18n/client';
 
-const LINES = [
-  { name: 'Accommodation', c: 'var(--c-acc)' },
-  { name: 'Retail', c: 'var(--c-ret)' },
-  { name: 'Catering', c: 'var(--c-cat)' },
-  { name: 'Spaces', c: 'var(--c-spa)' },
-  { name: 'Lifestyle', c: 'var(--c-lif)' },
-];
-const WORD = 'Al Maskaan Village';
+const LINE_COLORS = ['var(--c-acc)', 'var(--c-ret)', 'var(--c-cat)', 'var(--c-spa)', 'var(--c-lif)'];
 
 /**
  * First-visit intro. A small window onto the village aerial opens as the count runs 0 → 100 (never ahead of real
@@ -23,6 +17,9 @@ const WORD = 'Al Maskaan Village';
  */
 export default function Preloader() {
   const root = useRef<HTMLDivElement>(null);
+  const { ui, locale } = useI18n();
+  // Arabic letters join: animate whole words there, single letters only in Latin script
+  const pieces = locale === 'ar' ? ui.loader.word.split(' ').flatMap((w, i) => (i ? [' ', w] : [w])) : ui.loader.word.split('');
 
   useEffect(() => {
     const html = document.documentElement;
@@ -120,24 +117,24 @@ export default function Preloader() {
 
       <div className="preloader__top" data-chrome>
         <img className="preloader__mark" src="/assets/logos/al-maskaan-village-mark.png" alt="" width="40" height="40" />
-        <span>Khazaen Economic City · Barka · Oman</span>
+        <span>{ui.loader.place}</span>
       </div>
 
       <p className="preloader__word">
-        {WORD.split('').map((ch, i) => <span key={i}>{ch === ' ' ? ' ' : ch}</span>)}
+        {pieces.map((ch, i) => <span key={i}>{ch === ' ' ? ' ' : ch}</span>)}
       </p>
 
       <div className="preloader__bottom">
         <p className="preloader__count" data-chrome><span data-count>000</span><small>%</small></p>
         <ul className="preloader__lines" data-chrome>
-          {LINES.map((l) => (
-            <li key={l.name} className="preloader__line" style={{ '--c': l.c } as React.CSSProperties}>
-              <span>{l.name}</span>
+          {ui.loader.lines.map((name, i) => (
+            <li key={name} className="preloader__line" style={{ '--c': LINE_COLORS[i] } as React.CSSProperties}>
+              <span>{name}</span>
               <b><i /></b>
             </li>
           ))}
         </ul>
-        <p className="preloader__tag" data-chrome>Elevating living <em>&amp; working</em></p>
+        <p className="preloader__tag" data-chrome>{ui.loader.tagA} <em>{ui.loader.tagB}</em></p>
       </div>
     </div>
   );

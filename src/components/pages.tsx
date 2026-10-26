@@ -1,37 +1,36 @@
 import Image from 'next/image';
-import Link from 'next/link';
+import Link from '@/components/LocaleLink';
 import type { CSSProperties } from 'react';
 import { ContactBand } from './Footer';
 import { Button, Eyebrow, Fact, Heading, Media, PageHero, TextLink } from './ui';
 import type { Room } from '@/content/rooms';
-import { roomsFor } from '@/content/rooms';
 import type { Service } from '@/content/services';
-import { servicesFor } from '@/content/services';
-import { HAVEN } from '@/content/site';
+import { getContent, roomsFor, servicesFor, type Content } from '@/i18n/server';
 import { img } from '@/lib/images';
 
-const AUD = {
-  individuals: { label: 'Individuals', href: '/individuals' },
-  facilities: { label: 'Companies', href: '/facilities' },
-} as const;
+const audFor = (c: Content, audience: 'individuals' | 'facilities') =>
+  audience === 'individuals' ? { label: c.ui.templates.individuals, href: '/individuals' } : { label: c.ui.templates.companies, href: '/facilities' };
 
 const LINE_COLOR: Record<string, string> = {
   retail: 'var(--c-ret)', catering: 'var(--c-cat)', spaces: 'var(--c-spa)', lifestyle: 'var(--c-lif)', business: 'var(--c-ret)', accommodation: 'var(--c-acc)',
 };
 
 /** Sibling navigation shared by the audience sub-pages. */
-export function AudienceNav({ audience, current }: { audience: 'individuals' | 'facilities'; current: string }) {
-  const services = servicesFor(audience);
+export async function AudienceNav({ audience, current }: { audience: 'individuals' | 'facilities'; current: string }) {
+  const c = await getContent();
+  const t = c.ui.templates;
+  const aud = audFor(c, audience);
+  const services = servicesFor(c, audience);
   const links = [
     ...(audience === 'individuals'
-      ? [{ label: 'Junior staff', slug: 'junior-staff' }, { label: 'Senior staff', slug: 'senior-staff-single-premium', alt: ['senior-staff-double-premium', 'senior-staff-triple-premium'] }]
-      : [{ label: 'Workers', slug: 'workers' }, { label: 'Managers', slug: 'managers-single-premium', alt: ['managers-double-premium', 'managers-triple-premium'] }]),
-    ...services.map((s) => ({ label: navLabel(s), slug: s.slug })),
+      ? [{ label: t.juniorStaff, slug: 'junior-staff' }, { label: t.seniorStaff, slug: 'senior-staff-single-premium', alt: ['senior-staff-double-premium', 'senior-staff-triple-premium'] }]
+      : [{ label: t.workers, slug: 'workers' }, { label: t.managers, slug: 'managers-single-premium', alt: ['managers-double-premium', 'managers-triple-premium'] }]),
+    ...services.map((s) => ({ label: navLabel(c, s), slug: s.slug })),
   ];
   return (
-    <nav aria-label={`${AUD[audience].label} pages`} className="sibling-nav">
+    <nav aria-label={t.audPages(aud.label)} className="sibling-nav">
       {links.map((l) => (
-        <Link key={l.slug} href={`${AUD[audience].href}/${l.slug}`} aria-current={current === l.slug || (l as { alt?: string[] }).alt?.includes(current) ? 'page' : undefined}>
+        <Link key={l.slug} href={`${aud.href}/${l.slug}`} aria-current={current === l.slug || (l as { alt?: string[] }).alt?.includes(current) ? 'page' : undefined}>
           {l.label}
         </Link>
       ))}
@@ -39,32 +38,30 @@ export function AudienceNav({ audience, current }: { audience: 'individuals' | '
   );
 }
 
-function navLabel(s: Service) {
-  const map: Record<string, string> = {
-    'retail-opportunities': 'Retail', 'business-opportunities': 'Business opportunities', catering: 'Catering', spaces: 'Spaces', lifestyle: 'Lifestyle',
-    residents: 'Residents', 'business-owners': 'Business owners', 'individuals-catering': 'Catering', 'individuals-spaces': 'Spaces', 'individuals-lifestyle': 'Lifestyle',
-  };
-  return map[s.slug] ?? s.slug;
+function navLabel(c: Content, s: Service) {
+  return c.ui.templates.navLabels[s.slug] ?? s.slug;
 }
 
 /* ------------------------------------------------------------ Room page */
-export function RoomPage({ room }: { room: Room }) {
-  const aud = AUD[room.audience];
-  const same = roomsFor(room.audience);
+export async function RoomPage({ room }: { room: Room }) {
+  const c = await getContent();
+  const t = c.ui.templates;
+  const aud = audFor(c, room.audience);
+  const same = roomsFor(c, room.audience);
   return (
     <>
       <PageHero
-        eyebrow={`${aud.label} · Accommodation${room.code ? ` · ${room.code}` : ''}`}
+        eyebrow={`${aud.label} · ${t.accommodation}${room.code ? ` · ${room.code}` : ''}`}
         title={<>{room.name}</>}
         lead={room.tagline}
         image={img(room.image)}
         color="var(--c-acc)"
-        crumbs={[{ label: 'Home', href: '/' }, { label: aud.label, href: aud.href }, { label: room.name }]}
+        crumbs={[{ label: c.ui.home, href: '/' }, { label: aud.label, href: aud.href }, { label: room.name }]}
       >
-        <div data-reveal="fade" data-delay="0.25"><Button href="/contact-us">Enquire about this room</Button></div>
+        <div data-reveal="fade" data-delay="0.25"><Button href="/contact-us">{t.roomCta}</Button></div>
       </PageHero>
 
-      <section className="section--tight section" aria-label="Room specifications">
+      <section className="section--tight section" aria-label={t.specs}>
         <div className="container">
           <dl className="specs-grid" data-stagger="0.08">
             {room.specs.map((s) => (
@@ -77,10 +74,10 @@ export function RoomPage({ room }: { room: Room }) {
       <section className="section--tight section">
         <div className="container cols-2">
           <div>
-            <Eyebrow color="var(--c-acc)">The room</Eyebrow>
-            <Heading as="h2" className="display--md" fx="blur">{room.group === 'junior' || room.group === 'workers' ? 'Simple, clean and fully looked after' : 'Comfort after working hours'}</Heading>
+            <Eyebrow color="var(--c-acc)">{t.theRoom}</Eyebrow>
+            <Heading as="h2" className="display--md" fx="blur">{room.group === 'junior' || room.group === 'workers' ? t.roomTitleShared : t.roomTitlePrivate}</Heading>
             <p className="prose" style={{ marginTop: 24, color: 'var(--muted)' }} data-reveal="fade">{room.intro}</p>
-            <h3 className="eyebrow" style={{ marginTop: 48 }}>Booking options</h3>
+            <h3 className="eyebrow" style={{ marginTop: 48 }}>{t.booking}</h3>
             <ul className="list-rows" data-stagger="0.1">
               {room.booking.map((b) => (
                 <li key={b.label} data-stagger-item><b>{b.label}</b><span>{b.text}</span></li>
@@ -88,7 +85,7 @@ export function RoomPage({ room }: { room: Room }) {
             </ul>
           </div>
           <div>
-            <h3 className="eyebrow">Room amenities</h3>
+            <h3 className="eyebrow">{t.amenities}</h3>
             <ul className="checks" data-stagger="0.06" style={{ '--c': 'var(--c-acc)' } as CSSProperties}>
               {room.amenities.map((a) => <li key={a} data-stagger-item><span>{a}</span></li>)}
             </ul>
@@ -97,7 +94,7 @@ export function RoomPage({ room }: { room: Room }) {
       </section>
 
       {room.gallery.length > 0 && (
-        <section className="section--tight section" aria-label="Room images">
+        <section className="section--tight section" aria-label={t.roomImages}>
           <div className="container" style={{ display: 'grid', gridTemplateColumns: `repeat(${Math.max(2, Math.min(room.gallery.length, 3))}, 1fr)`, gap: 20 }}>
             {room.gallery.map((k, i) => (
               <div key={k} data-rise3d="16" data-tilt="5" style={{ position: 'relative', borderRadius: 'var(--radius)' }}><Media k={k} ratio="4 / 3" sizes="(min-width: 900px) 33vw, 100vw" reveal={i % 2 ? 'right' : true} /></div>
@@ -109,10 +106,10 @@ export function RoomPage({ room }: { room: Room }) {
       <section className="section section--sand" aria-labelledby="rates-title">
         <div className="container cols-2">
           <div>
-            <Eyebrow>Booking rates</Eyebrow>
-            <h2 id="rates-title" className="display display--lg" data-reveal="chars">Everything in <em>one package</em></h2>
-            <p className="prose" style={{ marginTop: 24, color: 'var(--muted)' }} data-reveal="fade">Why wait? Reach out to us now and secure your preferred room booking immediately.</p>
-            <div style={{ marginTop: 28 }} data-reveal="fade"><Button href="/contact-us">Get in touch</Button></div>
+            <Eyebrow>{t.rates}</Eyebrow>
+            <h2 id="rates-title" className="display display--lg" data-reveal="chars">{t.ratesTitleA} <em>{t.ratesTitleB}</em></h2>
+            <p className="prose" style={{ marginTop: 24, color: 'var(--muted)' }} data-reveal="fade">{t.ratesText}</p>
+            <div style={{ marginTop: 28 }} data-reveal="fade"><Button href="/contact-us">{t.getInTouch}</Button></div>
           </div>
           <div data-reveal="fade">
             <div className="rates">
@@ -126,15 +123,15 @@ export function RoomPage({ room }: { room: Room }) {
               </div>
             </div>
             {room.rateNote && <p className="fine">{room.rateNote}</p>}
-            <p className="fine">Rates are as published by Al Maskaan Village and are subject to confirmation — please contact us for the current offer.</p>
+            <p className="fine">{t.ratesFine}</p>
           </div>
         </div>
       </section>
 
-      <section className="section--tight section" aria-label="Other accommodation">
+      <section className="section--tight section" aria-label={t.otherRooms}>
         <div className="container">
-          <h2 className="eyebrow">Other accommodation</h2>
-          <nav className="sibling-nav" aria-label="Accommodation types">
+          <h2 className="eyebrow">{t.otherRooms}</h2>
+          <nav className="sibling-nav" aria-label={t.roomTypes}>
             {same.map((r) => (
               <Link key={r.slug} href={`${aud.href}/${r.slug}`} aria-current={r.slug === room.slug ? 'page' : undefined}>{r.name}</Link>
             ))}
@@ -147,10 +144,12 @@ export function RoomPage({ room }: { room: Room }) {
 }
 
 /* --------------------------------------------------------- Service page */
-export function ServicePage({ service }: { service: Service }) {
-  const aud = AUD[service.audience];
+export async function ServicePage({ service }: { service: Service }) {
+  const c = await getContent();
+  const t = c.ui.templates;
+  const aud = audFor(c, service.audience);
   const color = LINE_COLOR[service.line] ?? 'var(--bronze)';
-  const mark = HAVEN.find((h) => h.key === (service.line === 'business' ? 'retail' : service.line));
+  const mark = c.haven.find((h) => h.key === (service.line === 'business' ? 'retail' : service.line));
   return (
     <>
       <PageHero
@@ -160,13 +159,13 @@ export function ServicePage({ service }: { service: Service }) {
         image={img(service.image)}
         color={color}
         fx="blur"
-        crumbs={[{ label: 'Home', href: '/' }, { label: aud.label, href: aud.href }, { label: navLabel(service) }]}
+        crumbs={[{ label: c.ui.home, href: '/' }, { label: aud.label, href: aud.href }, { label: navLabel(c, service) }]}
       >
         <div data-reveal="fade" data-delay="0.25"><Button href="/contact-us">{service.cta.label}</Button></div>
       </PageHero>
 
       {service.stats && (
-        <section className="section--tight section" aria-label="Key figures">
+        <section className="section--tight section" aria-label={t.keyFigures}>
           <div className="container">
             <div className="facts" style={{ gridTemplateColumns: `repeat(${service.stats.length}, 1fr)` }} data-stagger="0.1">
               {service.stats.map((s) => <Fact key={s.label} {...s} />)}
@@ -197,7 +196,7 @@ export function ServicePage({ service }: { service: Service }) {
       ))}
 
       {service.gallery.length > 0 && (
-        <section className="section--tight section" aria-label="Gallery">
+        <section className="section--tight section" aria-label={t.gallery}>
           <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 20 }}>
             {service.gallery.slice(0, 3).map((k, i) => (
               <div key={k} data-rise3d="16" data-tilt="5" style={{ position: 'relative', borderRadius: 'var(--radius)' }}><Media k={k} ratio="4 / 3" sizes="(min-width: 900px) 33vw, 100vw" reveal={i % 2 ? 'right' : true} parallax={0.05} /></div>
@@ -215,14 +214,14 @@ export function ServicePage({ service }: { service: Service }) {
           </div>
           <div style={{ gridColumn: '9 / span 4', display: 'grid', gap: 18, justifyItems: 'start' }} data-reveal="fade">
             <Button href="/contact-us">{service.cta.label}</Button>
-            <TextLink href={aud.href}>Back to {aud.label.toLowerCase()}</TextLink>
+            <TextLink href={aud.href}>{t.backTo(c.locale === 'en' ? aud.label.toLowerCase() : aud.label)}</TextLink>
           </div>
         </div></div>
       </section>
 
-      <section className="section--tight section" aria-label="More services">
+      <section className="section--tight section" aria-label={t.moreFor(aud.label)}>
         <div className="container">
-          <h2 className="eyebrow">More for {aud.label.toLowerCase()}</h2>
+          <h2 className="eyebrow">{t.moreFor(c.locale === 'en' ? aud.label.toLowerCase() : aud.label)}</h2>
           <AudienceNav audience={service.audience} current={service.slug} />
         </div>
       </section>

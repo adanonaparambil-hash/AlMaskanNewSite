@@ -23,3 +23,11 @@ Any Node host (Vercel, a container, a VPS with `next start` behind nginx). Set t
 - Rooms and rates: `src/content/rooms.ts` · Service pages, team, clients: `src/content/services.ts`
 - News: regenerate with `node scripts/build-news.mjs` (from the WordPress export) or edit `src/content/news.generated.json`
 - Images: `scripts/build-assets.mjs` (key → original file, destination, alt)
+
+## English / Arabic
+- English keeps its URLs (`/about-us`); Arabic lives under `/ar` (`/ar/about-us`). `src/proxy.ts` rewrites unprefixed paths to the internal `en` segment; all routes are under `src/app/[lang]/`. `/en/...` redirects to the unprefixed URL.
+- The header and mobile menu have an "العربية / English" switch that opens the same page in the other language.
+- **Editing content:** every English data file has an Arabic twin with the same shape — `src/content/site.ar.ts`, `rooms.ar.ts`, `services.ar.ts`, `news.ar.json` (same slugs), `images.ar.json` (alt text by image path). Page-specific copy sits in a `COPY = { en, ar }` object at the top of each page; shared interface text is in `src/i18n/ui.ts`. Change both languages together.
+- Server components read the language with `getContent()` (`src/i18n/server.ts`); client components with `useI18n()`. Internal links use `components/LocaleLink` so Arabic visitors stay in Arabic.
+- Arabic pages are `dir="rtl"` with Noto Kufi Arabic / IBM Plex Sans Arabic; RTL rules are at the end of `globals.css`. Letter-by-letter animations run word by word in Arabic (Arabic letters join).
+- The Arabic text was machine-translated and should be reviewed by a native speaker before launch (names and terms follow one glossary).

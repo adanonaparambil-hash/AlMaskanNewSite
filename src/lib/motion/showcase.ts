@@ -2,24 +2,27 @@ import { EASE, gsap, ScrollTrigger, SplitText, START } from './gsap';
 
 /** The glass redesign's signature effects. Same contract as the rest of the library: content opts in with data attributes. */
 const q = <T extends Element = HTMLElement>(root: ParentNode, sel: string) => Array.from(root.querySelectorAll<T>(sel));
+/** Arabic letters join, so letter-level effects run on whole words there (and Latin glyph scrambles are skipped). */
+export const isJoinedScript = () => document.documentElement.lang === 'ar';
 
 /** data-reveal="chars" — letters flip up out of a mask, one after another. */
 export function charReveals(root: HTMLElement) {
+  const joined = isJoinedScript();
   q(root, '[data-reveal="chars"]').forEach((el) => {
     SplitText.create(el, {
-      type: 'words,chars',
+      type: joined ? 'words' : 'words,chars',
       mask: 'words',
       autoSplit: true,
       charsClass: 'split-char',
       onSplit(self) {
         gsap.set(el, { autoAlpha: 1 });
-        return gsap.from(self.chars, {
+        return gsap.from(joined ? self.words : self.chars, {
           yPercent: 115,
           rotationX: -70,
           transformOrigin: '50% 100%',
           duration: 1.1,
           ease: EASE.expo,
-          stagger: 0.018,
+          stagger: joined ? 0.06 : 0.018,
           delay: Number(el.dataset.delay ?? 0),
           scrollTrigger: { trigger: el, start: START, once: true },
         });
@@ -65,6 +68,7 @@ export function scaleReveals(root: HTMLElement) {
 const GLYPHS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789·/';
 /** data-scramble — short labels decode from random glyphs when they enter. Only the aria-hidden copy is scrambled. */
 export function scrambles(root: HTMLElement) {
+  if (isJoinedScript()) return;
   q(root, '[data-scramble]').forEach((el) => {
     const holder = el.querySelector<HTMLElement>('[data-scramble-text]') ?? el;
     // edit React's own text node in place (replacing it via textContent breaks React's later removal)

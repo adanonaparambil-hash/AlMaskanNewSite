@@ -1,7 +1,8 @@
 import Image from 'next/image';
-import Link from 'next/link';
+import Link from '@/components/LocaleLink';
 import type { ReactNode, CSSProperties } from 'react';
-import { img, type Img } from '@/lib/images';
+import { altFor, img, type Img } from '@/lib/images';
+import { getContent, getLocale } from '@/i18n/server';
 
 export const cx = (...c: (string | false | null | undefined)[]) => c.filter(Boolean).join(' ');
 
@@ -27,9 +28,10 @@ type MediaProps = {
 };
 
 /** Layout-stable image frame. `reveal` adds the mask wipe, `curtain` parts two leaves over it, `parallax` over-sizes the inner layer. */
-export function Media({ k, image, alt, ratio, sizes, priority, reveal, parallax, className, style, fit = 'cover', position, quality = 75, expandFrame, dataHero, curtain, circle }: MediaProps) {
+export async function Media({ k, image, alt, ratio, sizes, priority, reveal, parallax, className, style, fit = 'cover', position, quality = 75, expandFrame, dataHero, curtain, circle }: MediaProps) {
   const i = image ?? (k ? img(k) : null);
   if (!i) return null;
+  const locale = await getLocale();
   return (
     <div
       className={cx('media', parallax ? 'media--px' : false, className)}
@@ -44,7 +46,7 @@ export function Media({ k, image, alt, ratio, sizes, priority, reveal, parallax,
       <div className="media__inner" data-parallax={parallax || undefined}>
         <Image
           src={i.src}
-          alt={alt ?? i.alt}
+          alt={alt ?? altFor(i, locale)}
           fill
           sizes={sizes}
           priority={priority}
@@ -123,17 +125,18 @@ export function Heading({ as: Tag = 'h2', children, className, reveal = true, fx
 
 /* ----------------------------------------------------------- Page hero */
 /** Inner-page hero. `fx` picks the title's entrance so neighbouring pages don't all open the same way; `glow` tints the light behind it. */
-export function PageHero({
+export async function PageHero({
   eyebrow, title, lead, image, crumbs, color, children, fx = 'chars', glow,
 }: {
   eyebrow: string; title: ReactNode; lead?: string; image?: Img; crumbs?: { label: string; href?: string }[]; color?: string; children?: ReactNode; fx?: HeadingFx; glow?: string;
 }) {
+  const { ui } = await getContent();
   return (
     <header className="phero" style={glow || color ? ({ '--phero-c': glow ?? color } as CSSProperties) : undefined}>
       <div className="container phero__grid">
         <div className="phero__copy">
           {crumbs && (
-            <nav aria-label="Breadcrumb" className="crumbs">
+            <nav aria-label={ui.breadcrumb} className="crumbs">
               <ol>
                 {crumbs.map((c, i) => (
                   <li key={c.label}>{c.href && i < crumbs.length - 1 ? <Link href={c.href}>{c.label}</Link> : <span aria-current="page">{c.label}</span>}</li>
@@ -147,7 +150,7 @@ export function PageHero({
           {children}
         </div>
         {image && (
-          <div className="phero__media" data-tilt="6" data-cursor="Explore" style={{ position: 'relative', borderRadius: 'var(--radius)' }}>
+          <div className="phero__media" data-tilt="6" data-cursor={ui.cursor.explore} style={{ position: 'relative', borderRadius: 'var(--radius)' }}>
             <Media image={image} sizes="(min-width: 1024px) 46vw, 100vw" ratio="4 / 5" reveal={fx === 'blur' ? undefined : 'left'} curtain={fx === 'blur'} parallax={0.06} priority />
           </div>
         )}

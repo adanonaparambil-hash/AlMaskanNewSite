@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import styles from './HeroMedia.module.css';
+import { useI18n } from '@/i18n/client';
 
 type Connection = EventTarget & { saveData?: boolean };
 
@@ -20,6 +21,7 @@ const RATE = 0.85;
  * The only control is a keyboard/screen-reader "Pause background film" button that appears on focus.
  */
 export default function HeroMedia() {
+  const { ui } = useI18n();
   const background = useRef<HTMLDivElement>(null);
   const players = [useRef<HTMLVideoElement>(null), useRef<HTMLVideoElement>(null)];
   const [allowed, setAllowed] = useState(false);
@@ -153,7 +155,7 @@ export default function HeroMedia() {
       </div>
       {allowed && (
         <button className={styles.control} type="button" onClick={toggle} aria-pressed={paused}>
-          {paused ? 'Play background film' : 'Pause background film'}
+          {paused ? ui.film.play : ui.film.pause}
         </button>
       )}
     </>
