@@ -378,7 +378,7 @@ export const ABOUT = {
     },
     {
       name: 'Richard Sequeira',
-      role: 'DGM, Facility Management',
+      role: 'Vice President — Group Facilities, Agriculture & Carbon',
       image: 'people.richard',
       bio: [
         'Richard Sequeira oversees site mobilisation, camp set-ups and a centralised kitchen catering to the needs of over 10,000 guests, ensuring efficient, high-standard facility operations and maintenance.',
@@ -387,7 +387,7 @@ export const ABOUT = {
     },
     {
       name: 'Rajan Prabhakaran',
-      role: 'DGM, Technical',
+      role: 'General Manager — Projects & Development',
       image: 'people.rajan',
       bio: [
         'Rajan Prabhakaran oversees the technical aspects of Al Adrak Group projects. With over two decades of experience in Oman and India, he navigates project complexities, ensuring adherence to quality standards and optimal execution.',

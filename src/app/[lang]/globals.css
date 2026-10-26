@@ -187,10 +187,9 @@ html.is-loading { overflow: hidden; }
 /* ---------- typography ---------- */
 .display {
   font-family: var(--font-display);
-  font-weight: 360;
-  font-variation-settings: 'opsz' 144;
-  line-height: 1.02;
-  letter-spacing: -0.025em;
+  font-weight: 400;
+  line-height: 1.06;
+  letter-spacing: -0.012em;
   color: var(--text);
   text-wrap: balance;
 }
@@ -714,8 +713,8 @@ html:not(.motion-on) .tl-item__year { color: var(--gold); }
 .footer .footer__chips a:hover { border-color: var(--gold); color: var(--gold); }
 
 /* giant wordmark: outlined, filling with gold as it scrolls in (the motion library drives --fill) */
-/* sized in vw so the full name spans ~90% of any screen width; optical size is pinned because Fraunces widens its letters at small sizes, which would break the ratio on phones */
-.footer__mark { font-family: var(--font-display); font-weight: 300; font-size: 15vw; font-variation-settings: 'opsz' 144; line-height: 0.95; letter-spacing: -0.045em; white-space: nowrap; text-align: center; padding: clamp(28px, 4vw, 56px) 0 clamp(14px, 2vw, 28px); user-select: none;
+/* sized in vw so the full name spans ~90% of any screen width (measured with Playfair Display: 15vw ≈ 112%) */
+.footer__mark { font-family: var(--font-display); font-weight: 400; font-size: 12vw; line-height: 0.95; letter-spacing: -0.045em; white-space: nowrap; text-align: center; padding: clamp(28px, 4vw, 56px) 0 clamp(14px, 2vw, 28px); user-select: none;
   color: transparent; -webkit-text-stroke: 1px rgba(255, 255, 255, 0.16);
   background: linear-gradient(90deg, rgba(226, 196, 138, 0.05) 0%, rgba(226, 196, 138, 0.55) 30%, rgba(244, 223, 174, 0.85) 60%, rgba(201, 162, 94, 0.5) 100%) no-repeat 0 0 / var(--fill, 100%) 100%;
   -webkit-background-clip: text; background-clip: text; }
@@ -785,14 +784,18 @@ html:not(.motion-on) .tl-item__year { color: var(--gold); }
 .team { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 20px; row-gap: 20px; }
 .member { grid-column: span 4; display: grid; gap: 18px; align-content: start; padding: 14px 14px 26px; border-radius: calc(var(--radius) + 6px); border: 1px solid var(--glass-edge); background: linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02)); -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px); }
 .member > :not(.media) { padding-inline: 10px; }
-.member:first-child { grid-column: 1 / span 6; grid-template-columns: 1fr 1fr; gap: 24px; }
+/* the founder leads the team: a large portrait filling the card height, his bio beside it, the next member alongside */
+.member--lead { grid-column: 1 / span 8; grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr); gap: clamp(20px, 2.4vw, 36px); align-items: stretch; align-content: stretch; }
+.member.member--lead .media { aspect-ratio: auto; height: auto; align-self: stretch; min-height: 460px; }
+.member--lead > div { align-self: center; padding-block: 12px; }
+.member.member--lead h3 { font-size: clamp(1.8rem, 2.6vw, 2.4rem); }
 .member .media { aspect-ratio: 4 / 5; }
 .member h3 { font-family: var(--font-display); font-weight: 360; font-size: 1.6rem; letter-spacing: -0.012em; }
 .member .role { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin: 4px 0 12px; }
 .member p { color: var(--muted); font-size: 0.97rem; }
 .member p + p { margin-top: 0.8em; }
-@media (max-width: 1000px) { .member, .member:first-child { grid-column: span 6; grid-template-columns: 1fr; } }
-@media (max-width: 640px) { .member, .member:first-child { grid-column: 1 / -1; } }
+@media (max-width: 1000px) { .member { grid-column: span 6; grid-template-columns: 1fr; } .member--lead { grid-column: 1 / -1; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); } .member.member--lead .media { min-height: 380px; } }
+@media (max-width: 640px) { .member, .member--lead { grid-column: 1 / -1; grid-template-columns: 1fr; } .member.member--lead .media { min-height: 0; height: auto; aspect-ratio: 4 / 5; } }
 
 .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
 .pillars > div { padding: 32px 30px 36px; border-radius: var(--radius); border: 1px solid var(--glass-edge); background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)); -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px); display: grid; gap: 14px; align-content: start; }

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Fraunces, IBM_Plex_Sans_Arabic, Manrope, Noto_Kufi_Arabic } from 'next/font/google';
+import { IBM_Plex_Sans_Arabic, Manrope, Noto_Kufi_Arabic, Playfair_Display } from 'next/font/google';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Ambient, WhatsAppButton } from '@/components/fx';
@@ -12,7 +12,8 @@ import { getContent } from '@/i18n/server';
 import { SITE } from '@/content/site';
 import './globals.css';
 
-const display = Fraunces({ subsets: ['latin'], variable: '--f-display', axes: ['opsz'], style: ['normal', 'italic'], display: 'swap' });
+// headlines: a classic high-contrast serif with conventional, easy-to-read letterforms (and a true italic for the gold phrases)
+const display = Playfair_Display({ subsets: ['latin'], variable: '--f-display', style: ['normal', 'italic'], display: 'swap' });
 const body = Manrope({ subsets: ['latin'], variable: '--f-body', display: 'swap' });
 // Arabic faces (only downloaded on pages that render Arabic glyphs)
 const displayAr = Noto_Kufi_Arabic({ subsets: ['arabic'], variable: '--f-display-ar', display: 'swap' });

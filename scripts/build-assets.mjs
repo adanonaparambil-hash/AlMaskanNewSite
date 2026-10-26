@@ -55,7 +55,7 @@ const IMAGES = {
   'life.hall': [W('15.47.15'), 'images/lifestyle/recreation-hall-exterior.jpg', 'Recreation hall exterior with parking'],
   'fac.service': [W('15.38.07'), 'images/facilities/service-building.jpg', 'Service building exterior with coach'],
   // people
-  'people.thomas': ['2024_01_Dr.-Thomas-Alexander-2.jpg', 'images/people/dr-thomas-alexander.jpg', 'Portrait of Dr. Thomas Alexander, Founder and Chairman'],
+  'people.thomas': ['people/dr-thomas-alexander-2026.jpg', 'images/people/dr-thomas-alexander-2026.jpg', 'Portrait of Dr. Thomas Alexander, Founder and Chairman'],
   'people.aadil': ['2024_02_Dr.-Aadil-Alexander-1.jpg', 'images/people/dr-aadil-alexander.jpg', 'Portrait of Dr. Aadil Alexander, Executive Director'],
   'people.riyas': ['2024_02_Mr.-Riyas-Mohamed-1.jpg', 'images/people/riyas-mohamed.jpg', 'Portrait of Riyas Mohamed, Chief Executive Officer'],
   'people.richard': ['2024_02_Mr.-Richard-Sequeria-1.jpg', 'images/people/richard-sequeira.jpg', 'Portrait of Richard Sequeira, DGM Facility Management'],
