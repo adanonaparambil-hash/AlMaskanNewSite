@@ -6,6 +6,7 @@ import { Ambient, WhatsAppButton } from '@/components/fx';
 import Preloader from '@/components/Preloader';
 import PageTransition from '@/components/PageTransition';
 import MotionProvider from '@/components/MotionProvider';
+import { Analytics } from '@vercel/analytics/next';
 import SiteAssistant from '@/components/SiteAssistant';
 import { topicsFor } from '@/lib/assistant/topics';
 import { I18nProvider } from '@/i18n/client';
@@ -79,6 +80,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <PageTransition />
           <WhatsAppButton />
           <SiteAssistant topics={topicsFor(c)} />
+          {/* page views for Vercel Web Analytics (enable it in the Vercel project; no cookies, nothing sent in dev) */}
+          <Analytics />
           <MotionProvider />
         </I18nProvider>
       </body>
