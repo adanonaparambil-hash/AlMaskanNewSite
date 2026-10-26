@@ -40,3 +40,53 @@ export function BackToTop() {
     </button>
   );
 }
+
+/**
+ * Visitors since launch. Each browser is counted once (first visit, remembered in localStorage); later visits only
+ * read the total. Hidden until the counter store is configured or if it cannot be reached, so it never shows a
+ * made-up number. The figure counts up when it arrives; screen readers get the final value.
+ */
+export function VisitCounter() {
+  const { ui } = useI18n();
+  const [count, setCount] = useState<number | null>(null);
+  const [shown, setShown] = useState(0);
+
+  useEffect(() => {
+    let first = false;
+    try { first = !localStorage.getItem('amv-visitor'); } catch {}
+    const ctrl = new AbortController();
+    fetch('/api/visits', { method: first ? 'POST' : 'GET', signal: ctrl.signal })
+      .then((r) => r.json())
+      .then((j: { configured?: boolean; count?: number }) => {
+        if (!j.configured || typeof j.count !== 'number') return;
+        if (first) { try { localStorage.setItem('amv-visitor', '1'); } catch {} }
+        setCount(j.count);
+      })
+      .catch(() => {});
+    return () => ctrl.abort();
+  }, []);
+
+  useEffect(() => {
+    if (count === null) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { setShown(count); return; }
+    let raf = 0;
+    const start = performance.now();
+    const step = (now: number) => {
+      const p = Math.min(1, (now - start) / 1600);
+      setShown(Math.round(count * (1 - Math.pow(1 - p, 3))));
+      if (p < 1) raf = requestAnimationFrame(step);
+    };
+    raf = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(raf);
+  }, [count]);
+
+  if (count === null) return null;
+  const total = count.toLocaleString('en-US');
+  return (
+    <p className="footer__visits" aria-label={ui.footer.visitorsAria(total)}>
+      <i aria-hidden="true" />
+      <b dir="ltr" aria-hidden="true">{shown.toLocaleString('en-US')}</b>
+      <span aria-hidden="true">{ui.footer.visitors}</span>
+    </p>
+  );
+}

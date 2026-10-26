@@ -1134,3 +1134,9 @@ html[lang='ar'] .lang-switch, html[lang='ar'] .mmenu__lang { font-family: var(--
 [dir='rtl'] .hs__panel, [dir='rtl'] .marquee__item, [dir='rtl'] .ring__item { direction: rtl; }
 /* Arabic has no italic: emphasis stays upright everywhere (menus, numbers, quotes) */
 html[lang='ar'] em, html[lang='ar'] i:not(:empty), html[lang='ar'] .mmenu__link--cta, html[lang='ar'] .hs__num, html[lang='ar'] .ring__cap, html[lang='ar'] .circle__label span, html[lang='ar'] .intro__badge-k { font-style: normal; }
+
+/* live pills in the footer bar: visitors since launch + Barka clock */
+.footer__live { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.footer__visits { display: inline-flex; align-items: center; gap: 10px; padding: 7px 14px; border-radius: 999px; border: 1px solid var(--glass-edge); background: rgba(226, 196, 138, 0.06); color: var(--muted); }
+.footer__visits i { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 10px var(--gold); }
+.footer__visits b { color: var(--text); font-weight: 700; font-variant-numeric: tabular-nums; }

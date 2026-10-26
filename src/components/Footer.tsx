@@ -3,7 +3,7 @@ import Link from '@/components/LocaleLink';
 import { getContent } from '@/i18n/server';
 import type { CSSProperties } from 'react';
 import { Arrow, Button, Eyebrow } from './ui';
-import { BackToTop, VillageClock } from './FooterBits';
+import { BackToTop, VillageClock, VisitCounter } from './FooterBits';
 
 export async function ContactBand() {
   const { site: SITE, ui } = await getContent();
@@ -100,7 +100,10 @@ export default async function Footer() {
 
       <div className="container footer__legal">
         <p>{ui.footer.rights(new Date().getFullYear(), SITE.name, SITE.operator, SITE.group)}</p>
-        <VillageClock />
+        <div className="footer__live">
+          <VisitCounter />
+          <VillageClock />
+        </div>
         <div className="footer__legal-links">
           <Link href="/privacy-policy">{ui.footer.privacy}</Link>
           <BackToTop />

@@ -31,3 +31,6 @@ Any Node host (Vercel, a container, a VPS with `next start` behind nginx). Set t
 - Server components read the language with `getContent()` (`src/i18n/server.ts`); client components with `useI18n()`. Internal links use `components/LocaleLink` so Arabic visitors stay in Arabic.
 - Arabic pages are `dir="rtl"` with Noto Kufi Arabic / IBM Plex Sans Arabic; RTL rules are at the end of `globals.css`. Letter-by-letter animations run word by word in Arabic (Arabic letters join).
 - The Arabic text was machine-translated and should be reviewed by a native speaker before launch (names and terms follow one glossary).
+
+## Visitor counter
+The footer shows "visitors since launch" (each browser counted once; bots skipped; no cookies or personal data). It needs a small Redis store: in Vercel open the project → **Storage** → **Create Database** → **Upstash for Redis** (free plan) → connect it to this project, then redeploy. Vercel adds `KV_REST_API_URL` and `KV_REST_API_TOKEN` (or `UPSTASH_REDIS_REST_URL`/`UPSTASH_REDIS_REST_TOKEN`) for you. Until then the counter stays hidden. API: `GET/POST /api/visits`.
