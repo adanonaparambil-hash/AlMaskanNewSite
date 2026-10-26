@@ -52,7 +52,15 @@ export const viewport: Viewport = { themeColor: '#060e1c', colorScheme: 'dark', 
 
 // Adds .motion-on before first paint (only when motion is allowed) so animated elements never flash unstyled,
 // and .is-loading on the first page of a session so the preloader covers the page from the very first frame.
-const motionGate = `try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches){var h=document.documentElement;h.classList.add('motion-on');if(!sessionStorage.getItem('amv-intro'))h.classList.add('is-loading')}}catch(e){}`;
+const motionGate = `(function(){try{var d=document,h=d.documentElement,n=navigator,m=function(q){return matchMedia(q).matches},ua=n.userAgent||'';
+var ios=/iPad|iPhone|iPod/.test(ua)||(n.platform==='MacIntel'&&n.maxTouchPoints>1);
+var webkit=/AppleWebKit/.test(ua)&&!/Chrome|Chromium|CriOS|Edg|Android/.test(ua)||ios;
+var touch=m('(pointer: coarse)')||m('(hover: none)');
+var c=n.connection||{};
+var weak=(n.hardwareConcurrency&&n.hardwareConcurrency<=4)||(n.deviceMemory&&n.deviceMemory<=4)||c.saveData===true;
+if(ios)h.classList.add('is-ios');if(webkit)h.classList.add('is-webkit');if(touch)h.classList.add('is-touch');if(touch||weak)h.classList.add('is-lite');
+if(!m('(prefers-reduced-motion: reduce)')){h.classList.add('motion-on');if(!touch&&!weak){try{if(!sessionStorage.getItem('amv-intro'))h.classList.add('is-loading')}catch(e){h.classList.add('is-loading')}}
+setTimeout(function(){if(!window.__amvReady){h.classList.remove('motion-on','is-loading');h.classList.add('motion-failed')}},9000);setTimeout(function(){h.classList.remove('is-loading')},13000)}}catch(e){}})()`;
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const c = await getContent();

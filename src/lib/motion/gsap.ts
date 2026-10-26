@@ -11,6 +11,8 @@ export function registerGsap() {
   gsap.defaults({ ease: 'power3.out', duration: 0.9 });
   // avoid refresh storms when the mobile URL bar collapses
   ScrollTrigger.config({ ignoreMobileResize: true });
+  // slow frames must not stretch the timeline: animations finish on schedule (frames are skipped, not delayed)
+  gsap.ticker.lagSmoothing(0);
   registered = true;
 }
 

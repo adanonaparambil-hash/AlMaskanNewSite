@@ -5,6 +5,12 @@ import { cursor, hero3d, magnetic, marquees, ring, rise3d, tilt, velocitySkew, w
 import { expansion, header, horizontalScroll, parallax, timelines } from './scroll';
 import { blurReveals, charReveals, circles, curtains, driftX, feasts, footerRise, glow, progressBar, scaleReveals, scrambles, speeds, stacks, textFills } from './showcase';
 
+/** One broken effect must never take the page down with it: log, reveal everything, carry on. */
+let failed = false;
+const guard = (name: string, fn: () => void) => {
+  try { fn(); } catch (err) { failed = true; console.error(`[motion] ${name} failed`, err); }
+};
+
 const HIDDEN = '[data-reveal],[data-stagger-item],[data-hero],[data-timeline-item]';
 
 /** Make everything visible again (reduced motion, or if initialisation fails). */
@@ -28,7 +34,8 @@ export function initMotion(root: HTMLElement): () => void {
     {
       reduce: '(prefers-reduced-motion: reduce)',
       motion: '(prefers-reduced-motion: no-preference)',
-      desktop: '(min-width: 1024px)',
+      // pinned scenes need a real wheel/trackpad: touch devices (iPads included) get the native-scroll layouts
+      desktop: '(min-width: 1024px) and (hover: hover) and (pointer: fine)',
       wide: '(min-width: 760px)',
       fine: '(hover: hover) and (pointer: fine)',
     },
@@ -40,37 +47,43 @@ export function initMotion(root: HTMLElement): () => void {
       }
       document.documentElement.classList.add('motion-on');
       // pinned sections first, so every trigger measured after them accounts for the pin spacing
-      if (c.desktop) horizontalScroll(root);
-      circles(root);
-      feasts(root);
-      header();
-      progressBar();
-      hero(root);
-      lineReveals(root);
-      charReveals(root);
-      blurReveals(root);
-      scaleReveals(root);
-      scrambles(root);
-      stacks(root);
-      curtains(root);
-      if (c.wide) speeds(root);
-      driftX(root);
-      textFills(root);
-      footerRise(root);
-      fadeReveals(root);
-      staggerGroups(root);
-      maskReveals(root);
-      counters(root);
-      parallax(root);
-      expansion(root, c.wide);
-      timelines(root);
-      wordScrub(root);
-      marquees(root);
-      rise3d(root);
-      if (c.desktop) ring(root);
-      if (c.desktop) velocitySkew(root);
+      if (c.desktop) guard('horizontalScroll', () => horizontalScroll(root));
+      guard('circles', () => circles(root));
+      guard('feasts', () => feasts(root));
+      guard('header', () => header());
+      guard('progressBar', () => progressBar());
+      guard('hero', () => hero(root));
+      guard('lineReveals', () => lineReveals(root));
+      guard('charReveals', () => charReveals(root));
+      guard('blurReveals', () => blurReveals(root));
+      guard('scaleReveals', () => scaleReveals(root));
+      guard('scrambles', () => scrambles(root));
+      guard('stacks', () => stacks(root));
+      guard('curtains', () => curtains(root));
+      if (c.wide) guard('speeds', () => speeds(root));
+      guard('driftX', () => driftX(root));
+      guard('textFills', () => textFills(root));
+      guard('footerRise', () => footerRise(root));
+      guard('fadeReveals', () => fadeReveals(root));
+      guard('staggerGroups', () => staggerGroups(root));
+      guard('maskReveals', () => maskReveals(root));
+      guard('counters', () => counters(root));
+      guard('parallax', () => parallax(root));
+      guard('expansion', () => expansion(root, c.wide));
+      guard('timelines', () => timelines(root));
+      guard('wordScrub', () => wordScrub(root));
+      guard('marquees', () => marquees(root));
+      guard('rise3d', () => rise3d(root));
+      if (c.desktop) guard('ring', () => ring(root));
+      if (c.desktop) guard('velocitySkew', () => velocitySkew(root));
       const off: Array<() => void> = [];
-      if (c.fine) off.push(tilt(root), hero3d(root), magnetic(root), cursor(), glow(root));
+      if (c.fine) {
+        for (const [name, fn] of [['tilt', tilt], ['hero3d', hero3d], ['magnetic', magnetic], ['cursor', cursor], ['glow', glow]] as const) {
+          guard(name, () => off.push((fn as (r: HTMLElement) => () => void)(root)));
+        }
+      }
+      if (failed) revealAll(root);
+      (window as unknown as { __amvReady?: boolean }).__amvReady = true;
       return () => off.forEach((f) => f());
     },
   );

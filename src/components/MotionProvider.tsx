@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { initMotion, revealAll } from '@/lib/motion';
 import { registerGsap } from '@/lib/motion/gsap';
+import { watchFrameRate } from '@/lib/motion/perf';
 import { scrollToTop, startSmoothScroll } from '@/lib/motion/smooth';
 
 /**
@@ -17,7 +18,10 @@ export default function MotionProvider() {
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     registerGsap();
-    return startSmoothScroll();
+    const stopPerf = watchFrameRate();
+    // inertial wheel scrolling only where there is a wheel/trackpad; touch devices keep their native momentum
+    const stopSmooth = window.matchMedia('(hover: hover) and (pointer: fine)').matches ? startSmoothScroll() : () => {};
+    return () => { stopSmooth(); stopPerf(); };
   }, []);
 
   useEffect(() => {

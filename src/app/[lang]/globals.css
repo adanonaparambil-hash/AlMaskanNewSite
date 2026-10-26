@@ -72,6 +72,7 @@ body {
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  overflow-x: hidden; /* older Safari */
   overflow-x: clip;
 }
 img, svg { display: block; max-width: 100%; }
@@ -143,7 +144,7 @@ main { position: relative; z-index: 1; }
 
 /* ---------- preloader (first visit of a session; never blocks no-JS or reduced motion) ---------- */
 .preloader { position: fixed; inset: 0; z-index: 700; display: none; background: radial-gradient(90% 70% at 50% 40%, var(--bg-3) 0%, var(--bg) 70%); color: var(--text); overflow: hidden; }
-.is-loading .preloader { display: block; animation: preloader-failsafe 0s 10s forwards; }
+.is-loading .preloader { display: block; animation: preloader-failsafe 0s 9s forwards; }
 html.is-loading { overflow: hidden; }
 @keyframes preloader-failsafe { to { visibility: hidden; } }
 /* the window onto the village: grows with the count, then becomes the hero */
@@ -461,8 +462,8 @@ html.is-loading { overflow: hidden; }
 .hs__panel .media { aspect-ratio: 4 / 3; }
 .hs__rule { height: 3px; width: 56px; background: var(--c); border-radius: 3px; box-shadow: 0 0 16px var(--c); }
 @media (min-width: 1024px) {
-  .hs { overflow-x: auto; scrollbar-width: thin; display: flex; flex-direction: column; min-height: 100vh; }
-  .hs.is-pinned { overflow: hidden; height: 100vh; }
+  .hs { overflow-x: auto; scrollbar-width: thin; display: flex; flex-direction: column; min-height: 100vh; min-height: 100svh; }
+  .hs.is-pinned { overflow: hidden; height: 100vh; height: 100svh; }
   .hs__head { padding-top: calc(var(--header-h) + 24px); padding-bottom: 24px; flex: none; }
   .hs__track { display: flex; width: max-content; flex: 1; min-height: 0; padding-inline: var(--gutter); gap: clamp(24px, 2.4vw, 44px); padding-bottom: clamp(24px, 4vh, 48px); align-items: stretch; }
   .hs__panel { grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); width: min(70vw, 1120px); flex: none; min-height: 420px; }
@@ -563,7 +564,7 @@ html:not(.motion-on) .feast__copy { display: block; -webkit-line-clamp: unset; o
 
 /* spaces — a circle opens onto the image, glass card floats over it */
 .circle { position: relative; height: 220vh; }
-.circle__stage { position: sticky; top: 0; height: 100vh; overflow: hidden; display: grid; align-items: end; }
+.circle__stage { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; display: grid; align-items: end; }
 .circle__media { position: absolute; inset: 0; border-radius: 0; }
 .circle__media::after { display: none; }
 .circle__media .media__inner { inset: 0; }
@@ -577,7 +578,7 @@ html:not(.motion-on) .feast__copy { display: block; -webkit-line-clamp: unset; o
 
 /* image expansion */
 .expand { position: relative; height: 230vh; }
-.expand__stage { position: sticky; top: 0; height: 100vh; overflow: hidden; }
+.expand__stage { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; }
 .expand__stage .media { position: absolute; inset: 0; background: var(--bg-3); border-radius: 0; }
 .expand__stage .media::after { display: none; }
 .expand__stage .media__inner { inset: 0; }
@@ -934,7 +935,7 @@ html:not(.motion-on) .tl-item__year { color: var(--gold); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
   .ambient i, .grain { animation: none; }
-  .expand { height: 100vh; }
+  .expand { height: 100vh; height: 100svh; }
   .expand__copy { opacity: 1 !important; visibility: visible !important; }
 }
 
@@ -990,7 +991,7 @@ html.lenis, html.lenis body { height: auto; }
 .ring__cap { font-family: var(--font-display); font-style: italic; letter-spacing: 0; font-weight: 400; font-size: 1.1rem; color: var(--gold); text-transform: none; min-width: 20ch; }
 .ring__stage { perspective: 2000px; height: min(62vh, 560px); display: grid; place-items: center; }
 .ring__rotor { position: relative; width: min(30vw, 440px); height: 100%; transform-style: preserve-3d; }
-.ring__item { position: absolute; inset: 0; overflow: hidden; background: var(--bg-3); backface-visibility: hidden; border-radius: var(--radius); border: 1px solid var(--glass-edge); box-shadow: 0 30px 70px -30px rgba(0, 0, 0, 0.9); opacity: 0.4; transition: opacity 0.6s var(--ease); }
+.ring__item { position: absolute; inset: 0; overflow: hidden; background: var(--bg-3); -webkit-backface-visibility: hidden; backface-visibility: hidden; border-radius: var(--radius); border: 1px solid var(--glass-edge); box-shadow: 0 30px 70px -30px rgba(0, 0, 0, 0.9); opacity: 0.4; transition: opacity 0.6s var(--ease); }
 .ring__item.is-front { opacity: 1; }
 @media (max-width: 1023px) {
   .ring { padding-bottom: 64px; }
@@ -1187,3 +1188,37 @@ html[lang='ar'] em, html[lang='ar'] i:not(:empty), html[lang='ar'] .mmenu__link-
   .assistant__hint { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { .assistant__launcher::before, .assistant__typing i { animation: none; } }
+
+
+/* =====================================================================
+   Compatibility & performance tiers (set by the head script / perf.ts)
+   ===================================================================== */
+/* WebKit (Safari, every iOS browser) paints transformed child glyphs blank when they use background-clip:text:
+   keep the gold as a plain colour there. */
+.is-webkit .display em,
+.is-webkit .display em * { background: none; -webkit-background-clip: border-box; background-clip: border-box; -webkit-text-fill-color: currentColor; color: var(--gold); }
+.is-webkit .preloader__count { background: none; -webkit-text-fill-color: currentColor; color: var(--gold); }
+
+/* iOS: the fixed 150%-size animated grain and four 90px-blur drifting lights are what makes mobile Safari stutter or reload */
+.is-lite .grain { display: none; }
+.is-lite .ambient i { filter: none; animation: none; opacity: 0.16; will-change: auto; }
+.is-lite .glass, .is-lite .btn--line, .is-lite .site-header__bar, .is-lite .lightbox, .is-lite .assistant { -webkit-backdrop-filter: none; backdrop-filter: none; }
+.is-lite .glass { background: linear-gradient(145deg, rgba(24, 44, 82, 0.92), rgba(12, 26, 52, 0.92)); }
+.is-lite .site-header__bar { background: rgba(8, 18, 36, 0.94); }
+.is-lite .lightbox { background: rgba(4, 9, 18, 0.96); }
+.is-lite .assistant { background: rgba(8, 18, 36, 0.97); }
+.is-lite .cursor, .is-lite .grain { display: none; }
+.is-lite .marquee__track, .is-lite [data-tilt] { will-change: auto; }
+
+/* if motion could not start, never leave anything hidden or covered */
+.motion-failed .preloader { display: none !important; }
+.motion-failed [data-reveal], .motion-failed [data-stagger-item], .motion-failed [data-hero], .motion-failed [data-timeline-item] { visibility: visible !important; opacity: 1 !important; }
+html.motion-failed { overflow: auto !important; }
+
+/* Transforms (scale-in headings, drifting images, 3D tilt) widen the scrollable area; on iOS that makes the whole page
+   pan sideways and zooms the layout viewport out. Clip every section's horizontal overflow (clip, unlike hidden,
+   keeps position:sticky working). */
+@supports (overflow: clip) {
+  main, .footer, .hero { overflow-x: clip; }
+}
+html { overscroll-behavior-x: none; }

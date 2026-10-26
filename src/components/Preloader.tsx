@@ -25,7 +25,10 @@ export default function Preloader() {
     const html = document.documentElement;
     const el = root.current;
     if (!el || !html.classList.contains('is-loading')) return;
+    let released = false;
     const release = () => {
+      if (released) return;
+      released = true;
       html.classList.remove('is-loading');
       covered.forEach((n) => (n.inert = false));
       lockScroll(false);
@@ -96,11 +99,14 @@ export default function Preloader() {
     });
     const resume = () => { loaded = true; if (tween.paused()) tween.resume(); };
     window.addEventListener('load', resume);
+    // hard deadline on the wall clock (not the animation clock): a slow device must never be left behind a loader
+    const deadline = window.setTimeout(() => { intro.kill(); tween.kill(); gsap.killTweensOf([el, windowEl, photo, letters, chrome]); gsap.set(el, { autoAlpha: 0 }); release(); }, 7000);
     // worst case (mount at 4s + 2.5s hold + finish + 1.95s exit) stays inside the 10s CSS failsafe
     const safety = window.setTimeout(resume, 2500);
     return () => {
       window.removeEventListener('load', resume);
       window.clearTimeout(safety);
+      window.clearTimeout(deadline);
       intro.kill();
       tween.kill();
       covered.forEach((n) => (n.inert = false));

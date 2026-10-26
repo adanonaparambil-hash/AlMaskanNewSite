@@ -20,7 +20,11 @@ export function hero(root: HTMLElement) {
   // on the first visit the preloader covers the page: hold the sequence until it has opened
   const waiting = document.documentElement.classList.contains('is-loading');
   const tl = gsap.timeline({ defaults: { ease: EASE.expo }, paused: waiting });
-  if (waiting) window.addEventListener('preloader:done', () => tl.play(), { once: true });
+  if (waiting) {
+    window.addEventListener('preloader:done', () => tl.play(), { once: true });
+    // if the loader never reports back (script error, odd browser), do not leave the hero hidden
+    window.setTimeout(() => tl.paused() && tl.play(), 9000);
+  }
 
   // after the loader the same aerial is already full screen: no wipe, just a gentle settle
   if (bg) tl.fromTo(bg, { clipPath: waiting ? 'inset(0% 0% 0% 0%)' : 'inset(6% 5% 6% 5%)', autoAlpha: 1 }, { clipPath: 'inset(0% 0% 0% 0%)', duration: waiting ? 0.01 : 1.6 }, 0);
