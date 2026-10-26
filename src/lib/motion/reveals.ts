@@ -1,4 +1,4 @@
-import { DUR, EASE, gsap, SplitText, START } from './gsap';
+import { DUR, EASE, gsap, padMasks, SplitText, START } from './gsap';
 
 /** Elements opt in with data attributes; the animation logic lives only here. */
 const q = <T extends Element = HTMLElement>(root: ParentNode, sel: string) => Array.from(root.querySelectorAll<T>(sel));
@@ -12,9 +12,10 @@ export function lineReveals(root: HTMLElement) {
       autoSplit: true,
       linesClass: 'split-line',
       onSplit(self) {
+        padMasks(self.masks);
         gsap.set(el, { autoAlpha: 1 });
         return gsap.from(self.lines, {
-          yPercent: 108,
+          yPercent: 135,
           duration: DUR.slow,
           ease: EASE.expo,
           stagger: 0.09,

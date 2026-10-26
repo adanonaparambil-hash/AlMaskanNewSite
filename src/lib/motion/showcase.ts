@@ -1,4 +1,4 @@
-import { EASE, gsap, ScrollTrigger, SplitText, START } from './gsap';
+import { EASE, gsap, padMasks, ScrollTrigger, SplitText, START } from './gsap';
 
 /** The glass redesign's signature effects. Same contract as the rest of the library: content opts in with data attributes. */
 const q = <T extends Element = HTMLElement>(root: ParentNode, sel: string) => Array.from(root.querySelectorAll<T>(sel));
@@ -15,9 +15,10 @@ export function charReveals(root: HTMLElement) {
       autoSplit: true,
       charsClass: 'split-char',
       onSplit(self) {
+        padMasks(self.masks);
         gsap.set(el, { autoAlpha: 1 });
         return gsap.from(joined ? self.words : self.chars, {
-          yPercent: 115,
+          yPercent: 150,
           rotationX: -70,
           transformOrigin: '50% 100%',
           duration: 1.1,

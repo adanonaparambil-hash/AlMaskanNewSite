@@ -152,7 +152,7 @@ html.is-loading { overflow: hidden; }
 .preloader__photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(6, 14, 28, 0.55), rgba(6, 14, 28, 0.1) 50%); }
 .preloader__top { position: absolute; top: clamp(20px, 4vh, 40px); left: var(--gutter); right: var(--gutter); display: flex; align-items: center; justify-content: space-between; gap: 16px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); }
 .preloader__mark { width: 40px; height: 40px; filter: brightness(0) invert(1); }
-.preloader__word { position: absolute; left: 0; right: 0; top: 50%; transform: translateY(-50%); text-align: center; font-family: var(--font-display); font-weight: 300; font-size: clamp(2.6rem, 9vw, 9rem); letter-spacing: -0.04em; line-height: 1; white-space: nowrap; mix-blend-mode: difference; perspective: 600px; overflow: hidden; padding-block: 0.08em; }
+.preloader__word { position: absolute; left: 0; right: 0; top: 50%; transform: translateY(-50%); text-align: center; font-family: var(--font-display); font-weight: 300; font-size: clamp(2.6rem, 9vw, 9rem); letter-spacing: -0.04em; line-height: 1; white-space: nowrap; mix-blend-mode: difference; perspective: 600px; overflow: hidden; padding-block: 0.24em; }
 .preloader__word span { display: inline-block; transform-origin: 50% 100%; }
 .preloader__bottom { position: absolute; left: var(--gutter); right: var(--gutter); bottom: clamp(20px, 5vh, 48px); display: grid; grid-template-columns: auto 1fr auto; align-items: end; gap: clamp(20px, 4vw, 64px); }
 .preloader__count { font-family: var(--font-display); font-weight: 300; font-size: clamp(3.6rem, 10vw, 9rem); line-height: 0.82; letter-spacing: -0.05em; font-variant-numeric: tabular-nums;
@@ -204,7 +204,6 @@ html.is-loading { overflow: hidden; }
 .split-line { will-change: transform; }
 .split-char { display: inline-block; will-change: transform; }
 /* SplitText masks clip descenders of italic em — give them room */
-.display .split-line { padding-bottom: 0.08em; margin-bottom: -0.08em; }
 
 .eyebrow {
   --c: var(--gold);
@@ -1063,7 +1062,6 @@ html[lang='ar'] .display--lg { font-size: clamp(1.8rem, 3.8vw, 3.6rem); }
 html[lang='ar'] .display--md { font-size: clamp(1.45rem, 2.5vw, 2.3rem); }
 html[lang='ar'] .display--sm { font-size: clamp(1.25rem, 1.8vw, 1.7rem); }
 html[lang='ar'] .hero__title { font-size: clamp(2.2rem, 5.4vw, 5.6rem); }
-html[lang='ar'] .display .split-line { padding-bottom: 0.18em; margin-bottom: -0.18em; }
 html[lang='ar'] .quote__text, html[lang='ar'] .statement, html[lang='ar'] .marquee__item, html[lang='ar'] .stack__body h3, html[lang='ar'] .tl-item__title { line-height: 1.6; }
 html[lang='ar'] .statement { font-weight: 500; }
 html[lang='ar'] .quote__text { font-weight: 400; }

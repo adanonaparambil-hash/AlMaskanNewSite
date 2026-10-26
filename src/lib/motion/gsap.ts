@@ -21,3 +21,20 @@ export const DUR = { fast: 0.5, base: 0.9, slow: 1.3 } as const;
 export const START = 'top 86%';
 
 export { gsap, ScrollTrigger, SplitText };
+
+/**
+ * SplitText masks clip at the line box, which cuts off descenders (g, y, p), accents and Arabic marks in tight
+ * display type. Give each mask breathing room that its negative margin cancels, so the layout does not move.
+ */
+export function padMasks(masks: readonly Element[]) {
+  const ar = document.documentElement.lang === 'ar';
+  const top = ar ? '0.22em' : '0.12em';
+  const bottom = ar ? '0.36em' : '0.26em';
+  masks.forEach((m) => {
+    const s = (m as HTMLElement).style;
+    s.paddingTop = top;
+    s.paddingBottom = bottom;
+    s.marginTop = `-${top}`;
+    s.marginBottom = `-${bottom}`;
+  });
+}
