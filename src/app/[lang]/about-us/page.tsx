@@ -172,9 +172,9 @@ export default async function AboutPage() {
           <Heading as="h2" className="display--lg" fx="chars" id="team-title">{t.teamTitle}</Heading>
           <div className="team" style={{ marginTop: 'clamp(40px, 5vw, 80px)' }}>
             {c.about.team.map((m, i) => (
-              <article key={m.name} className={i === 0 ? 'member member--lead' : 'member'}>
-                {/* the founder's portrait fills the height of his card; the others keep the portrait frame */}
-                <Media k={m.image} ratio={i === 0 ? undefined : '4 / 5'} sizes={i === 0 ? '(min-width: 1000px) 32vw, 100vw' : '(min-width: 1000px) 28vw, 50vw'} position="50% 18%" reveal />
+              <article key={m.name} className={i < 2 ? 'member member--lead' : 'member'}>
+                {/* Founder & Chairman and Executive Director: two equal cards, portrait on top, biography below */}
+                <Media k={m.image} ratio={i < 2 ? '5 / 4' : '4 / 5'} sizes={i < 2 ? '(min-width: 1000px) 44vw, 100vw' : '(min-width: 1000px) 28vw, 50vw'} position="50% 22%" reveal />
                 <div>
                   <h3>{m.name}</h3>
                   <p className="role">{m.role}</p>
