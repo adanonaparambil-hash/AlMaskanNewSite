@@ -421,8 +421,10 @@ html.is-loading { overflow: hidden; }
 .about__a { grid-column: 1 / span 5; }
 .about__b { grid-column: 7 / span 6; position: sticky; top: calc(var(--header-h) + 40px); align-self: start; }
 .about__media { position: relative; margin-top: clamp(28px, 3vw, 44px); }
-.about__haven { position: relative; z-index: 3; display: flex; flex-wrap: wrap; gap: 8px; margin: -26px 16px 0; }
-.about__haven a { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; border: 1px solid var(--glass-edge); background: var(--glass-solid); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); font-size: 0.8rem; font-weight: 600; color: var(--text); transition: border-color 0.3s, transform 0.5s var(--ease); }
+/* the five service chips sit inside the photo, along its bottom edge, on one line */
+.about__haven { position: absolute; z-index: 3; left: 12px; right: 12px; bottom: 12px; display: flex; flex-wrap: nowrap; justify-content: center; gap: 6px; margin: 0; pointer-events: none; }
+.about__haven li { min-width: 0; pointer-events: auto; }
+.about__haven a { display: inline-flex; align-items: center; gap: 6px; padding: 6px 11px; white-space: nowrap; border-radius: 999px; border: 1px solid var(--glass-edge); background: var(--glass-solid); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); font-size: clamp(0.66rem, 0.85vw, 0.76rem); font-weight: 600; color: var(--text); transition: border-color 0.3s, transform 0.5s var(--ease); }
 .about__haven a::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--c); box-shadow: 0 0 10px var(--c); }
 .about__haven a:hover { border-color: var(--c); transform: translateY(-3px); }
 .about__haven a:focus-visible { border-radius: 999px; }
@@ -1228,3 +1230,4 @@ html { overscroll-behavior-x: none; }
 /* tighter page openings: the first screen should show the content, not empty space */
 @media (min-width: 961px) { .phero__media .media { aspect-ratio: 5 / 4.6 !important; } }
 .preloader__word .gap { width: 0.3em; }
+@media (max-width: 600px) { .about__haven { flex-wrap: wrap; } }
