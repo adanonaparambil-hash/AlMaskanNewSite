@@ -813,12 +813,13 @@ html:not(.motion-on) .tl-item__year { color: var(--gold); }
 @media (max-width: 900px) { .values { grid-template-columns: 1fr; } }
 
 /* clients — logos sit on light glass so their own colours read */
-.logos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
-.logos li { border-radius: var(--radius); background: rgba(255, 255, 255, 0.92); aspect-ratio: 4 / 3; display: grid; place-items: center; padding: 10%; position: relative; box-shadow: var(--shadow); transition: transform 0.6s var(--ease); }
-.logos img { max-height: 100%; width: auto; max-width: 100%; object-fit: contain; mix-blend-mode: multiply; transition: transform 0.7s var(--ease); }
+/* client logos: compact white tiles, four to a row, centred so the last row sits in the middle; never wider than the page */
+.logos { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
+.logos li { flex: 0 1 calc((100% - 48px) / 4); min-width: 0; border-radius: var(--radius); background: #fff; aspect-ratio: 16 / 10; display: grid; place-items: center; padding: 6% 9%; position: relative; box-shadow: var(--shadow); transition: transform 0.6s var(--ease); overflow: hidden; }
+.logos img { position: absolute; top: 8%; left: 8%; width: 84% !important; height: 84% !important; max-width: none; max-height: none !important; object-fit: contain; mix-blend-mode: multiply; transition: transform 0.7s var(--ease); }
 .logos li:hover { transform: translateY(-6px); }
 .logos li:hover img { transform: scale(1.06); }
-@media (max-width: 900px) { .logos { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 900px) { .logos li { flex-basis: calc((100% - 16px) / 2); } }
 
 /* gallery */
 .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 40px; }
