@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { ContactBand } from '@/components/Footer';
-import NewsletterForm from '@/components/NewsletterForm';
 import NewsCard from '@/components/NewsCard';
 import { Eyebrow } from '@/components/ui';
 import { getContent } from '@/i18n/server';
@@ -45,7 +44,6 @@ export default async function NewsPage() {
       </header>
       <section className="section--tight section">
         <div className="container">
-          <div style={{ marginBottom: 'clamp(32px, 4vw, 56px)' }}><NewsletterForm /></div>
           <div className="cards" data-stagger="0.08">
             <NewsCard a={lead} feature priority />
             {rest.map((a, i) => <NewsCard key={a.slug} a={a} priority={i < 2} />)}

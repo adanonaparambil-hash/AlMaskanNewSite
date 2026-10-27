@@ -787,7 +787,7 @@ html:not(.motion-on) .tl-item__year { color: var(--gold); }
 .member > :not(.media) { padding-inline: 10px; }
 /* the founder leads the team: a large portrait filling the card height, his bio beside it, the next member alongside */
 .member--lead { grid-column: span 6; }
-.member.member--lead .media { aspect-ratio: 4 / 5; }
+.member.member--lead .media { aspect-ratio: 1 / 1; }
 .member:not(.member--lead) .media { aspect-ratio: 1 / 1; }
 .member:not(.member--lead) h3 { font-size: 1.35rem; }
 .member:not(.member--lead) p { font-size: 0.92rem; }
@@ -1204,12 +1204,11 @@ html[lang='ar'] em, html[lang='ar'] i:not(:empty), html[lang='ar'] .mmenu__link-
 
 /* iOS: the fixed 150%-size animated grain and four 90px-blur drifting lights are what makes mobile Safari stutter or reload */
 .is-lite .grain { display: none; }
-.is-lite .ambient i { filter: none; animation: none; opacity: 0.16; will-change: auto; }
-.is-lite .glass, .is-lite .btn--line, .is-lite .site-header__bar, .is-lite .lightbox, .is-lite .assistant { -webkit-backdrop-filter: none; backdrop-filter: none; }
-.is-lite .glass { background: linear-gradient(145deg, rgba(24, 44, 82, 0.92), rgba(12, 26, 52, 0.92)); }
-.is-lite .site-header__bar { background: rgba(8, 18, 36, 0.94); }
-.is-lite .lightbox { background: rgba(4, 9, 18, 0.96); }
-.is-lite .assistant { background: rgba(8, 18, 36, 0.97); }
+/* lite keeps the look (blurred ambient light, translucent glass header) and only drops the costly motion */
+.is-lite .ambient i { animation: none; will-change: auto; }
+/* phones/tablets: no live backdrop blur on large panels (iOS stutters), but the same translucent colours */
+.is-touch .glass, .is-touch .btn--line, .is-touch .lightbox, .is-touch .assistant { -webkit-backdrop-filter: none; backdrop-filter: none; }
+.is-touch .glass { background: linear-gradient(145deg, rgba(30, 52, 92, 0.86), rgba(16, 32, 62, 0.86)); }
 .is-lite .cursor, .is-lite .grain { display: none; }
 .is-lite .marquee__track, .is-lite [data-tilt] { will-change: auto; }
 

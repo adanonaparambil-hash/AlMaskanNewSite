@@ -174,7 +174,7 @@ export default async function AboutPage() {
             {c.about.team.map((m, i) => (
               <article key={m.name} className={i < 2 ? 'member member--lead' : 'member'}>
                 {/* Founder & Chairman and Executive Director: two equal, larger cards with the full portrait; the rest of the team in a compact row */}
-                <Media k={m.image} ratio={i < 2 ? '4 / 5' : '1 / 1'} sizes={i < 2 ? '(min-width: 1000px) 44vw, 100vw' : '(min-width: 1000px) 28vw, 50vw'} position={i < 2 ? '50% 0%' : '50% 12%'} reveal />
+                <Media k={m.image} ratio="1 / 1" sizes={i < 2 ? '(min-width: 1000px) 44vw, 100vw' : '(min-width: 1000px) 28vw, 50vw'} position={i < 2 ? '50% 0%' : '50% 12%'} reveal />
                 <div>
                   <h3>{m.name}</h3>
                   <p className="role">{m.role}</p>
