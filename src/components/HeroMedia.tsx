@@ -7,11 +7,13 @@ import { useI18n } from '@/i18n/client';
 
 type Connection = EventTarget & { saveData?: boolean };
 
-const SRC = '/assets/hero/village-film.mp4';
+const SRC = '/assets/hero/village-hero.mp4';
+/** lighter encode for phones, tablets and weaker machines */
+const SRC_LITE = '/assets/hero/village-hero-sm.mp4';
 /** seconds of overlap between the two players at each loop */
 const XFADE = 1.2;
-/** a touch slower than real time reads as more cinematic (and stretches the 8s clip) */
-const RATE = 0.85;
+/** the client film plays at its natural speed */
+const RATE = 1;
 
 /**
  * Homepage-only media: the poster stays underneath; two players of the same film take turns so the loop never
@@ -25,6 +27,7 @@ export default function HeroMedia() {
   const background = useRef<HTMLDivElement>(null);
   const players = [useRef<HTMLVideoElement>(null), useRef<HTMLVideoElement>(null)];
   const [allowed, setAllowed] = useState(false);
+  const [src, setSrc] = useState(SRC);
   const [active, setActive] = useState<0 | 1 | null>(null);
   // the player being handed over from stays fully visible underneath until the incoming one has faded in
   const [previous, setPrevious] = useState<0 | 1 | null>(null);
@@ -36,6 +39,7 @@ export default function HeroMedia() {
     const connection = (navigator as Navigator & { connection?: Connection }).connection;
     const update = () => setAllowed(!motion.matches && !connection?.saveData);
     update();
+    if (window.matchMedia('(pointer: coarse)').matches || document.documentElement.classList.contains('is-lite')) setSrc(SRC_LITE);
     motion.addEventListener('change', update);
     connection?.addEventListener('change', update);
     return () => {
@@ -142,10 +146,10 @@ export default function HeroMedia() {
                 key={i}
                 ref={ref}
                 className={`${styles.video} ${active === i ? styles.ready : previous === i ? styles.prev : ''}`}
-                src={SRC}
+                src={src}
                 muted
                 playsInline
-                preload="auto"
+                preload={i === 0 ? 'auto' : 'metadata'}
                 disablePictureInPicture
                 aria-hidden="true"
                 tabIndex={-1}

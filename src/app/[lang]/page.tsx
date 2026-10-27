@@ -6,7 +6,6 @@ import InquiryForm from '@/components/InquiryForm';
 import NewsCard from '@/components/NewsCard';
 import HeroMedia from '@/components/HeroMedia';
 import RoomShowcase, { type ShowcaseRow } from '@/components/RoomShowcase';
-import VideoFacade from '@/components/VideoFacade';
 import { Button, Eyebrow, Fact, Heading, Media, TextLink } from '@/components/ui';
 import { Marquee, RingGallery } from '@/components/fx';
 import { getContent } from '@/i18n/server';
@@ -375,12 +374,6 @@ export default async function Home() {
               ))}
             </ul>
           </div>
-        </div>
-      </section>
-
-      <section className="section--tight" aria-label={t.filmLabel}>
-        <div className="container">
-          <VideoFacade id={SITE.video.id} title={SITE.video.title} poster={img('life.garden')} />
         </div>
       </section>
 
