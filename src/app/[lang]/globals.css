@@ -743,8 +743,8 @@ html:not(.motion-on) .tl-item__year { color: var(--gold); }
 /* ---------- inner pages ---------- */
 .phero { position: relative; padding-top: calc(var(--header-h) + clamp(20px, 2.4vw, 36px)); padding-bottom: clamp(28px, 3.4vw, 56px); overflow: hidden; }
 .phero::before { content: ''; position: absolute; width: 60vw; height: 60vw; left: -20vw; top: -30vw; border-radius: 50%; background: var(--phero-c, var(--glow-blue)); filter: blur(120px); opacity: 0.28; pointer-events: none; z-index: -1; }
-.phero__grid { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 24px; row-gap: 28px; align-items: end; }
-.phero__copy { grid-column: 1 / span 7; display: grid; gap: 16px; align-content: end; justify-items: start; }
+.phero__grid { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 24px; row-gap: 28px; align-items: start; }
+.phero__copy { grid-column: 1 / span 7; display: grid; gap: 16px; align-content: start; justify-items: start; }
 .phero__copy .eyebrow { margin-bottom: 0; }
 .phero__media { grid-column: 9 / span 4; }
 .phero__grid:not(:has(.phero__media)) .phero__copy { grid-column: 1 / span 10; }
@@ -1226,5 +1226,5 @@ html.motion-failed { overflow: auto !important; }
 html { overscroll-behavior-x: none; }
 
 /* tighter page openings: the first screen should show the content, not empty space */
-@media (min-width: 961px) { .phero__media .media { aspect-ratio: 1 / 1.05 !important; } }
+@media (min-width: 961px) { .phero__media .media { aspect-ratio: 5 / 4.6 !important; } }
 .preloader__word .gap { width: 0.3em; }
