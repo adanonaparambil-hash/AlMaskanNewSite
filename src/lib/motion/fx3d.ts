@@ -215,7 +215,7 @@ export function ring(root: HTMLElement) {
       scrollTrigger: {
         trigger: section,
         start: 'top top',
-        end: () => '+=' + Math.round(window.innerHeight * (n * 0.85)),
+        end: () => '+=' + Math.round(window.innerHeight * (n * 0.55)),
         pin: true,
         scrub: 0.9,
         anticipatePin: 1,
