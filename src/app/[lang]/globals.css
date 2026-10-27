@@ -142,37 +142,38 @@ main { position: relative; z-index: 1; }
 [data-glow]:hover::before { opacity: 1; }
 [data-glow] > * { position: relative; z-index: 1; }
 
-/* ---------- preloader (first visit of a session; never blocks no-JS or reduced motion) ---------- */
-.preloader { position: fixed; inset: 0; z-index: 700; display: none; background: radial-gradient(90% 70% at 50% 40%, var(--bg-3) 0%, var(--bg) 70%); color: var(--text); overflow: hidden; }
+/* ---------- preloader "the doorway" (first visit of a session; never blocks no-JS, reduced motion or touch) ---------- */
+.preloader { position: fixed; inset: 0; z-index: 700; display: none; color: var(--text); overflow: hidden;
+  background: radial-gradient(70% 60% at 50% 46%, var(--bg-3) 0%, var(--bg) 72%);
+  --cx: 50%; --cy: 50%; --r: 0px;
+  -webkit-mask-image: radial-gradient(circle at var(--cx) var(--cy), transparent var(--r), #000 calc(var(--r) + 1px));
+  mask-image: radial-gradient(circle at var(--cx) var(--cy), transparent var(--r), #000 calc(var(--r) + 1px)); }
 .is-loading .preloader { display: block; animation: preloader-failsafe 0s 9s forwards; }
 html.is-loading { overflow: hidden; }
 @keyframes preloader-failsafe { to { visibility: hidden; } }
-/* the window onto the village: grows with the count, then becomes the hero */
-.preloader__window { position: absolute; inset: 0; clip-path: inset(50% 50% 50% 50% round 999px); will-change: clip-path; }
-.preloader__photo { position: absolute; inset: 0; transform: scale(1.5); will-change: transform; }
-.preloader__photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(6, 14, 28, 0.55), rgba(6, 14, 28, 0.1) 50%); }
-.preloader__top { position: absolute; top: clamp(20px, 4vh, 40px); left: var(--gutter); right: var(--gutter); display: flex; align-items: center; justify-content: space-between; gap: 16px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); }
-.preloader__mark { width: 40px; height: 40px; filter: brightness(0) invert(1); }
-.preloader__word { position: absolute; left: 0; right: 0; top: 50%; transform: translateY(-50%); text-align: center; font-family: var(--font-display); font-weight: 300; font-size: clamp(2.6rem, 9vw, 9rem); letter-spacing: -0.04em; line-height: 1; white-space: nowrap; mix-blend-mode: difference; perspective: 600px; overflow: hidden; padding-block: 0.24em; }
+.preloader__top { position: absolute; top: clamp(20px, 4vh, 40px); left: var(--gutter); right: var(--gutter); display: flex; justify-content: space-between; align-items: baseline; gap: 20px;
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+.preloader__count { font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.04em; color: var(--gold); font-variant-numeric: tabular-nums; }
+.preloader__count small { font-size: 0.7em; margin-left: 2px; }
+.preloader__center { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: clamp(14px, 2.2vh, 22px); text-align: center; }
+.preloader__mark { width: clamp(150px, 20vmin, 230px); aspect-ratio: 1; will-change: transform, opacity; }
+.preloader__mark svg { width: 100%; height: 100%; overflow: visible; }
+.preloader__ghost, .preloader__line { fill: none; stroke-width: 4.5; stroke-linecap: round; stroke-linejoin: round; }
+.preloader__ghost { stroke: rgba(255, 255, 255, 0.07); }
+.preloader__line { filter: drop-shadow(0 0 6px currentColor); }
+.preloader__door { fill: #f3e7cf; filter: drop-shadow(0 0 10px rgba(243, 231, 207, 0.9)); }
+.preloader__labels { position: relative; height: 1.4em; width: 18em; }
+.preloader__label { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--text); opacity: 0; transform: translateY(8px); transition: opacity 0.35s, transform 0.45s var(--ease); }
+.preloader__label i { width: 8px; height: 8px; border-radius: 50%; background: var(--c); box-shadow: 0 0 10px var(--c); }
+.preloader__label.is-on { opacity: 1; transform: none; }
+.preloader__word { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.8rem, 4.2vw, 3.4rem); line-height: 1.1; letter-spacing: -0.01em; white-space: nowrap;
+  perspective: 600px; overflow: hidden; padding-block: 0.14em; }
 .preloader__word span { display: inline-block; transform-origin: 50% 100%; }
-.preloader__bottom { position: absolute; left: var(--gutter); right: var(--gutter); bottom: clamp(20px, 5vh, 48px); display: grid; grid-template-columns: auto 1fr auto; align-items: end; gap: clamp(20px, 4vw, 64px); }
-.preloader__count { font-family: var(--font-display); font-weight: 300; font-size: clamp(3.6rem, 10vw, 9rem); line-height: 0.82; letter-spacing: -0.05em; font-variant-numeric: tabular-nums;
-  background: var(--gold-grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
-.preloader__count small { font-size: 0.3em; letter-spacing: 0; margin-left: 4px; }
-.preloader__lines { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; padding-bottom: 8px; }
-.preloader__line { display: grid; gap: 8px; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--dim); transition: color 0.5s; }
-.preloader__line.is-on { color: var(--text); }
-.preloader__line b { display: block; height: 2px; border-radius: 2px; background: rgba(255, 255, 255, 0.12); overflow: hidden; }
-.preloader__line i { display: block; height: 100%; background: var(--c); box-shadow: 0 0 12px var(--c); transform: scaleX(0); transform-origin: left; }
-.preloader__tag { font-family: var(--font-display); font-size: clamp(1rem, 1.6vw, 1.4rem); padding-bottom: 6px; white-space: nowrap; }
+.preloader__sub { font-family: var(--font-display-ar, var(--font-display)); font-family: var(--f-display-ar), var(--font-display); font-size: clamp(1rem, 1.7vw, 1.35rem); color: var(--gold); margin-top: -6px; }
+.preloader__tag { position: absolute; bottom: clamp(20px, 5vh, 44px); left: 0; right: 0; text-align: center; font-family: var(--font-display); font-size: clamp(1rem, 1.5vw, 1.25rem); color: var(--muted); }
 .preloader__tag em { color: var(--gold); }
-@media (max-width: 760px) {
-  .preloader__bottom { grid-template-columns: 1fr; gap: 18px; }
-  .preloader__lines { grid-template-columns: repeat(5, 1fr); gap: 6px; }
-  .preloader__line span { font-size: 0.5rem; letter-spacing: 0.08em; overflow: hidden; text-overflow: ellipsis; }
-  .preloader__tag { display: none; }
-  .preloader__top span { display: none; }
-}
+@media (max-width: 760px) { .preloader__top > span:first-child { display: none; } .preloader__top { justify-content: flex-end; } }
 
 /* ---------- motion gate: hidden only while JS is about to animate them ---------- */
 .motion-on [data-reveal],
@@ -1045,7 +1046,6 @@ html.lenis, html.lenis body { height: auto; }
 @media (prefers-reduced-motion: reduce) { .pt { display: none; } }
 /* keep the bottom bar clear of the floating WhatsApp button where they could meet */
 @media (max-width: 1680px) { .footer__legal { padding-right: 76px; } }
-@media (max-width: 760px) { .preloader__line span { display: none; } }
 
 /* =====================================================================
    Arabic — right-to-left layout and Arabic typography
@@ -1106,7 +1106,7 @@ html[lang='ar'] .lang-switch, html[lang='ar'] .mmenu__lang { font-family: var(--
 [dir='rtl'] .lightbox__btn--next { right: auto; left: 20px; }
 
 /* progress lines fill from the right */
-[dir='rtl'] .progress, [dir='rtl'] .hs__bar i, [dir='rtl'] .preloader__line i, [dir='rtl'] .form__steps i::after { transform-origin: right; }
+[dir='rtl'] .progress, [dir='rtl'] .hs__bar i, [dir='rtl'] .form__steps i::after { transform-origin: right; }
 [dir='rtl'] .tlink::after { transform-origin: right; }
 [dir='rtl'] .tlink:hover::after { transform-origin: left; }
 
@@ -1227,3 +1227,4 @@ html { overscroll-behavior-x: none; }
 
 /* tighter page openings: the first screen should show the content, not empty space */
 @media (min-width: 961px) { .phero__media .media { aspect-ratio: 1 / 1.05 !important; } }
+.preloader__word .gap { width: 0.3em; }
