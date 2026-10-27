@@ -198,9 +198,9 @@ html.is-loading { overflow: hidden; }
   background: var(--gold-grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; padding-right: 0.06em; }
 /* once split into lines/words/letters, each piece carries the gradient itself */
 .display em * { background: var(--gold-grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-.display--xl { font-size: clamp(2.6rem, 7vw, 7.2rem); }
-.display--lg { font-size: clamp(2.1rem, 4.8vw, 4.6rem); }
-.display--md { font-size: clamp(1.7rem, 3vw, 2.8rem); line-height: 1.08; }
+.display--xl { font-size: clamp(2.2rem, 5.2vw, 5.4rem); }
+.display--lg { font-size: clamp(1.8rem, 3.8vw, 3.6rem); }
+.display--md { font-size: clamp(1.5rem, 2.5vw, 2.3rem); line-height: 1.1; }
 .display--sm { font-size: clamp(1.35rem, 2vw, 1.9rem); line-height: 1.15; letter-spacing: -0.012em; }
 .split-line { will-change: transform; }
 .split-char { display: inline-block; will-change: transform; }
@@ -210,7 +210,7 @@ html.is-loading { overflow: hidden; }
   --c: var(--gold);
   display: inline-flex; align-items: center; gap: 12px;
   font-size: 0.72rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--text); margin-bottom: 1.6rem;
+  color: var(--text); margin-bottom: 1.1rem;
   padding: 8px 16px 8px 12px; border-radius: 999px; border: 1px solid var(--glass-edge);
   background: rgba(255, 255, 255, 0.04); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
 }
@@ -218,7 +218,7 @@ html.is-loading { overflow: hidden; }
 .eyebrow--light { color: #fff; }
 .eyebrow--light::before { background: #fff; }
 
-.lead { font-size: clamp(1.08rem, 1.5vw, 1.32rem); line-height: 1.6; color: var(--muted); max-width: 42ch; }
+.lead { font-size: clamp(1rem, 1.3vw, 1.15rem); line-height: 1.6; color: var(--muted); max-width: 42ch; }
 .lead--wide { max-width: 56ch; }
 .prose p { color: var(--muted); max-width: 62ch; }
 .prose p + p { margin-top: 1.1em; }
@@ -362,8 +362,8 @@ html.is-loading { overflow: hidden; }
 }
 
 /* ---------- sections ---------- */
-.section { padding-block: clamp(64px, 8.5vw, 136px); position: relative; }
-.section--tight { padding-block: clamp(44px, 5.5vw, 88px); }
+.section { padding-block: clamp(44px, 6vw, 96px); position: relative; }
+.section--tight { padding-block: clamp(30px, 4vw, 60px); }
 /* alternate bands: a darker sheet with a soft glow, so the rhythm survives on the night ground */
 .section--sand { background: linear-gradient(180deg, rgba(10, 24, 48, 0) 0%, rgba(10, 24, 48, 0.7) 14%, rgba(10, 24, 48, 0.7) 86%, rgba(10, 24, 48, 0) 100%); }
 .section--paper { background: radial-gradient(70% 60% at 80% 30%, rgba(122, 63, 143, 0.14), transparent 70%), radial-gradient(60% 50% at 10% 80%, rgba(31, 79, 160, 0.16), transparent 70%); }
@@ -740,10 +740,10 @@ html:not(.motion-on) .tl-item__year { color: var(--gold); }
 @media (prefers-reduced-motion: reduce) { .footer__orb-ring, .footer__spectrum::after, .footer__clock i { animation: none; } }
 
 /* ---------- inner pages ---------- */
-.phero { position: relative; padding-top: calc(var(--header-h) + clamp(56px, 7vw, 112px)); padding-bottom: clamp(48px, 6vw, 96px); overflow: hidden; }
+.phero { position: relative; padding-top: calc(var(--header-h) + clamp(20px, 2.4vw, 36px)); padding-bottom: clamp(28px, 3.4vw, 56px); overflow: hidden; }
 .phero::before { content: ''; position: absolute; width: 60vw; height: 60vw; left: -20vw; top: -30vw; border-radius: 50%; background: var(--phero-c, var(--glow-blue)); filter: blur(120px); opacity: 0.28; pointer-events: none; z-index: -1; }
-.phero__grid { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 24px; row-gap: 40px; align-items: end; }
-.phero__copy { grid-column: 1 / span 7; display: grid; gap: 28px; align-content: end; justify-items: start; }
+.phero__grid { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 24px; row-gap: 28px; align-items: end; }
+.phero__copy { grid-column: 1 / span 7; display: grid; gap: 16px; align-content: end; justify-items: start; }
 .phero__copy .eyebrow { margin-bottom: 0; }
 .phero__media { grid-column: 9 / span 4; }
 .phero__grid:not(:has(.phero__media)) .phero__copy { grid-column: 1 / span 10; }
@@ -1058,9 +1058,9 @@ html[lang='ar'] body, html[lang='ar'] body * { letter-spacing: 0 !important; }
 html[lang='ar'] body { font-size: 1.08rem; line-height: 1.85; }
 html[lang='ar'] .display { font-weight: 500; line-height: 1.35; font-variation-settings: normal; }
 html[lang='ar'] .display em { font-style: normal; font-weight: 600; }
-html[lang='ar'] .display--xl { font-size: clamp(2.1rem, 5.2vw, 5.2rem); }
-html[lang='ar'] .display--lg { font-size: clamp(1.8rem, 3.8vw, 3.6rem); }
-html[lang='ar'] .display--md { font-size: clamp(1.45rem, 2.5vw, 2.3rem); }
+html[lang='ar'] .display--xl { font-size: clamp(1.9rem, 4.4vw, 4.4rem); }
+html[lang='ar'] .display--lg { font-size: clamp(1.6rem, 3.2vw, 3rem); }
+html[lang='ar'] .display--md { font-size: clamp(1.3rem, 2.1vw, 1.95rem); }
 html[lang='ar'] .display--sm { font-size: clamp(1.25rem, 1.8vw, 1.7rem); }
 html[lang='ar'] .hero__title { font-size: clamp(2.2rem, 5.4vw, 5.6rem); }
 html[lang='ar'] .quote__text, html[lang='ar'] .statement, html[lang='ar'] .marquee__item, html[lang='ar'] .stack__body h3, html[lang='ar'] .tl-item__title { line-height: 1.6; }
@@ -1222,3 +1222,6 @@ html.motion-failed { overflow: auto !important; }
   main, .footer, .hero { overflow-x: clip; }
 }
 html { overscroll-behavior-x: none; }
+
+/* tighter page openings: the first screen should show the content, not empty space */
+@media (min-width: 961px) { .phero__media .media { aspect-ratio: 1 / 1.05 !important; } }
