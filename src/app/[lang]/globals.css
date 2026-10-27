@@ -786,7 +786,10 @@ html:not(.motion-on) .tl-item__year { color: var(--gold); }
 .member > :not(.media) { padding-inline: 10px; }
 /* the founder leads the team: a large portrait filling the card height, his bio beside it, the next member alongside */
 .member--lead { grid-column: span 6; }
-.member.member--lead .media { aspect-ratio: 5 / 4; }
+.member.member--lead .media { aspect-ratio: 4 / 5; }
+.member:not(.member--lead) .media { aspect-ratio: 1 / 1; }
+.member:not(.member--lead) h3 { font-size: 1.35rem; }
+.member:not(.member--lead) p { font-size: 0.92rem; }
 .member.member--lead h3 { font-size: clamp(1.7rem, 2.3vw, 2.1rem); }
 .member .media { aspect-ratio: 4 / 5; }
 .member h3 { font-family: var(--font-display); font-weight: 360; font-size: 1.6rem; letter-spacing: -0.012em; }
@@ -794,7 +797,7 @@ html:not(.motion-on) .tl-item__year { color: var(--gold); }
 .member p { color: var(--muted); font-size: 0.97rem; }
 .member p + p { margin-top: 0.8em; }
 @media (max-width: 1000px) { .member { grid-column: span 6; grid-template-columns: 1fr; } .member--lead { grid-column: span 6; } }
-@media (max-width: 640px) { .member, .member--lead { grid-column: 1 / -1; grid-template-columns: 1fr; } .member.member--lead .media { aspect-ratio: 4 / 5; } }
+@media (max-width: 640px) { .member, .member--lead { grid-column: 1 / -1; grid-template-columns: 1fr; } .member.member--lead .media { aspect-ratio: 4 / 5; } .member:not(.member--lead) .media { aspect-ratio: 4 / 5; } }
 
 .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
 .pillars > div { padding: 32px 30px 36px; border-radius: var(--radius); border: 1px solid var(--glass-edge); background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)); -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px); display: grid; gap: 14px; align-content: start; }
@@ -1038,7 +1041,7 @@ html.lenis, html.lenis body { height: auto; }
 .pt { position: fixed; inset: 0; z-index: 500; display: flex; pointer-events: none; visibility: hidden; }
 .pt__col { flex: 1; will-change: transform; }
 .pt__mark { position: absolute; inset: 0; display: grid; place-items: center; opacity: 0; visibility: hidden; }
-.pt__mark img { width: 72px; height: 72px; filter: brightness(0) invert(1); }
+.pt__mark img { width: clamp(200px, 22vw, 300px); height: auto; filter: brightness(0) invert(1); }
 @media (prefers-reduced-motion: reduce) { .pt { display: none; } }
 /* keep the bottom bar clear of the floating WhatsApp button where they could meet */
 @media (max-width: 1680px) { .footer__legal { padding-right: 76px; } }

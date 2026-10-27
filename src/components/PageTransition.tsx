@@ -82,7 +82,7 @@ export default function PageTransition() {
     <div ref={root} className="pt" aria-hidden="true">
       {TOKENS.map((t) => <div key={t} className="pt__col" style={{ background: `var(${t})` }} />)}
       <div className="pt__mark">
-        <img src="/assets/logos/al-maskaan-village-mark.png" alt="" width="72" height="72" />
+        <img src="/assets/logos/al-maskaan-village-logo.png" alt="" width="300" height="84" />
       </div>
     </div>
   );
