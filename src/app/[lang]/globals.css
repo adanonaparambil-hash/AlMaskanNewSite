@@ -1231,3 +1231,10 @@ html { overscroll-behavior-x: none; }
 @media (min-width: 961px) { .phero__media .media { aspect-ratio: 5 / 4.6 !important; } }
 .preloader__word .gap { width: 0.3em; }
 @media (max-width: 600px) { .about__haven { flex-wrap: wrap; } }
+
+/* ---------- Masterplan explorer (self-contained page in an iframe) ---------- */
+.explorer { position: relative; height: min(84svh, 860px); min-height: 520px; border-radius: 22px; overflow: hidden; border: 1px solid var(--glass-edge); background: #f6f5f0; box-shadow: 0 30px 80px -40px rgba(0, 0, 0, 0.6); }
+.explorer iframe { display: block; width: 100%; height: 100%; border: 0; }
+.explorer__bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 20px; margin-top: 16px; }
+.explorer__bar .fine { margin: 0; }
+@media (max-width: 700px) { .explorer { height: 78svh; min-height: 460px; border-radius: 16px; } }

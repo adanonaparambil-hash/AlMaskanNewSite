@@ -62,6 +62,7 @@ export const NAV: NavItem[] = [
   { label: 'العملاء', href: '/clients' },
   { label: 'الأخبار', href: '/news' },
   { label: 'معرض الصور', href: '/gallery' },
+  { label: 'المخطط العام', href: '/masterplan' },
 ];
 
 export const FOOTER_LINKS = {
@@ -72,6 +73,7 @@ export const FOOTER_LINKS = {
     { label: 'العملاء', href: '/clients' },
     { label: 'الأخبار', href: '/news' },
     { label: 'معرض الصور', href: '/gallery' },
+    { label: 'المخطط العام', href: '/masterplan' },
     { label: 'تواصل معنا', href: '/contact-us' },
   ],
   stay: [

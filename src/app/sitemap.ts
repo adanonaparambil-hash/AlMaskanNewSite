@@ -15,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       { url: u(localizeHref(path, 'ar')), alternates, ...extra },
     ];
   };
-  const fixed = ['/', '/about-us', '/facilities', '/individuals', '/clients', '/news', '/gallery', '/contact-us', '/privacy-policy'];
+  const fixed = ['/', '/about-us', '/facilities', '/individuals', '/clients', '/news', '/gallery', '/masterplan', '/contact-us', '/privacy-policy'];
   return [
     ...fixed.flatMap((p) => both(p, { changeFrequency: 'monthly', priority: p === '/' ? 1 : 0.7 })),
     ...ROOMS.flatMap((r) => both(`/${r.audience}/${r.slug}`, { changeFrequency: 'monthly', priority: 0.6 })),

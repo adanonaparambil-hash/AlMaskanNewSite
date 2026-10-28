@@ -63,6 +63,7 @@ export const NAV: NavItem[] = [
   { label: 'Clients', href: '/clients' },
   { label: 'News', href: '/news' },
   { label: 'Gallery', href: '/gallery' },
+  { label: 'Masterplan', href: '/masterplan' },
 ];
 
 export const FOOTER_LINKS = {
@@ -73,6 +74,7 @@ export const FOOTER_LINKS = {
     { label: 'Clients', href: '/clients' },
     { label: 'News', href: '/news' },
     { label: 'Media gallery', href: '/gallery' },
+    { label: 'Masterplan', href: '/masterplan' },
     { label: 'Contact us', href: '/contact-us' },
   ],
   stay: [
