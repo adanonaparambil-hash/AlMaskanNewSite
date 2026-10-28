@@ -11,16 +11,16 @@ const en = {
   metaDescription: 'Images of Al Maskaan Village — residential blocks, rooms, dining halls, retail, spaces and lifestyle facilities in Khazaen Economic City.',
   eyebrow: 'Welcome to',
   title: <>Our media <em>gallery</em></>,
-  lead: 'Renderings and photographs of the village, its rooms and its shared spaces.',
-  fine: 'Many images are architectural renderings, shown as published on the original website; some food photography is stock imagery.',
+  lead: 'Photographs of the village today — its rooms, dining hall, shops and shared spaces.',
+  fine: 'All photographs were taken at Al Maskaan Village.',
 };
 const ar: typeof en = {
   metaTitle: 'معرض الصور',
   metaDescription: 'صور قرية المسكن — المباني السكنية والغرف وقاعات الطعام والمتاجر والمساحات ومرافق أسلوب الحياة في مدينة خزائن الاقتصادية.',
   eyebrow: 'مرحباً بكم في',
   title: <>معرض <em>الصور</em></>,
-  lead: 'تصاميم وصور فوتوغرافية للقرية وغرفها ومساحاتها المشتركة.',
-  fine: 'كثير من الصور تصاميم معمارية معروضة كما نُشرت على الموقع الأصلي، وبعض صور الطعام من مكتبات الصور الجاهزة.',
+  lead: 'صور فوتوغرافية للقرية اليوم — غرفها وقاعة الطعام والمتاجر ومساحاتها المشتركة.',
+  fine: 'جميع الصور مُلتقطة في قرية المسكن.',
 };
 const COPY = { en, ar };
 

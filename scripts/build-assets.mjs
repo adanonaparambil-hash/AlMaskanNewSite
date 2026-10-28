@@ -1,5 +1,6 @@
 // Curates + optimises the downloaded originals into public/assets and writes the asset manifest.
 // Originals stay untouched in source-assets/originals. Run: npm run assets
+// Then run scripts/real-photos.mjs: it swaps the renders and stock images for AMV's own photos and rebuilds the gallery.
 import fs from 'node:fs';
 import path from 'node:path';
 import sharp from 'sharp';

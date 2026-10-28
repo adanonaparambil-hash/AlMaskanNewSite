@@ -1,52 +1,52 @@
 {
  "images": {
   "hero.aerial": {
-   "src": "/assets/images/hero/aerial-masterplan.jpg",
-   "w": 2000,
-   "h": 1116,
-   "alt": "Aerial rendering of Al Maskaan Village: residential blocks, sports court and amenity buildings in Khazaen Economic City"
+   "src": "/assets/images/amv/village-aerial.jpg",
+   "w": 1800,
+   "h": 1013,
+   "alt": "Aerial view of Al Maskaan Village: residential blocks, dining hall and amenity buildings in Khazaen Economic City"
   },
   "hero.courtyard": {
-   "src": "/assets/images/hero/courtyard-aerial.jpg",
-   "w": 1600,
-   "h": 1344,
-   "alt": "Aerial view of the residential courtyard with basketball and tennis courts"
+   "src": "/assets/images/amv/courtyard-courts-night.jpg",
+   "w": 1800,
+   "h": 2400,
+   "alt": "The residential courtyard and sports courts lit at night"
   },
   "acc.tower": {
-   "src": "/assets/images/accommodation/residential-block-corner.jpg",
-   "w": 1600,
-   "h": 1344,
-   "alt": "Corner of an Al Maskaan Village residential block under a blue sky"
+   "src": "/assets/images/amv/residential-block-corner.jpg",
+   "w": 1800,
+   "h": 2400,
+   "alt": "Corner of a residential block with balconies"
   },
   "acc.block": {
-   "src": "/assets/images/accommodation/residential-block-frontage.jpg",
-   "w": 1600,
-   "h": 900,
+   "src": "/assets/images/amv/residential-block-frontage.jpg",
+   "w": 1800,
+   "h": 1012,
    "alt": "Residential block frontage with parking"
   },
   "acc.street": {
-   "src": "/assets/images/accommodation/landscaped-walkway.jpg",
-   "w": 1600,
-   "h": 1344,
-   "alt": "Landscaped paved walkway between residential blocks"
+   "src": "/assets/images/amv/landscaped-courtyard.jpg",
+   "w": 1800,
+   "h": 837,
+   "alt": "Landscaped green courtyard and footpath between residential blocks"
   },
   "acc.junior1": {
-   "src": "/assets/images/accommodation/junior-staff-room-1.jpg",
-   "w": 2200,
-   "h": 1238,
-   "alt": "Junior staff room with steel bunk beds and wardrobes"
+   "src": "/assets/images/amv/shared-room.jpg",
+   "w": 1800,
+   "h": 1012,
+   "alt": "Shared room with steel bunk beds and wardrobes"
   },
   "acc.junior2": {
-   "src": "/assets/images/accommodation/junior-staff-room-2.jpg",
-   "w": 2200,
-   "h": 1238,
-   "alt": "Junior staff room with bunks, desk and wardrobes"
+   "src": "/assets/images/amv/shared-room-2.jpg",
+   "w": 1800,
+   "h": 1012,
+   "alt": "Shared room with bunks, desk and wardrobe"
   },
   "acc.junior3": {
-   "src": "/assets/images/accommodation/junior-staff-room-3.jpg",
-   "w": 1600,
-   "h": 900,
-   "alt": "Junior staff bunk room with study table"
+   "src": "/assets/images/amv/shared-room-3.jpg",
+   "w": 1800,
+   "h": 803,
+   "alt": "Shared room with bunk beds and wardrobes"
   },
   "acc.juniorPlan": {
    "src": "/assets/images/accommodation/junior-staff-rooms-isometric.jpg",
@@ -55,172 +55,172 @@
    "alt": "Isometric cutaway of junior staff bunk rooms"
   },
   "acc.single": {
-   "src": "/assets/images/accommodation/senior-single-premium.jpg",
-   "w": 1600,
-   "h": 900,
-   "alt": "Single Premium room with queen bed, sofa, desk and television"
+   "src": "/assets/images/amv/single-premium.jpg",
+   "w": 1800,
+   "h": 1012,
+   "alt": "Single Premium room with queen bed, sofa and coffee table"
   },
   "acc.single2": {
-   "src": "/assets/images/accommodation/senior-single-premium-2.jpg",
-   "w": 1600,
-   "h": 900,
-   "alt": "Single Premium room seating corner"
+   "src": "/assets/images/amv/single-premium-2.jpg",
+   "w": 1800,
+   "h": 1012,
+   "alt": "Single Premium room with desk and television"
   },
   "acc.double": {
-   "src": "/assets/images/accommodation/senior-double-premium.jpg",
-   "w": 1600,
-   "h": 900,
-   "alt": "Double Premium room with two single beds, sofa and coffee table"
+   "src": "/assets/images/amv/double-premium.jpg",
+   "w": 1800,
+   "h": 1012,
+   "alt": "Double Premium room with two beds, sofa and coffee table"
   },
   "acc.triple": {
-   "src": "/assets/images/accommodation/senior-triple-premium.jpg",
-   "w": 1600,
-   "h": 900,
-   "alt": "Triple Premium room with three single beds"
+   "src": "/assets/images/amv/triple-premium.jpg",
+   "w": 1800,
+   "h": 2400,
+   "alt": "Triple Premium room with three beds"
   },
   "retail.frontage": {
-   "src": "/assets/images/retail/retail-frontage.jpg",
-   "w": 1600,
-   "h": 1042,
-   "alt": "Retail frontage with mobile shop, ATM and exchange units"
+   "src": "/assets/images/amv/commercial-building.jpg",
+   "w": 1800,
+   "h": 2400,
+   "alt": "Commercial building with Joyalukkas Exchange and the Bank Muscat ATM"
   },
   "retail.office": {
-   "src": "/assets/images/retail/commercial-building.jpg",
-   "w": 1600,
-   "h": 1368,
-   "alt": "Three-storey commercial building with glazed facade"
+   "src": "/assets/images/amv/commercial-building-glass.jpg",
+   "w": 1800,
+   "h": 2400,
+   "alt": "Glass-fronted commercial building with the Al Maskaan Village sign"
   },
   "retail.commercial2": {
-   "src": "/assets/images/retail/commercial-building-street.jpg",
-   "w": 1600,
-   "h": 1344,
-   "alt": "Commercial building seen from the street"
+   "src": "/assets/images/amv/commercial-building-corner.jpg",
+   "w": 1800,
+   "h": 2400,
+   "alt": "Corner of the commercial building"
   },
   "cat.hall": {
-   "src": "/assets/images/catering/dining-hall-render.jpg",
-   "w": 1600,
-   "h": 900,
-   "alt": "Dining hall with serving counters and green chairs"
+   "src": "/assets/images/amv/dining-hall.jpg",
+   "w": 1800,
+   "h": 1012,
+   "alt": "Safi Dining Hall with rows of tables and red chairs"
   },
   "cat.hall2": {
-   "src": "/assets/images/catering/dining-hall-long.jpg",
-   "w": 1600,
-   "h": 900,
-   "alt": "Long dining hall with tables and green chairs"
+   "src": "/assets/images/amv/dining-hall-2.jpg",
+   "w": 1800,
+   "h": 1012,
+   "alt": "Long view down Safi Dining Hall"
   },
   "cat.hallBig": {
-   "src": "/assets/images/catering/dining-hall-main.jpg",
-   "w": 1600,
-   "h": 900,
-   "alt": "Main community dining hall with red and white chairs"
+   "src": "/assets/images/amv/dining-hall-3.jpg",
+   "w": 1800,
+   "h": 1012,
+   "alt": "Safi Dining Hall, the village’s main dining hall"
   },
   "cat.hallPhoto": {
-   "src": "/assets/images/catering/dining-hall-built.jpg",
-   "w": 1575,
-   "h": 924,
-   "alt": "The completed dining hall with rows of tables and red chairs"
+   "src": "/assets/images/amv/dining-hall-4.jpg",
+   "w": 1800,
+   "h": 2400,
+   "alt": "Safi Dining Hall set for service"
   },
   "cat.kitchen": {
-   "src": "/assets/images/catering/central-kitchen.jpg",
-   "w": 1140,
-   "h": 567,
-   "alt": "Central kitchen with chefs and commercial cooking equipment"
+   "src": "/assets/images/amv/central-kitchen.jpg",
+   "w": 1800,
+   "h": 1012,
+   "alt": "The central kitchen with commercial cooking equipment"
   },
   "cat.canapes": {
-   "src": "/assets/images/catering/canapes.jpg",
-   "w": 1600,
-   "h": 1066,
-   "alt": "Canapé platter for events (stock photograph used on the original website)"
+   "src": "/assets/images/amv/buffet-counter.jpg",
+   "w": 1800,
+   "h": 2400,
+   "alt": "Hot dishes at the buffet counter"
   },
   "cat.desserts": {
-   "src": "/assets/images/catering/dessert-cups.jpg",
-   "w": 1280,
-   "h": 1600,
-   "alt": "Dessert cups served at an event (stock photograph used on the original website)"
+   "src": "/assets/images/amv/kitchen-team.jpg",
+   "w": 1800,
+   "h": 1012,
+   "alt": "The catering team in the central kitchen"
   },
   "cat.buffet": {
-   "src": "/assets/images/catering/buffet-service.jpg",
-   "w": 1575,
-   "h": 631,
-   "alt": "Buffet service for corporate events"
+   "src": "/assets/images/amv/chefs-buffet.jpg",
+   "w": 1800,
+   "h": 2400,
+   "alt": "Chefs at the buffet line"
   },
   "cat.chef": {
-   "src": "/assets/images/catering/chef-plating.jpg",
-   "w": 1000,
-   "h": 1000,
-   "alt": "Chef plating a dish (stock photograph used on the original website)"
+   "src": "/assets/images/amv/chef-wok.jpg",
+   "w": 1800,
+   "h": 2400,
+   "alt": "A chef cooking over a flaming wok"
   },
   "spaces.lounge": {
-   "src": "/assets/images/spaces/office-lounge.jpg",
-   "w": 1600,
-   "h": 900,
-   "alt": "Bright office lounge with round tables and white chairs"
+   "src": "/assets/images/amv/lounge.jpg",
+   "w": 1800,
+   "h": 1350,
+   "alt": "Lounge with round tables and chairs"
   },
   "spaces.lounge2": {
-   "src": "/assets/images/spaces/meeting-lounge.jpg",
-   "w": 1600,
-   "h": 800,
-   "alt": "Meeting lounge with glass-walled meeting room"
+   "src": "/assets/images/amv/lounge-2.jpg",
+   "w": 1800,
+   "h": 1012,
+   "alt": "Lounge with tables and window seating"
   },
   "spaces.cafe": {
-   "src": "/assets/images/spaces/cafe-atrium.jpg",
-   "w": 1600,
-   "h": 900,
-   "alt": "Cafe on a double-height atrium with landscaped stair"
+   "src": "/assets/images/amv/cafe.jpg",
+   "w": 1800,
+   "h": 1012,
+   "alt": "Café seating beside full-height windows"
   },
   "spaces.cafe2": {
-   "src": "/assets/images/spaces/cafe-atrium-2.jpg",
-   "w": 1600,
-   "h": 900,
-   "alt": "Cafe and atrium with planting"
+   "src": "/assets/images/amv/lounge-3.jpg",
+   "w": 1800,
+   "h": 1350,
+   "alt": "Lounge with bar seating and city views"
   },
   "spaces.recreation": {
-   "src": "/assets/images/spaces/recreation-centre.jpg",
-   "w": 1600,
-   "h": 1131,
-   "alt": "Recreation centre lobby with lounge seating and timber stair"
+   "src": "/assets/images/amv/reception.jpg",
+   "w": 1800,
+   "h": 1012,
+   "alt": "Reception lobby"
   },
   "spaces.games": {
-   "src": "/assets/images/spaces/games-lounge.jpg",
-   "w": 1600,
-   "h": 796,
-   "alt": "Lounge with colourful sofas beside a glass-walled room"
+   "src": "/assets/images/amv/lobby-seating.jpg",
+   "w": 1800,
+   "h": 1012,
+   "alt": "Lobby seating area"
   },
   "life.garden": {
-   "src": "/assets/images/lifestyle/garden-pergola.jpg",
-   "w": 1500,
-   "h": 844,
-   "alt": "Landscaped garden with pergola and seating between residential blocks"
+   "src": "/assets/images/amv/pergola-garden.jpg",
+   "w": 1800,
+   "h": 2400,
+   "alt": "Pergola and seating in the landscaped courtyard"
   },
   "life.courts": {
-   "src": "/assets/images/lifestyle/courtyard-basketball.jpg",
-   "w": 1573,
-   "h": 1166,
-   "alt": "Aerial view of the courtyard with basketball and tennis courts"
+   "src": "/assets/images/amv/courts-night.jpg",
+   "w": 1800,
+   "h": 1203,
+   "alt": "Sports courts in the courtyard at night"
   },
   "life.pitch": {
-   "src": "/assets/images/lifestyle/football-pitch.jpg",
-   "w": 1199,
-   "h": 833,
-   "alt": "Aerial view of the football pitch beside the recreation hall"
+   "src": "/assets/images/amv/football-pitch.jpg",
+   "w": 1800,
+   "h": 2400,
+   "alt": "The football pitch beside the recreation building"
   },
   "life.mosque": {
-   "src": "/assets/images/facilities/mosque-and-pitch.jpg",
-   "w": 1455,
-   "h": 1129,
-   "alt": "Aerial view of the village mosque, football pitch and parking"
+   "src": "/assets/images/amv/mosque.jpg",
+   "w": 1800,
+   "h": 1350,
+   "alt": "The village mosque"
   },
   "life.hall": {
-   "src": "/assets/images/lifestyle/recreation-hall-exterior.jpg",
-   "w": 1600,
-   "h": 900,
-   "alt": "Recreation hall exterior with parking"
+   "src": "/assets/images/amv/recreation-building.jpg",
+   "w": 1800,
+   "h": 2400,
+   "alt": "Recreation building beside the football pitch"
   },
   "fac.service": {
-   "src": "/assets/images/facilities/service-building.jpg",
-   "w": 1600,
-   "h": 900,
-   "alt": "Service building exterior with coach"
+   "src": "/assets/images/amv/safi-dining-hall.jpg",
+   "w": 1800,
+   "h": 1350,
+   "alt": "Safi Dining Hall building"
   },
   "people.thomas": {
    "src": "/assets/images/people/dr-thomas-alexander-2026.jpg",
@@ -388,291 +388,399 @@
  },
  "gallery": [
   {
-   "src": "/assets/images/gallery/village-154948-2.jpg",
-   "w": 1573,
-   "h": 1166,
+   "src": "/assets/images/amv/village-aerial.jpg",
+   "w": 1800,
+   "h": 1013,
    "cat": "village",
-   "alt": "Aerial view of the courtyard with basketball and tennis courts"
+   "alt": "Aerial view of the village"
   },
   {
-   "src": "/assets/images/gallery/village-154642.jpg",
-   "w": 1600,
-   "h": 1344,
+   "src": "/assets/images/amv/village-aerial-2.jpg",
+   "w": 1800,
+   "h": 1013,
    "cat": "village",
-   "alt": "Courtyard seen from above with sports courts and landscaping"
+   "alt": "The village from above, with the mosque and dining hall"
   },
   {
-   "src": "/assets/images/gallery/village-154948-4.jpg",
-   "w": 754,
-   "h": 462,
+   "src": "/assets/images/amv/village-aerial-3.jpg",
+   "w": 1800,
+   "h": 1013,
    "cat": "village",
-   "alt": "Courtyard with tennis courts and residential blocks"
+   "alt": "The village and the Hajar mountains beyond"
   },
   {
-   "src": "/assets/images/gallery/village-154948-3.jpg",
-   "w": 1370,
-   "h": 848,
+   "src": "/assets/images/amv/village-night-above.jpg",
+   "w": 1800,
+   "h": 1013,
    "cat": "village",
-   "alt": "Courtyard with courts and residential balconies"
+   "alt": "The village from directly above at night"
   },
   {
-   "src": "/assets/images/gallery/village-154948.jpg",
-   "w": 1455,
-   "h": 1129,
+   "src": "/assets/images/amv/village-night-aerial.jpg",
+   "w": 1800,
+   "h": 1013,
    "cat": "village",
-   "alt": "Mosque, football pitch and parking from above"
+   "alt": "The village lit up at night"
   },
   {
-   "src": "/assets/images/gallery/village-154948-1.jpg",
-   "w": 1199,
-   "h": 833,
+   "src": "/assets/images/amv/block-sign.jpg",
+   "w": 1800,
+   "h": 2400,
    "cat": "village",
-   "alt": "Football pitch and amenity building from above"
+   "alt": "Residential block with the Al Maskaan Village name"
   },
   {
-   "src": "/assets/images/gallery/village-153807-1.jpg",
-   "w": 1600,
-   "h": 1344,
+   "src": "/assets/images/amv/residential-block-corner.jpg",
+   "w": 1800,
+   "h": 2400,
    "cat": "village",
-   "alt": "Paved landscaped walkway between residential blocks"
+   "alt": "Corner of a residential block"
   },
   {
-   "src": "/assets/images/gallery/village-154159.jpg",
-   "w": 1600,
-   "h": 1344,
+   "src": "/assets/images/amv/residential-block-frontage.jpg",
+   "w": 1800,
+   "h": 1012,
    "cat": "village",
-   "alt": "Residential block corner at street level"
+   "alt": "Residential block frontage"
   },
   {
-   "src": "/assets/images/gallery/village-154159-1.jpg",
-   "w": 1600,
-   "h": 1344,
+   "src": "/assets/images/amv/landscaped-courtyard.jpg",
+   "w": 1800,
+   "h": 837,
    "cat": "village",
-   "alt": "Residential block facade"
+   "alt": "Landscaped courtyard between the blocks"
   },
   {
-   "src": "/assets/images/gallery/village-154616.jpg",
-   "w": 1600,
-   "h": 900,
+   "src": "/assets/images/amv/green-courtyard-dusk.jpg",
+   "w": 1800,
+   "h": 1012,
    "cat": "village",
-   "alt": "Residential block frontage and parking"
+   "alt": "Green courtyard at dusk"
   },
   {
-   "src": "/assets/images/gallery/village-154715.jpg",
-   "w": 1600,
-   "h": 900,
+   "src": "/assets/images/amv/block-night.jpg",
+   "w": 1800,
+   "h": 1350,
    "cat": "village",
-   "alt": "Recreation hall exterior"
+   "alt": "Residential block lit at night"
   },
   {
-   "src": "/assets/images/gallery/village-153807.jpg",
-   "w": 1600,
-   "h": 900,
+   "src": "/assets/images/amv/block-night-2.jpg",
+   "w": 1800,
+   "h": 1012,
    "cat": "village",
-   "alt": "Service building exterior"
+   "alt": "Residential block and gardens at night"
   },
   {
-   "src": "/assets/images/gallery/village-155048.jpg",
-   "w": 1600,
-   "h": 1368,
+   "src": "/assets/images/amv/block-night-3.jpg",
+   "w": 1800,
+   "h": 1012,
    "cat": "village",
-   "alt": "Commercial building with glazed facade"
+   "alt": "Residential block under the evening sky"
   },
   {
-   "src": "/assets/images/gallery/village-155146.jpg",
-   "w": 1600,
-   "h": 1344,
+   "src": "/assets/images/amv/wayfinding.jpg",
+   "w": 1800,
+   "h": 2400,
    "cat": "village",
-   "alt": "Commercial building corner"
+   "alt": "Signposts to the supermarket, ATM, pharmacy, clinic and dining hall"
   },
   {
-   "src": "/assets/images/gallery/village-155114.jpg",
-   "w": 1600,
-   "h": 900,
-   "cat": "village",
-   "alt": "Amenity building exterior"
-  },
-  {
-   "src": "/assets/images/gallery/village-155710.jpg",
-   "w": 1600,
-   "h": 1147,
-   "cat": "village",
-   "alt": "Amenity building entrance and parking"
-  },
-  {
-   "src": "/assets/images/gallery/accommodation-154145.jpg",
-   "w": 1600,
-   "h": 900,
-   "cat": "accommodation",
-   "alt": "Junior staff bunk room"
-  },
-  {
-   "src": "/assets/images/gallery/accommodation-154324-1.jpg",
-   "w": 1600,
-   "h": 900,
-   "cat": "accommodation",
-   "alt": "Junior staff room with study table"
-  },
-  {
-   "src": "/assets/images/gallery/accommodation-154324.jpg",
-   "w": 1600,
-   "h": 900,
-   "cat": "accommodation",
-   "alt": "Junior staff room with wardrobes"
-  },
-  {
-   "src": "/assets/images/gallery/accommodation-154129.jpg",
-   "w": 1256,
-   "h": 919,
-   "cat": "accommodation",
-   "alt": "Isometric view of junior staff bunk rooms"
-  },
-  {
-   "src": "/assets/images/gallery/accommodation-154421.jpg",
-   "w": 1467,
-   "h": 1019,
-   "cat": "accommodation",
-   "alt": "Isometric view of bunk room layout"
-  },
-  {
-   "src": "/assets/images/gallery/accommodation-154227.jpg",
-   "w": 1600,
-   "h": 900,
+   "src": "/assets/images/amv/single-premium.jpg",
+   "w": 1800,
+   "h": 1012,
    "cat": "accommodation",
    "alt": "Single Premium room"
   },
   {
-   "src": "/assets/images/gallery/accommodation-154235-1.jpg",
-   "w": 1600,
-   "h": 900,
+   "src": "/assets/images/amv/single-premium-2.jpg",
+   "w": 1800,
+   "h": 1012,
    "cat": "accommodation",
-   "alt": "Single Premium room with seating"
+   "alt": "Single Premium room with desk and television"
   },
   {
-   "src": "/assets/images/gallery/accommodation-154220.jpg",
-   "w": 1600,
-   "h": 900,
+   "src": "/assets/images/amv/double-premium.jpg",
+   "w": 1800,
+   "h": 1012,
    "cat": "accommodation",
    "alt": "Double Premium room"
   },
   {
-   "src": "/assets/images/gallery/accommodation-154220-1.jpg",
-   "w": 1600,
-   "h": 900,
-   "cat": "accommodation",
-   "alt": "Double Premium room with sofa"
-  },
-  {
-   "src": "/assets/images/gallery/accommodation-154243.jpg",
-   "w": 1600,
-   "h": 900,
+   "src": "/assets/images/amv/triple-premium.jpg",
+   "w": 1800,
+   "h": 2400,
    "cat": "accommodation",
    "alt": "Triple Premium room"
   },
   {
-   "src": "/assets/images/gallery/accommodation-154243-1.jpg",
-   "w": 1600,
-   "h": 900,
+   "src": "/assets/images/amv/shared-room.jpg",
+   "w": 1800,
+   "h": 1012,
    "cat": "accommodation",
-   "alt": "Triple Premium room with three beds"
+   "alt": "Shared room with bunk beds"
   },
   {
-   "src": "/assets/images/gallery/catering-153710.jpg",
-   "w": 1600,
-   "h": 900,
+   "src": "/assets/images/amv/shared-room-4.jpg",
+   "w": 1800,
+   "h": 1012,
+   "cat": "accommodation",
+   "alt": "Shared room with wardrobes and beds"
+  },
+  {
+   "src": "/assets/images/amv/shared-room-3.jpg",
+   "w": 1800,
+   "h": 803,
+   "cat": "accommodation",
+   "alt": "Shared room in Wing 1"
+  },
+  {
+   "src": "/assets/images/amv/washroom.jpg",
+   "w": 1800,
+   "h": 2400,
+   "cat": "accommodation",
+   "alt": "Shared washroom"
+  },
+  {
+   "src": "/assets/images/amv/corridor.jpg",
+   "w": 1800,
+   "h": 2400,
+   "cat": "accommodation",
+   "alt": "Residential corridor"
+  },
+  {
+   "src": "/assets/images/amv/dining-hall.jpg",
+   "w": 1800,
+   "h": 1012,
    "cat": "catering",
-   "alt": "Dining hall with serving counters"
+   "alt": "Safi Dining Hall"
   },
   {
-   "src": "/assets/images/gallery/catering-153846.jpg",
-   "w": 1600,
-   "h": 900,
+   "src": "/assets/images/amv/dining-hall-3.jpg",
+   "w": 1800,
+   "h": 1012,
    "cat": "catering",
-   "alt": "Long dining hall with green chairs"
+   "alt": "Safi Dining Hall seating"
   },
   {
-   "src": "/assets/images/gallery/catering-153807-2.jpg",
-   "w": 1600,
-   "h": 900,
+   "src": "/assets/images/amv/dining-hall-2.jpg",
+   "w": 1800,
+   "h": 1012,
    "cat": "catering",
-   "alt": "Main community dining hall"
+   "alt": "Long view down the dining hall"
   },
   {
-   "src": "/assets/images/gallery/catering-153807-3.jpg",
-   "w": 1600,
-   "h": 900,
+   "src": "/assets/images/amv/dining-tables.jpg",
+   "w": 1800,
+   "h": 3201,
    "cat": "catering",
-   "alt": "Dining hall from the entrance"
+   "alt": "Dining hall tables and chairs"
   },
   {
-   "src": "/assets/images/gallery/catering-153530-1.jpg",
-   "w": 1600,
-   "h": 1066,
+   "src": "/assets/images/amv/buffet-counter.jpg",
+   "w": 1800,
+   "h": 2400,
    "cat": "catering",
-   "alt": "Canapé platter"
+   "alt": "Hot dishes at the buffet counter"
   },
   {
-   "src": "/assets/images/gallery/catering-153530.jpg",
-   "w": 1280,
-   "h": 1600,
+   "src": "/assets/images/amv/chefs-buffet.jpg",
+   "w": 1800,
+   "h": 2400,
    "cat": "catering",
-   "alt": "Dessert cups"
+   "alt": "Chefs at the buffet line"
   },
   {
-   "src": "/assets/images/gallery/retail-155310.jpg",
-   "w": 1600,
-   "h": 1042,
+   "src": "/assets/images/amv/chef-wok.jpg",
+   "w": 1800,
+   "h": 2400,
+   "cat": "catering",
+   "alt": "A chef cooking over a flaming wok"
+  },
+  {
+   "src": "/assets/images/amv/central-kitchen.jpg",
+   "w": 1800,
+   "h": 1012,
+   "cat": "catering",
+   "alt": "The central kitchen"
+  },
+  {
+   "src": "/assets/images/amv/prep-kitchen.jpg",
+   "w": 1800,
+   "h": 1012,
+   "cat": "catering",
+   "alt": "Food preparation room"
+  },
+  {
+   "src": "/assets/images/amv/kitchen-team.jpg",
+   "w": 1800,
+   "h": 1012,
+   "cat": "catering",
+   "alt": "The catering team"
+  },
+  {
+   "src": "/assets/images/amv/safi-dining-hall.jpg",
+   "w": 1800,
+   "h": 1350,
+   "cat": "catering",
+   "alt": "Safi Dining Hall building"
+  },
+  {
+   "src": "/assets/images/amv/safi-dining-hall-night.jpg",
+   "w": 1800,
+   "h": 2400,
+   "cat": "catering",
+   "alt": "Safi Dining Hall sign at night"
+  },
+  {
+   "src": "/assets/images/amv/commercial-building.jpg",
+   "w": 1800,
+   "h": 2400,
    "cat": "retail",
-   "alt": "Retail frontage with mobile shop, ATM and exchange"
+   "alt": "Commercial building with the exchange and ATM"
   },
   {
-   "src": "/assets/images/gallery/spaces-155555.jpg",
-   "w": 1600,
-   "h": 900,
+   "src": "/assets/images/amv/joyalukkas-exchange.jpg",
+   "w": 1800,
+   "h": 2400,
+   "cat": "retail",
+   "alt": "Joyalukkas Exchange at night"
+  },
+  {
+   "src": "/assets/images/amv/bank-muscat-atm.jpg",
+   "w": 1800,
+   "h": 2400,
+   "cat": "retail",
+   "alt": "Bank Muscat self-service banking"
+  },
+  {
+   "src": "/assets/images/amv/bank-muscat-night.jpg",
+   "w": 1800,
+   "h": 2400,
+   "cat": "retail",
+   "alt": "Bank Muscat at night"
+  },
+  {
+   "src": "/assets/images/amv/clinic-reception.jpg",
+   "w": 1800,
+   "h": 1082,
+   "cat": "retail",
+   "alt": "Clinic reception and waiting area"
+  },
+  {
+   "src": "/assets/images/amv/clinic-lab.jpg",
+   "w": 1800,
+   "h": 1012,
+   "cat": "retail",
+   "alt": "The clinic’s laboratory"
+  },
+  {
+   "src": "/assets/images/amv/exchange-signpost.jpg",
+   "w": 1800,
+   "h": 1012,
+   "cat": "retail",
+   "alt": "Joyalukkas Exchange and the clinic signpost"
+  },
+  {
+   "src": "/assets/images/amv/lounge.jpg",
+   "w": 1800,
+   "h": 1350,
    "cat": "spaces",
-   "alt": "Office lounge"
+   "alt": "Lounge with round tables"
   },
   {
-   "src": "/assets/images/gallery/spaces-155702.jpg",
-   "w": 1600,
-   "h": 800,
+   "src": "/assets/images/amv/lounge-2.jpg",
+   "w": 1800,
+   "h": 1012,
    "cat": "spaces",
-   "alt": "Meeting lounge"
+   "alt": "Lounge with window seating"
   },
   {
-   "src": "/assets/images/gallery/spaces-155645-1.jpg",
-   "w": 1600,
-   "h": 900,
+   "src": "/assets/images/amv/cafe.jpg",
+   "w": 1800,
+   "h": 1012,
    "cat": "spaces",
-   "alt": "Cafe atrium"
+   "alt": "Café seating"
   },
   {
-   "src": "/assets/images/gallery/spaces-155655.jpg",
-   "w": 1600,
-   "h": 900,
+   "src": "/assets/images/amv/lobby.jpg",
+   "w": 1800,
+   "h": 1012,
    "cat": "spaces",
-   "alt": "Cafe and atrium planting"
+   "alt": "Reception lobby"
   },
   {
-   "src": "/assets/images/gallery/lifestyle-155645.jpg",
-   "w": 1600,
-   "h": 1131,
+   "src": "/assets/images/amv/lobby-seating.jpg",
+   "w": 1800,
+   "h": 1012,
+   "cat": "spaces",
+   "alt": "Lobby seating area"
+  },
+  {
+   "src": "/assets/images/amv/football-pitch.jpg",
+   "w": 1800,
+   "h": 2400,
    "cat": "lifestyle",
-   "alt": "Recreation centre lobby"
+   "alt": "The football pitch"
   },
   {
-   "src": "/assets/images/gallery/lifestyle-155655-2.jpg",
-   "w": 1600,
-   "h": 796,
+   "src": "/assets/images/amv/courtyard-courts-night.jpg",
+   "w": 1800,
+   "h": 2400,
    "cat": "lifestyle",
-   "alt": "Lounge beside a glass-walled meeting room"
+   "alt": "Courtyard sports courts at night"
   },
   {
-   "src": "/assets/images/gallery/lifestyle-155655-1.jpg",
-   "w": 1600,
-   "h": 900,
+   "src": "/assets/images/amv/courts-night.jpg",
+   "w": 1800,
+   "h": 1203,
    "cat": "lifestyle",
-   "alt": "Cafe seating beside the atrium"
+   "alt": "Sports courts from above at night"
+  },
+  {
+   "src": "/assets/images/amv/mosque.jpg",
+   "w": 1800,
+   "h": 1350,
+   "cat": "lifestyle",
+   "alt": "The village mosque"
+  },
+  {
+   "src": "/assets/images/amv/pergola-garden.jpg",
+   "w": 1800,
+   "h": 2400,
+   "cat": "lifestyle",
+   "alt": "Pergola in the courtyard"
+  },
+  {
+   "src": "/assets/images/amv/pergola-walk.jpg",
+   "w": 1800,
+   "h": 2400,
+   "cat": "lifestyle",
+   "alt": "Shaded walk under the pergola"
+  },
+  {
+   "src": "/assets/images/amv/garden-night.jpg",
+   "w": 1800,
+   "h": 1350,
+   "cat": "lifestyle",
+   "alt": "Bougainvillea and garden lights at night"
   }
- ]
+ ],
+ "outlets": {
+  "exchange": {
+   "src": "/assets/images/amv/joyalukkas-exchange.jpg",
+   "w": 1800,
+   "h": 2400
+  },
+  "clinic": {
+   "src": "/assets/images/amv/clinic-reception.jpg",
+   "w": 1800,
+   "h": 1082
+  },
+  "atm": {
+   "src": "/assets/images/amv/bank-muscat-atm.jpg",
+   "w": 1800,
+   "h": 2400
+  }
+ }
 }

@@ -152,7 +152,7 @@ export const SERVICES: Service[] = [
     lead:
       'اختاروا قرية المسكن لتُطلقوا كامل إمكانات أثمن أصولكم: موظفيكم. نوفّر البيئة المناسبة لأعلى مستويات الأداء والرفاهية من خلال توازن شامل بين العمل والحياة.',
     image: 'life.courts',
-    gallery: ['life.garden', 'life.pitch', 'spaces.recreation', 'spaces.games'],
+    gallery: ['life.garden', 'life.pitch', 'life.courts', 'life.mosque'],
     stats: [{ value: 9000, suffix: '+', unit: 'م²', label: 'مساحات خضراء' }],
     sections: [
       {
@@ -289,7 +289,7 @@ export const SERVICES: Service[] = [
     lead:
       'مهما كانت انشغالاتك، فمن الضروري الحفاظ على توازن صحي بين العمل والحياة. وفي قرية المسكن نتبنّى نهجاً شاملاً للرفاهية، مع مزيج غني من المرافق الترفيهية والأنشطة الممتعة.',
     image: 'life.courts',
-    gallery: ['life.garden', 'life.pitch', 'spaces.recreation', 'spaces.games'],
+    gallery: ['life.garden', 'life.pitch', 'life.courts', 'life.mosque'],
     sections: [
       {
         title: 'حياة مجتمعية كل يوم',

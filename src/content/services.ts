@@ -169,7 +169,7 @@ export const SERVICES: Service[] = [
     lead:
       'Choose Al Maskaan Village to unlock the full potential of your most valuable asset — your people. We provide the right environment for peak performance and well-being through a holistic work–life balance.',
     image: 'life.courts',
-    gallery: ['life.garden', 'life.pitch', 'spaces.recreation', 'spaces.games'],
+    gallery: ['life.garden', 'life.pitch', 'life.courts', 'life.mosque'],
     stats: [{ value: 9000, suffix: '+', unit: 'm²', label: 'Landscape spaces' }],
     sections: [
       {
@@ -306,7 +306,7 @@ export const SERVICES: Service[] = [
     lead:
       'As busy as you are, it is essential to maintain a healthy work–life balance. At Al Maskaan Village we champion a holistic approach to well-being, with a rich mix of recreational facilities and engaging activities.',
     image: 'life.courts',
-    gallery: ['life.garden', 'life.pitch', 'spaces.recreation', 'spaces.games'],
+    gallery: ['life.garden', 'life.pitch', 'life.courts', 'life.mosque'],
     sections: [
       {
         title: 'Community life, every day',

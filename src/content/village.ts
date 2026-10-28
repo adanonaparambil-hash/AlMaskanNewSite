@@ -33,10 +33,21 @@ export const OPEN_OUTLETS: OpenOutlet[] = [
     key: 'exchange',
     name: { en: 'Money exchange', ar: 'صرافة' },
     by: { en: 'Joyalukkas Exchange', ar: 'جوي الوكاس للصرافة' },
-    image: { src: '/assets/images/news/2024-11-11-joyalukkas-exchange-brings-convenience-to-al-mas.jpg', w: 1575, h: 631 },
+    image: { src: '/assets/images/amv/joyalukkas-exchange.jpg', w: 1800, h: 2400 },
+  },
+  {
+    key: 'atm',
+    name: { en: 'ATM', ar: 'صراف آلي' },
+    by: { en: 'Bank Muscat', ar: 'بنك مسقط' },
+    image: { src: '/assets/images/amv/bank-muscat-atm.jpg', w: 1800, h: 2400 },
   },
   { key: 'laundry', name: { en: 'Laundry', ar: 'مغسلة ملابس' } },
-  { key: 'clinic', name: { en: 'Clinic', ar: 'عيادة' }, by: { en: 'AdLife Clinics & Laboratories', ar: 'عيادات ومختبرات أدلايف' } },
+  {
+    key: 'clinic',
+    name: { en: 'Clinic', ar: 'عيادة' },
+    by: { en: 'AdLife Clinics & Laboratories', ar: 'عيادات ومختبرات أدلايف' },
+    image: { src: '/assets/images/amv/clinic-reception.jpg', w: 1800, h: 1082 },
+  },
 ];
 
 /** The village's dining outlets, all operating under HACCP certification (named on the Catering page). */
