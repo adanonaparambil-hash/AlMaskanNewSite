@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Marquee } from '@/components/fx';
 import { ContactBand } from '@/components/Footer';
+import { HaccpBadge } from '@/components/pages';
 import { CurrentYear } from '@/components/FooterBits';
 import { Button, Eyebrow, Fact, Heading, Media, PageHero } from '@/components/ui';
 import { alternatesFor } from '@/i18n/config';
@@ -13,7 +14,7 @@ const en = {
     'Al Maskaan Village is a community-oriented worker accommodation development in Khazaen Economic City. Our purpose, vision, mission, values, facts and figures, and the Adrak Group management team.',
   eyebrow: 'About us',
   heroTitle: <>Beyond <em>accommodation</em></>,
-  heroLead: 'We believe everyone deserves a place to call home — a space that feels safe, comfortable and truly welcoming.',
+  heroLead: 'More than 1,300 residents, over 400 rooms and one community in Khazaen Economic City — run with hotel-grade care.',
   standEyebrow: 'What we stand for',
   standTitle: <>A home-away-from-home <em>community</em></>,
   standText:
@@ -25,7 +26,7 @@ const en = {
   factsEyebrow: 'Facts and figures',
   factsTitle: <>What you need to <em>know</em></>,
   factsFine: 'Figures as published by Al Maskaan Village.',
-  marquee: ['Quality', 'Sustainability', 'Empathy', 'Purpose', 'Vision', 'Mission'],
+  marquee: ['Quality', 'Sustainability', 'Empathy'],
   valuesEyebrow: 'Values',
   valuesTitle: <>Quality, sustainability, <em>empathy</em></>,
   apartEyebrow: 'What sets us apart',
@@ -44,7 +45,7 @@ const ar: typeof en = {
     'قرية المسكن مشروع سكني للعاملين يتمحور حول المجتمع في مدينة خزائن الاقتصادية. تعرّف على غايتنا ورؤيتنا ورسالتنا وقيمنا، وعلى الحقائق والأرقام، وفريق الإدارة في مجموعة أدرك.',
   eyebrow: 'من نحن',
   heroTitle: <>ما هو أبعد من <em>السكن</em></>,
-  heroLead: 'نؤمن بأن لكل إنسان الحق في مكان يسمّيه بيته — مساحة يشعر فيها بالأمان والراحة والترحيب الحقيقي.',
+  heroLead: 'أكثر من 1,300 مقيم، وأكثر من 400 غرفة، ومجتمع واحد في مدينة خزائن الاقتصادية — بعناية ترقى إلى مستوى الفنادق.',
   standEyebrow: 'ما نؤمن به',
   standTitle: <>مجتمعٌ هو <em>بيتك الثاني</em></>,
   standText:
@@ -56,7 +57,7 @@ const ar: typeof en = {
   factsEyebrow: 'حقائق وأرقام',
   factsTitle: <>ما تحتاج إلى <em>معرفته</em></>,
   factsFine: 'الأرقام كما نشرتها قرية المسكن.',
-  marquee: ['الجودة', 'الاستدامة', 'التعاطف', 'الغاية', 'الرؤية', 'الرسالة'],
+  marquee: ['الجودة', 'الاستدامة', 'التعاطف'],
   valuesEyebrow: 'القيم',
   valuesTitle: <>الجودة، الاستدامة، <em>التعاطف</em></>,
   apartEyebrow: 'ما يميّزنا',
@@ -100,6 +101,7 @@ export default async function AboutPage() {
             <p>
               {t.standText}
             </p>
+            <div style={{ marginTop: 28 }}><HaccpBadge /></div>
           </div>
         </div>
       </section>
@@ -129,7 +131,8 @@ export default async function AboutPage() {
         </div>
       </section>
 
-      <Marquee outline speed={0.8} items={t.marquee} />
+      {/* only the three values; repeated so the strip stays full on wide screens */}
+      <Marquee outline speed={0.8} items={[...t.marquee, ...t.marquee]} />
 
       <section className="section" aria-labelledby="values-title">
         <div className="container">

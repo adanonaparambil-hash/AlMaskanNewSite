@@ -25,7 +25,7 @@ export async function POST(req: Request) {
 
   const audience = clean(body.audience, 20) === 'Institution' ? 'Institution' : 'Individual';
   const rawKind = clean(body.kind, 20);
-  const kind = rawKind === 'Complaint' ? 'Complaint' : rawKind === 'Newsletter' ? 'Newsletter' : 'Query';
+  const kind = (['Complaint', 'Newsletter', 'Quote'] as const).find((k) => k === rawKind) ?? 'Query';
   const topic = ['Village', 'Accommodation', 'Catering', 'Retail', 'Spaces', 'Lifestyle'].includes(clean(body.topic, 20)) ? clean(body.topic, 20) : 'Village';
   const name = clean(body.name, 120);
   const organisation = clean(body.organisation, 160);

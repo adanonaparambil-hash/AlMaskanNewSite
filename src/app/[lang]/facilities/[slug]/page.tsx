@@ -1,45 +1,29 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { RoomPage, ServicePage } from '@/components/pages';
-import { roomsFor } from '@/content/rooms';
-import { servicesFor } from '@/content/services';
-import { findRoom, findService, getContent } from '@/i18n/server';
+import { ServicePage } from '@/components/pages';
+import { findService, getContent, SERVICE_SLUGS } from '@/i18n/server';
 import { alternatesFor } from '@/i18n/config';
 
-const AUD = 'facilities' as const;
+// The village services: /facilities/catering, /facilities/spaces and /facilities/lifestyle.
 type Props = { params: Promise<{ slug: string }> };
 
-const COPY = {
-  en: { roomTitle: (name: string) => name + ' — accommodation' },
-  ar: { roomTitle: (name: string) => name + ' — السكن' },
-};
-
 export function generateStaticParams() {
-  return [...roomsFor(AUD), ...servicesFor(AUD)].map((x) => ({ slug: x.slug }));
+  return SERVICE_SLUGS.map((slug) => ({ slug }));
 }
 export const dynamicParams = false;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const c = await getContent();
-  const room = findRoom(c, AUD, slug);
-  const service = findService(c, AUD, slug);
-  const path = `/${AUD}/${slug}`;
-  const alternates = alternatesFor(path, c.locale);
-  if (room) {
-    const t = COPY[c.locale].roomTitle(room.name);
-    return { title: t, description: room.tagline + ' ' + room.intro.slice(0, 120), alternates, openGraph: { title: t, url: alternates.canonical } };
-  }
-  if (service) return { title: service.title, description: service.seo, alternates, openGraph: { title: service.title, description: service.seo, url: alternates.canonical } };
-  return {};
+  const service = findService(c, slug);
+  if (!service) return {};
+  const alternates = alternatesFor(`/facilities/${slug}`, c.locale);
+  return { title: service.title, description: service.seo, alternates, openGraph: { title: service.title, description: service.seo, url: alternates.canonical } };
 }
 
 export default async function Page({ params }: Props) {
   const { slug } = await params;
-  const c = await getContent();
-  const room = findRoom(c, AUD, slug);
-  if (room) return <RoomPage room={room} />;
-  const service = findService(c, AUD, slug);
-  if (service) return <ServicePage service={service} />;
-  notFound();
+  const service = findService(await getContent(), slug);
+  if (!service) notFound();
+  return <ServicePage service={service} />;
 }

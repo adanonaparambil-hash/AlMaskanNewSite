@@ -33,7 +33,8 @@ function matchTopic(q: string, topics: Topic[]) {
   let best: Topic | undefined;
   let score = 0;
   for (const t of topics) {
-    const s = t.keywords.reduce((n, k) => n + (words.some((w) => w.includes(k) || k.includes(w) && w.length > 3) ? 1 : 0), 0);
+    // price questions go to the quote answer even when they also name a room
+    const s = t.keywords.reduce((n, k) => n + (words.some((w) => w.includes(k) || k.includes(w) && w.length > 3) ? 1 : 0), 0) * (t.id === 'quote' ? 3 : 1);
     if (s > score) { score = s; best = t; }
   }
   return best;

@@ -1,6 +1,5 @@
 import type { MetadataRoute } from 'next';
 import { ROOMS } from '@/content/rooms';
-import { SERVICES } from '@/content/services';
 import { SITE } from '@/content/site';
 import { localizeHref } from '@/i18n/config';
 import { articles } from '@/lib/news';
@@ -15,11 +14,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       { url: u(localizeHref(path, 'ar')), alternates, ...extra },
     ];
   };
-  const fixed = ['/', '/about-us', '/facilities', '/individuals', '/clients', '/news', '/gallery', '/masterplan', '/contact-us', '/privacy-policy'];
+  const fixed = ['/', '/about-us', '/rooms', '/retail-spaces', '/clients', '/news', '/gallery', '/masterplan', '/contact-us', '/privacy-policy'];
   return [
     ...fixed.flatMap((p) => both(p, { changeFrequency: 'monthly', priority: p === '/' ? 1 : 0.7 })),
-    ...ROOMS.flatMap((r) => both(`/${r.audience}/${r.slug}`, { changeFrequency: 'monthly', priority: 0.6 })),
-    ...SERVICES.flatMap((s) => both(`/${s.audience}/${s.slug}`, { changeFrequency: 'monthly', priority: 0.6 })),
+    ...ROOMS.flatMap((r) => both(`/rooms/${r.slug}`, { changeFrequency: 'monthly', priority: 0.6 })),
+    ...['catering', 'spaces', 'lifestyle'].flatMap((slug) => both(`/facilities/${slug}`, { changeFrequency: 'monthly', priority: 0.6 })),
     ...articles.flatMap((a) => both(`/news/${a.slug}`, { lastModified: a.date, changeFrequency: 'yearly', priority: 0.5 })),
   ];
 }

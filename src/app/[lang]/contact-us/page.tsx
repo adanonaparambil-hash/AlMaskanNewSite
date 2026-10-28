@@ -84,7 +84,7 @@ export default async function ContactPage() {
               <ul>{site.social.map((s) => <li key={s.label}><a href={s.href} target="_blank" rel="noopener noreferrer">{s.label}</a></li>)}</ul>
             </div>
           </div>
-          <div className="contact__form glass" data-reveal="fade">
+          <div id="inquiry" className="contact__form glass" data-reveal="fade">
             <InquiryForm />
           </div>
         </div>

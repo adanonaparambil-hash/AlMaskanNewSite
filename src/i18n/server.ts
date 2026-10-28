@@ -62,7 +62,31 @@ export async function getContent(): Promise<Content> {
 export const contentFor = (locale: Locale): Content => (locale === 'ar' ? AR : EN);
 export { dirOf };
 
-export const roomsFor = (c: Content, audience: Room['audience']) => c.rooms.filter((r) => r.audience === audience);
-export const findRoom = (c: Content, audience: Room['audience'], slug: string) => c.rooms.find((r) => r.audience === audience && r.slug === slug);
-export const servicesFor = (c: Content, audience: Service['audience']) => c.services.filter((s) => s.audience === audience);
-export const findService = (c: Content, audience: Service['audience'], slug: string) => c.services.find((s) => s.audience === audience && s.slug === slug);
+export const findRoom = (c: Content, slug: string) => c.rooms.find((r) => r.slug === slug);
+
+/** The village services, one page each at /facilities/<slug>. */
+export const SERVICE_SLUGS = ['catering', 'spaces', 'lifestyle'] as const;
+
+/**
+ * A service page: the original company page with the individuals' page for the same service folded in (their
+ * sections and pictures follow), now that the site no longer splits pages by audience.
+ */
+export function findService(c: Content, slug: string): Service | undefined {
+  if (!(SERVICE_SLUGS as readonly string[]).includes(slug)) return undefined;
+  const base = c.services.find((s) => s.audience === 'facilities' && s.slug === slug);
+  if (!base) return undefined;
+  const extra = c.services.find((s) => s.audience === 'individuals' && s.slug === `individuals-${slug}`);
+  return {
+    ...base,
+    eyebrow: base.eyebrow.split('·').pop()!.trim(),
+    gallery: [...new Set([...base.gallery, ...(extra?.gallery ?? [])])],
+    sections: [...base.sections, ...(extra?.sections ?? []).filter((x) => !base.sections.some((b) => b.title === x.title))],
+  };
+}
+export const servicePages = (c: Content) => SERVICE_SLUGS.map((slug) => findService(c, slug)!);
+
+/** Source copy for /retail-spaces: the former business-opportunities and residents pages. */
+export const retailSource = (c: Content) => ({
+  business: c.services.find((s) => s.slug === 'business-opportunities')!,
+  residents: c.services.find((s) => s.slug === 'residents')!,
+});

@@ -65,17 +65,13 @@ const en = {
   // haven
   havenTitle: <>Five ways the village <em>works for you</em></> as ReactNode,
   havenPanelTitle: (_key: string, name: string) => `Al Maskaan ${name}`,
-  forIndividuals: 'For individuals',
-  forCompanies: 'For companies',
+  havenMore: (name: string) => `Explore ${name.toLowerCase()}`,
   // accommodation
   accEyebrow: 'Al Maskaan Accommodation',
   accTitle: <>Select what works <em>better for you</em></> as ReactNode,
   accText: 'Modern, furnished rooms — from shared bunk rooms to private premium rooms — close to your workplace, whether you are an Omani citizen or an expatriate.',
-  accIndividuals: 'Accommodation for individuals',
-  accCompanies: 'Workforce housing for companies',
-  juniorName: 'Junior Staff',
-  seniorPrefix: 'Senior Staff · ',
-  juniorText: 'A bunk room for ten — with three meals, internet and laundry included.',
+  accRooms: 'See all rooms',
+  accQuote: 'Get a quote',
   specLabels: { occupancy: 'Maximum occupancy', area: 'Area of the room', count: 'Total count of rooms' },
   upTo: (n?: string) => `Up to ${n}`,
   roomsCount: (n?: string) => `${n} rooms`,
@@ -88,8 +84,7 @@ const en = {
     { b: 'Financial services', s: 'Exchange stores, an ATM space and a 244.21 m² bank branch location.' },
     { b: 'Cafe, restaurant and supermarket units', s: '90.37 m² cafe · 121.98 m² restaurant · 471 m² supermarket.' },
   ],
-  forResidents: 'For residents',
-  businessOpportunities: 'Business opportunities',
+  retailSpaces: 'Retail Spaces',
   // catering
   catEyebrow: 'Al Maskaan Catering',
   catTitle: <>Delicious meals, <em>included</em> in your stay</> as ReactNode,
@@ -99,8 +94,8 @@ const en = {
     { unit: '', label: 'In-house catering serving' },
     { unit: '', label: 'External catering serving' },
   ],
-  catCompanies: 'Catering for companies',
-  catResidents: 'Meals for residents',
+  catCompanies: 'Explore catering',
+  catResidents: 'Get a catering quote',
   // spaces
   spacesLabel: 'Spaces',
   spacesEyebrow: 'Al Maskaan Spaces',
@@ -120,8 +115,7 @@ const en = {
     { n: '03', t: 'Vibrant social hubs', d: 'Inviting cafes — warm spaces for interaction and casual meetings that foster belonging.' },
     { n: '04', t: 'Events and workshops', d: 'A recreation hall for community events, workshops, dance classes and game nights.' },
   ],
-  lifeResidents: 'Lifestyle for residents',
-  lifeCompanies: 'Lifestyle for companies',
+  lifeResidents: 'Explore lifestyle',
   // story
   storyEyebrow: 'Our story',
   storyTitle: <>From a winning pitch to a <em>village</em></> as ReactNode,
@@ -198,16 +192,12 @@ const ar: typeof en = {
   factsNote: 'الأرقام كما نشرتها قرية المسكن.',
   havenTitle: <>خمس طرق تجعل القرية <em>في خدمتك</em></>,
   havenPanelTitle: (key: string, name: string) => AR_HAVEN_TITLES[key] ?? `${name} في المسكن`,
-  forIndividuals: 'للأفراد',
-  forCompanies: 'للشركات',
+  havenMore: (name: string) => `استكشف ${name}`,
   accEyebrow: 'سكن المسكن',
   accTitle: <>اختر ما <em>يناسبك أكثر</em></>,
   accText: 'غرف حديثة ومفروشة — من الغرف المشتركة بأسرّة بطابقين إلى الغرف المميّزة الخاصة — بالقرب من مكان عملك، سواء كنت مواطناً عُمانياً أو مقيماً وافداً.',
-  accIndividuals: 'السكن للأفراد',
-  accCompanies: 'سكن القوى العاملة للشركات',
-  juniorName: 'الموظفون المبتدئون',
-  seniorPrefix: 'كبار الموظفين · ',
-  juniorText: 'غرفة بأسرّة بطابقين لعشرة أشخاص — تشمل ثلاث وجبات والإنترنت وخدمة الغسيل.',
+  accRooms: 'جميع الغرف',
+  accQuote: 'اطلب عرض سعر',
   specLabels: { occupancy: 'الطاقة الاستيعابية القصوى', area: 'مساحة الغرفة', count: 'إجمالي عدد الغرف' },
   upTo: (n?: string) => `حتى ${n} ${n === '1' ? 'شخص' : 'أشخاص'}`,
   roomsCount: (n?: string) => `${n} غرفة`,
@@ -219,8 +209,7 @@ const ar: typeof en = {
     { b: 'الخدمات المالية', s: 'محلات صرافة، ومساحة لجهاز صراف آلي، وموقع لفرع بنكي بمساحة 244.21 م².' },
     { b: 'وحدات للمقهى والمطعم والسوبرماركت', s: 'مقهى 90.37 م² · مطعم 121.98 م² · سوبرماركت 471 م².' },
   ],
-  forResidents: 'للمقيمين',
-  businessOpportunities: 'فرص الأعمال',
+  retailSpaces: 'مساحات التجزئة',
   catEyebrow: 'تموين المسكن',
   catTitle: <>وجبات شهية <em>مشمولة</em> في إقامتك</>,
   catText: 'ثلاث وجبات مغذية يومياً تُبقي المقيمين بكامل طاقتهم وجاهزيتهم للعمل. وإلى جانب المائدة اليومية، تلائم خدمات التموين المصمّمة حسب الطلب اجتماعات مجالس الإدارة والمؤتمرات المهنية واحتفالات الفرق — بقوائم طعام يصمّمها طهاتنا وفق ثقافتك وتفضيلاتك وميزانيتك.',
@@ -229,8 +218,8 @@ const ar: typeof en = {
     { unit: '', label: 'وجبة تموين داخلي' },
     { unit: '', label: 'وجبة تموين خارجي' },
   ],
-  catCompanies: 'التموين للشركات',
-  catResidents: 'وجبات للمقيمين',
+  catCompanies: 'استكشف التموين',
+  catResidents: 'اطلب عرض سعر للتموين',
   spacesLabel: 'المساحات',
   spacesEyebrow: 'مساحات المسكن',
   spacesTitle: <>ارتقِ بأعمالك <em>ومناسباتك الخاصة</em></>,
@@ -248,8 +237,7 @@ const ar: typeof en = {
     { n: '03', t: 'ملتقيات اجتماعية نابضة', d: 'مقاهٍ جذابة — مساحات دافئة للتفاعل واللقاءات غير الرسمية تعزّز روح الانتماء.' },
     { n: '04', t: 'فعاليات وورش عمل', d: 'قاعة ترفيهية للفعاليات المجتمعية وورش العمل وحصص الرقص وأمسيات الألعاب.' },
   ],
-  lifeResidents: 'أسلوب الحياة للمقيمين',
-  lifeCompanies: 'أسلوب الحياة للشركات',
+  lifeResidents: 'استكشف أسلوب الحياة',
   storyEyebrow: 'قصتنا',
   storyTitle: <>من عرضٍ فائز إلى <em>قرية</em></>,
   storyText: 'طوّرتها شركة أدرك للمرافق والخدمات (AFS)، إحدى شركات مجموعة شركات أدرك.',
@@ -290,13 +278,12 @@ export default async function Home() {
   const t = COPY[c.locale];
   const { site: SITE, facts: FACTS, haven: HAVEN, story: STORY, group: GROUP } = c;
   const spec = (r: (typeof c.rooms)[number], label: string) => r.specs.find((s) => s.label === label)?.value;
-  const showcase: ShowcaseRow[] = ['junior-staff', 'senior-staff-single-premium', 'senior-staff-double-premium', 'senior-staff-triple-premium'].map((slug) => {
-    const r = c.rooms.find((x) => x.audience === 'individuals' && x.slug === slug)!;
+  const showcase: ShowcaseRow[] = c.rooms.map((r) => {
     return {
-      href: `/individuals/${r.slug}`,
+      href: `/rooms/${r.slug}`,
       code: r.code,
-      name: r.group === 'junior' ? t.juniorName : r.name.replace(t.seniorPrefix, ''),
-      text: r.group === 'junior' ? t.juniorText : r.tagline,
+      name: r.name,
+      text: r.tagline,
       specs: [t.upTo(spec(r, t.specLabels.occupancy)), spec(r, t.specLabels.area) ?? '', t.roomsCount(spec(r, t.specLabels.count))],
       image: img(r.image),
     };
@@ -401,7 +388,7 @@ export default async function Home() {
               <ul className="about__haven" data-stagger="0.08" aria-label={t.havenOfFive}>
                 {HAVEN.map((h, i) => (
                   <li key={h.key} data-stagger-item style={{ '--c': ['var(--c-acc)', 'var(--c-ret)', 'var(--c-cat)', 'var(--c-spa)', 'var(--c-lif)'][i] } as CSSProperties}>
-                    <Link href={h.individuals}>{h.name}</Link>
+                    <Link href={h.href}>{h.name}</Link>
                   </li>
                 ))}
               </ul>
@@ -464,8 +451,7 @@ export default async function Home() {
                   <p className="hs__ask">{h.ask}</p>
                 </div>
                 <div className="hs__links">
-                  <TextLink href={h.individuals}>{t.forIndividuals}</TextLink>
-                  <TextLink href={h.companies}>{t.forCompanies}</TextLink>
+                  <TextLink href={h.href}>{t.havenMore(h.name)}</TextLink>
                 </div>
               </div>
             </li>
@@ -488,8 +474,8 @@ export default async function Home() {
           </div>
           <RoomShowcase rows={showcase} />
           <div style={{ marginTop: 40, display: 'flex', gap: 24, flexWrap: 'wrap' }} data-reveal="fade">
-            <Button href="/individuals">{t.accIndividuals}</Button>
-            <Button href="/facilities" variant="line">{t.accCompanies}</Button>
+            <Button href="/rooms">{t.accRooms}</Button>
+            <Button href="/contact-us?kind=Quote&topic=Accommodation#inquiry" variant="line">{t.accQuote}</Button>
           </div>
         </div>
       </section>
@@ -510,8 +496,7 @@ export default async function Home() {
               {t.retailChecks.map((x) => <li key={x.b} data-stagger-item><span><b>{x.b}</b><span>{x.s}</span></span></li>)}
             </ul>
             <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' }} data-reveal="fade">
-              <TextLink href="/individuals/residents">{t.forResidents}</TextLink>
-              <TextLink href="/facilities/business-opportunities">{t.businessOpportunities}</TextLink>
+              <TextLink href="/retail-spaces">{t.retailSpaces}</TextLink>
             </div>
           </div>
         </div>
@@ -547,7 +532,7 @@ export default async function Home() {
             </ul>
             <div className="feast__cta">
               <Button href="/facilities/catering">{t.catCompanies}</Button>
-              <Button href="/individuals/individuals-catering" variant="line">{t.catResidents}</Button>
+              <Button href="/contact-us?kind=Quote&topic=Catering#inquiry" variant="line">{t.catResidents}</Button>
             </div>
           </div>
         </div>
@@ -597,8 +582,7 @@ export default async function Home() {
             ))}
           </div>
           <div style={{ marginTop: 40, display: 'flex', gap: 24, flexWrap: 'wrap' }} data-reveal="fade">
-            <Button href="/individuals/individuals-lifestyle">{t.lifeResidents}</Button>
-            <Button href="/facilities/lifestyle" variant="line">{t.lifeCompanies}</Button>
+            <Button href="/facilities/lifestyle">{t.lifeResidents}</Button>
           </div>
         </div>
       </section>

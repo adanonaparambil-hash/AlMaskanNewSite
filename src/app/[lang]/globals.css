@@ -1261,3 +1261,48 @@ html.explorer-expanded .assistant__launcher, html.explorer-expanded .wa { visibi
 @media (max-width: 600px) {
   .grid-12, .split, .story, .phero__grid, .cols-2, .team, .group, .contact { column-gap: 12px; }
 }
+
+/* ---------- HACCP badge (About, Catering) ---------- */
+.haccp { display: inline-flex; align-items: center; gap: 14px; padding: 12px 18px 12px 12px; border-radius: 999px; border: 1px solid rgba(226, 196, 138, 0.4); background: linear-gradient(120deg, rgba(226, 196, 138, 0.14), rgba(226, 196, 138, 0.03)); max-width: 460px; }
+.haccp__seal { flex: none; display: grid; place-items: center; width: 48px; height: 48px; color: var(--gold); }
+.haccp__text { display: grid; gap: 2px; font-size: 0.85rem; line-height: 1.4; color: var(--muted); }
+.haccp__text b { color: var(--text); font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; }
+.haccp--compact { padding: 8px 16px 8px 8px; }
+.haccp--compact .haccp__seal, .haccp--compact .haccp__seal svg { width: 34px; height: 34px; }
+.haccp--compact .haccp__text span { display: none; }
+html[dir='rtl'] .haccp { padding: 12px 12px 12px 18px; }
+html[dir='rtl'] .haccp__text b { letter-spacing: 0; }
+
+/* ---------- dining outlets (Catering) ---------- */
+.outlets { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.outlets__item { padding: clamp(22px, 3vw, 34px); border-radius: var(--radius); display: grid; gap: 10px; }
+.outlets__kind { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--c-cat); }
+.outlets__item h3 { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.4rem, 2.2vw, 1.9rem); }
+@media (max-width: 760px) { .outlets { grid-template-columns: minmax(0, 1fr); } }
+
+/* ---------- Retail Spaces: already open + units ---------- */
+.open-strip { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; }
+.open-strip__item { border-radius: var(--radius-sm); overflow: hidden; display: grid; grid-template-rows: auto 1fr; }
+.open-strip__media { aspect-ratio: 4 / 3; display: grid; place-items: center; color: var(--c-ret); background: radial-gradient(circle at 50% 40%, rgba(255, 255, 255, 0.08), transparent 70%), var(--bg-2); }
+.open-strip__media img { width: 100%; height: 100%; object-fit: cover; }
+.open-strip__body { padding: 14px 16px 18px; display: grid; gap: 4px; align-content: start; }
+.open-strip__body h3 { font-size: 1.05rem; font-weight: 600; }
+.open-strip__body p { font-size: 0.85rem; color: var(--muted); }
+.open-strip__live { display: inline-flex; align-items: center; gap: 8px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #8fd18a; }
+.open-strip__live i { width: 7px; height: 7px; border-radius: 50%; background: currentColor; box-shadow: 0 0 0 4px rgba(143, 209, 138, 0.18); }
+html[dir='rtl'] .open-strip__live, html[dir='rtl'] .outlets__kind { letter-spacing: 0; }
+@media (max-width: 1000px) { .open-strip { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .open-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+.units { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-top: clamp(28px, 4vw, 56px); }
+.units__card { border-radius: var(--radius); overflow: hidden; display: grid; grid-template-rows: auto 1fr; }
+.units__media { position: relative; aspect-ratio: 16 / 10; display: grid; place-items: center; background: var(--bg-2); color: var(--dim); font-size: 0.85rem; }
+.units__body { padding: 20px 22px 24px; display: grid; gap: 16px; align-content: start; justify-items: start; }
+.units__id { font-family: var(--font-display); font-size: 1.6rem; }
+.units__body dl { display: grid; gap: 8px; width: 100%; }
+.units__body dl div { display: flex; justify-content: space-between; gap: 16px; border-bottom: 1px solid var(--line); padding-bottom: 8px; }
+.units__body dt { color: var(--muted); font-size: 0.85rem; }
+.units__body dd { text-align: end; }
+.units__empty { margin-top: clamp(28px, 4vw, 56px); padding: clamp(24px, 4vw, 48px); border-radius: var(--radius); display: flex; flex-wrap: wrap; gap: 20px 40px; align-items: center; justify-content: space-between; }
+.units__empty h3 { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.5rem, 2.4vw, 2rem); }
+.units__empty p { color: var(--muted); margin-top: 8px; max-width: 52ch; }

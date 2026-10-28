@@ -18,8 +18,8 @@ export const SITE = {
   ],
   email: 'operations@almaskaanvillage.com',
   whatsapp: 'https://wa.me/96878477776',
-  reviews: 'https://maps.app.goo.gl/FuiPUcVvjxrRTQ3n8',
-  responseTime: '24 ساعة عمل',
+  reviews: 'https://maps.app.goo.gl/2mk2L5cP3F1qkVeY9',
+  responseTime: 'يوم عمل واحد',
   social: [
     { label: 'LinkedIn', href: 'https://www.linkedin.com/company/almaskaanoman/' },
     { label: 'Facebook', href: 'https://www.facebook.com/almaskaanvillage' },
@@ -32,31 +32,24 @@ export const SITE = {
 export const NAV: NavItem[] = [
   { label: 'من نحن', href: '/about-us' },
   {
-    label: 'للشركات',
-    href: '/facilities',
+    label: 'الغرف',
+    href: '/rooms',
     children: [
-      { label: 'نظرة عامة', href: '/facilities', note: 'الحل المتكامل للقوى العاملة' },
-      { label: 'العمال', href: '/facilities/workers', note: 'الجناحان 1 و2 · غرف مشتركة' },
-      { label: 'المدراء', href: '/facilities/managers-single-premium', note: 'مميّزة فردية ومزدوجة وثلاثية' },
-      { label: 'فرص التجزئة', href: '/facilities/retail-opportunities' },
-      { label: 'فرص الأعمال', href: '/facilities/business-opportunities', note: 'وحدات تجزئة ومكاتب' },
-      { label: 'التموين', href: '/facilities/catering' },
-      { label: 'المساحات', href: '/facilities/spaces' },
-      { label: 'أسلوب الحياة', href: '/facilities/lifestyle' },
+      { label: 'جميع الغرف', href: '/rooms', note: 'للشركات والأفراد' },
+      { label: 'الغرفة المشتركة', href: '/rooms/shared', note: 'العمال والموظفون المبتدئون · حتى 10' },
+      { label: 'مميّزة فردية', href: '/rooms/single-premium', note: 'المدراء وكبار الموظفين · S1' },
+      { label: 'مميّزة مزدوجة', href: '/rooms/double-premium', note: 'المدراء وكبار الموظفين · S2' },
+      { label: 'مميّزة ثلاثية', href: '/rooms/triple-premium', note: 'المدراء وكبار الموظفين · S3' },
     ],
   },
+  { label: 'مساحات التجزئة', href: '/retail-spaces' },
   {
-    label: 'للأفراد',
-    href: '/individuals',
+    label: 'الخدمات',
+    href: '/facilities/catering',
     children: [
-      { label: 'نظرة عامة', href: '/individuals', note: 'بيتك بعيداً عن بيتك' },
-      { label: 'الموظفون المبتدئون', href: '/individuals/junior-staff' },
-      { label: 'كبار الموظفين', href: '/individuals/senior-staff-single-premium', note: 'مميّزة فردية ومزدوجة وثلاثية' },
-      { label: 'المقيمون', href: '/individuals/residents', note: 'التسوق والخدمات' },
-      { label: 'أصحاب الأعمال', href: '/individuals/business-owners' },
-      { label: 'التموين', href: '/individuals/individuals-catering' },
-      { label: 'المساحات', href: '/individuals/individuals-spaces' },
-      { label: 'أسلوب الحياة', href: '/individuals/individuals-lifestyle' },
+      { label: 'التموين', href: '/facilities/catering', note: 'ثلاثة منافذ للطعام · شهادة HACCP' },
+      { label: 'المساحات', href: '/facilities/spaces', note: 'قاعات اجتماعات ومرافق للفعاليات' },
+      { label: 'أسلوب الحياة', href: '/facilities/lifestyle', note: 'الرياضة والصالة الرياضية والمساحات الخضراء' },
     ],
   },
   { label: 'العملاء', href: '/clients' },
@@ -68,8 +61,8 @@ export const NAV: NavItem[] = [
 export const FOOTER_LINKS = {
   main: [
     { label: 'من نحن', href: '/about-us' },
-    { label: 'المرافق', href: '/facilities' },
-    { label: 'الأفراد', href: '/individuals' },
+    { label: 'الغرف', href: '/rooms' },
+    { label: 'مساحات التجزئة', href: '/retail-spaces' },
     { label: 'العملاء', href: '/clients' },
     { label: 'الأخبار', href: '/news' },
     { label: 'معرض الصور', href: '/gallery' },
@@ -77,11 +70,11 @@ export const FOOTER_LINKS = {
     { label: 'تواصل معنا', href: '/contact-us' },
   ],
   stay: [
-    { label: 'السكن', href: '/individuals/junior-staff' },
-    { label: 'التجزئة', href: '/individuals/residents' },
-    { label: 'التموين', href: '/individuals/individuals-catering' },
-    { label: 'المساحات', href: '/individuals/individuals-spaces' },
-    { label: 'أسلوب الحياة', href: '/individuals/individuals-lifestyle' },
+    { label: 'السكن', href: '/rooms' },
+    { label: 'التجزئة', href: '/retail-spaces' },
+    { label: 'التموين', href: '/facilities/catering' },
+    { label: 'المساحات', href: '/facilities/spaces' },
+    { label: 'أسلوب الحياة', href: '/facilities/lifestyle' },
   ],
 };
 
@@ -96,8 +89,7 @@ export const HAVEN = [
     mark: '/assets/logos/amv-mark-accommodation.png',
     blurb: 'غرف مفروشة للأفراد وللقوى العاملة في الشركات، من الغرف المشتركة بأسرّة بطابقين إلى الغرف المميّزة الخاصة.',
     image: 'acc.single',
-    individuals: '/individuals/junior-staff',
-    companies: '/facilities/workers',
+    href: '/rooms',
   },
   {
     key: 'retail',
@@ -108,8 +100,7 @@ export const HAVEN = [
     mark: '/assets/logos/amv-mark-retail.png',
     blurb: 'تجربة تسوق متكاملة في مكان واحد للمقيمين، وسوق ثابتة لأصحاب الأعمال.',
     image: 'retail.frontage',
-    individuals: '/individuals/residents',
-    companies: '/facilities/retail-opportunities',
+    href: '/retail-spaces',
   },
   {
     key: 'catering',
@@ -120,8 +111,7 @@ export const HAVEN = [
     mark: '/assets/logos/amv-mark-catering.png',
     blurb: 'ثلاث وجبات يومياً مشمولة في الإقامة، وخدمات تموين مصمّمة حسب الطلب للاجتماعات والمؤتمرات والاحتفالات.',
     image: 'cat.hallBig',
-    individuals: '/individuals/individuals-catering',
-    companies: '/facilities/catering',
+    href: '/facilities/catering',
   },
   {
     key: 'spaces',
@@ -132,8 +122,7 @@ export const HAVEN = [
     mark: '/assets/logos/amv-mark-spaces.png',
     blurb: 'قاعات اجتماعات وأماكن متعددة الاستخدامات للقاءات العمل والعروض التقديمية والاحتفالات الشخصية.',
     image: 'spaces.cafe',
-    individuals: '/individuals/individuals-spaces',
-    companies: '/facilities/spaces',
+    href: '/facilities/spaces',
   },
   {
     key: 'lifestyle',
@@ -144,16 +133,14 @@ export const HAVEN = [
     mark: '/assets/logos/amv-mark-lifestyle.png',
     blurb: 'ملاعب رياضية ومساحات خضراء وصالة رياضية ومقاهٍ وقاعة ترفيه تبني مجتمعاً حقيقياً.',
     image: 'life.courts',
-    individuals: '/individuals/individuals-lifestyle',
-    companies: '/facilities/lifestyle',
+    href: '/facilities/lifestyle',
   },
 ];
 
 export const STORY = [
-  { year: '2022', title: 'فوز AFS بالعطاء لبدء المشروع' },
-  { year: '2022', title: 'استكمال مفهوم المشروع وتصميمه' },
-  { year: '2022', title: 'بدء أعمال الإنشاء' },
+  { year: '2022', title: 'فوز AFS بالعطاء، واستكمال مفهوم المشروع وتصميمه، وبدء أعمال الإنشاء' },
   { year: '2023', title: 'تسمية المشروع قرية المسكن' },
+  { year: '2024', title: 'القرية تفتح أبوابها لأول المقيمين، ويتبعها افتتاح السوبرماركت والعيادة وجهاز الصراف الآلي لبنك مسقط وجوي الوكاس للصرافة' },
 ];
 
 export const STORY_NOW = 'اليوم، موطن لأكثر من 1,300 مقيم في أكثر من 400 غرفة';

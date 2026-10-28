@@ -17,8 +17,8 @@ export const SITE = {
   ],
   email: 'operations@almaskaanvillage.com',
   whatsapp: 'https://wa.me/96878477776',
-  reviews: 'https://maps.app.goo.gl/FuiPUcVvjxrRTQ3n8',
-  responseTime: '24 working hours',
+  reviews: 'https://maps.app.goo.gl/2mk2L5cP3F1qkVeY9',
+  responseTime: 'one working day',
   social: [
     { label: 'LinkedIn', href: 'https://www.linkedin.com/company/almaskaanoman/' },
     { label: 'Facebook', href: 'https://www.facebook.com/almaskaanvillage' },
@@ -33,31 +33,24 @@ export type NavItem = { label: string; href: string; children?: { label: string;
 export const NAV: NavItem[] = [
   { label: 'About', href: '/about-us' },
   {
-    label: 'For Companies',
-    href: '/facilities',
+    label: 'Rooms',
+    href: '/rooms',
     children: [
-      { label: 'Overview', href: '/facilities', note: 'The complete workforce solution' },
-      { label: 'Workers', href: '/facilities/workers', note: 'Wing 1 & 2 · shared rooms' },
-      { label: 'Managers', href: '/facilities/managers-single-premium', note: 'Single, double and triple premium' },
-      { label: 'Retail opportunities', href: '/facilities/retail-opportunities' },
-      { label: 'Business opportunities', href: '/facilities/business-opportunities', note: 'Retail and office units' },
-      { label: 'Catering', href: '/facilities/catering' },
-      { label: 'Spaces', href: '/facilities/spaces' },
-      { label: 'Lifestyle', href: '/facilities/lifestyle' },
+      { label: 'All rooms', href: '/rooms', note: 'For companies and individuals' },
+      { label: 'Shared Room', href: '/rooms/shared', note: 'Workers & junior staff · up to 10' },
+      { label: 'Single Premium', href: '/rooms/single-premium', note: 'Managers & senior staff · S1' },
+      { label: 'Double Premium', href: '/rooms/double-premium', note: 'Managers & senior staff · S2' },
+      { label: 'Triple Premium', href: '/rooms/triple-premium', note: 'Managers & senior staff · S3' },
     ],
   },
+  { label: 'Retail Spaces', href: '/retail-spaces' },
   {
-    label: 'For Individuals',
-    href: '/individuals',
+    label: 'Services',
+    href: '/facilities/catering',
     children: [
-      { label: 'Overview', href: '/individuals', note: 'Your home away from home' },
-      { label: 'Junior staff', href: '/individuals/junior-staff' },
-      { label: 'Senior staff', href: '/individuals/senior-staff-single-premium', note: 'Single, double and triple premium' },
-      { label: 'Residents', href: '/individuals/residents', note: 'Shopping and services' },
-      { label: 'Business owners', href: '/individuals/business-owners' },
-      { label: 'Catering', href: '/individuals/individuals-catering' },
-      { label: 'Spaces', href: '/individuals/individuals-spaces' },
-      { label: 'Lifestyle', href: '/individuals/individuals-lifestyle' },
+      { label: 'Catering', href: '/facilities/catering', note: 'Three dining outlets · HACCP certified' },
+      { label: 'Spaces', href: '/facilities/spaces', note: 'Meeting rooms and venues' },
+      { label: 'Lifestyle', href: '/facilities/lifestyle', note: 'Sports, gym and green spaces' },
     ],
   },
   { label: 'Clients', href: '/clients' },
@@ -69,8 +62,8 @@ export const NAV: NavItem[] = [
 export const FOOTER_LINKS = {
   main: [
     { label: 'About us', href: '/about-us' },
-    { label: 'Facilities', href: '/facilities' },
-    { label: 'Individuals', href: '/individuals' },
+    { label: 'Rooms', href: '/rooms' },
+    { label: 'Retail Spaces', href: '/retail-spaces' },
     { label: 'Clients', href: '/clients' },
     { label: 'News', href: '/news' },
     { label: 'Media gallery', href: '/gallery' },
@@ -78,11 +71,11 @@ export const FOOTER_LINKS = {
     { label: 'Contact us', href: '/contact-us' },
   ],
   stay: [
-    { label: 'Accommodation', href: '/individuals/junior-staff' },
-    { label: 'Retail', href: '/individuals/residents' },
-    { label: 'Catering', href: '/individuals/individuals-catering' },
-    { label: 'Spaces', href: '/individuals/individuals-spaces' },
-    { label: 'Lifestyle', href: '/individuals/individuals-lifestyle' },
+    { label: 'Accommodation', href: '/rooms' },
+    { label: 'Retail', href: '/retail-spaces' },
+    { label: 'Catering', href: '/facilities/catering' },
+    { label: 'Spaces', href: '/facilities/spaces' },
+    { label: 'Lifestyle', href: '/facilities/lifestyle' },
   ],
 };
 
@@ -97,8 +90,7 @@ export const HAVEN = [
     mark: '/assets/logos/amv-mark-accommodation.png',
     blurb: 'Furnished rooms for individuals and company workforces, from shared bunk rooms to private premium rooms.',
     image: 'acc.single',
-    individuals: '/individuals/junior-staff',
-    companies: '/facilities/workers',
+    href: '/rooms',
   },
   {
     key: 'retail',
@@ -109,8 +101,7 @@ export const HAVEN = [
     mark: '/assets/logos/amv-mark-retail.png',
     blurb: 'A one-stop shopping experience for residents, and a captive market for business owners.',
     image: 'retail.frontage',
-    individuals: '/individuals/residents',
-    companies: '/facilities/retail-opportunities',
+    href: '/retail-spaces',
   },
   {
     key: 'catering',
@@ -121,8 +112,7 @@ export const HAVEN = [
     mark: '/assets/logos/amv-mark-catering.png',
     blurb: 'Three daily meals included in the stay, and bespoke catering for meetings, conferences and celebrations.',
     image: 'cat.hallBig',
-    individuals: '/individuals/individuals-catering',
-    companies: '/facilities/catering',
+    href: '/facilities/catering',
   },
   {
     key: 'spaces',
@@ -133,8 +123,7 @@ export const HAVEN = [
     mark: '/assets/logos/amv-mark-spaces.png',
     blurb: 'Meeting rooms and versatile venues for business gatherings, presentations and personal celebrations.',
     image: 'spaces.cafe',
-    individuals: '/individuals/individuals-spaces',
-    companies: '/facilities/spaces',
+    href: '/facilities/spaces',
   },
   {
     key: 'lifestyle',
@@ -145,18 +134,16 @@ export const HAVEN = [
     mark: '/assets/logos/amv-mark-lifestyle.png',
     blurb: 'Sports courts, green spaces, a gym, cafes and a recreation hall that build real community.',
     image: 'life.courts',
-    individuals: '/individuals/individuals-lifestyle',
-    companies: '/facilities/lifestyle',
+    href: '/facilities/lifestyle',
   },
 ] as const;
 
-/** Milestones as shown on the current homepage (2022–2023). The legacy /elevating-living-and-working page
- *  carried different placeholder-looking years (2000/2010/2015/2021) — flagged in docs/reference-audit.md. */
+/** Milestones, one row per year. 2022–2023 from the original homepage; 2024 from the village's own news posts
+ *  (opening in June 2024; supermarket, clinic, ATM and exchange partnerships). Add 2025 here when AMV supplies it. */
 export const STORY = [
-  { year: '2022', title: 'AFS wins the pitch to start the project' },
-  { year: '2022', title: 'Completion of the project’s concept and design' },
-  { year: '2022', title: 'Commencement of construction works' },
+  { year: '2022', title: 'AFS wins the pitch, completes the concept and design, and starts construction' },
   { year: '2023', title: 'The project is named Al Maskaan Village' },
+  { year: '2024', title: 'The village opens to its first residents, followed by a supermarket, clinic, Bank Muscat ATM and Joyalukkas Exchange' },
 ] as const;
 /** The timeline's last row, always dated with the current year (see CurrentYear). */
 export const STORY_NOW = 'Today, home to more than 1,300 residents in over 400 rooms';

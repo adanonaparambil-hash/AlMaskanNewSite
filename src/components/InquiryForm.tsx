@@ -1,6 +1,6 @@
 'use client';
 
-import { useId, useState } from 'react';
+import { useEffect, useId, useRef, useState } from 'react';
 import { useI18n } from '@/i18n/client';
 import type { UI } from '@/i18n/ui';
 
@@ -8,12 +8,14 @@ type Status = { kind: 'idle' } | { kind: 'sending' } | { kind: 'success' } | { k
 
 const TOPICS = ['Village', 'Accommodation', 'Catering', 'Retail', 'Spaces', 'Lifestyle'] as const;
 
-/** Room types as named on the accommodation pages. */
+const KINDS = ['Query', 'Quote', 'Complaint'] as const;
+
+/** Room types (the values the inquiry email uses); labels come from ui.form.rooms. */
 const ROOMS = [
   { v: 'Junior staff', note: 'Shared room, up to 10' },
-  { v: 'Single premium', note: 'Senior staff · S1' },
-  { v: 'Double premium', note: 'Senior staff · S2' },
-  { v: 'Triple premium', note: 'Senior staff · S3' },
+  { v: 'Single premium', note: 'Managers & senior staff · S1' },
+  { v: 'Double premium', note: 'Managers & senior staff · S2' },
+  { v: 'Triple premium', note: 'Managers & senior staff · S3' },
 ] as const;
 
 type Errors = Partial<Record<'name' | 'email' | 'phone' | 'message' | 'topic' | 'residents', string>>;
@@ -41,6 +43,22 @@ export default function InquiryForm({ defaultTopic = 'Village' }: { defaultTopic
   const [errors, setErrors] = useState<Errors>({});
   const [audience, setAudience] = useState<'Individual' | 'Institution'>('Individual');
   const [topic, setTopic] = useState<string>(defaultTopic);
+  const [kind, setKind] = useState<string>('Query');
+  const [room, setRoom] = useState<string>('');
+  const message = useRef<HTMLTextAreaElement>(null);
+
+  // "Get a quote" buttons link here with ?kind=Quote&topic=…&room=…&about=…: set the form up to match
+  useEffect(() => {
+    const q = new URLSearchParams(window.location.search);
+    const k = q.get('kind');
+    const tp = q.get('topic');
+    const rm = q.get('room');
+    const about = q.get('about');
+    if (k && (KINDS as readonly string[]).includes(k)) setKind(k);
+    if (tp && (TOPICS as readonly string[]).includes(tp)) setTopic(tp);
+    if (rm && ROOMS.some((r) => r.v === rm)) setRoom(rm);
+    if (about && message.current && !message.current.value) message.current.value = t.quoteFor(about.slice(0, 120));
+  }, [t]);
   const [progress, setProgress] = useState(0);
   // share of the required fields that are already filled in — drives the progress line
   const measure = (form: HTMLFormElement) => {
@@ -73,6 +91,8 @@ export default function InquiryForm({ defaultTopic = 'Village' }: { defaultTopic
         form.reset();
         setAudience('Individual');
         setTopic(defaultTopic);
+        setKind('Query');
+        setRoom('');
         setProgress(0);
       } else if (json.code === 'not_configured') {
         setStatus({ kind: 'error', fallback: true, message: t.notConfigured });
@@ -110,9 +130,9 @@ export default function InquiryForm({ defaultTopic = 'Village' }: { defaultTopic
       <fieldset className="choice">
         <legend>{t.kind}</legend>
         <div>
-          {['Query', 'Complaint'].map((v, i) => (
+          {KINDS.map((v) => (
             <label key={v} className="chip">
-              <input type="radio" name="kind" value={v} defaultChecked={i === 0} />
+              <input type="radio" name="kind" value={v} checked={kind === v} onChange={() => setKind(v)} />
               <span>{t.kinds[v] ?? v}</span>
             </label>
           ))}
@@ -138,7 +158,7 @@ export default function InquiryForm({ defaultTopic = 'Village' }: { defaultTopic
             <div>
               {ROOMS.map((r) => (
                 <label key={r.v} className="chip chip--room">
-                  <input type="radio" name="room" value={r.v} />
+                  <input type="radio" name="room" value={r.v} checked={room === r.v} onChange={() => setRoom(r.v)} />
                   <span>{t.rooms[r.v]?.[0] ?? r.v}<small>{t.rooms[r.v]?.[1] ?? r.note}</small></span>
                 </label>
               ))}
@@ -184,7 +204,7 @@ export default function InquiryForm({ defaultTopic = 'Village' }: { defaultTopic
 
       <div className="field">
         <label htmlFor={fid('message')}>{t.message}</label>
-        <textarea id={fid('message')} name="message" rows={5} required {...err('message')} />
+        <textarea ref={message} id={fid('message')} name="message" rows={5} required {...err('message')} />
         <Err n="message" />
       </div>
 
