@@ -1,0 +1,106 @@
+/* Al Maskaan Village theme: dresses the explorer in the main site's night-glass look (navy ground, frosted panels,
+   gold accents, Playfair Display + Manrope). Loaded after style.css and tour.css; layout is left to them. */
+:root{
+  --bg:#060e1c;--bg-2:#0a1830;--bg-3:#10234a;
+  --glass:rgba(255,255,255,.055);--glass-2:rgba(255,255,255,.09);--glass-solid:rgba(10,22,44,.78);
+  --edge:rgba(255,255,255,.13);--line:rgba(255,255,255,.1);
+  --text:#f3efe6;--muted:#aeb4c1;--dim:#7f879a;
+  --gold:#e2c48a;--gold-2:#c9a25e;--gold-grad:linear-gradient(120deg,#f4dfae 0%,#e2c48a 40%,#c9a25e 100%);
+  --green:#e2c48a;
+  --serif:"Playfair Display",Georgia,"Times New Roman",serif;
+  font-family:Manrope,"Segoe UI",Arial,sans-serif;color:var(--text);background:var(--bg);color-scheme:dark
+}
+body{background:radial-gradient(70% 60% at 85% 0%,rgba(31,79,160,.28),transparent 70%),radial-gradient(60% 50% at 0% 100%,rgba(79,122,40,.16),transparent 70%),var(--bg)}
+button:focus-visible,a:focus-visible,.viewport:focus-visible{outline-color:var(--gold)}
+
+/* top bar */
+.topbar{background:rgba(6,14,28,.55);border-bottom-color:var(--line);backdrop-filter:blur(18px)}
+.brand-mark{color:var(--gold)}
+.brand strong{font-weight:700;color:var(--text)}
+.brand small{color:var(--dim)}
+.mode-tabs{background:var(--glass);border-color:var(--edge);border-radius:999px}
+.mode-tabs button{color:var(--muted);border-radius:999px}
+.mode-tabs button:hover{color:var(--text)}
+.mode-tabs button[aria-selected=true]{background:var(--gold-grad);color:#1a1408;box-shadow:0 6px 22px -8px rgba(226,196,138,.6)}
+.overview-btn{border-color:var(--edge);background:var(--glass);border-radius:999px;color:var(--text)}
+.overview-btn:hover{background:var(--glass-2);border-color:rgba(226,196,138,.5)}
+
+/* sidebar */
+.sidebar{background:rgba(8,18,36,.6);border-color:var(--line);scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.18) transparent}
+.eyebrow{color:var(--gold)}
+.sidebar h1{font-family:var(--serif);letter-spacing:-.02em;color:var(--text)}
+.sidebar-intro>p:last-child{color:var(--muted)}
+.place,.tour-chapter{color:var(--text);border-radius:12px}
+.place:hover,.tour-chapter:hover{background:var(--glass)}
+.place.active,.tour-chapter.active{background:var(--glass-2);border-color:rgba(226,196,138,.45);box-shadow:inset 3px 0 0 var(--gold)}
+.place-num{border-color:var(--edge);color:var(--muted)}
+.active .place-num{background:var(--gold-grad);border-color:transparent;color:#1a1408}
+.place-subtitle,.chapter-copy small,.chapter-index{color:var(--dim)}
+.place>svg{color:var(--gold)}
+.chapter-thumb{border-radius:8px;box-shadow:0 0 0 1px var(--edge)}
+.tour-invitation{background:var(--glass);border-color:var(--edge);border-radius:14px;color:var(--text)}
+.tour-invitation:hover{background:var(--glass-2);border-color:rgba(226,196,138,.45)}
+.tour-invitation-icon,.small-symbol{color:var(--gold)}
+.tour-invitation small,.sidebar-bottom p span{color:var(--dim)}
+.sidebar-bottom p{color:var(--muted)}
+
+/* masterplan viewer: the floating panels become frosted glass */
+.viewer-shell{background:var(--bg-2)}
+.viewport{background:radial-gradient(ellipse at center,#14284c,#081326)}
+.view-caption,.label-toggle,.focus-card,.bottom-hint,.minimap-wrap,.zoom-controls{background:var(--glass-solid);border-color:var(--edge);color:var(--text);backdrop-filter:blur(16px);box-shadow:0 18px 40px -20px rgba(0,0,0,.7)}
+.view-caption,.label-toggle,.bottom-hint,.zoom-controls{border-radius:999px}
+.focus-card,.minimap-wrap{border-radius:16px}
+.caption-tag,.minimap-header{color:var(--gold)}
+.caption-divider,.control-divider{background:var(--edge)}
+.label-toggle[aria-pressed=false]{color:var(--dim)}
+.focus-card h2{font-family:var(--serif)}
+.focus-card p{color:var(--muted)}
+.focus-card button{border-top-color:var(--line);color:var(--gold)}
+.bottom-hint i{color:var(--dim)}
+#zoom-label{color:var(--gold)}
+.zoom-controls button{color:var(--text)}
+.zoom-controls button:hover{background:var(--glass-2)}
+#minimap-frame{border-color:var(--gold);outline-color:rgba(6,14,28,.8);box-shadow:0 0 0 150px rgba(6,14,28,.45)}
+.image-note{color:var(--dim)}
+.loading{background:var(--bg);color:var(--text);font-family:var(--serif)}
+.marker{background:rgba(10,22,44,.86);border-color:var(--edge);color:var(--text);box-shadow:0 8px 24px -8px rgba(0,0,0,.7);backdrop-filter:blur(8px)}
+.marker .dot{background:var(--glass-2);border-color:var(--edge);color:var(--gold)}
+.marker:hover,.marker.selected{background:var(--gold-grad);color:#1a1408;border-color:transparent}
+.marker:hover .dot,.marker.selected .dot{background:rgba(26,20,8,.15);border-color:rgba(26,20,8,.25);color:#1a1408}
+.outlines polygon:hover,.outlines polygon.hovered{fill:rgba(226,196,138,.16);stroke:rgba(244,223,174,.7)}
+.outlines polygon.selected{fill:rgba(226,196,138,.2);stroke:#f4dfae}
+
+/* video tour */
+.tour-pane{background:var(--bg)}
+.tour-frame:before{background:radial-gradient(ellipse at center,#122649,#060e1c)}
+.tour-top{background:linear-gradient(rgba(6,14,28,.88),rgba(6,14,28,.4),transparent)}
+.tour-heading .eyebrow{color:var(--gold)}
+.tour-heading .eyebrow span{border-color:rgba(226,196,138,.4);color:var(--gold)}
+.tour-heading h2{font-family:var(--serif);letter-spacing:-.02em}
+.tour-heading>p:last-child,.tour-guide,.tour-perspective{color:var(--muted)}
+.aerial-filter,.tour-zoom,.tour-loading{background:var(--glass-solid);border-color:var(--edge);backdrop-filter:blur(16px);border-radius:999px;color:var(--text)}
+.tour-loading{border-radius:16px}
+.aerial-filter input{accent-color:var(--gold)}
+.tour-zoom button{color:var(--text)}
+.tour-zoom button:hover{background:var(--glass-2)}
+.tour-bottom{background:linear-gradient(transparent,rgba(6,14,28,.75) 35%,rgba(6,14,28,.95))}
+.tour-guide #tour-counter{color:var(--gold);border-color:var(--edge)}
+.tour-guide i{color:var(--dim)}
+.tour-controls{background:var(--glass-solid);border-color:var(--edge);border-radius:999px;padding:8px 10px 8px 8px;box-shadow:0 18px 40px -20px rgba(0,0,0,.7);backdrop-filter:blur(16px)}
+.tour-controls button{color:var(--text)}
+.tour-controls .tour-play{background:var(--gold-grad);color:#1a1408;border-radius:999px;font-weight:700;letter-spacing:.02em}
+.tour-controls .tour-play:hover{background:var(--gold-grad);filter:brightness(1.08)}
+.tour-scrubber input{accent-color:var(--gold)}
+.tour-scrubber input::-webkit-slider-runnable-track{background:linear-gradient(to right,var(--gold) 0 var(--tour-progress,0%),rgba(255,255,255,.18) var(--tour-progress,0%) 100%)}
+.tour-scrubber input::-webkit-slider-thumb{background:#f4dfae;box-shadow:0 0 0 4px rgba(226,196,138,.25)}
+.tour-scrubber input::-moz-range-track{background:rgba(255,255,255,.18)}
+.tour-scrubber input::-moz-range-progress{background:var(--gold)}
+.tour-scrubber input::-moz-range-thumb{background:#f4dfae}
+.tour-scrubber-labels{color:var(--dim)}
+.tour-scrubber-labels #tour-time{color:var(--text)}
+
+@media(max-width:760px){
+  .sidebar{border-color:var(--line)}
+  .place,.tour-chapter{border-color:var(--edge)}
+  .mode-tabs{border-radius:999px}
+}
