@@ -4,6 +4,9 @@ import { SITE } from '@/content/site';
 import { localizeHref } from '@/i18n/config';
 import { articles } from '@/lib/news';
 
+// generated once at build time (also required for the static cPanel export)
+export const dynamic = 'force-static';
+
 /** Every page in English (unprefixed) and Arabic (/ar), each entry listing both languages as alternates. */
 export default function sitemap(): MetadataRoute.Sitemap {
   const u = (p: string) => SITE.url + p;

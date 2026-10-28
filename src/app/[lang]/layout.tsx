@@ -88,8 +88,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <PageTransition />
           <WhatsAppButton />
           <SiteAssistant topics={topicsFor(c)} />
-          {/* page views for Vercel Web Analytics (enable it in the Vercel project; no cookies, nothing sent in dev) */}
-          <Analytics />
+          {/* page views for Vercel Web Analytics (enable it in the Vercel project; no cookies, nothing sent in dev); not on cPanel hosting */}
+          {process.env.NEXT_PUBLIC_HOSTING !== 'cpanel' && <Analytics />}
           <MotionProvider />
         </I18nProvider>
       </body>
