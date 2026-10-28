@@ -57,10 +57,12 @@ export function blurReveals(root: HTMLElement) {
 
 /** data-reveal="scale" — the heading settles from oversize with a widening letter-spacing that closes in. */
 export function scaleReveals(root: HTMLElement) {
+  // grow from the side the text starts on, so the oversize start never spills past the far edge of a phone
+  const origin = document.documentElement.dir === 'rtl' ? '100% 100%' : '0% 100%';
   q(root, '[data-reveal="scale"]').forEach((el) => {
     gsap.fromTo(
       el,
-      { autoAlpha: 0, scale: 1.18, letterSpacing: '0.04em', transformOrigin: '0% 100%' },
+      { autoAlpha: 0, scale: 1.08, letterSpacing: '0.02em', transformOrigin: origin },
       { autoAlpha: 1, scale: 1, letterSpacing: '-0.025em', duration: 1.6, ease: EASE.expo, clearProps: 'letterSpacing,transform', scrollTrigger: { trigger: el, start: START, once: true } },
     );
   });
