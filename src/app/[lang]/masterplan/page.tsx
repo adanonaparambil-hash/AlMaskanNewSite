@@ -45,11 +45,12 @@ export default async function MasterplanPage() {
         crumbs={[{ label: c.ui.home, href: '/' }, { label: t.eyebrow }]}
       />
       <section className="section--tight section" aria-label={t.frame}>
+        {/* the explorer is a self-contained page (its own pan/zoom and video scrubbing), kept apart from the site's
+            scroll motion; it runs edge to edge so the map gets the whole screen width */}
+        <div className="explorer" data-reveal="fade">
+          <iframe src={EXPLORER} title={t.frame} loading="lazy" allow="fullscreen" allowFullScreen />
+        </div>
         <div className="container">
-          {/* the explorer is a self-contained page (its own pan/zoom and video scrubbing), kept apart from the site's scroll motion */}
-          <div className="explorer" data-reveal="fade">
-            <iframe src={EXPLORER} title={t.frame} loading="lazy" allow="fullscreen" allowFullScreen />
-          </div>
           <p className="explorer__bar">
             <span className="fine">{t.hint}</span>
             <a className="btn btn--line" href={EXPLORER} target="_blank" rel="noopener">{t.open}</a>
