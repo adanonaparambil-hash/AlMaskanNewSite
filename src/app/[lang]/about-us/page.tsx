@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Marquee } from '@/components/fx';
 import { ContactBand } from '@/components/Footer';
+import { CurrentYear } from '@/components/FooterBits';
 import { Button, Eyebrow, Fact, Heading, Media, PageHero } from '@/components/ui';
 import { alternatesFor } from '@/i18n/config';
 import { getContent } from '@/i18n/server';
@@ -201,6 +202,10 @@ export default async function AboutPage() {
                 <p className="tl-item__title">{s.title}</p>
               </li>
             ))}
+            <li className="tl-item tl-item--now" data-timeline-item>
+              <p className="tl-item__year"><CurrentYear /></p>
+              <p className="tl-item__title">{c.storyNow}</p>
+            </li>
           </ol>
         </div>
       </section>

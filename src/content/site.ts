@@ -158,6 +158,8 @@ export const STORY = [
   { year: '2022', title: 'Commencement of construction works' },
   { year: '2023', title: 'The project is named Al Maskaan Village' },
 ] as const;
+/** The timeline's last row, always dated with the current year (see CurrentYear). */
+export const STORY_NOW = 'Today, home to more than 1,300 residents in over 400 rooms';
 
 export const FACTS = [
   { value: 3000, suffix: '+', label: 'Junior staff accommodations' },

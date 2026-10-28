@@ -4,6 +4,18 @@ import { useEffect, useState } from 'react';
 import { getLenis } from '@/lib/motion/smooth';
 import { useI18n } from '@/i18n/client';
 
+/**
+ * The current year in Oman. Pages are built ahead of time, so the server's year would freeze at the last deploy:
+ * the build-time year is shown first and replaced with the visitor's current year after mount.
+ */
+export function CurrentYear() {
+  const [year, setYear] = useState(() => new Date().getFullYear());
+  useEffect(() => {
+    setYear(Number(new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Muscat', year: 'numeric' }).format(new Date())));
+  }, []);
+  return <span suppressHydrationWarning>{year}</span>;
+}
+
 /** Live local time at the village (Oman, UTC+4). Rendered after mount so server and client markup agree. */
 export function VillageClock() {
   const { ui } = useI18n();

@@ -613,6 +613,10 @@ html:not(.motion-on) .feast__copy { display: block; -webkit-line-clamp: unset; o
 .tl-item:last-child { padding-bottom: 0; }
 .tl-item::before { content: ''; position: absolute; left: -50px; top: 14px; width: 13px; height: 13px; border-radius: 50%; background: var(--bg); border: 1px solid var(--gold); transition: background-color 0.5s, transform 0.5s var(--ease), box-shadow 0.5s; }
 .tl-item.is-active::before { background: var(--gold); transform: scale(1.35); box-shadow: 0 0 18px var(--gold); }
+/* the closing row is always the current year: its dot keeps a soft pulse */
+.tl-item--now.is-active::before { animation: tl-now 2.4s ease-in-out infinite; }
+@keyframes tl-now { 50% { box-shadow: 0 0 0 8px rgba(226, 196, 138, 0.18), 0 0 18px var(--gold); } }
+@media (prefers-reduced-motion: reduce) { .tl-item--now.is-active::before { animation: none; } }
 .tl-item__year { font-family: var(--font-display); font-weight: 300; font-size: clamp(3.4rem, 8vw, 7rem); line-height: 0.95; letter-spacing: -0.04em; color: var(--dim); transition: color 0.6s; font-variant-numeric: tabular-nums; }
 html:not(.motion-on) .tl-item__year { color: var(--gold); }
 .tl-item.is-active .tl-item__year { color: var(--gold); }

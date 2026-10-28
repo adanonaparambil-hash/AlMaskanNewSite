@@ -24,6 +24,7 @@ export type Content = {
   footerLinks: Widen<typeof siteEn.FOOTER_LINKS>;
   haven: Widen<typeof siteEn.HAVEN>;
   story: Widen<typeof siteEn.STORY>;
+  storyNow: string;
   facts: Widen<typeof siteEn.FACTS>;
   group: Widen<typeof siteEn.GROUP>;
   rooms: Room[];
@@ -36,14 +37,14 @@ export type Content = {
 
 const EN: Content = {
   locale: 'en', dir: 'ltr',
-  site: siteEn.SITE, nav: siteEn.NAV, footerLinks: siteEn.FOOTER_LINKS, haven: siteEn.HAVEN, story: siteEn.STORY,
+  site: siteEn.SITE, nav: siteEn.NAV, footerLinks: siteEn.FOOTER_LINKS, haven: siteEn.HAVEN, story: siteEn.STORY, storyNow: siteEn.STORY_NOW,
   facts: siteEn.FACTS, group: siteEn.GROUP,
   rooms: roomsEn, services: servicesEn, about: aboutEn, clients: clientsEn, articles: buildArticles(newsEn), ui: UI_STRINGS.en,
 };
 
 const AR: Content = {
   locale: 'ar', dir: 'rtl',
-  site: siteAr.SITE, nav: siteAr.NAV, footerLinks: siteAr.FOOTER_LINKS, haven: siteAr.HAVEN, story: siteAr.STORY,
+  site: siteAr.SITE, nav: siteAr.NAV, footerLinks: siteAr.FOOTER_LINKS, haven: siteAr.HAVEN, story: siteAr.STORY, storyNow: siteAr.STORY_NOW,
   facts: siteAr.FACTS, group: siteAr.GROUP,
   // client names stay as the companies write them (their logos carry the same names)
   rooms: roomsAr, services: servicesAr, about: aboutAr, clients: clientsEn, articles: buildArticles(newsAr), ui: UI_STRINGS.ar,

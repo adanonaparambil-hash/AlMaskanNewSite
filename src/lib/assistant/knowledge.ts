@@ -1,6 +1,6 @@
 // What the site assistant knows: compiled once from the site's own content files, so the chatbot always matches
 // the website (rooms, rates, services, facts, contacts). Used as the cached system prompt of /api/chat.
-import { FACTS, GROUP, HAVEN, SITE, STORY } from '@/content/site';
+import { FACTS, GROUP, HAVEN, SITE, STORY, STORY_NOW } from '@/content/site';
 import { ROOMS } from '@/content/rooms';
 import { ABOUT, SERVICES } from '@/content/services';
 
@@ -40,7 +40,7 @@ function about() {
   return [
     team ? `Management team: ${team}` : '',
     `Facts and figures: ${FACTS.map((f) => `${f.value.toLocaleString('en-US')}${f.suffix}${'unit' in f && f.unit ? ` ${f.unit}` : ''} ${f.label}`).join('; ')}`,
-    `Story: ${STORY.map((s) => `${s.year} — ${s.title}`).join('; ')}`,
+    `Story: ${STORY.map((s) => `${s.year} — ${s.title}`).join('; ')}; today — ${STORY_NOW}`,
     `Group: ${GROUP.lead}`,
   ].filter(Boolean).join('\n');
 }

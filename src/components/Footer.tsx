@@ -3,7 +3,10 @@ import Link from '@/components/LocaleLink';
 import { getContent } from '@/i18n/server';
 import type { CSSProperties } from 'react';
 import { Arrow, Button, Eyebrow } from './ui';
-import { BackToTop, VillageClock, VisitCounter } from './FooterBits';
+import { BackToTop, CurrentYear, VillageClock, VisitCounter } from './FooterBits';
+
+// placeholder the year is cut out at, so the live year can be dropped into the translated sentence
+const YEAR = '{year}';
 
 export async function ContactBand() {
   const { site: SITE, ui } = await getContent();
@@ -99,7 +102,8 @@ export default async function Footer() {
       <p className="footer__mark" data-fill aria-hidden="true"><span>{ui.wordmark.a} <em>{ui.wordmark.b}</em></span></p>
 
       <div className="container footer__legal">
-        <p>{ui.footer.rights(new Date().getFullYear(), SITE.name, SITE.operator, SITE.group)}</p>
+        {/* the year comes from the visitor's clock, so it rolls over on 1 January without a new deploy */}
+        <p>{ui.footer.rights(YEAR, SITE.name, SITE.operator, SITE.group).split(YEAR).flatMap((part, i) => (i ? [<CurrentYear key={i} />, part] : [part]))}</p>
         <div className="footer__live">
           <VisitCounter />
           <VillageClock />

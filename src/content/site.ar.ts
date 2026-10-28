@@ -156,6 +156,8 @@ export const STORY = [
   { year: '2023', title: 'تسمية المشروع قرية المسكن' },
 ];
 
+export const STORY_NOW = 'اليوم، موطن لأكثر من 1,300 مقيم في أكثر من 400 غرفة';
+
 export const FACTS = [
   { value: 3000, suffix: '+', label: 'وحدة سكنية للموظفين المبتدئين' },
   { value: 1000, suffix: '+', label: 'وحدة سكنية لكبار الموظفين' },

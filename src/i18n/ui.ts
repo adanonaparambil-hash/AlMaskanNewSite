@@ -26,7 +26,7 @@ const en = {
     map: 'Find us on the map',
     whatsapp: 'WhatsApp',
     reviews: 'Google Reviews',
-    rights: (year: number, name: string, operator: string, group: string) => `© ${year} ${name}. All rights reserved. Operated by ${operator}, part of the ${group}.`,
+    rights: (year: number | string, name: string, operator: string, group: string) => `© ${year} ${name}. All rights reserved. Operated by ${operator}, part of the ${group}.`,
     privacy: 'Privacy policy',
     clockPlace: 'Barka, Oman',
     top: 'Back to top',

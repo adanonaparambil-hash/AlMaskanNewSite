@@ -8,6 +8,7 @@ import HeroMedia from '@/components/HeroMedia';
 import RoomShowcase, { type ShowcaseRow } from '@/components/RoomShowcase';
 import { Button, Eyebrow, Fact, Heading, Media, TextLink } from '@/components/ui';
 import { Marquee, RingGallery } from '@/components/fx';
+import { CurrentYear } from '@/components/FooterBits';
 import { getContent } from '@/i18n/server';
 import { alternatesFor } from '@/i18n/config';
 import { galleryFor, img } from '@/lib/images';
@@ -620,6 +621,10 @@ export default async function Home() {
                 <p className="tl-item__title">{s.title}</p>
               </li>
             ))}
+            <li className="tl-item tl-item--now" data-timeline-item>
+              <p className="tl-item__year"><CurrentYear /></p>
+              <p className="tl-item__title">{c.storyNow}</p>
+            </li>
           </ol>
         </div>
       </section>
