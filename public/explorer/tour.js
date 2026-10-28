@@ -110,9 +110,6 @@
   function release(e){pointers.delete(e.pointerId);if(frame.hasPointerCapture(e.pointerId))frame.releasePointerCapture(e.pointerId);pinch=null;if(pointers.size===1){const p=[...pointers.values()][0];pointerStart={...p,pan:{...pan},position:toVirtual(desired),zoom}}else pointerStart=null}
   frame.addEventListener('pointerup',release);frame.addEventListener('pointercancel',release);frame.addEventListener('lostpointercapture',e=>{if(pointers.has(e.pointerId))release(e)});
   new ResizeObserver(drawZoom).observe(frame);
-  if(!document.fullscreenEnabled)$('tour-fullscreen').hidden=true;
-  $('tour-fullscreen').addEventListener('click',async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await pane.requestFullscreen()}catch{$('tour-announcement').textContent='Full screen is unavailable in this browser.'}});
-  document.addEventListener('fullscreenchange',()=>{$('tour-fullscreen').setAttribute('aria-label',document.fullscreenElement?'Exit full screen':'Enter full screen')});
   document.addEventListener('visibilitychange',()=>{if(document.hidden)pause()});
   if(matchMedia('(pointer:coarse)').matches)$('tour-keyboard-help').textContent='Swipe to explore · Pinch to zoom';
   update();drawZoom();

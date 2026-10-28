@@ -20,6 +20,7 @@
     <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
     <symbol id="i-full" viewBox="0 0 24 24"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></symbol>
+    <symbol id="i-exit" viewBox="0 0 24 24"><path d="M3 8h5V3m8 0v5h5M3 16h5v5m13-5h-5v5"/></symbol>
     <symbol id="i-pin" viewBox="0 0 24 24"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2"/></symbol>
     <symbol id="i-mouse" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="6"/><path d="M12 2v7"/></symbol>
   </defs></svg>
@@ -29,7 +30,7 @@
       <span><strong>MASTERPLAN</strong><small>Interactive explorer</small></span>
     </a>
     <nav class="mode-tabs" role="tablist" aria-label="Choose your view"><button id="mode-plan" role="tab" aria-selected="true" aria-controls="viewport">Masterplan</button><button id="mode-tour" role="tab" aria-selected="false" aria-controls="tour-pane" tabindex="-1"><span class="play-mini" aria-hidden="true">▷</span> Video & surroundings</button></nav>
-    <button class="overview-btn" id="reset"><svg><use href="#i-fit"/></svg><span>Full overview</span></button>
+    <div class="top-actions"><button class="overview-btn" id="reset"><svg><use href="#i-fit"/></svg><span>Full overview</span></button><button class="overview-btn fs-btn" id="fs-top" data-fullscreen><svg><use href="#i-full"/></svg><span>Full screen</span></button></div>
   </header>
   <div class="workspace">
     <aside class="sidebar" aria-label="Places to explore">
@@ -52,7 +53,7 @@
         <div class="tour-top"><div class="tour-heading"><p class="eyebrow">RECORDED VIDEO TOUR <span>HD</span></p><h2 id="tour-title">Whole site</h2><p id="tour-status">Scroll to explore the surroundings</p></div><label class="aerial-filter"><input type="checkbox" id="tour-aerial" checked><span>Aerial views only</span></label></div>
         <div class="tour-loading" id="tour-loading" role="status">Preparing your tour…</div>
         <div class="tour-zoom" aria-label="Video zoom controls"><button id="tour-zoom-out" aria-label="Zoom video out">−</button><button id="tour-zoom-reset" aria-label="Reset video zoom"><span id="tour-zoom-value">1.0×</span></button><button id="tour-zoom-in" aria-label="Zoom video in">+</button></div>
-        <div class="tour-bottom"><div class="tour-guide"><span id="tour-counter">01 / 07</span><p id="tour-keyboard-help">Scroll to explore <i>·</i> Swipe or use the timeline on touch</p><span class="tour-perspective">Views captured in the film</span></div><div class="tour-controls"><button id="tour-play" class="tour-play" aria-label="Play video">Play tour</button><div class="tour-scrubber"><label for="tour-timeline" class="sr-only">Video tour position</label><input id="tour-timeline" type="range" min="0" max="1000" step="1" value="0"><div class="tour-scrubber-labels"><span>SCROLL THROUGH THE SITE</span><span id="tour-time">0:00 / 0:00</span></div></div><button id="tour-reset" class="tour-reset" aria-label="Restart tour" title="Restart tour">↺</button><button id="tour-fullscreen" class="tour-fullscreen" aria-label="Enter full screen" title="Full screen"><svg><use href="#i-full"/></svg></button></div></div>
+        <div class="tour-bottom"><div class="tour-guide"><span id="tour-counter">01 / 07</span><p id="tour-keyboard-help">Scroll to explore <i>·</i> Swipe or use the timeline on touch</p><span class="tour-perspective">Views captured in the film</span></div><div class="tour-controls"><button id="tour-play" class="tour-play" aria-label="Play video">Play tour</button><div class="tour-scrubber"><label for="tour-timeline" class="sr-only">Video tour position</label><input id="tour-timeline" type="range" min="0" max="1000" step="1" value="0"><div class="tour-scrubber-labels"><span>SCROLL THROUGH THE SITE</span><span id="tour-time">0:00 / 0:00</span></div></div><button id="tour-reset" class="tour-reset" aria-label="Restart tour" title="Restart tour">↺</button><button id="tour-fullscreen" class="tour-fullscreen" data-fullscreen aria-label="Enter full screen" title="Full screen"><svg><use href="#i-full"/></svg></button></div></div>
         <p id="tour-announcement" class="sr-only" role="status" aria-live="polite"></p>
       </section>
       <div class="view-caption"><span class="caption-tag">AERIAL VIEW</span><span class="caption-divider"></span><span id="focus-name">Full masterplan</span></div>
@@ -61,13 +62,14 @@
       <div class="bottom-hint" id="viewer-help"><svg><use href="#i-mouse"/></svg><span><b>Drag</b> to move <i>·</i> <b>Scroll</b> to zoom <i>·</i> <b>Click</b> to focus</span></div>
       <div class="map-controls">
         <div class="minimap-wrap"><div class="minimap-header"><span>YOU ARE HERE</span><span id="zoom-label">1.0×</span></div><button id="minimap" class="minimap" aria-label="Click this miniature map to move the main view"><img src="masterplan.jpg" alt="" draggable="false"><span id="minimap-frame"></span></button></div>
-        <div class="zoom-controls"><button id="zoom-out" aria-label="Zoom out" title="Zoom out (−)"><svg><use href="#i-minus"/></svg></button><button id="zoom-in" aria-label="Zoom in" title="Zoom in (+)"><svg><use href="#i-plus"/></svg></button><span class="control-divider"></span><button id="fit" aria-label="Reset to full overview" title="Full overview (Escape)"><svg><use href="#i-fit"/></svg></button><button id="fullscreen" aria-label="Enter full screen" title="Full screen"><svg><use href="#i-full"/></svg></button></div>
+        <div class="zoom-controls"><button id="zoom-out" aria-label="Zoom out" title="Zoom out (−)"><svg><use href="#i-minus"/></svg></button><button id="zoom-in" aria-label="Zoom in" title="Zoom in (+)"><svg><use href="#i-plus"/></svg></button><span class="control-divider"></span><button id="fit" aria-label="Reset to full overview" title="Full overview (Escape)"><svg><use href="#i-fit"/></svg></button><button id="fullscreen" data-fullscreen aria-label="Enter full screen" title="Full screen"><svg><use href="#i-full"/></svg></button></div>
       </div>
       <div class="loading" id="loading">Opening your masterplan…</div>
       <span class="image-note">Original-resolution masterplan <span id="image-detail-note">· fixed aerial perspective</span></span>
       <p id="announcement" class="sr-only" role="status" aria-live="polite"></p>
     </main>
   </div>
+  <script src="fullscreen.js"></script>
   <script src="app.js"></script>
   <script src="tour.js"></script>
 </body>

@@ -124,8 +124,5 @@
   $('zoom-in').addEventListener('click',()=>zoomAt(1.4));$('zoom-out').addEventListener('click',()=>zoomAt(1/1.4));
   $('toggle-markers').addEventListener('click',()=>{const on=$('toggle-markers').getAttribute('aria-pressed')!=='true';$('toggle-markers').setAttribute('aria-pressed',String(on));$('toggle-markers').querySelector('span').textContent=on?'Places on':'Places off';scene.classList.toggle('markers-hidden',!on)});
   $('minimap').addEventListener('click',e=>{if(e.detail===0){viewport.focus();return}const r=$('minimap').getBoundingClientRect(),nx=(e.clientX-r.left)/r.width,ny=(e.clientY-r.top)/r.height;select(null);const s=Math.max(current.s,fit*2);move({x:width/2-clamp(nx,0,1)*W*s,y:height/2-clamp(ny,0,1)*H*s,s});$('focus-name').textContent='Custom view'});
-  if(!document.fullscreenEnabled)$('fullscreen').hidden=true;
-  $('fullscreen').addEventListener('click',async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await document.querySelector('.viewer-shell').requestFullscreen()}catch{$('announcement').textContent='Full screen is unavailable in this browser.'}});
-  document.addEventListener('fullscreenchange',()=>{$('fullscreen').setAttribute('aria-label',document.fullscreenElement?'Exit full screen':'Enter full screen')});
   if(matchMedia('(pointer: coarse)').matches)$('viewer-help').querySelector('span').innerHTML='<b>Drag</b> to move <i>·</i> <b>Pinch</b> to zoom <i>·</i> <b>Tap</b> a place';
 })();

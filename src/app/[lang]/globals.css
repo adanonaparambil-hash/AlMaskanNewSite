@@ -1233,8 +1233,14 @@ html { overscroll-behavior-x: none; }
 @media (max-width: 600px) { .about__haven { flex-wrap: wrap; } }
 
 /* ---------- Masterplan explorer (self-contained page in an iframe) ---------- */
-.explorer { position: relative; height: min(84svh, 860px); min-height: 520px; border-radius: 22px; overflow: hidden; border: 1px solid var(--glass-edge); background: var(--bg); box-shadow: 0 30px 80px -40px rgba(0, 0, 0, 0.6); }
+.explorer { position: relative; height: min(88svh, 900px); min-height: 600px; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--glass-edge); background: var(--bg); box-shadow: 0 40px 90px -40px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(226, 196, 138, 0.06); }
 .explorer iframe { display: block; width: 100%; height: 100%; border: 0; }
+.explorer iframe:fullscreen { width: 100vw; height: 100vh; }
+/* fallback when the browser has no element full screen (iPhone): the explorer fills the window */
+.explorer iframe.is-expanded { position: fixed; inset: 0; z-index: 2147483000; width: 100vw; height: 100dvh; }
+html.explorer-expanded, html.explorer-expanded body { overflow: hidden; }
+html.explorer-expanded :has(> .explorer), html.explorer-expanded :has(iframe.is-expanded) { transform: none !important; filter: none !important; contain: none !important; }
+html.explorer-expanded .assistant__launcher, html.explorer-expanded .wa { visibility: hidden; }
 .explorer__bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 20px; margin-top: 16px; }
 .explorer__bar .fine { margin: 0; }
-@media (max-width: 700px) { .explorer { height: 78svh; min-height: 460px; border-radius: 16px; } }
+@media (max-width: 700px) { .explorer { height: 80svh; min-height: 500px; border-radius: 16px; } }
