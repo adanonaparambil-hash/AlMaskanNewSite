@@ -64,7 +64,7 @@ export const ROOMS: Room[] = [
     intro:
       `${premiumIntro} The Single Premium gives a manager or senior staff member much-needed privacy and a space of their own after work, along with three meals daily, high-speed internet and free daily laundry service.`,
     image: 'acc.single',
-    gallery: ['acc.single2'],
+    gallery: [],
     specs: [
       { label: 'Maximum occupancy', value: '1' },
       { label: 'Area of the room', value: '33.65 m²' },
