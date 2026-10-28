@@ -393,6 +393,15 @@ export const ABOUT = {
         'Rajan Prabhakaran oversees the technical aspects of Al Adrak Group projects. With over two decades of experience in Oman and India, he navigates project complexities, ensuring adherence to quality standards and optimal execution.',
       ],
     },
+    {
+      name: 'Rajesh Menon',
+      role: 'General Manager — Al Maskaan Village & Business Development',
+      image: 'people.rajesh',
+      bio: [
+        'Rajesh Menon leads Al Maskaan Village as General Manager and heads its business development. He oversees a community of more than 1,300 residents across over 400 rooms, serving a diverse portfolio of corporate clients. His remit covers property operations, guest experience, food and beverage, and commercial performance. Under his leadership, the Village’s dining outlets (Liwan Restaurant, Mint Café and Safi Dining Hall) operate under HACCP certification. He has also introduced structured systems for revenue management, procurement and compliance.',
+        'He brings nearly three decades of experience in hospitality, facilities management and sales across India and Oman, including leadership roles with Frankincense Hotel & Resorts and Hotel Muscat Holiday (formerly Holiday Inn). A certified Train The Trainer professional who speaks six languages, he is committed to delivering on the Village’s promise of going beyond accommodation.',
+      ],
+    },
   ],
 };
 

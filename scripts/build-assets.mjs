@@ -60,6 +60,7 @@ const IMAGES = {
   'people.riyas': ['2024_02_Mr.-Riyas-Mohamed-1.jpg', 'images/people/riyas-mohamed.jpg', 'Portrait of Riyas Mohamed, Chief Executive Officer'],
   'people.richard': ['2024_02_Mr.-Richard-Sequeria-1.jpg', 'images/people/richard-sequeira.jpg', 'Portrait of Richard Sequeira, DGM Facility Management'],
   'people.rajan': ['2024_02_Mr.-Rajan-P-1.jpg', 'images/people/rajan-prabhakaran.jpg', 'Portrait of Rajan Prabhakaran, DGM Technical'],
+  'people.rajesh': ['people/rajesh-menon.jpg', 'images/people/rajesh-menon.jpg', 'Portrait of Rajesh Menon, General Manager of Al Maskaan Village and Business Development'],
 };
 
 const COPY = {
