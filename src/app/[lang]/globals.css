@@ -721,11 +721,15 @@ html:not(.motion-on) .tl-item__year { color: var(--gold); }
 
 /* giant wordmark: outlined, filling with gold as it scrolls in (the motion library drives --fill) */
 /* sized in vw so the full name spans ~90% of any screen width (measured with Playfair Display: 15vw ≈ 112%) */
-.footer__mark { font-family: var(--font-display); font-weight: 400; font-size: 12vw; line-height: 0.95; letter-spacing: -0.045em; white-space: nowrap; text-align: center; padding: clamp(28px, 4vw, 56px) 0 clamp(14px, 2vw, 28px); user-select: none;
-  color: transparent; -webkit-text-stroke: 1px rgba(255, 255, 255, 0.16);
-  background: linear-gradient(90deg, rgba(226, 196, 138, 0.05) 0%, rgba(226, 196, 138, 0.55) 30%, rgba(244, 223, 174, 0.85) 60%, rgba(201, 162, 94, 0.5) 100%) no-repeat 0 0 / var(--fill, 100%) 100%;
-  -webkit-background-clip: text; background-clip: text; }
-.footer__mark em { font-style: italic; }
+.footer__signoff { padding-block: clamp(48px, 6vw, 88px) clamp(28px, 3.5vw, 48px); text-align: center; }
+.footer__signoff-mark { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: clamp(18px, 3vw, 36px); }
+.footer__signoff-mark img { width: 44px; height: 44px; filter: brightness(0) invert(1); opacity: 0.92; }
+.footer__rule { height: 1px; background: linear-gradient(90deg, transparent, rgba(226, 196, 138, 0.5)); }
+.footer__rule:last-child { background: linear-gradient(90deg, rgba(226, 196, 138, 0.5), transparent); }
+.footer__tagline { margin: 18px 0 0; font-family: var(--font-display); font-size: clamp(1.05rem, 1.5vw, 1.35rem); letter-spacing: 0.01em; color: var(--text); }
+.footer__tagline em { color: var(--gold); }
+.footer__dots { display: flex; justify-content: center; gap: 10px; margin: 16px 0 0; }
+.footer__dots i { width: 6px; height: 6px; border-radius: 50%; opacity: 0.9; }
 
 .footer__legal { display: grid; grid-template-columns: 1fr auto auto; align-items: center; gap: 16px 32px; padding-block: 22px 32px; border-top: 1px solid var(--line); font-size: 0.86rem; color: var(--dim); }
 .footer__clock { display: inline-flex; align-items: center; gap: 10px; padding: 7px 14px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
@@ -1084,8 +1088,7 @@ html[lang='ar'] .eyebrow { font-size: 0.82rem; }
 html[lang='ar'] .tlink, html[lang='ar'] .card .more { font-size: 0.9rem; }
 html[lang='ar'] .card__date, html[lang='ar'] .choice legend, html[lang='ar'] .footer__col h2, html[lang='ar'] .info-block h3, html[lang='ar'] .specs-grid dt { font-size: 0.85rem; }
 html[lang='ar'] .marquee__item:nth-child(even) { font-style: normal; }
-html[lang='ar'] .footer__mark { font-size: 14vw; line-height: 1.25; font-variation-settings: normal; font-weight: 500; }
-html[lang='ar'] .footer__mark em, html[lang='ar'] .preloader__word em { font-style: normal; }
+html[lang='ar'] .footer__tagline em, html[lang='ar'] .preloader__word em { font-style: normal; }
 html[lang='ar'] .preloader__word { font-weight: 500; line-height: 1.4; }
 
 /* header & menus */

@@ -99,7 +99,16 @@ export default async function Footer() {
         </div>
       </div>
 
-      <p className="footer__mark" data-fill aria-hidden="true"><span>{ui.wordmark.a} <em>{ui.wordmark.b}</em></span></p>
+      {/* quiet brand sign-off: the house mark between hairlines, the tagline and the five service colours */}
+      <div className="container footer__signoff" data-footer-rise>
+        <div className="footer__signoff-mark" aria-hidden="true">
+          <i className="footer__rule" />
+          <Image src="/assets/logos/al-maskaan-village-mark.png" alt="" width={512} height={512} sizes="44px" />
+          <i className="footer__rule" />
+        </div>
+        <p className="footer__tagline">{ui.loader.tagA} <em>{ui.loader.tagB}</em></p>
+        <p className="footer__dots" aria-hidden="true">{['acc', 'ret', 'cat', 'spa', 'lif'].map((k) => <i key={k} style={{ background: `var(--c-${k})` }} />)}</p>
+      </div>
 
       <div className="container footer__legal">
         {/* the year comes from the visitor's clock, so it rolls over on 1 January without a new deploy */}
