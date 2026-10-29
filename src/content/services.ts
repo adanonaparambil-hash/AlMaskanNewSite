@@ -386,14 +386,6 @@ export const ABOUT = {
       ],
     },
     {
-      name: 'Rajan Prabhakaran',
-      role: 'General Manager — Projects & Development',
-      image: 'people.rajan',
-      bio: [
-        'Rajan Prabhakaran oversees the technical aspects of Al Adrak Group projects. With over two decades of experience in Oman and India, he navigates project complexities, ensuring adherence to quality standards and optimal execution.',
-      ],
-    },
-    {
       name: 'Rajesh Menon',
       role: 'General Manager — Al Maskaan Village & Business Development',
       image: 'people.rajesh',

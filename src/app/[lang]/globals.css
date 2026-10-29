@@ -807,9 +807,8 @@ html:not(.motion-on) .tl-item__year { color: var(--gold); }
 .member .role { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin: 4px 0 12px; }
 .member p { color: var(--muted); font-size: 0.97rem; }
 .member p + p { margin-top: 0.8em; }
-/* four team cards after the two leads: one row of four on wide screens, two by two below that */
-.member:not(.member--lead) { grid-column: span 3; }
-@media (max-width: 1280px) { .member:not(.member--lead) { grid-column: span 6; } }
+/* three team cards after the two leads: one row of three */
+.member:not(.member--lead) { grid-column: span 4; }
 @media (max-width: 1000px) { .member { grid-column: span 6; grid-template-columns: 1fr; } .member--lead { grid-column: span 6; } }
 @media (max-width: 640px) { .member, .member--lead, .member:not(.member--lead) { grid-column: 1 / -1; grid-template-columns: 1fr; } .member.member--lead .media { aspect-ratio: 4 / 5; } .member:not(.member--lead) .media { aspect-ratio: 4 / 5; } }
 
