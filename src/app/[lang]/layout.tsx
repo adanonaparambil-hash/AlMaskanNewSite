@@ -31,7 +31,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const { site, locale } = await getContent();
   return {
     metadataBase: new URL(SITE.url),
-    title: { default: `${site.name} — ${site.tagline}`, template: `%s — ${site.name}` },
+    title: { default: `${site.name} — ${site.metaTitle}`, template: `%s — ${site.name}` },
     description: site.description,
     applicationName: site.name,
     alternates: alternatesFor('/', locale),
@@ -39,11 +39,11 @@ export async function generateMetadata(): Promise<Metadata> {
       type: 'website',
       siteName: site.name,
       locale: locale === 'ar' ? 'ar_OM' : 'en_OM',
-      title: `${site.name} — ${site.tagline}`,
+      title: `${site.name} — ${site.metaTitle}`,
       description: site.description,
       images: [{ url: '/assets/hero/og.jpg', width: 1200, height: 630, alt: site.name }],
     },
-    twitter: { card: 'summary_large_image' },
+    twitter: { card: 'summary_large_image', title: `${site.name} — ${site.metaTitle}`, description: site.description },
     icons: { icon: '/assets/logos/al-maskaan-village-mark.png', apple: '/assets/logos/al-maskaan-village-mark.png' },
   };
 }

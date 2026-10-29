@@ -38,7 +38,10 @@ $email = $clean($body['email'] ?? '', 160);
 $phone = $clean($body['phone'] ?? '', 40);
 $message = $block($body['message'] ?? '', 4000);
 $roomIn = $clean($body['room'] ?? '', 30);
-$room = in_array($roomIn, ['Junior staff', 'Single premium', 'Double premium', 'Triple premium'], true) ? $roomIn : '';
+$room = in_array($roomIn, ['Executive single', 'Executive twin', 'Executive triple', 'Shared room', 'Individual bedspace', 'Basic room'], true) ? $roomIn : '';
+$mealIn = $clean($body['mealPlan'] ?? '', 30);
+$mealPlan = in_array($mealIn, ['Room Only', 'Bed & Breakfast', 'Half Board', 'Full Board'], true) ? $mealIn : '';
+$duration = $clean($body['duration'] ?? '', 60);
 $residentsIn = $clean($body['residents'] ?? '', 6);
 $residents = (ctype_digit($residentsIn) && (int) $residentsIn >= 1 && (int) $residentsIn <= 5000) ? $residentsIn : '';
 $moveinIn = $clean($body['movein'] ?? '', 10);
@@ -60,10 +63,12 @@ $lines = [
   "Email: $email",
   'Phone: ' . ($phone !== '' ? $phone : '—'),
 ];
-if ($topic === 'Accommodation' && ($room !== '' || $residents !== '' || $movein !== '')) {
+if ($topic === 'Accommodation' && ($room !== '' || $residents !== '' || $movein !== '' || $mealPlan !== '' || $duration !== '')) {
   $lines[] = 'Room type: ' . ($room !== '' ? $room : '—');
-  $lines[] = 'Residents: ' . ($residents !== '' ? $residents : '—');
-  $lines[] = 'Preferred move-in: ' . ($movein !== '' ? $movein : '—');
+  $lines[] = 'Meal plan: ' . ($mealPlan !== '' ? $mealPlan : '—');
+  $lines[] = 'Number of people: ' . ($residents !== '' ? $residents : '—');
+  $lines[] = 'Start date: ' . ($movein !== '' ? $movein : '—');
+  $lines[] = 'Duration of stay: ' . ($duration !== '' ? $duration : '—');
 }
 $lines[] = '';
 $lines[] = $message;

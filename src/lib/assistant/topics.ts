@@ -10,9 +10,9 @@ export const QUOTE_HREF = '/contact-us?kind=Quote&topic=Accommodation#inquiry';
 const T = {
   en: {
     rooms: 'Rooms', quote: 'Get a quote', catering: 'Meals & catering', retail: 'Retail Spaces', spaces: 'Meeting spaces', lifestyle: 'Sports & lifestyle', location: 'Location', contact: 'Contact us',
-    roomsIntro: 'Furnished rooms for company workforces and individuals:',
+    roomsIntro: 'Furnished executive and team residences for companies and individuals:',
     upTo: (n: string) => `up to ${n}`,
-    roomsNote: 'Every stay includes three daily meals, Wi-Fi and laundry. For prices, ask for a quote.',
+    roomsNote: 'Daily or monthly stays, with meal plans from Room Only to Full Board (buffet). Internet, electricity and water are included in every room. For prices, ask for a quote.',
     quoteAnswer: (time: string) => `Prices depend on the room type, the number of rooms and the length of stay, so we send each visitor a tailored quote. Tell us what you need on the quote form and we will reply within ${time}.`,
     roomsLink: 'See the rooms', quoteLink: 'Open the quote form', more: 'Read more', mapLink: 'Open the map', contactLink: 'Send an inquiry',
     locationLead: (addr: string) => `We are in ${addr}, on the Muscat–Batinah Expressway.`,
@@ -21,9 +21,9 @@ const T = {
   },
   ar: {
     rooms: 'الغرف', quote: 'اطلب عرض سعر', catering: 'الوجبات والتموين', retail: 'مساحات التجزئة', spaces: 'قاعات الاجتماعات', lifestyle: 'الرياضة وأسلوب الحياة', location: 'الموقع', contact: 'تواصل معنا',
-    roomsIntro: 'غرف مفروشة للقوى العاملة لدى الشركات وللأفراد:',
+    roomsIntro: 'مساكن تنفيذية ومساكن للفرق مفروشة للشركات والأفراد:',
     upTo: (n: string) => `حتى ${n}`,
-    roomsNote: 'تشمل كل إقامة ثلاث وجبات يومية والإنترنت والغسيل. لمعرفة الأسعار، اطلب عرض سعر.',
+    roomsNote: 'إقامة يومية أو شهرية، مع خطط وجبات من الغرفة فقط إلى الإقامة الكاملة (بوفيه). الإنترنت والكهرباء والمياه مشمولة في كل غرفة. لمعرفة الأسعار، اطلب عرض سعر.',
     quoteAnswer: (time: string) => `تعتمد الأسعار على نوع الغرفة وعدد الغرف ومدة الإقامة، لذلك نرسل لكل زائر عرض سعر مخصصاً. أخبرنا بما تحتاجه في نموذج طلب عرض السعر وسنردّ خلال ${time}.`,
     roomsLink: 'اطّلع على الغرف', quoteLink: 'افتح نموذج عرض السعر', more: 'اقرأ المزيد', mapLink: 'افتح الخريطة', contactLink: 'أرسل استفساراً',
     locationLead: (addr: string) => `نقع في ${addr}، على طريق مسقط–الباطنة السريع.`,

@@ -5,6 +5,7 @@ import { FACTS, GROUP, HAVEN, SITE, STORY, STORY_NOW } from '@/content/site';
 import { ROOMS } from '@/content/rooms';
 import { ABOUT, SERVICES, type Service } from '@/content/services';
 import { DINING_OUTLETS, OPEN_OUTLETS, RETAIL_UNITS } from '@/content/village';
+import { HOUSE_RULE, HOW_TO_BOOK, INCLUDED_NOTE, LAUNDRY_NOTE, MEAL_NOTE, MEAL_PLANS, ROOM_OPTIONS } from '@/content/stays';
 
 const line = (label: string, value: string) => `- ${label}: ${value}`;
 
@@ -12,7 +13,7 @@ function rooms() {
   return ROOMS.map((r) => {
     const specs = r.specs.map((s) => `${s.label}: ${s.value}`).join('; ');
     return [
-      `### ${r.name} — for ${r.forWho.toLowerCase()} — page: /rooms/${r.slug}`,
+      `### ${r.name} — ${r.forWho} — page: /rooms/${r.slug}`,
       r.tagline,
       r.intro,
       `Specs: ${specs}`,
@@ -61,7 +62,7 @@ function about() {
 }
 
 /** The complete, stable system prompt (no dates or per-request values, so it caches across every visitor). */
-export const SITE_KNOWLEDGE = `You are the website assistant of ${SITE.name} (Arabic: ${SITE.arabicName}), ${SITE.description}
+export const SITE_KNOWLEDGE = `You are the website assistant of ${SITE.name} (Arabic: ${SITE.arabicName}): ${SITE.metaTitle}. ${SITE.description}
 
 How to answer
 - Help visitors with questions about Al Maskaan Village: rooms, catering, retail spaces and units to rent, meeting spaces, lifestyle facilities, location, the company, news and how to get in touch.
@@ -89,6 +90,11 @@ ${about()}
 
 Rooms (for company workforces and individuals alike; all rooms are at /rooms)
 ${rooms()}
+
+Meal plans: ${MEAL_PLANS.map((m) => `${m.plan.en} (${m.meals.en})`).join('; ')}. ${MEAL_NOTE.en}
+Room options: ${ROOM_OPTIONS.map((o) => `${o.room.en} — ${o.building.en}; meal plans: ${o.plans.en}; laundry: ${o.laundry ? 'yes' : 'no'}; stay: ${o.stay.en}`).join(' | ')}
+${LAUNDRY_NOTE.en} ${INCLUDED_NOTE.en} ${HOUSE_RULE.en}
+How to book: ${HOW_TO_BOOK.map((h, i) => `${i + 1}. ${h.step.en} — ${h.text.en}`).join(' ')}
 
 Retail Spaces
 ${retail()}

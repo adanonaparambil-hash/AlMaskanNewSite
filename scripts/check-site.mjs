@@ -34,7 +34,7 @@ for (const a of assets) {
   if (!r.ok) bad.push(`asset ${a} -> ${r.status}`);
 }
 // sample optimised image endpoint
-const r = await fetch(base + '/_next/image?url=%2Fassets%2Fimages%2Fhero%2Faerial-masterplan.jpg&w=1920&q=82', { headers: { accept: 'image/avif,image/webp' } });
+const r = await fetch(base + '/_next/image?url=%2Fassets%2Fimages%2Famv%2Fvillage-aerial.jpg&w=1920&q=82', { headers: { accept: 'image/avif,image/webp' } });
 if (!r.ok) bad.push('image optimiser -> ' + r.status);
 console.log(`${pages} pages, ${assets.size} assets checked; image optimiser content-type: ${r.headers.get('content-type')}`);
 console.log(bad.length ? 'PROBLEMS:\n' + bad.join('\n') : 'No broken links, assets or missing SEO basics.');

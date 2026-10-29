@@ -28,6 +28,8 @@ const KEYS = {
   'acc.junior1': [`${P3}/OST00298.JPG`, 'shared-room', 'Shared room with steel bunk beds and wardrobes', 'غرفة مشتركة بأسرّة معدنية بطابقين وخزائن ملابس'],
   'acc.junior2': [`${P3}/OST00302.JPG`, 'shared-room-2', 'Shared room with bunks, desk and wardrobe', 'غرفة مشتركة بأسرّة بطابقين ومكتب وخزانة'],
   'acc.junior3': [`${P2}/IMG_6613.JPG`, 'shared-room-3', 'Shared room with bunk beds and wardrobes', 'غرفة مشتركة بأسرّة بطابقين وخزائن ملابس'],
+  'acc.bedspace': [`${P3}/OST00305.JPG`, 'individual-bedspace', 'Individual bedspace with a single bed in a shared room', 'سرير فردي في غرفة مشتركة'],
+  'acc.basic': [`${P2}/IMG_6614.JPG`, 'basic-room', 'Basic room with bunk beds and wardrobes', 'غرفة أساسية بأسرّة بطابقين وخزائن'],
   'acc.single': [`${P3}/OST00040.JPG`, 'single-premium', 'Single Premium room with queen bed, sofa and coffee table', 'غرفة مميّزة فردية بسرير كوين وأريكة وطاولة قهوة'],
   'acc.single2': [`${P3}/OST00046.JPG`, 'single-premium-2', 'Single Premium room with desk and television', 'غرفة مميّزة فردية بمكتب وتلفزيون'],
   'acc.double': [`${P3}/OST00050.JPG`, 'double-premium', 'Double Premium room with two beds, sofa and coffee table', 'غرفة مميّزة مزدوجة بسريرين وأريكة وطاولة قهوة'],

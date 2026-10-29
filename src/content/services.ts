@@ -105,7 +105,7 @@ export const SERVICES: Service[] = [
     title: 'Catering that extends beyond the daily meal',
     eyebrow: 'Companies · Catering',
     lead:
-      'Our commitment to three delicious, nutritious meals a day keeps your workforce fuelled and ready to perform. Our catering services also extend far beyond routine sustenance — we understand the power of food to elevate any event.',
+      'Buffet meal plans — from Room Only to Full Board, with packed meals for residents on site shifts — keep your workforce fuelled and ready to perform. Our catering services also extend far beyond routine sustenance — we understand the power of food to elevate any event.',
     image: 'cat.hallBig',
     gallery: ['cat.kitchen', 'cat.canapes', 'cat.desserts', 'cat.hallPhoto'],
     stats: [
@@ -133,7 +133,7 @@ export const SERVICES: Service[] = [
       },
     ],
     cta: { title: 'Plan your next event with us', text: 'Tell us the occasion, the numbers and the tone — we will design the menu.', label: 'Get in touch' },
-    seo: 'Al Maskaan Catering: three daily meals for your workforce from a 3,900 m² kitchen, plus bespoke catering for meetings, conferences and celebrations.',
+    seo: 'Al Maskaan Catering: buffet meal plans from Room Only to Full Board from a 3,900 m² kitchen, plus bespoke catering for meetings, conferences and celebrations.',
   },
   {
     slug: 'spaces',
@@ -257,23 +257,23 @@ export const SERVICES: Service[] = [
     slug: 'individuals-catering',
     audience: 'individuals',
     line: 'catering',
-    title: 'Three meals a day, already taken care of',
+    title: 'Meals, taken care of',
     eyebrow: 'Individuals · Catering',
     lead:
-      'With three daily meals included in your rental rate, you have access to food whenever you need it — breakfast, lunch or dinner.',
+      'Choose the meal plan that suits your stay — Room Only, Bed & Breakfast, Half Board or Full Board — with buffet breakfast, lunch and dinner.',
     image: 'cat.hall',
     gallery: ['cat.hall2', 'cat.hallPhoto', 'cat.kitchen'],
     sections: [
       {
         title: 'Cooked for you',
         paragraphs: [
-          'Our carefully curated menu aims to satisfy your taste buds, fulfil your nutritional needs and provide unmatched convenience and affordability throughout your stay.',
+          'Our carefully curated menu aims to satisfy your taste buds, fulfil your nutritional needs and provide unmatched convenience throughout your stay.',
           'We invite you to indulge in a diverse menu crafted by our skilled chefs, who are dedicated to creating culinary experiences rather than just serving meals. Relax and enjoy.',
         ],
       },
     ],
-    cta: { title: 'Come and eat with us', text: 'Ask about rooms — meals are included.', label: 'Get in touch' },
-    seo: 'Three daily meals are included in your stay at Al Maskaan Village, prepared by our chefs from a central kitchen.',
+    cta: { title: 'Come and eat with us', text: 'Ask about rooms and the meal plan that suits you.', label: 'Get in touch' },
+    seo: 'Buffet meal plans from Room Only to Full Board at Al Maskaan Village, prepared by our chefs in a central kitchen.',
   },
   {
     slug: 'individuals-spaces',
@@ -332,7 +332,7 @@ export const findService = (audience: Service['audience'], slug: string) => SERV
 export const ABOUT = {
   purpose: 'To nurture human and business fulfilment.',
   vision: 'To create a home-away-from-home community and foster growth and wellbeing.',
-  mission: 'To revolutionise accommodation and service while providing companies with affordable and hassle-free solutions.',
+  mission: 'To revolutionise accommodation and service while providing companies with hassle-free solutions.',
   values: [
     { name: 'Quality', text: 'We are committed to providing services and activities that exceed our customers’ expectations. We continuously improve the quality of everything we do to ensure customer satisfaction and deliver on our high standards of excellence.' },
     { name: 'Sustainability', text: 'We are here to stay, and we are committed to meeting the needs of the present without compromising the ability to generate future growth and prosperity. We will respect the environment, conduct business ethically and responsibly, and make decisions based on the common good.' },
@@ -344,7 +344,7 @@ export const ABOUT = {
     { label: 'Unwavering commitment', text: 'We are passionate about exceeding expectations and offering a seamless experience that supports productivity and well-being.' },
   ],
   committed: [
-    { label: 'A comfortable and affordable haven', text: 'A space that feels like home, offering exceptional value for money.' },
+    { label: 'A comfortable haven', text: 'A space that feels like home, offering exceptional value for money.' },
     { label: 'An environment for productivity and well-being', text: 'Resources and amenities designed to support professional and personal needs, helping our community thrive in every aspect of life.' },
     { label: 'Continuous improvement', text: 'We are always seeking ways to elevate our residents’ experience and remain at the forefront of the accommodation industry.' },
   ],

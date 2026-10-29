@@ -12,11 +12,15 @@ const KINDS = ['Query', 'Quote', 'Complaint'] as const;
 
 /** Room types (the values the inquiry email uses); labels come from ui.form.rooms. */
 const ROOMS = [
-  { v: 'Junior staff', note: 'Shared room, up to 10' },
-  { v: 'Single premium', note: 'Managers & senior staff · S1' },
-  { v: 'Double premium', note: 'Managers & senior staff · S2' },
-  { v: 'Triple premium', note: 'Managers & senior staff · S3' },
+  { v: 'Executive single', note: 'Liwan Building' },
+  { v: 'Executive twin', note: 'Liwan Building' },
+  { v: 'Executive triple', note: 'Liwan Building' },
+  { v: 'Shared room', note: 'Majan 1' },
+  { v: 'Individual bedspace', note: 'Majan 1' },
+  { v: 'Basic room', note: 'Majan 2' },
 ] as const;
+
+const MEAL_PLANS = ['Room Only', 'Bed & Breakfast', 'Half Board', 'Full Board'] as const;
 
 type Errors = Partial<Record<'name' | 'email' | 'phone' | 'message' | 'topic' | 'residents', string>>;
 
@@ -164,6 +168,17 @@ export default function InquiryForm({ defaultTopic = 'Village' }: { defaultTopic
               ))}
             </div>
           </fieldset>
+          <fieldset className="choice">
+            <legend>{t.mealPlan} <span className="opt">{t.optional}</span></legend>
+            <div>
+              {MEAL_PLANS.map((v) => (
+                <label key={v} className="chip">
+                  <input type="radio" name="mealPlan" value={v} />
+                  <span>{t.mealPlans[v] ?? v}</span>
+                </label>
+              ))}
+            </div>
+          </fieldset>
           <div className="form__grid">
             <div className="field">
               <label htmlFor={fid('residents')}>{t.residents} <span className="opt">{t.optional}</span></label>
@@ -173,6 +188,10 @@ export default function InquiryForm({ defaultTopic = 'Village' }: { defaultTopic
             <div className="field">
               <label htmlFor={fid('movein')}>{t.movein} <span className="opt">{t.optional}</span></label>
               <input id={fid('movein')} name="movein" type="date" />
+            </div>
+            <div className="field">
+              <label htmlFor={fid('duration')}>{t.duration} <span className="opt">{t.optional}</span></label>
+              <input id={fid('duration')} name="duration" type="text" maxLength={60} placeholder={t.durationHint} />
             </div>
           </div>
         </div>

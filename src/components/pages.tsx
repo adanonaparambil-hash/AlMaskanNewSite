@@ -5,6 +5,7 @@ import { ContactBand } from './Footer';
 import { Button, Eyebrow, Fact, Heading, Media, PageHero, TextLink } from './ui';
 import type { Room } from '@/content/rooms';
 import type { Service } from '@/content/services';
+import { HOUSE_RULE, ON_SITE_SERVICES } from '@/content/stays';
 import { DINING_OUTLETS } from '@/content/village';
 import { getContent, servicePages } from '@/i18n/server';
 import { img } from '@/lib/images';
@@ -107,7 +108,7 @@ export async function RoomPage({ room }: { room: Room }) {
   return (
     <>
       <PageHero
-        eyebrow={`${t.rooms} · ${room.forWho}${room.code ? ` · ${room.code}` : ''}`}
+        eyebrow={`${t.rooms} · ${room.forWho}`}
         title={<>{room.name}</>}
         lead={room.tagline}
         image={img(room.image)}
@@ -145,6 +146,7 @@ export async function RoomPage({ room }: { room: Room }) {
             <ul className="checks" data-stagger="0.06" style={{ '--c': 'var(--c-acc)' } as CSSProperties}>
               {room.amenities.map((a) => <li key={a} data-stagger-item><span>{a}</span></li>)}
             </ul>
+            <p className="fine" style={{ marginTop: 24 }} data-reveal="fade">{HOUSE_RULE[c.locale]}</p>
           </div>
         </div>
       </section>
@@ -235,6 +237,18 @@ export async function ServicePage({ service }: { service: Service }) {
           </div>
         </section>
       ))}
+
+      {service.slug === 'lifestyle' && (
+        <section className="section--tight section" aria-labelledby="onsite-title">
+          <div className="container">
+            <Eyebrow color={color}>{c.locale === 'ar' ? 'داخل القرية' : 'In the village'}</Eyebrow>
+            <h2 id="onsite-title" className="display display--md" data-reveal="chars">{c.locale === 'ar' ? <>خدمات <em>في الموقع</em></> : <>On-site <em>services</em></>}</h2>
+            <ul className="onsite" data-stagger="0.05">
+              {ON_SITE_SERVICES.map((x) => <li key={x.en} className="glass" data-stagger-item>{x[c.locale]}</li>)}
+            </ul>
+          </div>
+        </section>
+      )}
 
       {service.gallery.length > 0 && (
         <section className="section--tight section" aria-label={t.gallery}>

@@ -1309,3 +1309,37 @@ html[dir='rtl'] .open-strip__live, html[dir='rtl'] .outlets__kind { letter-spaci
 .units__empty { margin-top: clamp(28px, 4vw, 56px); padding: clamp(24px, 4vw, 48px); border-radius: var(--radius); display: flex; flex-wrap: wrap; gap: 20px 40px; align-items: center; justify-content: space-between; }
 .units__empty h3 { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.5rem, 2.4vw, 2rem); }
 .units__empty p { color: var(--muted); margin-top: 8px; max-width: 52ch; }
+
+/* ---------- Rooms page: meal plans and room options tables, how to book ---------- */
+.table-wrap { border-radius: var(--radius); overflow-x: auto; padding: 6px clamp(10px, 2vw, 22px); }
+.data-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+.data-table th, .data-table td { padding: 16px 12px; text-align: start; vertical-align: top; border-bottom: 1px solid var(--line); }
+.data-table tbody tr:last-child th, .data-table tbody tr:last-child td { border-bottom: 0; }
+.data-table thead th { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
+.data-table tbody th { font-weight: 600; color: var(--text); }
+.data-table td { color: var(--muted); }
+.data-table a { color: var(--text); text-decoration: underline; text-decoration-color: rgba(226, 196, 138, 0.5); text-underline-offset: 3px; }
+.data-table a:hover { color: var(--gold); }
+.data-table .tick { color: #8fd18a; font-weight: 700; }
+.data-table .dash { color: var(--dim); }
+html[dir='rtl'] .data-table thead th { letter-spacing: 0; }
+/* phones: each room option becomes a small card, its labels taken from the column headings */
+@media (max-width: 760px) {
+  .data-table--options thead { display: none; }
+  .data-table--options tr { display: grid; gap: 6px; padding: 14px 4px; border-bottom: 1px solid var(--line); }
+  .data-table--options tbody tr:last-child { border-bottom: 0; }
+  .data-table--options th, .data-table--options td { padding: 0; border: 0; }
+  .data-table--options td { display: flex; gap: 10px; }
+  .data-table--options td::before { content: attr(data-label); min-width: 96px; color: var(--dim); font-size: 0.85rem; }
+}
+.steps { list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: clamp(28px, 4vw, 48px); counter-reset: none; }
+.steps li { padding: clamp(20px, 2.5vw, 28px); border-radius: var(--radius); display: grid; gap: 10px; align-content: start; }
+.steps__n { font-family: var(--font-display); font-size: 2rem; color: var(--gold); line-height: 1; }
+.steps h3 { font-size: 1.15rem; font-weight: 600; }
+.steps p { color: var(--muted); font-size: 0.92rem; }
+@media (max-width: 900px) { .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .steps { grid-template-columns: minmax(0, 1fr); } }
+
+/* ---------- Lifestyle: on-site services ---------- */
+.onsite { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; margin-top: clamp(20px, 3vw, 36px); }
+.onsite li { padding: 10px 18px; border-radius: 999px; font-size: 0.95rem; color: var(--text); }

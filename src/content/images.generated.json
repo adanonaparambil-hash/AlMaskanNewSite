@@ -257,6 +257,18 @@
    "w": 545,
    "h": 625,
    "alt": "Portrait of Rajesh Menon, General Manager of Al Maskaan Village and Business Development"
+  },
+  "acc.bedspace": {
+   "src": "/assets/images/amv/individual-bedspace.jpg",
+   "w": 1800,
+   "h": 1012,
+   "alt": "Individual bedspace with a single bed in a shared room"
+  },
+  "acc.basic": {
+   "src": "/assets/images/amv/basic-room.jpg",
+   "w": 1800,
+   "h": 2400,
+   "alt": "Basic room with bunk beds and wardrobes"
   }
  },
  "news": {

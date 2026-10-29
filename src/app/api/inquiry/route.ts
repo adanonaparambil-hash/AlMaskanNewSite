@@ -33,7 +33,9 @@ export async function POST(req: Request) {
   const phone = clean(body.phone, 40);
   const message = cleanBlock(body.message, 4000);
   // accommodation details (only sent when the topic is Accommodation; all optional)
-  const room = ['Junior staff', 'Single premium', 'Double premium', 'Triple premium'].includes(clean(body.room, 30)) ? clean(body.room, 30) : '';
+  const room = ['Executive single', 'Executive twin', 'Executive triple', 'Shared room', 'Individual bedspace', 'Basic room'].includes(clean(body.room, 30)) ? clean(body.room, 30) : '';
+  const mealPlan = ['Room Only', 'Bed & Breakfast', 'Half Board', 'Full Board'].includes(clean(body.mealPlan, 30)) ? clean(body.mealPlan, 30) : '';
+  const duration = clean(body.duration, 60);
   const residentsNum = Number(clean(body.residents, 6));
   const residents = Number.isInteger(residentsNum) && residentsNum >= 1 && residentsNum <= 5000 ? String(residentsNum) : '';
   const movein = /^\d{4}-\d{2}-\d{2}$/.test(clean(body.movein, 10)) ? clean(body.movein, 10) : '';
@@ -56,8 +58,8 @@ export async function POST(req: Request) {
     `Name: ${name}`,
     `Email: ${email}`,
     `Phone: ${phone || '—'}`,
-    ...(topic === 'Accommodation' && (room || residents || movein)
-      ? [`Room type: ${room || '—'}`, `Residents: ${residents || '—'}`, `Preferred move-in: ${movein || '—'}`]
+    ...(topic === 'Accommodation' && (room || residents || movein || mealPlan || duration)
+      ? [`Room type: ${room || '—'}`, `Meal plan: ${mealPlan || '—'}`, `Number of people: ${residents || '—'}`, `Start date: ${movein || '—'}`, `Duration of stay: ${duration || '—'}`]
       : []),
     '',
     message,

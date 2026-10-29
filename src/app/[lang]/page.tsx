@@ -15,13 +15,13 @@ import { galleryFor, img } from '@/lib/images';
 import type { CSSProperties } from 'react';
 
 const en = {
-  metaTitleTail: 'Elevating Living and Working',
+  metaTitleTail: 'Integrated Workforce Living in Khazaen Economic City, Oman',
   metaDescription:
-    'Furnished accommodation, retail, catering, spaces and lifestyle in Khazaen Economic City, Barka, Oman. A community-oriented, mixed-use village on the Muscat–Batinah Expressway.',
+    'Furnished executive and team residences for companies and individuals in Khazaen Economic City, Barka, with daily or monthly stays, room-only to full-board buffet dining, laundry, retail, meeting spaces and recreation on the Muscat–Batinah Expressway.',
   // hero
   heroEyebrow: 'Khazaen Economic City · Barka · Oman',
-  heroTitle: <>Redefining <em>accommodation</em> in Khazaen Economic City</> as ReactNode,
-  heroLead: 'A community-oriented, mixed-use village of furnished rooms and on-site catering — for individuals and company workforces, on the Muscat–Batinah Expressway.',
+  heroTitle: <>Integrated <em>workforce living</em> in Khazaen Economic City</> as ReactNode,
+  heroLead: 'A managed, mixed-use village of furnished residences with daily or monthly stays and meal plans from room-only to full board, serving companies and individuals on the Muscat–Batinah Expressway.',
   inquiry: 'Make an inquiry',
   exploreVillage: 'Explore the village',
   scroll: 'Scroll',
@@ -30,7 +30,7 @@ const en = {
   introEyebrow: 'Elevating living and working',
   introTitle: <>Exceptional service and <em>rewarding</em> experiences</> as ReactNode,
   introText: [
-    'Al Maskaan Village elevates the concept of accommodation with an innovative, welcoming and community-oriented mixed-use development in Khazaen Economic City. As a pioneer in affordable accommodation in Oman, we provide modern, furnished apartments with on-site catering for the diverse needs of individuals and corporate workforces.',
+    'Al Maskaan Village elevates the concept of accommodation with an innovative, welcoming and community-oriented mixed-use development in Khazaen Economic City. As a pioneer in integrated workforce living in Oman, Al Maskaan Village offers furnished executive and team residences with flexible meal plans, laundry and on-site buffet dining, meeting the staff and worker accommodation needs of individuals and corporate workforces.',
     'A dedicated team delivers exceptional service, fosters innovation and creates a healthy, safe living environment — in Barka on the Muscat–Batinah Expressway, the most densely populated part of the Sultanate.',
     'Whether you are looking for accommodation, a sense of community, or ways to enhance your business, Al Maskaan Village stands as a model of elevated living and working, with a remarkable and unmatched experience for residents and employers alike.',
   ],
@@ -40,7 +40,7 @@ const en = {
   havenLine: 'Accommodation · Retail · Catering · Spaces · Lifestyle',
   seal: 'Khazaen Economic City · Barka · Oman · Al Maskaan Village · ',
   badgeK: 'Pioneer',
-  badgeText: 'in affordable accommodation in Oman — modern, furnished apartments with on-site catering.',
+  badgeText: 'in integrated workforce living in Oman — furnished executive and team residences with on-site catering.',
   kicker: <>In Barka on the Muscat–Batinah Expressway — <em>the most densely populated</em> part of the Sultanate.</> as ReactNode,
   // film + statement
   filmLabel: 'Film',
@@ -87,8 +87,8 @@ const en = {
   retailSpaces: 'Retail Spaces',
   // catering
   catEyebrow: 'Al Maskaan Catering',
-  catTitle: <>Delicious meals, <em>included</em> in your stay</> as ReactNode,
-  catText: 'Three nutritious meals a day keep residents fuelled and ready to perform. Beyond the daily table, bespoke catering suits boardroom meetings, industry conferences and team celebrations — menus designed with our chefs around your culture, preferences and budget.',
+  catTitle: <>Three buffet meals a day on <em>Full Board</em></> as ReactNode,
+  catText: 'Breakfast, lunch and dinner are served buffet-style at Liwan Restaurant and Safi Dining Hall, with packed meals available for residents on site shifts. Choose Room Only, Bed & Breakfast, Half Board or Full Board. Beyond the daily table, we offer bespoke catering for meetings, conferences and celebrations.',
   catFacts: [
     { unit: 'm²', label: 'Industrial kitchen' },
     { unit: '', label: 'In-house catering serving' },
@@ -148,12 +148,12 @@ const AR_HAVEN_TITLES: Record<string, string> = {
 };
 
 const ar: typeof en = {
-  metaTitleTail: 'الارتقاء بالمعيشة والعمل',
+  metaTitleTail: 'سكن متكامل للقوى العاملة في مدينة خزائن الاقتصادية، عُمان',
   metaDescription:
-    'سكن مفروش، ومتاجر، وتموين، ومساحات، وأسلوب حياة متكامل في مدينة خزائن الاقتصادية، بركاء، سلطنة عُمان. قرية متعددة الاستخدامات تتمحور حول المجتمع على طريق مسقط–الباطنة السريع.',
+    'مساكن تنفيذية ومساكن للفرق مفروشة للشركات والأفراد في مدينة خزائن الاقتصادية، بركاء، بإقامة يومية أو شهرية، ووجبات بوفيه من الغرفة فقط إلى الإقامة الكاملة، وغسيل الملابس، ومتاجر، وقاعات اجتماعات، ومرافق ترفيهية على طريق مسقط–الباطنة السريع.',
   heroEyebrow: 'مدينة خزائن الاقتصادية · بركاء · عُمان',
-  heroTitle: <>نعيد تعريف <em>السكن</em> في مدينة خزائن الاقتصادية</>,
-  heroLead: 'قرية متعددة الاستخدامات تتمحور حول المجتمع، تضم غرفاً مفروشة وخدمات تموين في الموقع — للأفراد وللقوى العاملة في الشركات، على طريق مسقط–الباطنة السريع.',
+  heroTitle: <>سكن <em>متكامل للقوى العاملة</em> في مدينة خزائن الاقتصادية</>,
+  heroLead: 'قرية متعددة الاستخدامات تُدار باحترافية، تضم مساكن مفروشة بإقامة يومية أو شهرية وخطط وجبات من الغرفة فقط إلى الإقامة الكاملة، وتخدم الشركات والأفراد على طريق مسقط–الباطنة السريع.',
   inquiry: 'أرسل استفساراً',
   exploreVillage: 'استكشف القرية',
   scroll: 'مرّر',
@@ -161,7 +161,7 @@ const ar: typeof en = {
   introEyebrow: 'الارتقاء بالمعيشة والعمل',
   introTitle: <>خدمة استثنائية وتجارب <em>مُجزية</em></>,
   introText: [
-    'ترتقي قرية المسكن بمفهوم السكن من خلال مشروع مبتكر ومرحِّب متعدد الاستخدامات يتمحور حول المجتمع في مدينة خزائن الاقتصادية. وبصفتنا روّاداً في توفير السكن بأسعار معقولة في عُمان، نقدّم شققاً حديثة ومفروشة مع خدمات تموين في الموقع، تلبي الاحتياجات المتنوعة للأفراد وللقوى العاملة في الشركات.',
+    'ترتقي قرية المسكن بمفهوم السكن من خلال مشروع مبتكر ومرحِّب متعدد الاستخدامات يتمحور حول المجتمع في مدينة خزائن الاقتصادية. وبصفتها رائدة في السكن المتكامل للقوى العاملة في عُمان، توفّر قرية المسكن مساكن تنفيذية ومساكن للفرق مفروشة، مع خطط وجبات مرنة وغسيل للملابس وبوفيه في الموقع، لتلبية احتياجات السكن للموظفين والعمال لدى الأفراد والشركات.',
     'يقدّم فريق متفانٍ خدمة استثنائية، ويعزّز الابتكار، ويهيّئ بيئة معيشية صحية وآمنة — في بركاء على طريق مسقط–الباطنة السريع، المنطقة الأكثر كثافة سكانية في السلطنة.',
     'سواء كنت تبحث عن سكن، أو عن روح المجتمع، أو عن سبل لتطوير أعمالك، تقف قرية المسكن نموذجاً للارتقاء بالمعيشة والعمل، بتجربة لافتة لا مثيل لها للمقيمين وأصحاب العمل على حدٍّ سواء.',
   ],
@@ -171,7 +171,7 @@ const ar: typeof en = {
   havenLine: 'السكن · التجزئة · التموين · المساحات · أسلوب الحياة',
   seal: 'مدينة خزائن الاقتصادية · بركاء · عُمان · قرية المسكن · ',
   badgeK: 'روّاد',
-  badgeText: 'في توفير السكن بأسعار معقولة في عُمان — شقق حديثة ومفروشة مع خدمات تموين في الموقع.',
+  badgeText: 'في السكن المتكامل للقوى العاملة في عُمان — مساكن تنفيذية ومساكن للفرق مفروشة مع خدمات تموين في الموقع.',
   kicker: <>في بركاء على طريق مسقط–الباطنة السريع — <em>المنطقة الأكثر كثافة سكانية</em> في السلطنة.</>,
   filmLabel: 'الفيلم',
   statementLabel: 'رسالتنا',
@@ -211,8 +211,8 @@ const ar: typeof en = {
   ],
   retailSpaces: 'مساحات التجزئة',
   catEyebrow: 'تموين المسكن',
-  catTitle: <>وجبات شهية <em>مشمولة</em> في إقامتك</>,
-  catText: 'ثلاث وجبات مغذية يومياً تُبقي المقيمين بكامل طاقتهم وجاهزيتهم للعمل. وإلى جانب المائدة اليومية، تلائم خدمات التموين المصمّمة حسب الطلب اجتماعات مجالس الإدارة والمؤتمرات المهنية واحتفالات الفرق — بقوائم طعام يصمّمها طهاتنا وفق ثقافتك وتفضيلاتك وميزانيتك.',
+  catTitle: <>ثلاث وجبات بوفيه يومياً مع <em>الإقامة الكاملة</em></>,
+  catText: 'تُقدَّم وجبات الإفطار والغداء والعشاء بنظام البوفيه في مطعم ليوان وقاعة صافي للطعام، مع وجبات مغلّفة للمقيمين العاملين في نوبات المواقع. اختر بين الغرفة فقط، أو مبيت وإفطار، أو نصف إقامة، أو إقامة كاملة. وإلى جانب المائدة اليومية، نقدّم خدمات تموين مخصصة للاجتماعات والمؤتمرات والاحتفالات.',
   catFacts: [
     { unit: 'م²', label: 'مطبخ صناعي' },
     { unit: '', label: 'وجبة تموين داخلي' },
@@ -262,10 +262,13 @@ const COPY = { en, ar };
 export async function generateMetadata(): Promise<Metadata> {
   const { locale, site } = await getContent();
   const t = COPY[locale];
+  const title = `${site.name} — ${t.metaTitleTail}`;
   return {
-    title: { absolute: `${site.name} — ${t.metaTitleTail}` },
+    title: { absolute: title },
     description: t.metaDescription,
     alternates: alternatesFor('/', locale),
+    openGraph: { title, description: t.metaDescription },
+    twitter: { card: 'summary_large_image', title, description: t.metaDescription },
   };
 }
 
@@ -281,10 +284,11 @@ export default async function Home() {
   const showcase: ShowcaseRow[] = c.rooms.map((r) => {
     return {
       href: `/rooms/${r.slug}`,
-      code: r.code,
+      tag: r.forWho,
       name: r.name,
       text: r.tagline,
-      specs: [t.upTo(spec(r, t.specLabels.occupancy)), spec(r, t.specLabels.area) ?? '', t.roomsCount(spec(r, t.specLabels.count))],
+      // building, room size and room count, where the room type has them
+      specs: [r.building, spec(r, t.specLabels.area), spec(r, t.specLabels.count) && t.roomsCount(spec(r, t.specLabels.count))].filter((x): x is string => !!x),
       image: img(r.image),
     };
   });

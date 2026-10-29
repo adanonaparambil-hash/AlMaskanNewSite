@@ -4,7 +4,7 @@ import type { Img } from '@/lib/images';
 import { Arrow, Media } from './ui';
 import { getContent } from '@/i18n/server';
 
-export type ShowcaseRow = { href: string; code?: string; name: string; text: string; specs: string[]; image: Img };
+export type ShowcaseRow = { href: string; tag: string; name: string; text: string; specs: string[]; image: Img };
 
 /**
  * Accommodation as a stack of sticky glass cards: each room slides up over the previous one, which sinks back
@@ -20,7 +20,7 @@ export default async function RoomShowcase({ rows }: { rows: ShowcaseRow[] }) {
           <div className="stack__body">
             <div className="stack__top">
               <span className="stack__idx" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
-              <span className="stack__code">{r.code ? ui.stack.senior(r.code) : ui.stack.shared}</span>
+              <span className="stack__code">{r.tag}</span>
               <h3>{r.name}</h3>
               <p>{r.text}</p>
             </div>
