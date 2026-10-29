@@ -35,3 +35,12 @@ export const getLenis = () => lenis;
 /** Pause/resume smooth scrolling (menus, lightboxes). */
 export const lockScroll = (lock: boolean) => (lock ? lenis?.stop() : lenis?.start());
 export const scrollToTop = () => lenis?.scrollTo(0, { immediate: true, force: true });
+/** Jump to the element a #hash names (e.g. /about-us#team), clearing the fixed header. Returns whether it exists. */
+export function scrollToHash(hash: string): boolean {
+  const el = hash.length > 1 ? document.getElementById(decodeURIComponent(hash.slice(1))) : null;
+  if (!el) return false;
+  const y = el.getBoundingClientRect().top + window.scrollY - 96;
+  if (lenis) lenis.scrollTo(y, { immediate: true, force: true });
+  else window.scrollTo(0, y);
+  return true;
+}

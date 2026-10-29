@@ -398,8 +398,7 @@ export const ABOUT = {
       role: 'General Manager — Al Maskaan Village & Business Development',
       image: 'people.rajesh',
       bio: [
-        'Rajesh Menon leads Al Maskaan Village as General Manager and heads its business development. He oversees a community of more than 1,300 residents across over 400 rooms, serving a diverse portfolio of corporate clients. His remit covers property operations, guest experience, food and beverage, and commercial performance. Under his leadership, the Village’s dining outlets (Liwan Restaurant, Mint Café and Safi Dining Hall) operate under HACCP certification. He has also introduced structured systems for revenue management, procurement and compliance.',
-        'He brings nearly three decades of experience in hospitality, facilities management and sales across India and Oman, including leadership roles with Frankincense Hotel & Resorts and Hotel Muscat Holiday (formerly Holiday Inn). A certified Train The Trainer professional who speaks six languages, he is committed to delivering on the Village’s promise of going beyond accommodation.',
+        'Rajesh Menon leads Al Maskaan Village and its business development, overseeing more than 1,300 residents in over 400 rooms — from property operations and guest experience to food and beverage. He brings nearly three decades in hospitality and facilities management across India and Oman, including Frankincense Hotel & Resorts and Hotel Muscat Holiday.',
       ],
     },
   ],

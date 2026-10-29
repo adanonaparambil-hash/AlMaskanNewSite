@@ -616,22 +616,19 @@ export default async function Home() {
       {/* GROUP */}
       <section className="section section--sand" aria-labelledby="group-title">
         <div className="container group">
-          <div className="group__media" data-rise3d="18" data-tilt="5" style={{ position: 'relative' }}>
-            <Media k="people.thomas" ratio="4 / 5" sizes="(min-width: 900px) 40vw, 100vw" position="50% 20%" reveal />
+          <div className="group__head">
+            <Eyebrow>{t.groupEyebrow}</Eyebrow>
+            <h2 id="group-title" className="display display--lg" data-reveal="lines">{t.groupTitle(GROUP.name)}</h2>
           </div>
-          <div className="group__body">
-            <div>
-              <Eyebrow>{t.groupEyebrow}</Eyebrow>
-              <h2 id="group-title" className="display display--lg" data-reveal="lines">{t.groupTitle(GROUP.name)}</h2>
-            </div>
-            <p className="prose" data-reveal="fade" style={{ color: 'var(--muted)' }}>{GROUP.lead}</p>
-            <div className="group__stats" data-stagger="0.1">
-              {GROUP.stats.map((s) => (
-                <div key={s.label} data-stagger-item><b>{s.prefix}{s.value.toLocaleString('en-US')}{s.suffix}</b><span>{s.label}</span></div>
-              ))}
-            </div>
-            <p className="fine" style={{ marginTop: 0 }}>{GROUP.note}</p>
-            <div data-reveal="fade"><TextLink href="/about-us">{t.meetTeam}</TextLink></div>
+          <p className="group__lead prose" data-reveal="fade" style={{ color: 'var(--muted)' }}>{GROUP.lead}</p>
+          <div className="group__stats" data-stagger="0.1">
+            {GROUP.stats.map((s) => (
+              <div key={s.label} data-stagger-item><b>{s.prefix}{s.value.toLocaleString('en-US')}{s.suffix}</b><span>{s.label}</span></div>
+            ))}
+          </div>
+          <div className="group__foot">
+            <p className="fine" style={{ margin: 0 }}>{GROUP.note}</p>
+            <div data-reveal="fade"><TextLink href="/about-us#team">{t.meetTeam}</TextLink></div>
           </div>
         </div>
       </section>

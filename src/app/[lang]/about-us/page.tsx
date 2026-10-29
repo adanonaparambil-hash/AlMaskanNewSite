@@ -170,7 +170,7 @@ export default async function AboutPage() {
         </div>
       </section>
 
-      <section className="section" aria-labelledby="team-title">
+      <section id="team" className="section" aria-labelledby="team-title">
         <div className="container">
           <Eyebrow>{t.teamEyebrow}</Eyebrow>
           <Heading as="h2" className="display--lg" fx="chars" id="team-title">{t.teamTitle}</Heading>
