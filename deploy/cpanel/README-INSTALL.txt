@@ -1,57 +1,87 @@
-AL MASKAAN VILLAGE WEBSITE — INSTALLING ON GODADDY (cPanel Web Hosting)
-=======================================================================
+AL MASKAAN VILLAGE WEBSITE — WHAT TO DO ON GODADDY
+==================================================
 
-This package is the complete website as plain files (English + Arabic), plus three small PHP files for the
-inquiry form, the visitor counter and the site assistant. No database and no WordPress are needed.
-
-Needs: GoDaddy cPanel Web Hosting (Linux), PHP 8.0 or newer, an SSL certificate (free AutoSSL in cPanel).
-Note: GoDaddy "Managed WordPress" plans cannot host this site — it must be a cPanel plan.
+The website is already live at almaskaanvillage.com (GoDaddy cPanel hosting).
+This file lists everything to do on GoDaddy: (A) update the website, (B) make the inquiry
+form emails arrive, (C) check it works. Nothing needs to be edited inside the website files.
 
 
-1. BACK UP, THEN EMPTY public_html
-   - cPanel → File Manager → public_html.
-   - If an old site is there, download a backup first (select all → Compress), then delete the old files.
-   - In File Manager: Settings (top right) → tick "Show Hidden Files (dotfiles)".
+A. UPDATE THE WEBSITE  (each time you receive a new AlMaskanVillage-cPanel.zip)
+---------------------------------------------------------------------------
+1. Log in to GoDaddy → My Products → Web Hosting → Manage → cPanel Admin.
+2. cPanel → File Manager → open the folder  public_html
+3. Top right: Settings → tick "Show Hidden Files (dotfiles)" → Save.
+4. Click Upload → choose AlMaskanVillage-cPanel.zip → wait for 100% → go back to public_html.
+5. Right-click AlMaskanVillage-cPanel.zip → Extract → extract to  /public_html  → Extract Files.
+   If asked about existing files: allow it to overwrite them.
+6. Delete AlMaskanVillage-cPanel.zip from public_html (it is no longer needed).
+7. Check that public_html directly contains:  .htaccess   en.html   ar.html   api   assets   _img   _next
+   (they must not be inside a sub-folder).
 
-2. UPLOAD AND EXTRACT
-   - Upload AlMaskanVillage-cPanel.zip into public_html.
-   - Right-click the zip → Extract → into /public_html. Then delete the zip.
-   - Check that public_html now directly contains: .htaccess, en.html, ar.html, 404.html, api/, assets/, _next/ …
-     (not a sub-folder holding them). The .htaccess file is essential.
-
-3. SET UP THE INQUIRY FORM EMAIL  (first install only)
-   - In public_html/api: rename config.sample.php to config.php, then Edit it:
-       'INQUIRY_TO'   => 'operations@almaskaanvillage.com',   ← who receives inquiries (comma-separate several)
-       'INQUIRY_FROM' => 'website@almaskaanvillage.com',      ← sender; must be an address of this domain
-   - cPanel → Email Routing → choose almaskaanvillage.com → "Remote Mail Exchanger" → Change.
-     (The company email is on Google Workspace. Without this, cPanel keeps @almaskaanvillage.com mail on the
-      GoDaddy server and the inquiries never reach Gmail.)
-   - DNS (GoDaddy → Domain → DNS): the domain has no SPF record, so website emails may land in spam.
-     Add a TXT record:  Name: @   Value: v=spf1 include:_spf.google.com include:secureserver.net ~all
-   Until config.php is filled in, the form honestly tells visitors their message was not sent and shows the
-   phone numbers and email instead.
-
-4. PHP VERSION AND HTTPS
-   - cPanel → MultiPHP Manager → set the domain to PHP 8.1 or newer.
-   - cPanel → SSL/TLS Status → run AutoSSL so https:// works. The site redirects every visitor to https.
-
-5. CHECK IT  (open each in a browser)
-   - https://almaskaanvillage.com            → English home page
-   - https://almaskaanvillage.com/ar         → Arabic home page
-   - https://almaskaanvillage.com/rooms      → Rooms page
-   - https://almaskaanvillage.com/individuals/junior-staff → must jump to /rooms/shared (old address redirect)
-   - Contact us → send a test inquiry → it must arrive in the INQUIRY_TO mailbox.
-   - Footer: "visitors since launch" starts counting from the first visitor.
+   Kept automatically during updates: the visitor count, and api/config.php if you ever created one.
 
 
-UPDATING THE WEBSITE LATER
-   - Upload and extract the new zip over the old files (allow overwrite).
-   - Your api/config.php and the visitor count (api/data/visits.txt) are not in the zip, so they are kept.
+B. MAKE THE INQUIRY FORM EMAILS ARRIVE  (one time only)
+------------------------------------------------------
+The form already sends every inquiry by email:
+  To:    operations@almaskaanvillage.com
+  From:  website@almaskaanvillage.com   (Reply goes straight to the visitor)
+Two GoDaddy settings are needed so these emails reach your Google (Gmail) inbox and not spam:
+
+8. EMAIL ROUTING  — the most important step
+   cPanel → search "Email Routing" → select the domain almaskaanvillage.com
+   → choose  "Remote Mail Exchanger"  → click Change.
+   Why: your company email is on Google Workspace. If this stays on "Local Mail Exchanger",
+   GoDaddy keeps @almaskaanvillage.com emails on its own server and they never reach Gmail.
+
+9. SPF RECORD  — so the emails do not go to spam
+   GoDaddy → My Products → Domains → almaskaanvillage.com → DNS → Add New Record:
+       Type:   TXT
+       Name:   @
+       Value:  v=spf1 include:_spf.google.com include:secureserver.net ~all
+       TTL:    1 Hour
+   Save. (If a TXT record starting with "v=spf1" already exists, edit that one instead —
+   a domain must have only one SPF record.)
+
+10. PHP VERSION
+    cPanel → "MultiPHP Manager" → tick almaskaanvillage.com → PHP 8.1 or newer → Apply.
+
+11. HTTPS
+    cPanel → "SSL/TLS Status" → if the domain is not green, click "Run AutoSSL".
+
+Optional — to send inquiries to a different or extra address:
+   In public_html/api rename  config.sample.php  to  config.php , click Edit, change the
+   INQUIRY_TO line (separate several addresses with commas), Save.
 
 
-WHAT IS DIFFERENT FROM THE VERCEL VERSION
-   - Site assistant: answers from its built-in topics (rooms, quotes, catering, retail, spaces, lifestyle,
-     location, contact). The AI answers need a Node.js server.
-   - Visitor counter: kept in a small file on this server (api/data/visits.txt) — counting starts at 0.
-   - Vercel Web Analytics is not included (it only works on Vercel); Google Analytics can be added instead.
-   - Images are served at their prepared size (no automatic resizing), which is fine for this site.
+C. CHECK IT WORKS
+-----------------
+12. Open  https://almaskaanvillage.com  and  https://almaskaanvillage.com/ar  on a computer
+    and on a phone.
+13. Open  https://almaskaanvillage.com/individuals/junior-staff  → it must jump to /rooms/shared.
+14. Contact us page → send a test inquiry using your own email address:
+      - the page must say "Thank you — your message has been sent"
+      - the email must arrive at operations@almaskaanvillage.com within a few minutes
+        (wait up to 1 hour after step 9 the first time; check Spam and mark it "Not spam").
+
+
+IF THE FORM DOES NOT WORK
+-------------------------
+"Our online form is not available right now…"   → api/config.php exists but an address is empty:
+                                                 fix or delete api/config.php
+"Thank you…" but no email arrives               → step 8 (Email Routing) is not set to Remote
+The email arrives in Spam                        → step 9 (SPF), then mark it "Not spam"
+"Something went wrong…"                          → cPanel → "Track Delivery" shows the reason;
+                                                 check step 10 (PHP 8.1+)
+Still nothing                                    → GoDaddy limits how many emails a hosting plan
+                                                 may send; ask GoDaddy support, or ask the
+                                                 developer to send through Google Workspace instead.
+
+
+GOOD TO KNOW
+------------
+- The site assistant (chat button) answers from its built-in topics; the AI answers need a
+  Node.js server and are not part of the GoDaddy version.
+- Visitor counter: stored in public_html/api/data/visits.txt.
+- Phones and slow computers automatically get a lighter version of the animations, smaller
+  images and a smaller background film; visitors who switch off motion get a still version.

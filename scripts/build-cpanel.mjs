@@ -5,7 +5,10 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { execSync } from 'node:child_process';
+import sharp from 'sharp';
 import { REDIRECTS } from '../redirects.mjs';
+// Node 22.18+ reads this TypeScript file directly (types are stripped)
+import { IMG_WIDTHS } from '../src/lib/image-loader.ts';
 
 const ROOT = process.cwd();
 const OUT = path.join(ROOT, 'out');
@@ -36,6 +39,31 @@ if (!process.argv.includes('--package-only')) {
     // the next Vercel/Node build must not reuse this export's cache
     fs.rmSync(path.join(ROOT, '.next'), { recursive: true, force: true });
   }
+}
+
+// ---------------------------------------------------------------- sized images (there is no image optimiser on cPanel)
+// every raster under /assets in each width the image loader asks for, as WebP: phones get small files
+{
+  const widths = IMG_WIDTHS;
+  const files = [];
+  (function walk(d) {
+    for (const f of fs.readdirSync(d)) {
+      const p = path.join(d, f);
+      if (fs.statSync(p).isDirectory()) walk(p);
+      else if (/\.(jpe?g|png|webp)$/i.test(f)) files.push(p);
+    }
+  })(path.join(OUT, 'assets'));
+  let bytes = 0;
+  for (const file of files) {
+    const rel = path.relative(OUT, file).replace(/\.(jpe?g|png|webp)$/i, '.webp');
+    await Promise.all(widths.map(async (w) => {
+      const dest = path.join(OUT, '_img', String(w), rel);
+      fs.mkdirSync(path.dirname(dest), { recursive: true });
+      const info = await sharp(file).rotate().resize({ width: w, withoutEnlargement: true }).webp({ quality: 74 }).toFile(dest);
+      bytes += info.size;
+    }));
+  }
+  console.log(`sized images: ${files.length} images × ${widths.length} widths (${(bytes / 1048576).toFixed(1)} MB)`);
 }
 
 // ---------------------------------------------------------------- PHP endpoints and the install notes
@@ -78,7 +106,7 @@ RewriteCond %{THE_REQUEST} \\s/en(/[^\\s?]*)?[\\s?]
 RewriteRule ^en/?(.*)$ /$1 [R=301,L]
 
 # a trailing slash on a page address → the address without it (pages are files, never folders)
-RewriteCond %{REQUEST_URI} !^/(explorer|_next|assets|api)/
+RewriteCond %{REQUEST_URI} !^/(explorer|_next|_img|assets|api)/
 RewriteRule ^(.+)/$ /$1 [R=301,L]
 
 # page-data files for instant navigation: the browser asks for __next.a.b.txt, the export stores __next.a/b.txt
@@ -92,10 +120,10 @@ RewriteRule ^(ar/.+)$ $1.html [L]
 
 # English pages are stored under /en: / → en.html, /rooms → en/rooms.html, and their data files
 RewriteRule ^$ en.html [L]
-RewriteCond %{REQUEST_URI} !^/(ar|en|_next|assets|api|explorer)(/|$)
+RewriteCond %{REQUEST_URI} !^/(ar|en|_next|_img|assets|api|explorer)(/|$)
 RewriteCond %{DOCUMENT_ROOT}/en/$1.html -f
 RewriteRule ^(.+)$ en/$1.html [L]
-RewriteCond %{REQUEST_URI} !^/(ar|en|_next|assets|api|explorer)(/|$)
+RewriteCond %{REQUEST_URI} !^/(ar|en|_next|_img|assets|api|explorer)(/|$)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{DOCUMENT_ROOT}/en/$1 -f
 RewriteRule ^(.+)$ en/$1 [L]

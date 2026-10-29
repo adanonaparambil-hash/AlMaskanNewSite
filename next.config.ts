@@ -9,7 +9,8 @@ const config: NextConfig = STATIC
   ? {
       output: 'export',
       poweredByHeader: false,
-      images: { unoptimized: true },
+      // pre-sized WebP copies made by scripts/build-cpanel.mjs (widths must match IMG_WIDTHS in src/lib/image-loader.ts)
+      images: { loader: 'custom', loaderFile: './src/lib/image-loader.ts', deviceSizes: [640, 960, 1440, 1920], imageSizes: [96, 200, 384] },
       experimental: { cpus: Number(process.env.BUILD_CPUS) || undefined },
     }
   : {

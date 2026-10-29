@@ -13,9 +13,10 @@ function reply(int $status, array $body): void {
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') reply(405, ['ok' => false, 'error' => 'Method not allowed.']);
 
+// built-in addresses; an optional api/config.php (see config.sample.php) overrides them
 $config = is_file(__DIR__ . '/config.php') ? require __DIR__ . '/config.php' : [];
-$to = trim((string) ($config['INQUIRY_TO'] ?? ''));
-$from = trim((string) ($config['INQUIRY_FROM'] ?? ''));
+$to = trim((string) ($config['INQUIRY_TO'] ?? 'operations@almaskaanvillage.com'));
+$from = trim((string) ($config['INQUIRY_FROM'] ?? 'website@almaskaanvillage.com'));
 
 $body = json_decode((string) file_get_contents('php://input'), true);
 if (!is_array($body)) reply(400, ['ok' => false, 'error' => 'Invalid request.']);
