@@ -41,7 +41,7 @@ export const OPEN_OUTLETS: OpenOutlet[] = [
     by: { en: 'Bank Muscat', ar: 'بنك مسقط' },
     image: { src: '/assets/images/amv/bank-muscat-atm.jpg', w: 1800, h: 2400 },
   },
-  { key: 'laundry', name: { en: 'Laundry', ar: 'مغسلة ملابس' } },
+  { key: 'laundry', name: { en: 'Laundry', ar: 'مغسلة ملابس' }, image: { src: '/assets/images/amv/laundry.jpg', w: 721, h: 1280 } },
   {
     key: 'clinic',
     name: { en: 'Clinic', ar: 'عيادة' },
