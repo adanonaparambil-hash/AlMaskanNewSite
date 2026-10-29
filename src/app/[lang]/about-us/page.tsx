@@ -11,7 +11,7 @@ import { img } from '@/lib/images';
 const en = {
   metaTitle: 'About us',
   metaDescription:
-    'Al Maskaan Village is a community-oriented worker accommodation development in Khazaen Economic City. Our purpose, vision, mission, values, facts and figures, and the Adrak Group management team.',
+    'Al Maskaan Village is a community-oriented accommodation development in Khazaen Economic City. Our purpose, vision, mission, values, facts and figures, and the Adrak Group management team.',
   eyebrow: 'About us',
   heroTitle: <>Beyond <em>accommodation</em></>,
   heroLead: 'More than 1,300 residents, over 400 rooms and one community in Khazaen Economic City — run with hotel-grade care.',
@@ -42,7 +42,7 @@ const en = {
 const ar: typeof en = {
   metaTitle: 'من نحن',
   metaDescription:
-    'قرية المسكن مشروع سكني للعاملين يتمحور حول المجتمع في مدينة خزائن الاقتصادية. تعرّف على غايتنا ورؤيتنا ورسالتنا وقيمنا، وعلى الحقائق والأرقام، وفريق الإدارة في مجموعة أدرك.',
+    'قرية المسكن مشروع سكني يتمحور حول المجتمع في مدينة خزائن الاقتصادية. تعرّف على غايتنا ورؤيتنا ورسالتنا وقيمنا، وعلى الحقائق والأرقام، وفريق الإدارة في مجموعة أدرك.',
   eyebrow: 'من نحن',
   heroTitle: <>ما هو أبعد من <em>السكن</em></>,
   heroLead: 'أكثر من 1,300 مقيم، وأكثر من 400 غرفة، ومجتمع واحد في مدينة خزائن الاقتصادية — بعناية ترقى إلى مستوى الفنادق.',

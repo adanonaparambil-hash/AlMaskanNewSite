@@ -7,7 +7,7 @@ export const SITE = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://almaskaanvillage.com',
   tagline: 'Elevating Living and Working',
   description:
-    'Al Maskaan Village is a community-oriented, mixed-use worker accommodation development in Khazaen Economic City, Barka, on the Muscat–Batinah Expressway in Oman.',
+    'Al Maskaan Village is a community-oriented, mixed-use accommodation development in Khazaen Economic City, Barka, on the Muscat–Batinah Expressway in Oman.',
   operator: 'Adrak Facilities and Services LLC (AFS)',
   group: 'Adrak Group of Companies',
   address: ['Al Maskaan Village', 'Adrak Facilities and Services LLC (AFS)', 'Khazaen Economic City, Barka', 'P.O. Box 1465, PC 130', 'Sultanate of Oman'],
@@ -37,7 +37,7 @@ export const NAV: NavItem[] = [
     href: '/rooms',
     children: [
       { label: 'All rooms', href: '/rooms', note: 'For companies and individuals' },
-      { label: 'Shared Room', href: '/rooms/shared', note: 'Workers & junior staff · up to 10' },
+      { label: 'Shared Room', href: '/rooms/shared', note: 'Teams & junior staff · up to 10' },
       { label: 'Single Premium', href: '/rooms/single-premium', note: 'Managers & senior staff · S1' },
       { label: 'Double Premium', href: '/rooms/double-premium', note: 'Managers & senior staff · S2' },
       { label: 'Triple Premium', href: '/rooms/triple-premium', note: 'Managers & senior staff · S3' },

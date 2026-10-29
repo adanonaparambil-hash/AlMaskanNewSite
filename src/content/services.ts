@@ -33,7 +33,7 @@ export const SERVICES: Service[] = [
     gallery: ['retail.office', 'retail.commercial2'],
     sections: [
       {
-        title: 'What your workers will enjoy',
+        title: 'What your team will enjoy',
         items: [
           { label: 'Comprehensive shopping', text: 'A short stroll from their rooms provides access to everything they require, from groceries and phone accessories to money exchange and fashionable attire.' },
           { label: 'A dynamic community hub', text: 'Cafes and restaurants catering to various tastes create a vibrant atmosphere that enhances the living experience.' },
@@ -332,7 +332,7 @@ export const findService = (audience: Service['audience'], slug: string) => SERV
 export const ABOUT = {
   purpose: 'To nurture human and business fulfilment.',
   vision: 'To create a home-away-from-home community and foster growth and wellbeing.',
-  mission: 'To revolutionise workers’ accommodation and service while providing companies with affordable and hassle-free solutions.',
+  mission: 'To revolutionise accommodation and service while providing companies with affordable and hassle-free solutions.',
   values: [
     { name: 'Quality', text: 'We are committed to providing services and activities that exceed our customers’ expectations. We continuously improve the quality of everything we do to ensure customer satisfaction and deliver on our high standards of excellence.' },
     { name: 'Sustainability', text: 'We are here to stay, and we are committed to meeting the needs of the present without compromising the ability to generate future growth and prosperity. We will respect the environment, conduct business ethically and responsibly, and make decisions based on the common good.' },

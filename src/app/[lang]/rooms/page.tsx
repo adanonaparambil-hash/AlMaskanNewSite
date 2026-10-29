@@ -6,7 +6,7 @@ import { alternatesFor } from '@/i18n/config';
 const en = {
   metaTitle: 'Rooms — for company workforces and individuals',
   metaDescription:
-    'Furnished rooms at Al Maskaan Village, Khazaen Economic City: shared rooms for workers and junior staff, and Single, Double and Triple Premium rooms for managers and senior staff — meals, Wi-Fi and laundry included. Get a quote.',
+    'Furnished rooms at Al Maskaan Village, Khazaen Economic City: shared rooms for teams and junior staff, and Single, Double and Triple Premium rooms for managers and senior staff — meals, Wi-Fi and laundry included. Get a quote.',
   title: <>Rooms for every <em>team</em>, and everyone in it</>,
   lead: 'From shared rooms for whole workforces to private premium rooms — for companies and individuals alike.',
   introEyebrow: 'Secure and comfortable',
@@ -26,7 +26,7 @@ const en = {
 const ar: typeof en = {
   metaTitle: 'الغرف — للقوى العاملة لدى الشركات وللأفراد',
   metaDescription:
-    'غرف مفروشة في قرية المسكن بمدينة خزائن الاقتصادية: غرف مشتركة للعمال والموظفين المبتدئين، وغرف مميّزة فردية ومزدوجة وثلاثية للمدراء وكبار الموظفين — مع الوجبات والإنترنت والغسيل. اطلب عرض سعر.',
+    'غرف مفروشة في قرية المسكن بمدينة خزائن الاقتصادية: غرف مشتركة للفرق والموظفين المبتدئين، وغرف مميّزة فردية ومزدوجة وثلاثية للمدراء وكبار الموظفين — مع الوجبات والإنترنت والغسيل. اطلب عرض سعر.',
   title: <>غرف لكل <em>فريق</em>، ولكل فرد فيه</>,
   lead: 'من الغرف المشتركة للقوى العاملة بالكامل إلى الغرف المميّزة الخاصة — للشركات والأفراد على حد سواء.',
   introEyebrow: 'آمن ومريح',

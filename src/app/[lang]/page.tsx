@@ -17,10 +17,10 @@ import type { CSSProperties } from 'react';
 const en = {
   metaTitleTail: 'Elevating Living and Working',
   metaDescription:
-    'Furnished worker accommodation, retail, catering, spaces and lifestyle in Khazaen Economic City, Barka, Oman. A community-oriented, mixed-use village on the Muscat–Batinah Expressway.',
+    'Furnished accommodation, retail, catering, spaces and lifestyle in Khazaen Economic City, Barka, Oman. A community-oriented, mixed-use village on the Muscat–Batinah Expressway.',
   // hero
   heroEyebrow: 'Khazaen Economic City · Barka · Oman',
-  heroTitle: <>Redefining <em>worker accommodation</em> in Khazaen Economic City</> as ReactNode,
+  heroTitle: <>Redefining <em>accommodation</em> in Khazaen Economic City</> as ReactNode,
   heroLead: 'A community-oriented, mixed-use village of furnished rooms and on-site catering — for individuals and company workforces, on the Muscat–Batinah Expressway.',
   inquiry: 'Make an inquiry',
   exploreVillage: 'Explore the village',
@@ -30,7 +30,7 @@ const en = {
   introEyebrow: 'Elevating living and working',
   introTitle: <>Exceptional service and <em>rewarding</em> experiences</> as ReactNode,
   introText: [
-    'Al Maskaan Village elevates the concept of accommodation with an innovative, welcoming and community-oriented mixed-use development in Khazaen Economic City. As a pioneer in affordable worker accommodation in Oman, we provide modern, furnished worker apartments with on-site catering for the diverse needs of individuals and corporate workforces.',
+    'Al Maskaan Village elevates the concept of accommodation with an innovative, welcoming and community-oriented mixed-use development in Khazaen Economic City. As a pioneer in affordable accommodation in Oman, we provide modern, furnished apartments with on-site catering for the diverse needs of individuals and corporate workforces.',
     'A dedicated team delivers exceptional service, fosters innovation and creates a healthy, safe living environment — in Barka on the Muscat–Batinah Expressway, the most densely populated part of the Sultanate.',
     'Whether you are looking for accommodation, a sense of community, or ways to enhance your business, Al Maskaan Village stands as a model of elevated living and working, with a remarkable and unmatched experience for residents and employers alike.',
   ],
@@ -40,7 +40,7 @@ const en = {
   havenLine: 'Accommodation · Retail · Catering · Spaces · Lifestyle',
   seal: 'Khazaen Economic City · Barka · Oman · Al Maskaan Village · ',
   badgeK: 'Pioneer',
-  badgeText: 'in affordable worker accommodation in Oman — modern, furnished apartments with on-site catering.',
+  badgeText: 'in affordable accommodation in Oman — modern, furnished apartments with on-site catering.',
   kicker: <>In Barka on the Muscat–Batinah Expressway — <em>the most densely populated</em> part of the Sultanate.</> as ReactNode,
   // film + statement
   filmLabel: 'Film',
@@ -150,9 +150,9 @@ const AR_HAVEN_TITLES: Record<string, string> = {
 const ar: typeof en = {
   metaTitleTail: 'الارتقاء بالمعيشة والعمل',
   metaDescription:
-    'سكن مفروش للعاملين، ومتاجر، وتموين، ومساحات، وأسلوب حياة متكامل في مدينة خزائن الاقتصادية، بركاء، سلطنة عُمان. قرية متعددة الاستخدامات تتمحور حول المجتمع على طريق مسقط–الباطنة السريع.',
+    'سكن مفروش، ومتاجر، وتموين، ومساحات، وأسلوب حياة متكامل في مدينة خزائن الاقتصادية، بركاء، سلطنة عُمان. قرية متعددة الاستخدامات تتمحور حول المجتمع على طريق مسقط–الباطنة السريع.',
   heroEyebrow: 'مدينة خزائن الاقتصادية · بركاء · عُمان',
-  heroTitle: <>نعيد تعريف <em>سكن العاملين</em> في مدينة خزائن الاقتصادية</>,
+  heroTitle: <>نعيد تعريف <em>السكن</em> في مدينة خزائن الاقتصادية</>,
   heroLead: 'قرية متعددة الاستخدامات تتمحور حول المجتمع، تضم غرفاً مفروشة وخدمات تموين في الموقع — للأفراد وللقوى العاملة في الشركات، على طريق مسقط–الباطنة السريع.',
   inquiry: 'أرسل استفساراً',
   exploreVillage: 'استكشف القرية',
@@ -161,7 +161,7 @@ const ar: typeof en = {
   introEyebrow: 'الارتقاء بالمعيشة والعمل',
   introTitle: <>خدمة استثنائية وتجارب <em>مُجزية</em></>,
   introText: [
-    'ترتقي قرية المسكن بمفهوم السكن من خلال مشروع مبتكر ومرحِّب متعدد الاستخدامات يتمحور حول المجتمع في مدينة خزائن الاقتصادية. وبصفتنا روّاداً في توفير سكن العاملين بأسعار معقولة في عُمان، نقدّم شققاً حديثة ومفروشة للعاملين مع خدمات تموين في الموقع، تلبي الاحتياجات المتنوعة للأفراد وللقوى العاملة في الشركات.',
+    'ترتقي قرية المسكن بمفهوم السكن من خلال مشروع مبتكر ومرحِّب متعدد الاستخدامات يتمحور حول المجتمع في مدينة خزائن الاقتصادية. وبصفتنا روّاداً في توفير السكن بأسعار معقولة في عُمان، نقدّم شققاً حديثة ومفروشة مع خدمات تموين في الموقع، تلبي الاحتياجات المتنوعة للأفراد وللقوى العاملة في الشركات.',
     'يقدّم فريق متفانٍ خدمة استثنائية، ويعزّز الابتكار، ويهيّئ بيئة معيشية صحية وآمنة — في بركاء على طريق مسقط–الباطنة السريع، المنطقة الأكثر كثافة سكانية في السلطنة.',
     'سواء كنت تبحث عن سكن، أو عن روح المجتمع، أو عن سبل لتطوير أعمالك، تقف قرية المسكن نموذجاً للارتقاء بالمعيشة والعمل، بتجربة لافتة لا مثيل لها للمقيمين وأصحاب العمل على حدٍّ سواء.',
   ],
@@ -171,7 +171,7 @@ const ar: typeof en = {
   havenLine: 'السكن · التجزئة · التموين · المساحات · أسلوب الحياة',
   seal: 'مدينة خزائن الاقتصادية · بركاء · عُمان · قرية المسكن · ',
   badgeK: 'روّاد',
-  badgeText: 'في توفير سكن العاملين بأسعار معقولة في عُمان — شقق حديثة ومفروشة مع خدمات تموين في الموقع.',
+  badgeText: 'في توفير السكن بأسعار معقولة في عُمان — شقق حديثة ومفروشة مع خدمات تموين في الموقع.',
   kicker: <>في بركاء على طريق مسقط–الباطنة السريع — <em>المنطقة الأكثر كثافة سكانية</em> في السلطنة.</>,
   filmLabel: 'الفيلم',
   statementLabel: 'رسالتنا',

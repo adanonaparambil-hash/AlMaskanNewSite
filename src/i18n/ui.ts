@@ -13,7 +13,7 @@ const en = {
   header: { logo: 'Al Maskaan Village — home', primary: 'Primary', mobile: 'Mobile', cta: 'Get in touch', open: 'Open menu', close: 'Close menu' },
   band: { eyebrow: 'Talk to us', title: (time: string) => `We typically answer queries within ${time}.`, cta: 'Get in touch' },
   footer: {
-    about: 'A community-oriented, mixed-use worker accommodation development in Khazaen Economic City, Oman.',
+    about: 'A community-oriented, mixed-use accommodation development in Khazaen Economic City, Oman.',
     social: 'Social media',
     orb: 'Get in touch',
     orbRing: 'Get in touch · Make an inquiry · Get in touch · Make an inquiry ·',
@@ -56,7 +56,7 @@ const en = {
   whatsapp: 'Chat with us on WhatsApp',
   ring: { eyebrow: 'Inside the village', titleA: 'Walk around', titleB: 'the village' },
   card: { more: 'Read more', readAria: (t: string) => `${t} — read article`, explore: 'Explore', exploreAria: (t: string) => `${t} — explore` },
-  stack: { senior: (code: string) => `Managers & senior staff · ${code}`, shared: 'Workers & junior staff', view: 'View room', aria: (n: string) => `${n} — view details` },
+  stack: { senior: (code: string) => `Managers & senior staff · ${code}`, shared: 'Teams & junior staff', view: 'View room', aria: (n: string) => `${n} — view details` },
   gallery: {
     filter: 'Filter gallery',
     labels: { all: 'All', village: 'Al Maskaan Village', accommodation: 'Accommodation', catering: 'Catering', retail: 'Retail', spaces: 'Spaces', lifestyle: 'Lifestyle' } as Record<string, string>,
@@ -88,7 +88,7 @@ const en = {
     topics: { Village: 'Village', Accommodation: 'Accommodation', Catering: 'Catering', Retail: 'Retail', Spaces: 'Spaces', Lifestyle: 'Lifestyle' } as Record<string, string>,
     roomType: 'Room type',
     rooms: {
-      'Junior staff': ['Shared room', 'Workers & junior staff · up to 10'],
+      'Junior staff': ['Shared room', 'Teams & junior staff · up to 10'],
       'Single premium': ['Single Premium', 'Managers & senior staff · S1'],
       'Double premium': ['Double Premium', 'Managers & senior staff · S2'],
       'Triple premium': ['Triple Premium', 'Managers & senior staff · S3'],
@@ -171,7 +171,7 @@ const ar: UI = {
   header: { logo: 'قرية المسكن — الصفحة الرئيسية', primary: 'القائمة الرئيسية', mobile: 'قائمة الجوال', cta: 'تواصل معنا', open: 'فتح القائمة', close: 'إغلاق القائمة' },
   band: { eyebrow: 'تحدث إلينا', title: (time) => `نردّ عادةً على الاستفسارات خلال ${time}.`, cta: 'تواصل معنا' },
   footer: {
-    about: 'مشروع سكني متعدد الاستخدامات للعمال يتمحور حول المجتمع في مدينة خزائن الاقتصادية، سلطنة عُمان.',
+    about: 'مشروع سكني متعدد الاستخدامات يتمحور حول المجتمع في مدينة خزائن الاقتصادية، سلطنة عُمان.',
     social: 'وسائل التواصل الاجتماعي',
     orb: 'تواصل معنا',
     orbRing: 'تواصل معنا · أرسل استفساراً · تواصل معنا · أرسل استفساراً ·',
@@ -214,7 +214,7 @@ const ar: UI = {
   whatsapp: 'تحدث معنا عبر واتساب',
   ring: { eyebrow: 'داخل القرية', titleA: 'تجوّل في', titleB: 'أرجاء القرية' },
   card: { more: 'اقرأ المزيد', readAria: (t) => `${t} — قراءة الخبر`, explore: 'استكشف', exploreAria: (t) => `${t} — استكشف` },
-  stack: { senior: (code) => `المدراء وكبار الموظفين · ${code}`, shared: 'العمال والموظفون المبتدئون', view: 'تفاصيل الغرفة', aria: (n) => `${n} — عرض التفاصيل` },
+  stack: { senior: (code) => `المدراء وكبار الموظفين · ${code}`, shared: 'الفرق والموظفون المبتدئون', view: 'تفاصيل الغرفة', aria: (n) => `${n} — عرض التفاصيل` },
   gallery: {
     filter: 'تصفية الصور',
     labels: { all: 'الكل', village: 'قرية المسكن', accommodation: 'السكن', catering: 'التموين', retail: 'التجزئة', spaces: 'المساحات', lifestyle: 'أسلوب الحياة' },
@@ -246,7 +246,7 @@ const ar: UI = {
     topics: { Village: 'القرية', Accommodation: 'السكن', Catering: 'التموين', Retail: 'التجزئة', Spaces: 'المساحات', Lifestyle: 'أسلوب الحياة' },
     roomType: 'نوع الغرفة',
     rooms: {
-      'Junior staff': ['الغرفة المشتركة', 'العمال والموظفون المبتدئون · حتى 10'],
+      'Junior staff': ['الغرفة المشتركة', 'الفرق والموظفون المبتدئون · حتى 10'],
       'Single premium': ['مميّزة فردية', 'المدراء وكبار الموظفين · S1'],
       'Double premium': ['مميّزة مزدوجة', 'المدراء وكبار الموظفين · S2'],
       'Triple premium': ['مميّزة ثلاثية', 'المدراء وكبار الموظفين · S3'],

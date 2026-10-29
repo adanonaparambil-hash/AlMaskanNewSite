@@ -27,7 +27,7 @@ export const ROOMS: Room[] = [
     slug: 'shared',
     group: 'shared',
     name: 'Shared Room',
-    forWho: 'Workers and junior staff',
+    forWho: 'Teams and junior staff',
     tagline: 'Bunk rooms for up to ten in Wing 1 & 2, with meals, internet and laundry included.',
     intro:
       'A place to stay alongside fellow residents in a bunk room for up to ten people — for company workforces and individual junior staff alike. Every stay includes three meals daily, high-speed internet and a convenient laundry service.',

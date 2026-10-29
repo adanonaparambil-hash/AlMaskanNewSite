@@ -34,7 +34,7 @@ const T = {
 
 // typed questions are matched against these words (both languages, either page)
 const KEYWORDS: Record<string, string[]> = {
-  rooms: ['room', 'rooms', 'stay', 'bed', 'accommodation', 'single', 'double', 'triple', 'shared', 'junior', 'senior', 'worker', 'workers', 'manager', 'premium', 'غرفة', 'غرف', 'سكن', 'السكن', 'سرير', 'مشتركة', 'مميزة'],
+  rooms: ['room', 'rooms', 'stay', 'bed', 'accommodation', 'single', 'double', 'triple', 'shared', 'junior', 'senior', 'staff', 'team', 'teams', 'employee', 'employees', 'manager', 'premium', 'غرفة', 'غرف', 'سكن', 'السكن', 'سرير', 'مشتركة', 'مميزة'],
   quote: ['price', 'prices', 'rate', 'rates', 'cost', 'costs', 'rent', 'rental', 'quote', 'quotation', 'fee', 'fees', 'omr', 'rial', 'cheap', 'expensive', 'budget', 'package', 'سعر', 'أسعار', 'الأسعار', 'تكلفة', 'إيجار', 'عرض', 'ريال', 'باقة', 'رسوم'],
   catering: ['meal', 'meals', 'food', 'catering', 'breakfast', 'lunch', 'dinner', 'kitchen', 'event', 'restaurant', 'cafe', 'liwan', 'mint', 'safi', 'haccp', 'وجبة', 'وجبات', 'طعام', 'تموين', 'التموين', 'إفطار', 'غداء', 'عشاء', 'مطعم', 'ليوان', 'صافي'],
   retail: ['shop', 'shops', 'retail', 'store', 'supermarket', 'atm', 'bank', 'exchange', 'pharmacy', 'laundry', 'clinic', 'business', 'unit', 'units', 'lease', 'office', 'متجر', 'متاجر', 'التجزئة', 'سوبرماركت', 'صراف', 'بنك', 'صرافة', 'صيدلية', 'مغسلة', 'عيادة', 'وحدة', 'مكتب'],
