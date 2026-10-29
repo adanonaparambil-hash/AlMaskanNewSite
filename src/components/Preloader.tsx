@@ -150,9 +150,9 @@ export default function Preloader() {
           </svg>
         </div>
         <ul className="preloader__labels">
-          {ui.loader.lines.map((name, i) => (
-            <li key={name} className="preloader__label" style={{ '--c': LINE_COLORS[i] } as React.CSSProperties}>
-              <i /> {name}
+          {LINE_COLORS.map((color, i) => (
+            <li key={color} className="preloader__label" style={{ '--c': color } as React.CSSProperties}>
+              <i />
             </li>
           ))}
         </ul>

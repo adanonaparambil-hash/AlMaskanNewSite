@@ -27,8 +27,8 @@ export const RETAIL_UNITS: RetailUnit[] = [
 export type OpenOutlet = { key: string; name: T; by?: T; image?: { src: string; w: number; h: number } };
 
 export const OPEN_OUTLETS: OpenOutlet[] = [
-  { key: 'supermarket', name: { en: 'Supermarket', ar: 'سوبرماركت' }, by: { en: 'Suhol Al Fayha', ar: 'سهول الفيحاء' } },
-  { key: 'pharmacy', name: { en: 'Pharmacy', ar: 'صيدلية' } },
+  { key: 'supermarket', name: { en: 'Supermarket', ar: 'سوبرماركت' }, by: { en: 'Suhol Al Fayha', ar: 'سهول الفيحاء' }, image: { src: '/assets/images/amv/supermarket.jpg', w: 1800, h: 1350 } },
+  { key: 'pharmacy', name: { en: 'Pharmacy', ar: 'صيدلية' }, image: { src: '/assets/images/amv/adlife-pharmacy.jpg', w: 1800, h: 1350 } },
   {
     key: 'exchange',
     name: { en: 'Money exchange', ar: 'صرافة' },

@@ -10,9 +10,9 @@ export const SITE = {
   metaTitle: 'Integrated Workforce Living in Khazaen Economic City, Oman',
   description:
     'Furnished executive and team residences for companies and individuals in Khazaen Economic City, Barka, with daily or monthly stays, room-only to full-board buffet dining, laundry, retail, meeting spaces and recreation on the Muscat–Batinah Expressway.',
-  operator: 'Adrak Facilities and Services LLC (AFS)',
+  operator: 'Adrak Facility Services',
   group: 'Adrak Group of Companies',
-  address: ['Al Maskaan Village', 'Adrak Facilities and Services LLC (AFS)', 'Khazaen Economic City, Barka', 'P.O. Box 1465, PC 130', 'Sultanate of Oman'],
+  address: ['Al Maskaan Village', 'Adrak Facility Services', 'Khazaen Economic City, Barka', 'P.O. Box 1465, PC 130', 'Sultanate of Oman'],
   phones: [
     { label: '+968 2200 1300', href: 'tel:+96822001300' },
     { label: '+968 7847 7776', href: 'tel:+96878477776' },
@@ -145,7 +145,7 @@ export const HAVEN = [
 /** Milestones, one row per year. 2022–2023 from the original homepage; 2024 from the village's own news posts
  *  (opening in June 2024; supermarket, clinic, ATM and exchange partnerships). Add 2025 here when AMV supplies it. */
 export const STORY = [
-  { year: '2022', title: 'AFS wins the pitch, completes the concept and design, and starts construction' },
+  { year: '2022', title: 'Adrak Facility Services wins the pitch, completes the concept and design, and starts construction' },
   { year: '2023', title: 'The project is named Al Maskaan Village' },
   { year: '2024', title: 'The village opens to its first residents, followed by a supermarket, clinic, Bank Muscat ATM and Joyalukkas Exchange' },
 ] as const;
@@ -165,7 +165,7 @@ export const FACTS = [
 /** Parent group facts — from the management-team biographies on the original About page. */
 export const GROUP = {
   name: 'Adrak Group of Companies',
-  lead: 'Al Maskaan Village is developed and operated by Adrak Facilities and Services LLC (AFS), part of the Adrak Group, which delivers engineering and construction services with operations and projects across the Sultanate of Oman.',
+  lead: 'Al Maskaan Village is developed and operated by Adrak Facility Services, part of the Adrak Group, which delivers engineering and construction services with operations and projects across the Sultanate of Oman.',
   stats: [
     { value: 6000, prefix: '≈', suffix: '', label: 'Group employees' },
     { value: 1, prefix: 'USD ', suffix: 'bn+', label: 'Group order book' },

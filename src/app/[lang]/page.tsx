@@ -55,7 +55,7 @@ const en = {
   ],
   aboutLink: 'About Al Maskaan Village',
   quote:
-    '“Al Maskaan Village is not just about providing accommodations; it’s a commitment to shaping a lifestyle where quality meets warmth, and community thrives. We feel proud at Al Adrak Facilities & Services LLC (AFS) to having developed a project that fosters an environment where every resident, employee, and business partner feels a genuine sense of belonging. Al Maskaan Village is not just a place to live; it’s a home away from home and a journey towards excellence, where every detail reflects our dedication to redefining living experiences in Khazaen Economic City and beyond.”',
+    '“Al Maskaan Village is not just about providing accommodations; it’s a commitment to shaping a lifestyle where quality meets warmth, and community thrives. We feel proud at Adrak Facility Services to having developed a project that fosters an environment where every resident, employee, and business partner feels a genuine sense of belonging. Al Maskaan Village is not just a place to live; it’s a home away from home and a journey towards excellence, where every detail reflects our dedication to redefining living experiences in Khazaen Economic City and beyond.”',
   quoteName: 'Dr. Thomas Alexander',
   quoteRole: 'Founder and Chairman, Adrak Group of Companies',
   // facts
@@ -87,7 +87,7 @@ const en = {
   retailSpaces: 'Retail Spaces',
   // catering
   catEyebrow: 'Al Maskaan Catering',
-  catTitle: <>Three buffet meals a day on <em>Full Board</em></> as ReactNode,
+  catTitle: <>Culinary experiences <em>included</em> in your stay</> as ReactNode,
   catText: 'Breakfast, lunch and dinner are served buffet-style at Liwan Restaurant and Safi Dining Hall, with packed meals available for residents on site shifts. Choose Room Only, Bed & Breakfast, Half Board or Full Board. Beyond the daily table, we offer bespoke catering for meetings, conferences and celebrations.',
   catFacts: [
     { unit: 'm²', label: 'Industrial kitchen' },
@@ -119,7 +119,7 @@ const en = {
   // story
   storyEyebrow: 'Our story',
   storyTitle: <>From a winning pitch to a <em>village</em></> as ReactNode,
-  storyText: 'Developed by Adrak Facilities and Services (AFS), part of the Adrak Group of Companies.',
+  storyText: 'Developed by Adrak Facility Services, part of the Adrak Group of Companies.',
   // group
   groupEyebrow: 'Holding company',
   groupTitle: (name: string) => <>Part of the <em>{name}</em></> as ReactNode,
@@ -184,7 +184,7 @@ const ar: typeof en = {
   ],
   aboutLink: 'عن قرية المسكن',
   quote:
-    '«قرية المسكن ليست مجرد توفير لأماكن الإقامة؛ بل هي التزام بتشكيل أسلوب حياة تلتقي فيه الجودة بالدفء ويزدهر فيه المجتمع. ونفخر في شركة أدرك للمرافق والخدمات ش.م.م (AFS) بتطوير مشروع يرسّخ بيئة يشعر فيها كل مقيم وموظف وشريك أعمال بانتماء حقيقي. قرية المسكن ليست مجرد مكان للعيش؛ إنها بيتٌ بعيد عن البيت ورحلة نحو التميّز، تعكس كل تفاصيلها تفانينا في إعادة تعريف تجارب المعيشة في مدينة خزائن الاقتصادية وما بعدها.»',
+    '«قرية المسكن ليست مجرد توفير لأماكن الإقامة؛ بل هي التزام بتشكيل أسلوب حياة تلتقي فيه الجودة بالدفء ويزدهر فيه المجتمع. ونفخر في شركة أدرك للمرافق والخدمات ش.م.م (Adrak Facility Services) بتطوير مشروع يرسّخ بيئة يشعر فيها كل مقيم وموظف وشريك أعمال بانتماء حقيقي. قرية المسكن ليست مجرد مكان للعيش؛ إنها بيتٌ بعيد عن البيت ورحلة نحو التميّز، تعكس كل تفاصيلها تفانينا في إعادة تعريف تجارب المعيشة في مدينة خزائن الاقتصادية وما بعدها.»',
   quoteName: 'د. توماس ألكسندر',
   quoteRole: 'المؤسس ورئيس مجلس الإدارة، مجموعة شركات أدرك',
   factsEyebrow: 'حقائق وأرقام',
@@ -211,7 +211,7 @@ const ar: typeof en = {
   ],
   retailSpaces: 'مساحات التجزئة',
   catEyebrow: 'تموين المسكن',
-  catTitle: <>ثلاث وجبات بوفيه يومياً مع <em>الإقامة الكاملة</em></>,
+  catTitle: <>تجارب طعام <em>مشمولة</em> في إقامتك</>,
   catText: 'تُقدَّم وجبات الإفطار والغداء والعشاء بنظام البوفيه في مطعم ليوان وقاعة صافي للطعام، مع وجبات مغلّفة للمقيمين العاملين في نوبات المواقع. اختر بين الغرفة فقط، أو مبيت وإفطار، أو نصف إقامة، أو إقامة كاملة. وإلى جانب المائدة اليومية، نقدّم خدمات تموين مخصصة للاجتماعات والمؤتمرات والاحتفالات.',
   catFacts: [
     { unit: 'م²', label: 'مطبخ صناعي' },
@@ -240,7 +240,7 @@ const ar: typeof en = {
   lifeResidents: 'استكشف أسلوب الحياة',
   storyEyebrow: 'قصتنا',
   storyTitle: <>من عرضٍ فائز إلى <em>قرية</em></>,
-  storyText: 'طوّرتها شركة أدرك للمرافق والخدمات (AFS)، إحدى شركات مجموعة شركات أدرك.',
+  storyText: 'طوّرتها شركة أدرك للمرافق والخدمات (Adrak Facility Services)، إحدى شركات مجموعة شركات أدرك.',
   groupEyebrow: 'الشركة القابضة',
   groupTitle: (name: string) => <>جزء من <em>{name}</em></>,
   meetTeam: 'تعرّف على فريق الإدارة',
